@@ -42,7 +42,7 @@ public class IOSPostEffects : MonoBehaviour
 	// Use this for initialization
 	public void Awake()
 	{
-		_cam = this.camera;
+		_cam = GetComponent<Camera>();
 		
 		if (UseIOSPostEffects)
 		{

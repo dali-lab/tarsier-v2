@@ -31,11 +31,11 @@ Material:
     - <noninit>: 0
     - _Exposure: 1
     - _FogBottom: 0
-    - _FogEnd: 0.231
+    - _FogEnd: 0.169
     - _FogIntens: 1
     - _FogStart: 0
-    - _MieIntens: 0.78
-    - _MieSize: 0.307
+    - _MieIntens: 0.297
+    - _MieSize: 0.339
     - _Rotation: 0
     - _SunDir: 59
     m_Colors:
