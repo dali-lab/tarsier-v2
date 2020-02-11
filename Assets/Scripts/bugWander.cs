@@ -43,17 +43,21 @@ public class bugWander : MonoBehaviour {
             //yield return new WaitForSeconds(walkWait);
             // print("yield after walkWait");
             // isWalking = true;
-
+            ;
             if (animationNumber == 0)
             {
                 Vector3 newPosition = transform.position - transform.forward * moveSpeed * Time.deltaTime;
                 Vector3 newVector = new Vector3(newPosition.x, floor.transform.position.y, newPosition.z);
                 //Debug.Log("new Position: " + newPosition);
+                //Debug.Log(floorCollider.bounds);
+                Debug.Log(newVector);
                 if (floorCollider.bounds.Contains(newVector)) {
 
                     transform.position -= transform.forward * moveSpeed * Time.deltaTime;
+                    
                 }
                 else {
+                    Debug.Log("inside");
                     Vector3 halfRotation = new Vector3(0f, 180f, 0f);
                     transform.Rotate(halfRotation);
                 }
