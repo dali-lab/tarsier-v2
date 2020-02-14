@@ -8,7 +8,6 @@ public class bugWander : MonoBehaviour {
     public float rotSpeed = 100f;
     public GameObject floor;
 
-
     private bool executeMovement = true;
     private Collider floorCollider;
     private float timer = 0.0f;
@@ -67,9 +66,5 @@ public class bugWander : MonoBehaviour {
                 timer += Time.deltaTime;
             }
         }
-            
-               
-     
-        }
-   
+    }
 }
