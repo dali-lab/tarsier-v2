@@ -12,10 +12,9 @@ public class bugEat : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.name);
-        if (collision.gameObject.tag == "katydid")
+        if (collision.gameObject.tag == "katydid")                      // checks for objects tagged as katydid, if yes then delete katydid
         {
-            bugSound.Play();
+            bugSound.Play();                                            // play eat sound
             Destroy(collision.gameObject);
         }
     }
