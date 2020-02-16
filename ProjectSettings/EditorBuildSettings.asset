@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ForestScene.unity
+    path: Assets/Scenes/Tarsier/TarsierMasterScene.unity
+    guid: b92c1571ede104cd3a23f16c7879b3e6
+  - enabled: 1
+    path: Assets/Scenes/Tarsier/ForestScene.unity
     guid: 1c8c01441a343ee4e9e29a4b46ea5821
   - enabled: 0
-    path: Assets/Scenes/LobbyScene.unity
+    path: Assets/Scenes/Tarsier/LobbyScene.unity
     guid: 4858140498bb04c41b5c5043db129911
+  - enabled: 1
+    path: Assets/Scenes/Tarsier/ForestVRTK.unity
+    guid: 95962cf2ac8ff46438de4e6d696e0385
   m_configObjects: {}
