@@ -7,15 +7,20 @@ public class bugWander : MonoBehaviour {
     public float moveSpeed = 8f;
     public float rotSpeed = 100f;
     public GameObject floor;
+    public GameObject boundingBox;
 
     private bool executeMovement = true;
     private Collider floorCollider;
+    private Vector3 maxPoint;
+    private Vector3 minPoint;
     private float timer = 0.0f;
     private float randomWaitTime = 0.0f;
 
     // Use this for initialization
     void Start () {
         floorCollider = floor.GetComponent<Collider>();
+        maxPoint = boundingBox.GetComponent<Collider>().bounds.max;
+        minPoint = boundingBox.GetComponent<Collider>().bounds.min;
     }
     
     // Update is called once per frame
@@ -28,9 +33,9 @@ public class bugWander : MonoBehaviour {
             if (animationNumber >= 0 && animationNumber <= 50)                   // move forward
             {
                 Vector3 newPosition = transform.position - transform.forward * moveSpeed * Time.deltaTime;
-                Vector3 newVector = new Vector3(newPosition.x, floor.transform.position.y, newPosition.z);
 
-                if (floorCollider.bounds.Contains(newVector))                   // if within bounds of ground, move forward
+                // if within bounds of the x and z bounding box, move forward, otherwise turn and stay within bounds
+                if (newPosition.x > minPoint.x && newPosition.x < maxPoint.x && newPosition.z > minPoint.z && newPosition.z < maxPoint.z)                   
                 {         
                     transform.position -= transform.forward * moveSpeed * Time.deltaTime;
 

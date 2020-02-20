@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class bugEat : MonoBehaviour
 {
     public AudioSource bugSound;
