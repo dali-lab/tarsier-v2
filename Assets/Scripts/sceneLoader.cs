@@ -52,7 +52,7 @@ public class sceneLoader : MonoBehaviour
             
             for (int j = 0; j < scenes.Length; j++)
             {
-                SceneManager.LoadSceneAsync(scenes[j], LoadSceneMode.Additive);
+                SceneManager.LoadScene(scenes[j], LoadSceneMode.Additive);
             }
 
 
