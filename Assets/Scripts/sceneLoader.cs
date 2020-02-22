@@ -10,38 +10,51 @@ using UnityEngine.SceneManagement;
 [ExecuteInEditMode]
 public class sceneLoader : MonoBehaviour
 {
-    public Object[] scenes;
+
+    [SerializeField] private SceneReference[] scenes;
     public string scenesFolder;
+    public bool wipeScenesList = false;
 
     // Start is called before the first frame update
     public void Start()
     {
-
         if (Application.isEditor)
         {
 #if UNITY_EDITOR
-            for (int i = 0; i < scenes.Length; i++)
+
+            if (EditorApplication.isPlayingOrWillChangePlaymode)
             {
-                if (EditorApplication.isPlayingOrWillChangePlaymode)
+                
+                for (int j = 0; j < scenes.Length; j++)
                 {
+
                     LoadSceneParameters parameters = new LoadSceneParameters();
                     parameters.loadSceneMode = LoadSceneMode.Additive;
-                    SceneManager.UnloadSceneAsync(scenes[i].name);
-                    EditorSceneManager.LoadSceneInPlayMode("Assets/Scenes/" + scenesFolder + "/" + scenes[i].name + ".unity", parameters);
+                    SceneManager.UnloadSceneAsync(scenes[j]);
+                    EditorSceneManager.LoadSceneInPlayMode(scenes[j].ScenePath, parameters);
                 }
-                else
+
+            }
+            else
+            {
+                for (int j = 0; j < scenes.Length; j++)
                 {
-                    EditorSceneManager.OpenScene("Assets/Scenes/" + scenesFolder + "/" + scenes[i].name + ".unity", OpenSceneMode.Additive);
+
+                    EditorSceneManager.OpenScene(scenes[j].ScenePath, OpenSceneMode.Additive);
+
                 }
+
             }
 #endif
         }
         else
         {
+            
             for (int j = 0; j < scenes.Length; j++)
             {
-                SceneManager.LoadSceneAsync(scenes[j].name, LoadSceneMode.Additive);
+                SceneManager.LoadSceneAsync(scenes[j], LoadSceneMode.Additive);
             }
+
 
         }
       
