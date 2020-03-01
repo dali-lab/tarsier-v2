@@ -60,33 +60,33 @@ public class tutorial : MonoBehaviour
         coolCube2.SetActive(false);
         door.SetActive(false);
 
+        foreach(GameObject platform in platforms)
+        {
+            platform.SetActive(false);
+        }
+        
+
         StartCoroutine(Wait());
     }
-    IEnumerator Wait()
+    IEnumerator Wait()                              // on welcome screen
     {
-        Debug.Log("inside");
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSeconds(5);
+
+        // move to next screen
+        textScreens[0].SetActive(false);
+        textScreens[1].SetActive(true);
+
+        // turn on button glow
+        R1.SetActive(true);
+        R2.SetActive(true);
+        L1.SetActive(true);
+        L2.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (textScreens[0].activeSelf)                  // on welcome screen
-        {
-            //[wait 5 seconds]
-            
-
-            // move to next screen
-            textScreens[0].SetActive(false);
-            textScreens[1].SetActive(true);
-
-            // turn on button glow
-            R1.SetActive(true);
-            R2.SetActive(true);
-            L1.SetActive(true);
-            L2.SetActive(true);
-        }
-        else if (textScreens[1].activeSelf)                         // on button screen
+        if (textScreens[1].activeSelf)                         // on button screen
         {
             if (RControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress))
             {
@@ -175,12 +175,12 @@ public class tutorial : MonoBehaviour
         else if (textScreens[4].activeSelf)             // on grab screen
         {
             //grab goggles
-            //if (goggles == null)
-            //{
+            if (goggles == null)
+            {
                 // move to next screen
                 textScreens[4].SetActive(false);
                 textScreens[5].SetActive(true);
-            //}
+            }
         }
         else if (textScreens[5].activeSelf)
         {
@@ -234,6 +234,8 @@ public class tutorial : MonoBehaviour
             {
                 platform.SetActive(true);
                 door.SetActive(true);
+                RController.GetComponent<VRTK_Pointer>().enabled = true;
+                RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = true;
             }
         }
 
