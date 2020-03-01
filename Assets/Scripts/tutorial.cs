@@ -17,10 +17,23 @@ public class tutorial : MonoBehaviour
     public GameObject LGrip;
     public GameObject table;
     public GameObject goggles;
+    public GameObject ground;
+    public GameObject superHotCube;
+    public GameObject coolCube1;
+    public GameObject coolCube2;
+    public GameObject door;
+    public Material regularVisionMaterial;
+    public Material hotMaterial;
+    public Material coolMaterial;
     public GameObject[] textScreens;
+    public GameObject[] platforms;
+
 
     private VRTK_ControllerEvents RControllerEvents;
     private VRTK_ControllerEvents LControllerEvents;
+
+    private int timesVisionSwitched = 0;
+    private bool regularVision = true;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +55,17 @@ public class tutorial : MonoBehaviour
         // table and stuff
         table.SetActive(false);
         goggles.SetActive(false);
+        superHotCube.SetActive(false);
+        coolCube1.SetActive(false);
+        coolCube2.SetActive(false);
+        door.SetActive(false);
+
+        StartCoroutine(Wait());
+    }
+    IEnumerator Wait()
+    {
+        Debug.Log("inside");
+        yield return new WaitForSecondsRealtime(5);
     }
 
     // Update is called once per frame
@@ -50,6 +74,7 @@ public class tutorial : MonoBehaviour
         if (textScreens[0].activeSelf)                  // on welcome screen
         {
             //[wait 5 seconds]
+            
 
             // move to next screen
             textScreens[0].SetActive(false);
@@ -81,7 +106,7 @@ public class tutorial : MonoBehaviour
             }
 
             // once all buttons are pressed
-            if (!R1.activeSelf && !R2.activeSelf && !L1.activeSelf && !L2.activeSelf)           
+            if (!R1.activeSelf && !R2.activeSelf && !L1.activeSelf && !L2.activeSelf)
             {
                 // move to next screen
                 textScreens[1].SetActive(false);
@@ -104,7 +129,7 @@ public class tutorial : MonoBehaviour
             }
 
             // once both triggers are pressed
-            if (!RTrigger.activeSelf && !LTrigger.activeSelf)           
+            if (!RTrigger.activeSelf && !LTrigger.activeSelf)
             {
                 // move to next screen
                 textScreens[2].SetActive(false);
@@ -127,7 +152,7 @@ public class tutorial : MonoBehaviour
             }
 
             // once both grips are pressed
-            if (!RGrip.activeSelf && !LGrip.activeSelf)           
+            if (!RGrip.activeSelf && !LGrip.activeSelf)
             {
                 // move to next screen
                 textScreens[3].SetActive(false);
@@ -137,12 +162,105 @@ public class tutorial : MonoBehaviour
                 table.SetActive(true);
                 goggles.SetActive(true);
 
+                superHotCube.SetActive(true);
+                coolCube1.SetActive(true);
+                coolCube2.SetActive(true);
                 // turn on components to grab
                 RController.GetComponent<VRTK_InteractGrab>().enabled = true;
                 RController.GetComponent<VRTK_InteractTouch>().enabled = true;
 
-                
+
             }
         }
+        else if (textScreens[4].activeSelf)             // on grab screen
+        {
+            //grab goggles
+            //if (goggles == null)
+            //{
+                // move to next screen
+                textScreens[4].SetActive(false);
+                textScreens[5].SetActive(true);
+            //}
+        }
+        else if (textScreens[5].activeSelf)
+        {
+            //switch visions
+            if (RControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress))
+            {
+                changeVisions();
+                // move to next screen
+                textScreens[5].SetActive(false);
+                textScreens[6].SetActive(true);
+
+            }
+        }
+        else if (textScreens[6].activeSelf)
+        {
+            //grab super hot cube
+            if (RControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress))
+            {
+                changeVisions();
+            }
+
+            if (RControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.GripPress))
+            {
+                if (RController.GetComponent<VRTK_InteractGrab>().GetGrabbedObject() == superHotCube)
+                {
+                    textScreens[6].SetActive(false);
+                    textScreens[7].SetActive(true);
+
+                    superHotCube.SetActive(false);
+                    coolCube1.SetActive(false);
+                    coolCube2.SetActive(false);
+                }
+            }
+
+            if (LControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.GripPress))
+            {
+                if (LController.GetComponent<VRTK_InteractGrab>().GetGrabbedObject() == superHotCube)
+                {
+                    textScreens[6].SetActive(false);
+                    textScreens[7].SetActive(true);
+
+                    superHotCube.SetActive(false);
+                    coolCube1.SetActive(false);
+                    coolCube2.SetActive(false);
+                }
+            }
+        }
+        else if (textScreens[7].activeSelf)                             // on teleport screen
+        {
+            foreach (GameObject platform in platforms)
+            {
+                platform.SetActive(true);
+                door.SetActive(true);
+            }
+        }
+
     }
+
+    private void changeVisions()
+    {
+        if (regularVision)
+        {
+            table.GetComponent<Renderer>().material = coolMaterial;
+            ground.GetComponent<Renderer>().material = coolMaterial;
+            superHotCube.GetComponent<Renderer>().material = hotMaterial;
+            coolCube1.GetComponent<Renderer>().material = coolMaterial;
+            coolCube2.GetComponent<Renderer>().material = coolMaterial;
+            regularVision = false;
+
+        }
+        else
+        {
+            table.GetComponent<Renderer>().material = regularVisionMaterial;
+            ground.GetComponent<Renderer>().material = regularVisionMaterial;
+            superHotCube.GetComponent<Renderer>().material = regularVisionMaterial;
+            coolCube1.GetComponent<Renderer>().material = regularVisionMaterial;
+            coolCube2.GetComponent<Renderer>().material = regularVisionMaterial;
+            regularVision = true;
+        }
+
+    }
+
 }

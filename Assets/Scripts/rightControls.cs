@@ -5,9 +5,12 @@ using VRTK;
 
 public class rightControls : MonoBehaviour
 {
+    public Material[] materials;
+    public AudioClip humanKatydidAudio;
+    public AudioClip tarsierKatydidAudio;
+    //public AudioSource audioSource;
 
     private VRTK_ControllerEvents controllerEvents;
-    public Material[] materials;
 
     private void OnEnable()
     {
@@ -38,6 +41,7 @@ public class rightControls : MonoBehaviour
 
     private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
     {
+        // material changes
         for (int i = 0; i < materials.Length; i++)
         {
             if (materials[i].GetFloat("_ColorblindOn") == 1.0f)
@@ -48,6 +52,40 @@ public class rightControls : MonoBehaviour
             {
                 materials[i].SetFloat("_ColorblindOn", 1.0f);
             }
+        }
+
+        // sound changes
+        GameObject[] katydids;
+        katydids = GameObject.FindGameObjectsWithTag("edible");
+        foreach (GameObject katydid in katydids)
+        {
+            AudioSource katydidAudio = katydid.GetComponent<AudioSource>();
+            
+            // switch to tarsier katydid sound
+            if (katydidAudio.clip == humanKatydidAudio)
+            {
+                if (katydidAudio.isPlaying)
+                {
+                    katydidAudio.Stop();
+                }
+                katydidAudio.loop = true;
+                katydidAudio.clip = tarsierKatydidAudio;
+                katydidAudio.Play();
+            }
+
+            // switch to human katydid sound
+            else if (katydidAudio.clip == tarsierKatydidAudio)
+            {
+                if (katydidAudio.isPlaying)
+                {
+                    katydidAudio.Stop();
+                }
+                katydidAudio.loop = true;
+                katydidAudio.clip = humanKatydidAudio;
+                katydidAudio.Play();
+            }
+
+            
         }
 
     }

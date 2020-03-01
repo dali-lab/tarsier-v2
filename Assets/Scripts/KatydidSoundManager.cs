@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 /// <summary>
 /// This script controls the playing of the audio depending on the static humanVision boolean
@@ -12,9 +13,12 @@ public class KatydidSoundManager : MonoBehaviour {
     public AudioClip tarsierKatydidAudio;
     public AudioSource audioSource;
     public GameObject[] katydids;
+    private VRTK_ControllerEvents controllerEvents;
 
     private void Start()
     {
+        controllerEvents = GetComponent<VRTK_ControllerEvents>();
+
         if (humanKatydidAudio == null || tarsierKatydidAudio == null)
         {
             string error = "";
@@ -29,6 +33,7 @@ public class KatydidSoundManager : MonoBehaviour {
         {
             Debug.LogError("AudioSource component missing from this gameobject.");
         }
+
     }
 
     public void PlayHumanAudioClip()

@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: com.DALI.tarsierV2
-  productName: tarsier-v2 Bughunt
+  productName: tarsier-v2 Sound
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -396,6 +396,12 @@ PlayerSettings:
     m_Enabled: 0
     m_Devices: []
   - m_BuildTarget: BJM
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: Facebook
+    m_Enabled: 0
+    m_Devices: []
+  - m_BuildTarget: Nintendo Switch
     m_Enabled: 0
     m_Devices: []
   openGLRequireES31: 0

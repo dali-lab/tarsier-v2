@@ -6,6 +6,7 @@ TagManager:
   tags:
   - katydid
   - edible
+  - goggles
   layers:
   - Default
   - TransparentFX
