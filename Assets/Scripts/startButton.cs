@@ -33,6 +33,8 @@ public class startButton : MonoBehaviour
           spotlightObject.enabled = !spotlightObject.enabled;
           anim.SetBool("Press", true);
           pressing = true;
+        } else {
+          anim.SetBool("Press", true);
         }
       }
       if(!leftControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress)) {

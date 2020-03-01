@@ -9,6 +9,7 @@ public class warpSphereScript : MonoBehaviour
     public GameObject leftController;
     public GameObject rightController;
 
+    public VRTK_HeadsetCollision headsetCollision;
     void Start()
     {
     }
@@ -20,11 +21,16 @@ public class warpSphereScript : MonoBehaviour
       Transform buttonT = gameObject.GetComponent(typeof(Transform)) as Transform;
 
       VRTK_ControllerEvents leftControllerEvents = leftController.GetComponent<VRTK_ControllerEvents>();
-      if(Vector3.Distance(buttonT.position, leftT.position) <= 1 && leftControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress)) 
-      {
-        SceneManager.LoadScene("TarsierMasterScene", LoadSceneMode.Single);
-          // Scene sceneToLoad = SceneManager.GetSceneByName("TarsierMasterScene");
-          // SceneManager.MoveGameObjectToScene(other.gameObject, sceneToLoad);
+      // if(Vector3.Distance(buttonT.position, leftT.position) <= 1 && leftControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress)) 
+      // {
+      //   SceneManager.LoadScene("TarsierMasterScene", LoadSceneMode.Single);
+      //     // Scene sceneToLoad = SceneManager.GetSceneByName("TarsierMasterScene");
+      //     // SceneManager.MoveGameObjectToScene(other.gameObject, sceneToLoad);
+      // }
+      if(headsetCollision.headsetColliding == true){
+        Debug.Log("COLLIDED");
+        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "TarsierMasterScene"));
+        //SceneManager.LoadScene("TarsierMasterScene", LoadSceneMode.Single);
       }
     }
 }
