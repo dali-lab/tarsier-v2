@@ -1,7 +1,7 @@
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
 
 
-# Tarsier Googles
+# Tarsier Goggles
 The Tarsier Goggles Project aims to let a user experience the world through the eyes of a tarsier. The experience focuses on different vision adaptions and the everyday life of these unique animals.
 
 ## Setup for development
@@ -31,7 +31,7 @@ __If the `Tarsier-Goggles` executable file and the `Tarsier-Goggles_Data` folder
 
 ### Gameplay
 
-See [here](https://github.com/dali-lab/tarsier/wiki/Gameplay).
+The user will start in the Home Lobby scene, where there will be an optional tutorial. To transition to another scene the user will pull a pair of goggles to their face.
 
 ## Overview of Developement Implementation
 
