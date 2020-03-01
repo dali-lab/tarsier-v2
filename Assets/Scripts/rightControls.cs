@@ -60,7 +60,7 @@ public class rightControls : MonoBehaviour
         foreach (GameObject katydid in katydids)
         {
             AudioSource katydidAudio = katydid.GetComponent<AudioSource>();
-            
+
             // switch to tarsier katydid sound
             if (katydidAudio.clip == humanKatydidAudio)
             {
@@ -84,8 +84,6 @@ public class rightControls : MonoBehaviour
                 katydidAudio.clip = humanKatydidAudio;
                 katydidAudio.Play();
             }
-
-            
         }
 
     }
