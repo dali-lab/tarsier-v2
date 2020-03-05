@@ -41,7 +41,6 @@ public class rightControls : MonoBehaviour
 
     private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
     {
-        // material changes
         for (int i = 0; i < materials.Length; i++)
         {
             if (materials[i].GetFloat("_ColorblindOn") == 1.0f)
@@ -87,7 +86,6 @@ public class rightControls : MonoBehaviour
 
             
         }
-
     }
 }
 
