@@ -248,6 +248,42 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 135055182}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &135055184 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1883185261795400, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 135055182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &135055185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 135055182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &135055186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1384746914293964, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 135055182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &135055187 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 135055182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &135055188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1587602180963074, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 135055182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &135055189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013941130086, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 135055182}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &283777972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -671,8 +707,6 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 81bc22e12db425b4791322a8b35f6bd3, type: 2}
   - {fileID: 2100000, guid: 65543d594be8dcc4b9d85eb4498c101e, type: 2}
   - {fileID: 2100000, guid: 4faf030ee7e8c93488fb9b776294fbda, type: 2}
-  humanKatydidAudio: {fileID: 8300000, guid: 6e6ffd2c80d5e6f489139e34f365f376, type: 3}
-  tarsierKatydidAudio: {fileID: 8300000, guid: f3d53b14532c4b148b976c5e0128bd81, type: 3}
 --- !u!114 &569421836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1405,12 +1439,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPopulateObjectReferences: 1
-  actualBoundaries: {fileID: 0}
-  actualHeadset: {fileID: 0}
-  actualLeftController: {fileID: 0}
-  actualRightController: {fileID: 0}
-  modelAliasLeftController: {fileID: 0}
-  modelAliasRightController: {fileID: 0}
+  actualBoundaries: {fileID: 135055189}
+  actualHeadset: {fileID: 135055188}
+  actualLeftController: {fileID: 135055187}
+  actualRightController: {fileID: 135055185}
+  modelAliasLeftController: {fileID: 135055186}
+  modelAliasRightController: {fileID: 135055184}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem

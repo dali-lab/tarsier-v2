@@ -52,7 +52,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _ColorblindOn: 1
+    - _ColorblindOn: 0
     - _Cull: 2
     - _Cutoff: 0.5
     - _DstBlend: 0
@@ -72,7 +72,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_A0E3BBEC: {r: 0, g: 0.9150943, b: 0.085408725, a: 0}
+    - Color_A0E3BBEC: {r: 0, g: 0.29411766, b: 0.02745098, a: 0}
     - _BaseColor: {r: 0, g: 0.2924528, b: 0.027749417, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
