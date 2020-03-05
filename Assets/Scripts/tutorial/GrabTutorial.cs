@@ -54,11 +54,6 @@ public class GrabTutorial : TutorialBaseClass
     
     }
 
-    public override bool IsDone()
-    {
-        return base.IsDone();
-    }
-
     public override void Disable()
     {
         for (int i = 0; i < textScreens.Length; i++)

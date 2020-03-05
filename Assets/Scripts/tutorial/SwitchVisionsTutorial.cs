@@ -138,11 +138,6 @@ public class SwitchVisionsTutorial : TutorialBaseClass
         }
     }
 
-    public override bool IsDone()
-    {
-        return base.IsDone();
-    }
-
     public void changeVisions(object sender, ControllerInteractionEventArgs e)
     {
         if (!thermalVisionOn)

@@ -39,11 +39,6 @@ public class TeleportTutorial : TutorialBaseClass
         
     }
 
-    public override bool IsDone()
-    {
-        return base.IsDone();
-    }
-
     public override void Disable()
     {
         foreach (GameObject platform in platforms)
