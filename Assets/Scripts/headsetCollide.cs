@@ -6,6 +6,7 @@ using UnityEngine;
 public class headsetCollide : MonoBehaviour
 {
     public AudioSource bugSound;
+    public Material coolMaterial;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class headsetCollide : MonoBehaviour
         }
         if (collision.gameObject.tag == "goggles")
         {
+
             Destroy(collision.gameObject);
         }
     }

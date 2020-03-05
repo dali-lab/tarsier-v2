@@ -162,9 +162,6 @@ public class tutorial : MonoBehaviour
                 table.SetActive(true);
                 goggles.SetActive(true);
 
-                superHotCube.SetActive(true);
-                coolCube1.SetActive(true);
-                coolCube2.SetActive(true);
                 // turn on components to grab
                 RController.GetComponent<VRTK_InteractGrab>().enabled = true;
                 RController.GetComponent<VRTK_InteractTouch>().enabled = true;
@@ -174,12 +171,17 @@ public class tutorial : MonoBehaviour
         }
         else if (textScreens[4].activeSelf)             // on grab screen
         {
+            
             //grab goggles
             if (goggles == null)
             {
                 // move to next screen
                 textScreens[4].SetActive(false);
                 textScreens[5].SetActive(true);
+
+                superHotCube.SetActive(true);
+                coolCube1.SetActive(true);
+                coolCube2.SetActive(true);
             }
         }
         else if (textScreens[5].activeSelf)
