@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6227,6 +6227,7 @@ GameObject:
   - component: {fileID: 852749158}
   - component: {fileID: 852749157}
   - component: {fileID: 852749156}
+  - component: {fileID: 852749160}
   m_Layer: 0
   m_Name: Cold Cube 2
   m_TagString: edible
@@ -6340,6 +6341,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852749154}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &852749160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852749154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128da5f5b36af954b99189bd136234d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minY: 0
 --- !u!1 &957822307
 GameObject:
   m_ObjectHideFlags: 0
@@ -6446,6 +6460,7 @@ GameObject:
   - component: {fileID: 1010453280}
   - component: {fileID: 1010453279}
   - component: {fileID: 1010453278}
+  - component: {fileID: 1010453282}
   m_Layer: 0
   m_Name: Cold Cube
   m_TagString: edible
@@ -6559,6 +6574,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1010453276}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1010453282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010453276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128da5f5b36af954b99189bd136234d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minY: 0
 --- !u!1 &1018495848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6991,6 +7019,7 @@ GameObject:
   - component: {fileID: 1272386995}
   - component: {fileID: 1272386994}
   - component: {fileID: 1272386998}
+  - component: {fileID: 1272386999}
   m_Layer: 2
   m_Name: goggles
   m_TagString: goggles
@@ -7104,6 +7133,19 @@ MonoBehaviour:
   objectHighlighter: {fileID: 0}
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
+--- !u!114 &1272386999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272386993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128da5f5b36af954b99189bd136234d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minY: 0
 --- !u!1 &1394404000
 GameObject:
   m_ObjectHideFlags: 0
@@ -8076,6 +8118,7 @@ GameObject:
   - component: {fileID: 1948211323}
   - component: {fileID: 1948211322}
   - component: {fileID: 1948211321}
+  - component: {fileID: 1948211325}
   m_Layer: 0
   m_Name: Hot Cube
   m_TagString: edible
@@ -8189,6 +8232,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948211319}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1948211325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948211319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128da5f5b36af954b99189bd136234d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minY: 0
 --- !u!1 &1957460070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9015514450934013021, guid: 24c4979ee8884fd4d9225bf97b2f5895,
