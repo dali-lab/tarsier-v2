@@ -27,6 +27,8 @@ public class tutorial : MonoBehaviour
     public Material coolMaterial;
     public GameObject[] textScreens;
     public GameObject[] platforms;
+    public Animator tableAnim;
+    public Animator platformAnim;
 
 
     private VRTK_ControllerEvents RControllerEvents;
@@ -159,7 +161,9 @@ public class tutorial : MonoBehaviour
                 textScreens[4].SetActive(true);
 
                 // turn on table and goggles
+                
                 table.SetActive(true);
+                tableAnim.SetBool("Up", true);
                 goggles.SetActive(true);
 
                 superHotCube.SetActive(true);
@@ -237,6 +241,7 @@ public class tutorial : MonoBehaviour
                 RController.GetComponent<VRTK_Pointer>().enabled = true;
                 RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = true;
             }
+            platformAnim.SetBool("On", true);
         }
 
     }
