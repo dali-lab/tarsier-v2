@@ -41,6 +41,7 @@ public class rightControls : MonoBehaviour
 
     private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
     {
+        // material changes
         for (int i = 0; i < materials.Length; i++)
         {
             if (materials[i].GetFloat("_ColorblindOn") == 1.0f)
@@ -59,10 +60,10 @@ public class rightControls : MonoBehaviour
         foreach (GameObject katydid in katydids)
         {
             AudioSource katydidAudio = katydid.GetComponent<AudioSource>();
-            
             // switch to tarsier katydid sound
             if (katydidAudio.clip == humanKatydidAudio)
             {
+                
                 if (katydidAudio.isPlaying)
                 {
                     katydidAudio.Stop();
@@ -83,10 +84,7 @@ public class rightControls : MonoBehaviour
                 katydidAudio.clip = humanKatydidAudio;
                 katydidAudio.Play();
             }
-
-            
         }
+
     }
 }
-
-

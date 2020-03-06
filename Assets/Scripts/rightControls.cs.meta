@@ -3,7 +3,10 @@ guid: 4241742b07d0fb64f98963c57d6ef9cb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - humanKatydidAudio: {fileID: 8300000, guid: 6e6ffd2c80d5e6f489139e34f365f376, type: 3}
+  - tarsierKatydidAudio: {fileID: 8300000, guid: f3d53b14532c4b148b976c5e0128bd81,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

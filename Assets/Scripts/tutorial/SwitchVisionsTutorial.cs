@@ -15,6 +15,10 @@ public class SwitchVisionsTutorial : TutorialBaseClass
     public GameObject coldCube;
     public GameObject coldCube2;
     public GameObject table;
+    public GameObject visionButton;
+
+    public Animator cubesAnim;
+    public Animator tableAnim;
 
     public Material coolMaterial;
     public Material hotMaterial;
@@ -44,12 +48,12 @@ public class SwitchVisionsTutorial : TutorialBaseClass
         {
             visionAffectedObjects[i].SetActive(true);
         }
-
+        visionButton.SetActive(true);
         table.SetActive(true);
         hotCube.SetActive(true);
         coldCube.SetActive(true);
         coldCube2.SetActive(true);
-
+        cubesAnim.SetBool("up", true);
 
         // turn on components to grab
         RController.GetComponent<VRTK_InteractGrab>().enabled = true;
@@ -86,9 +90,10 @@ public class SwitchVisionsTutorial : TutorialBaseClass
             {
                 if (RController.GetComponent<VRTK_InteractGrab>().GetGrabbedObject() == hotCube)
                 {
-                    hotCube.SetActive(false);
-                    coldCube.SetActive(false);
-                    coldCube2.SetActive(false);
+                    
+                    visionButton.SetActive(false);
+                    cubesAnim.SetBool("up", false);
+                    tableAnim.SetBool("on", false);
 
                     isDone = true;
                     textScreens[1].SetActive(false);
@@ -103,6 +108,7 @@ public class SwitchVisionsTutorial : TutorialBaseClass
                     hotCube.SetActive(false);
                     coldCube.SetActive(false);
                     coldCube2.SetActive(false);
+                    visionButton.SetActive(false);
 
                     isDone = true;
                     textScreens[1].SetActive(false);
