@@ -12,6 +12,8 @@ public class sceneLoader : MonoBehaviour
 {
 
     [SerializeField] private SceneReference[] scenes;
+    public string scenesFolder;
+    public bool wipeScenesList = false;
 
     // Start is called before the first frame update
     public void Start()
