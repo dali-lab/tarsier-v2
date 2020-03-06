@@ -11,7 +11,10 @@ public class GrabTutorial : TutorialBaseClass
     public GameObject[] textScreens;
     public GameObject table;
     public GameObject goggles;
-    
+
+    public Animator tableAnim;
+    public Animator gogglesAnim;
+
     private VRTK_ControllerEvents RControllerEvents;
     private VRTK_ControllerEvents LControllerEvents;
 
@@ -30,6 +33,9 @@ public class GrabTutorial : TutorialBaseClass
         // turn on components to grab
         RController.GetComponent<VRTK_InteractGrab>().enabled = true;
         RController.GetComponent<VRTK_InteractTouch>().enabled = true;
+
+        tableAnim.SetBool("on", true);
+        gogglesAnim.SetBool("on", true);
 
         isDone = false;
 

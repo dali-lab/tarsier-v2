@@ -12,6 +12,8 @@ public class TeleportTutorial : TutorialBaseClass
     public GameObject[] platforms;
     public GameObject door;
 
+    public Animator platformAnim;
+
     private VRTK_ControllerEvents RControllerEvents;
     private VRTK_ControllerEvents LControllerEvents;
 
@@ -25,6 +27,7 @@ public class TeleportTutorial : TutorialBaseClass
         {
             platform.SetActive(true);
         }
+        platformAnim.SetBool("up", true);
 
         door.SetActive(true);
         RController.GetComponent<VRTK_Pointer>().enabled = true;

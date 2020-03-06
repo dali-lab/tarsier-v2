@@ -8,12 +8,8 @@ public class changeScene : MonoBehaviour
     private void Start()
     {
     }
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "OVRCameraRig")                      // checks for objects tagged as katydid, if yes then delete katydid
-        {
-            SceneManager.LoadScene("LobbyScene");
-        }
+            SceneManager.LoadScene("ForestScene");
     }
 }

@@ -19,6 +19,7 @@ public class ButtonPressTutorial : TutorialBaseClass
     public GameObject RController;
     public GameObject LController;
 
+
     public TutorialButton[] buttons;
 
     private VRTK_ControllerEvents RControllerEvents;
