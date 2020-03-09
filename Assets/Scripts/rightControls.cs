@@ -56,16 +56,16 @@ public class rightControls : MonoBehaviour
             else
             {
                 materials[i].SetFloat("_ColorblindOn", 1.0f);
-                directionalLight.intensity = 0.5f;
+
             }
         }
 
         if (tarsierVision)
         {
-            directionalLight.intensity = 0.5f;
+            directionalLight.intensity = 0.25f;
         } else
         {
-            directionalLight.intensity = 0.02f;
+            directionalLight.intensity = 0.05f;
         }
 
         // sound changes
