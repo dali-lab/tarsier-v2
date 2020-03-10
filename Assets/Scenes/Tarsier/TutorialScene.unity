@@ -404,7 +404,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 32fbc8bcebb64584da5868aeeb086cda, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a044097b61d40474a975dc6199a7ec87, type: 2}
+      objectReference: {fileID: 2100000, guid: 39ab01e39b6853b43ad9c26136374fe3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32fbc8bcebb64584da5868aeeb086cda, type: 3}
 --- !u!4 &169907506 stripped
@@ -5765,7 +5765,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a044097b61d40474a975dc6199a7ec87, type: 2}
+      objectReference: {fileID: 2100000, guid: 39ab01e39b6853b43ad9c26136374fe3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37ba10a26a648144fa2390c8adfb2c8a, type: 3}
 --- !u!4 &630700061 stripped
@@ -6394,7 +6394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128da5f5b36af954b99189bd136234d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minY: 0
+  minY: 0.5
 --- !u!1 &957822307
 GameObject:
   m_ObjectHideFlags: 0
@@ -6627,7 +6627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128da5f5b36af954b99189bd136234d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minY: 0
+  minY: 0.5
 --- !u!1 &1018495848
 GameObject:
   m_ObjectHideFlags: 0
@@ -6896,7 +6896,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102532858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.434, z: 0}
+  m_LocalPosition: {x: 0, y: -0.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1135180886}
@@ -7064,7 +7064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128da5f5b36af954b99189bd136234d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minY: 0
+  minY: 0.5
 --- !u!65 &1202915898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8149,7 +8149,7 @@ BoxCollider:
   m_GameObject: {fileID: 1910887461}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -8478,7 +8478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 128da5f5b36af954b99189bd136234d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minY: 0
+  minY: 0.5
 --- !u!95 &1948211326
 Animator:
   serializedVersion: 3
@@ -8658,6 +8658,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 4faf030ee7e8c93488fb9b776294fbda, type: 2}
   humanKatydidAudio: {fileID: 0}
   tarsierKatydidAudio: {fileID: 0}
+  directionalLight: {fileID: 0}
 --- !u!114 &2061878473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9067,6 +9068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933294501162799810, guid: 24c4979ee8884fd4d9225bf97b2f5895,
+        type: 3}
+      propertyPath: m_Text
+      value: Press the highlighted button on your right hand to toggle thermal vision.
       objectReference: {fileID: 0}
     - target: {fileID: 6982718002902036836, guid: 24c4979ee8884fd4d9225bf97b2f5895,
         type: 3}

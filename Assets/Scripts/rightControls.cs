@@ -10,7 +10,11 @@ public class rightControls : MonoBehaviour
     public AudioClip tarsierKatydidAudio;
     //public AudioSource audioSource;
 
+    public Light directionalLight;
+
     private VRTK_ControllerEvents controllerEvents;
+
+    private bool tarsierVision = false;
 
     private void OnEnable()
     {
@@ -41,6 +45,7 @@ public class rightControls : MonoBehaviour
 
     private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
     {
+        tarsierVision = !tarsierVision;
         // material changes
         for (int i = 0; i < materials.Length; i++)
         {
@@ -51,7 +56,16 @@ public class rightControls : MonoBehaviour
             else
             {
                 materials[i].SetFloat("_ColorblindOn", 1.0f);
+
             }
+        }
+
+        if (tarsierVision)
+        {
+            directionalLight.intensity = 0.25f;
+        } else
+        {
+            directionalLight.intensity = 0.05f;
         }
 
         // sound changes

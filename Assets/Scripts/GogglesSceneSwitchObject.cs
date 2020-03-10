@@ -23,7 +23,8 @@ public class GogglesSceneSwitchObject : MonoBehaviour
       VRTK_ControllerEvents leftControllerEvents = leftController.GetComponent<VRTK_ControllerEvents>();
       if(headsetCollision.headsetColliding == true){
         Debug.Log("COLLIDED");
-        StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "ForestScene"));
+        SceneManager.LoadScene("ForestScene");
+        //StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "ForestScene"));
       }
     }
 }

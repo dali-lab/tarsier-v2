@@ -10,6 +10,6 @@ public class changeScene : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-            SceneManager.LoadScene("ForestScene");
+            SceneManager.LoadScene("LobbyScene");
     }
 }
