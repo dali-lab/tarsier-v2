@@ -28,14 +28,6 @@ public class changeScene : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter(Collider collision)
-    //{
-    //    if (collision.gameObject == headset)
-    //    {
-    //        sceneFader.StartFade();
-    //    }
-    //}
-
     private void SwitchScene()
     {
         SceneManager.LoadScene(sceneName);
