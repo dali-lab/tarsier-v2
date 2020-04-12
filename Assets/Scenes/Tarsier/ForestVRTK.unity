@@ -495,6 +495,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.6490159, y: 0.26390237, z: 0.23404694}
   m_Center: {x: -0.0014232993, y: -0.006083399, z: -0.008975446}
+--- !u!20 &283777984 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2037080, guid: 126d619cf4daa52469682f85c1378b4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 283777972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &569421833
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,17 +828,11 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 684702895}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &795051443 stripped
+--- !u!1 &684702897 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1587602180963074, guid: be540b97364be0a4890e39e62ac89ed1,
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 37ba10a26a648144fa2390c8adfb2c8a,
     type: 3}
-  m_PrefabInstance: {fileID: 135055182}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &806692156 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 135055182}
+  m_PrefabInstance: {fileID: 684702895}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &977507274
 GameObject:
@@ -868,18 +868,90 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &981866452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1384746914293964, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 135055182}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1280706402 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 135055182}
-  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1209944651
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.58677197
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7688905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.64895
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713098, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneFader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713099, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: eye
+      value: 
+      objectReference: {fileID: 283777984}
+    - target: {fileID: 6258232699570713099, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: rightModel
+      value: 
+      objectReference: {fileID: 684702897}
+    - target: {fileID: 6258232699570713099, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: leftModel
+      value: 
+      objectReference: {fileID: 1861922414}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66ca030cbc7dfb848a12f594d6f57187, type: 3}
 --- !u!1 &1565841928
 GameObject:
   m_ObjectHideFlags: 0
@@ -1230,12 +1302,6 @@ MonoBehaviour:
   snapToNearestFloor: 0
   applyPlayareaParentOffset: 0
   customRaycast: {fileID: 0}
---- !u!1 &1606598259 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000013941130086, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 135055182}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1610510680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,12 +1347,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPopulateObjectReferences: 1
-  actualBoundaries: {fileID: 1606598259}
-  actualHeadset: {fileID: 795051443}
-  actualLeftController: {fileID: 806692156}
-  actualRightController: {fileID: 1280706402}
-  modelAliasLeftController: {fileID: 981866452}
-  modelAliasRightController: {fileID: 1757960238}
+  actualBoundaries: {fileID: 0}
+  actualHeadset: {fileID: 0}
+  actualLeftController: {fileID: 0}
+  actualRightController: {fileID: 0}
+  modelAliasLeftController: {fileID: 0}
+  modelAliasRightController: {fileID: 0}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
@@ -1307,12 +1373,6 @@ MonoBehaviour:
     fallbackTypeName: VRTK.SDK_FallbackController
     typeName: VRTK.SDK_SimController
     descriptionIndex: 0
---- !u!1 &1757960238 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1883185261795400, guid: be540b97364be0a4890e39e62ac89ed1,
-    type: 3}
-  m_PrefabInstance: {fileID: 135055182}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1861922412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1381,6 +1441,12 @@ PrefabInstance:
 --- !u!4 &1861922413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 32fbc8bcebb64584da5868aeeb086cda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1861922412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1861922414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 32fbc8bcebb64584da5868aeeb086cda,
     type: 3}
   m_PrefabInstance: {fileID: 1861922412}
   m_PrefabAsset: {fileID: 0}

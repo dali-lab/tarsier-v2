@@ -6,25 +6,31 @@ using VRTK;
 
 public class GogglesSceneSwitchObject : MonoBehaviour
 {
-    public GameObject leftController;
-    public GameObject rightController;
-
+    public string sceneName = "ForestScene";
     public VRTK_HeadsetCollision headsetCollision;
-    void Start()
-    {
-    }
+    public SceneFader sceneFader;
 
     void Update()
     {
-      Transform leftT = leftController.GetComponent(typeof(Transform)) as Transform;
-      Transform rightT = rightController.GetComponent(typeof(Transform)) as Transform;
-      Transform buttonT = gameObject.GetComponent(typeof(Transform)) as Transform;
+        if (headsetCollision.IsColliding() && !sceneFader.IsFading())
+        {
+            Debug.Log("starting fade");
+            sceneFader.StartFade();
+        }
+    }
+    void OnEnable()
+    {
+        SceneFader.OnFadeComplete += SwitchScene;
+    }
 
-      VRTK_ControllerEvents leftControllerEvents = leftController.GetComponent<VRTK_ControllerEvents>();
-      if(headsetCollision.headsetColliding == true){
-        Debug.Log("COLLIDED");
-        SceneManager.LoadScene("ForestScene");
-        //StartCoroutine(GameObject.FindObjectOfType<SceneFader>().FadeAndLoadScene(SceneFader.FadeDirection.In, "ForestScene"));
-      }
+    void OnDisable()
+    {
+        SceneFader.OnFadeComplete -= SwitchScene;
+    }
+
+    private void SwitchScene()
+    {
+        Debug.Log("switching scenes");
+        SceneManager.LoadScene(sceneName);
     }
 }

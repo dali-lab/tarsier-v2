@@ -5,11 +5,39 @@ using UnityEngine.SceneManagement;
 
 public class changeScene : MonoBehaviour
 {
-    private void Start()
+    public string sceneName = "LobbyScene";
+    public GameObject headset;
+    public SceneFader sceneFader;
+    public float requiredDistance = 1;
+
+    private void OnEnable()
     {
+        SceneFader.OnFadeComplete += SwitchScene;
     }
-    private void OnTriggerEnter(Collider collision)
+
+    private void OnDisable()
     {
-            SceneManager.LoadScene("LobbyScene");
+        SceneFader.OnFadeComplete -= SwitchScene;
+    }
+
+    private void Update()
+    {
+        if (Vector3.Distance(gameObject.transform.position, headset.transform.position) <= requiredDistance)
+        {
+            sceneFader.StartFade();
+        }
+    }
+
+    //private void OnTriggerEnter(Collider collision)
+    //{
+    //    if (collision.gameObject == headset)
+    //    {
+    //        sceneFader.StartFade();
+    //    }
+    //}
+
+    private void SwitchScene()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
