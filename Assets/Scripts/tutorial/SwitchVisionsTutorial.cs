@@ -17,6 +17,8 @@ public class SwitchVisionsTutorial : TutorialBaseClass
     public GameObject table;
     public GameObject visionButton;
 
+    public GameObject grabButton;
+
     public Animator cubesAnim;
     public Animator tableAnim;
 
@@ -49,6 +51,7 @@ public class SwitchVisionsTutorial : TutorialBaseClass
             visionAffectedObjects[i].SetActive(true);
         }
         visionButton.SetActive(true);
+        grabButton.SetActive(true);
         table.SetActive(true);
         hotCube.SetActive(true);
         coldCube.SetActive(true);
@@ -92,6 +95,7 @@ public class SwitchVisionsTutorial : TutorialBaseClass
                 {
                     
                     visionButton.SetActive(false);
+                    grabButton.SetActive(false);
                     cubesAnim.SetBool("up", false);
                     tableAnim.SetBool("on", false);
 
