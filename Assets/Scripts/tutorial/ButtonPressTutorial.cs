@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
 using VRTK;
 
 public class ButtonPressTutorial : TutorialBaseClass
@@ -18,6 +19,8 @@ public class ButtonPressTutorial : TutorialBaseClass
 
     public GameObject RController;
     public GameObject LController;
+
+    public GameObject OculusOVRController;
 
 
     public TutorialButton[] buttons;
@@ -46,6 +49,7 @@ public class ButtonPressTutorial : TutorialBaseClass
         }
 
         isDone = false;
+        InputTracking.Recenter();
 
         StartCoroutine(Wait());
 
@@ -68,6 +72,7 @@ public class ButtonPressTutorial : TutorialBaseClass
                 buttons[i].button.SetActive(true);
             }
         }
+        InputTracking.Recenter();
     }
 
     // Update is called once per frame

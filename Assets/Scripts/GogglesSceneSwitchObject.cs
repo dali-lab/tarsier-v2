@@ -14,7 +14,6 @@ public class GogglesSceneSwitchObject : MonoBehaviour
     {
         if (headsetCollision.IsColliding() && !sceneFader.IsFading())
         {
-            Debug.Log("starting fade");
             sceneFader.StartFade();
         }
     }
@@ -30,7 +29,6 @@ public class GogglesSceneSwitchObject : MonoBehaviour
 
     private void SwitchScene()
     {
-        Debug.Log("switching scenes");
         SceneManager.LoadScene(sceneName);
     }
 }
