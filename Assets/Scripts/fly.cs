@@ -7,18 +7,15 @@ public class fly : MonoBehaviour
 {
     public GameObject centerEye;
     public GameObject flyParticles;
-    public GameObject LController;
+    public GameObject LController;                                  // turn fly on/off
     public GameObject blackScreen;
-    //public Material skybox;
 
     private VRTK_ControllerEvents LControllerEvents;
-    //private float _exposure = 1;
-    private float thrust = .075f;
+    private float speed = .075f;                                   // fly speed
     private bool isFlying = false;
 
     private void OnEnable()
     {
-        //RenderSettings.skybox.SetFloat("_Exposure", _exposure);
         flyParticles.SetActive(false);
         blackScreen.SetActive(false);
 
@@ -38,54 +35,20 @@ public class fly : MonoBehaviour
     }
 
 
-    private void Fly()
+    private void Fly()                                          // fly via head tilt (tracks headset)
     {
         if (isFlying == true)
         {
-            //Vector3 flyDir = LController.transform.position - centerEye.transform.position;
-            //transform.position += flyDir.normalized * thrust;
             Vector3 flyDir = centerEye.transform.forward;
-            transform.position += flyDir.normalized * thrust;
-            //transform.position += centerEye.transform.position Rotate(0, increment, 0);
-            //Debug.Log(transform.position);
+            transform.position += flyDir.normalized * speed;
         }
     }
 
-    IEnumerator movementTransition()
+    private IEnumerator movementTransition()                            // transition that triggers when button is pressed
     {
-        //while (_exposure > 0)                                       // decrease brightness of skybox
-        //{
-        //    yield return new WaitForSeconds(0.0005f);
-        //    darkenSkybox();
-        //}
         blackScreen.SetActive(true);
         yield return new WaitForSeconds(1);
         flyParticles.SetActive(!flyParticles.activeSelf);
         blackScreen.SetActive(false);
-
-        //while (_exposure < 1)                                       // increase brightness of skybox
-        //{
-        //    yield return new WaitForSeconds(0.0005f);
-        //    brightenSkybox();
-        //}
-
     }
-
-    //private void brightenSkybox()
-    //{
-    //    if (_exposure < 1)
-    //    {
-    //        _exposure += 0.005f;
-    //        RenderSettings.skybox.SetFloat("_Exposure", _exposure);
-    //    }
-    //}
-
-    //private void darkenSkybox()
-    //{
-    //    if (_exposure > 0)
-    //    {
-    //        _exposure -= 0.005f;
-    //        RenderSettings.skybox.SetFloat("_Exposure", _exposure);
-    //    }
-    //}
 }
