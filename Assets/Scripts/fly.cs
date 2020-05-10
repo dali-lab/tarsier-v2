@@ -13,30 +13,31 @@ public class fly : MonoBehaviour
 
     private VRTK_ControllerEvents LControllerEvents;
     //private float _exposure = 1;
-
-
-
     private float thrust = .075f;
     private bool isFlying = false;
 
     private void OnEnable()
     {
-        Debug.Log("starting");
-        LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
         //RenderSettings.skybox.SetFloat("_Exposure", _exposure);
         flyParticles.SetActive(false);
         blackScreen.SetActive(false);
+
+        LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
+        LControllerEvents.ButtonOnePressed += DoButtonOnePressed;
     }
- 
+
+    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
+    {
+        isFlying = !isFlying;
+        StartCoroutine(movementTransition());
+    }
+
     private void Update()
     {
-        if (LControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress))
-        {
-            isFlying = !isFlying;
-            StartCoroutine(movementTransition());
-        }
         Fly();
     }
+
+
     private void Fly()
     {
         if (isFlying == true)
@@ -49,12 +50,6 @@ public class fly : MonoBehaviour
             //Debug.Log(transform.position);
         }
     }
-    //IEnumerator fadeToBlack()
-    //{
-    //    blackScreen.SetActive(true);
-    //    yield return new WaitForSeconds(2);
-    //    blackScreen.SetActive(false);
-    //}
 
     IEnumerator movementTransition()
     {
