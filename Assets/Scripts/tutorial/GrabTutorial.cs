@@ -7,6 +7,7 @@ public class GrabTutorial : TutorialBaseClass
 {
     public GameObject RController;
     public GameObject LController;
+    public GameObject buttons;
 
     public GameObject[] textScreens;
     public GameObject table;
@@ -37,6 +38,8 @@ public class GrabTutorial : TutorialBaseClass
         tableAnim.SetBool("on", true);
         gogglesAnim.SetBool("on", true);
 
+        buttons.SetActive(true);
+
         isDone = false;
 
     }
@@ -53,6 +56,7 @@ public class GrabTutorial : TutorialBaseClass
                 textScreens[0].SetActive(false);
 
                 isDone = true;
+                buttons.SetActive(false);
 
             }
 

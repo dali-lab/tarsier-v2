@@ -9,7 +9,10 @@ public class fly : MonoBehaviour
     public GameObject flyParticles;
     public GameObject LController;
     public GameObject blackScreen;
+    //public Material skybox;
+
     private VRTK_ControllerEvents LControllerEvents;
+    //private float _exposure = 1;
 
 
 
@@ -20,6 +23,7 @@ public class fly : MonoBehaviour
     {
         Debug.Log("starting");
         LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
+        //RenderSettings.skybox.SetFloat("_Exposure", _exposure);
         flyParticles.SetActive(false);
         blackScreen.SetActive(false);
     }
@@ -29,12 +33,7 @@ public class fly : MonoBehaviour
         if (LControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress))
         {
             isFlying = !isFlying;
-            Debug.Log("flying: " + isFlying);
-            flyParticles.SetActive(!flyParticles.activeSelf);
-            if (isFlying == false)
-            {
-                StartCoroutine(fadeToBlack());
-            }
+            StartCoroutine(movementTransition());
         }
         Fly();
     }
@@ -50,10 +49,48 @@ public class fly : MonoBehaviour
             //Debug.Log(transform.position);
         }
     }
-    IEnumerator fadeToBlack()
+    //IEnumerator fadeToBlack()
+    //{
+    //    blackScreen.SetActive(true);
+    //    yield return new WaitForSeconds(2);
+    //    blackScreen.SetActive(false);
+    //}
+
+    IEnumerator movementTransition()
     {
+        //while (_exposure > 0)                                       // decrease brightness of skybox
+        //{
+        //    yield return new WaitForSeconds(0.0005f);
+        //    darkenSkybox();
+        //}
         blackScreen.SetActive(true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+        flyParticles.SetActive(!flyParticles.activeSelf);
         blackScreen.SetActive(false);
+
+        //while (_exposure < 1)                                       // increase brightness of skybox
+        //{
+        //    yield return new WaitForSeconds(0.0005f);
+        //    brightenSkybox();
+        //}
+
     }
+
+    //private void brightenSkybox()
+    //{
+    //    if (_exposure < 1)
+    //    {
+    //        _exposure += 0.005f;
+    //        RenderSettings.skybox.SetFloat("_Exposure", _exposure);
+    //    }
+    //}
+
+    //private void darkenSkybox()
+    //{
+    //    if (_exposure > 0)
+    //    {
+    //        _exposure -= 0.005f;
+    //        RenderSettings.skybox.SetFloat("_Exposure", _exposure);
+    //    }
+    //}
 }
