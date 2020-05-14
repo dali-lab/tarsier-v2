@@ -21,7 +21,11 @@
 
 
 /[Aa]ssets/Resources/OVRBuildConfig.asset
-ProjectSettings/EditorBuildSettings.asset
+/[Aa]ssets/Resources/OVRBuildConfig.asset.meta
+/ProjectSettings/EditorBuildSettings.asset
+/ProjectSettings/EditorBuildSettings.asset.meta
+/ProjectSettings/ProjectSettings.asset
+/ProjectSettings/ProjectSettings.asset.meta
 
 # Visual Studio cache directory
 .vs/
