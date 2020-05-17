@@ -18,18 +18,18 @@ public class fly : MonoBehaviour
     {
         windParticles.SetActive(false);
 
-        RController.GetComponent<VRTK_Pointer>().enabled = false;
-        RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = false;
+        RController.GetComponent<VRTK_Pointer>().enabled = true;
+        RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = true;
 
         RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
         RControllerEvents.ButtonOnePressed += DoButtonOnePressed;
     }
 
-    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
+    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)                        // trigger transition, toggle teleport
     {
         StartCoroutine(movementTransition());
-        RController.GetComponent<VRTK_Pointer>().enabled = true;
-        RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = true;
+        RController.GetComponent<VRTK_Pointer>().enabled = !RController.GetComponent<VRTK_Pointer>().enabled;
+        RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = !RController.GetComponent<VRTK_StraightPointerRenderer>().enabled;
     }
 
     private void Update()
