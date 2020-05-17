@@ -6,27 +6,30 @@ using VRTK;
 public class fly : MonoBehaviour
 {
     public GameObject centerEye;
-    public GameObject flyParticles;
-    public GameObject LController;                                  // turn fly on/off
-    public GameObject blackScreen;
+    public GameObject windParticles;
+    public GameObject RController;
+    public SceneFader sceneFader;
+    public float speed = .06f;
 
-    private VRTK_ControllerEvents LControllerEvents;
-    private float speed = .075f;                                   // fly speed
+    private VRTK_ControllerEvents RControllerEvents;
     private bool isFlying = false;
 
     private void OnEnable()
     {
-        flyParticles.SetActive(false);
-        blackScreen.SetActive(false);
+        windParticles.SetActive(false);
 
-        LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
-        LControllerEvents.ButtonOnePressed += DoButtonOnePressed;
+        RController.GetComponent<VRTK_Pointer>().enabled = true;
+        RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = true;
+
+        RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
+        RControllerEvents.ButtonOnePressed += DoButtonOnePressed;
     }
 
-    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
+    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)                        // trigger transition, toggle teleport
     {
-        isFlying = !isFlying;
         StartCoroutine(movementTransition());
+        RController.GetComponent<VRTK_Pointer>().enabled = !RController.GetComponent<VRTK_Pointer>().enabled;
+        RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = !RController.GetComponent<VRTK_StraightPointerRenderer>().enabled;
     }
 
     private void Update()
@@ -35,7 +38,7 @@ public class fly : MonoBehaviour
     }
 
 
-    private void Fly()                                          // fly via head tilt (tracks headset)
+    private void Fly()                                              // fly via head tilt (tracks headset)
     {
         if (isFlying == true)
         {
@@ -44,11 +47,11 @@ public class fly : MonoBehaviour
         }
     }
 
-    private IEnumerator movementTransition()                            // transition that triggers when button is pressed
+    private IEnumerator movementTransition()                        // fade to black and unfade for transition
     {
-        blackScreen.SetActive(true);
+        sceneFader.StartFade();
         yield return new WaitForSeconds(1);
-        flyParticles.SetActive(!flyParticles.activeSelf);
-        blackScreen.SetActive(false);
+        windParticles.SetActive(!windParticles.activeSelf);
+        isFlying = !isFlying;
     }
 }
