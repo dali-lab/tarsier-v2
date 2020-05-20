@@ -7,24 +7,37 @@ public class NectarUI : MonoBehaviour
     public GameObject nectarUISlider;
     private float progress;
     private Vector3 maxScale;
+    private bool decrease = true;           // needs to be turned true upon leaving hive
 
     // Start is called before the first frame update
     void Start()
     {
-        progress = 0.0f;
+        progress = 1.0f;
         maxScale = nectarUISlider.transform.localScale;
         Vector3 zeroProgress = new Vector3(maxScale.x, 0.0f, maxScale.z);
         nectarUISlider.transform.localScale = zeroProgress;
+        StartCoroutine(updateHealth());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(progress < 1) {
-            progress += 0.01f;
-        } else {
-            progress = 0.0f;
+    }
+
+    private IEnumerator updateHealth()
+    {
+        while (decrease)
+        {
+            yield return new WaitForSeconds(1);
+            if ((progress > 0f))
+            {
+                progress -= 0.01f;                             // 100 seconds total
+                nectarUISlider.transform.localScale = new Vector3(maxScale.x, maxScale.y * progress, maxScale.z);
+            }
+            else
+            {
+                progress = 1.0f;
+            }
         }
-        nectarUISlider.transform.localScale = new Vector3(maxScale.x, maxScale.y * progress, maxScale.z);
     }
 }
