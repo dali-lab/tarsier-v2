@@ -21,6 +21,7 @@ public class beeTutorial : MonoBehaviour
 
     private bool tutorialInProgress;
     private bool onFlower;
+    private bool UIHit;
     private int currPanel;
 
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class beeTutorial : MonoBehaviour
     {
         tutorialInProgress = true;
         onFlower = false;
+        UIHit = false;
         currPanel = 0;
 
     statusPanel.SetActive(false);
@@ -64,6 +66,19 @@ public class beeTutorial : MonoBehaviour
                 tutorialPanels[1].SetActive(true);                                          // fly2
                 currPanel = 1;
                 StartCoroutine(WaitFly());                                                  // turns off intro panel in 10 sec
+            }
+        }
+        else if (currPanel == 2)
+        {
+            Ray ray = new Ray(centerEye.transform.position, centerEye.transform.forward);       // cast a ray from the center eye
+            RaycastHit hit;                                                                     // returns the hit variable to indicate what and where the ray 
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (!UIHit && hit.transform.gameObject.tag == "UI")
+                {
+                    UIHit = true;
+                    StartCoroutine(WaitNectar());
+                }
             }
         }
         else if (currPanel == 3)
@@ -100,6 +115,7 @@ public class beeTutorial : MonoBehaviour
         {
             tutorialPanels[6].SetActive(false);                                         // tutorialEnd
             statusPanel.SetActive(true);                                                // status panel
+            tutorialInProgress = false;
         }
 
     }
@@ -117,24 +133,20 @@ public class beeTutorial : MonoBehaviour
         tutorialPanels[2].SetActive(true);                                                  // fly3
         nectarBar.SetActive(true);
         currPanel = 2;
-
-        Ray ray = new Ray(centerEye.transform.position, centerEye.transform.forward);       // cast a ray from the center eye
-        RaycastHit hit;                                                                     // returns the hit variable to indicate what and where the ray 
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (hit.transform.gameObject.tag == "UI")
-            {
-                yield return new WaitForSeconds(10);
-                tutorialPanels[2].SetActive(false);                                         // fly3
-                tutorialPanels[3].SetActive(true);                                          // fly4
-                currPanel = 3;
-            }
-        }
     }
 
-    void OnCollisionEnter(Collision collision)
+    IEnumerator WaitNectar()
     {
-        if (collision.gameObject.tag == "flower")
+        yield return new WaitForSeconds(8);
+        tutorialPanels[2].SetActive(false);                                         // fly3
+        tutorialPanels[3].SetActive(true);                                          // fly4
+        currPanel = 3;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        onFlower = true;
+        if (other.gameObject.tag == "flower")
         {
             onFlower = true;
         }
