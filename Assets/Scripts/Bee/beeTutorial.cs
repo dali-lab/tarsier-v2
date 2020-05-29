@@ -5,76 +5,147 @@ using VRTK;
 
 public class beeTutorial : MonoBehaviour
 {
+    public GameObject centerEye;
     public GameObject LController;
-    public GameObject UIPanel;
+    public GameObject RController;
+    public GameObject introPanel;
 
-    public GameObject textProceed;
-    public GameObject titleVision;
-    public GameObject textStart;
+    public GameObject statusPanel;
+    public GameObject nectarBar;
 
-    public GameObject titleFly;
-    public GameObject textFly;
-    public GameObject textFlyTilt;
-
-    public GameObject titleNectar;
-    public GameObject textNectar;
-    public GameObject textNectarGrab;
-
-    public GameObject textNectarVision;
-    public GameObject textClose;
+    public GameObject[] tutorialPanels;                                                 //fly1, fly2, fly3, fly4, nectar, vision, tutorialEnd
 
     private VRTK_ControllerEvents LControllerEvents;
-    private int press = 0;
+    private VRTK_ControllerEvents RControllerEvents;
+    private VRTK_InteractGrab grabScript;
+
+    private bool tutorialInProgress;
+    private bool onFlower;
+    private int currPanel;
 
     // Start is called before the first frame update
     void Start()
     {
+        grabScript = RController.GetComponent<VRTK_InteractGrab>();
+        RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
         LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
-        LControllerEvents.ButtonOnePressed += DoButtonOnePressed;
-
-        UIPanel.SetActive(true);
-        textProceed.SetActive(true);
-        titleVision.SetActive(true);
-        textStart.SetActive(true);
+        LControllerEvents.ButtonOnePressed += DoLeftButtonOnePressed;                       // 'X' button on left controller
+        
+        StartTutorial();    
     }
 
-    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
+    private void StartTutorial()
     {
-        press += 1;
-        if (press == 1)
+        tutorialInProgress = true;
+        onFlower = false;
+        currPanel = 0;
+
+    statusPanel.SetActive(false);
+        nectarBar.SetActive(false);
+
+        introPanel.SetActive(true);
+        tutorialPanels[0].SetActive(true);
+
+        for (int i = 1; i < tutorialPanels.Length; i++)
         {
-            titleVision.SetActive(false);
-            textStart.SetActive(false);
-            titleFly.SetActive(true);
-            textFly.SetActive(true);
+            tutorialPanels[i].SetActive(false);
         }
-        else if (press == 2)
+
+        StartCoroutine(WaitIntro());                                                         // turns off intro panel in 10 sec
+    }
+
+    private void Update()
+    {
+        if (currPanel == 0)
         {
-            textFly.SetActive(false);
-            textFlyTilt.SetActive(true);
+            if (RControllerEvents.buttonOnePressed)                                         // 'A' button on right controller
+            {
+                tutorialPanels[0].SetActive(false);                                         // fly1
+                tutorialPanels[1].SetActive(true);                                          // fly2
+                currPanel = 1;
+                StartCoroutine(WaitFly());                                                  // turns off intro panel in 10 sec
+            }
         }
-        else if (press == 3)
+        else if (currPanel == 3)
         {
-            titleFly.SetActive(false);
-            textFlyTilt.SetActive(false);
-            titleNectar.SetActive(true);
-            textNectar.SetActive(true);
+            if (onFlower)
+            {
+                tutorialPanels[3].SetActive(false);                                         // fly4
+                tutorialPanels[4].SetActive(true);                                          // nectar
+                currPanel = 4;
+            }
         }
-        else if (press == 4)
+        else if (currPanel == 4)
         {
-            textNectar.SetActive(false);
-            textNectarGrab.SetActive(true);
+            if (grabScript.GetGrabbedObject().tag == "nectar")
+            {
+                grabScript.GetGrabbedObject().SetActive(false);
+                nectarBar.GetComponent<NectarUI>().addHealth(1);                            // set health to max
+
+                tutorialPanels[4].SetActive(false);                                         // nectar
+                tutorialPanels[5].SetActive(true);                                          // vision
+                currPanel = 5;
+            }
         }
-        else if (press == 5)
+        else if (currPanel == 5)
         {
-            textProceed.SetActive(false);
-            textNectarGrab.SetActive(false);
-            textNectarVision.SetActive(true);
-            textClose.SetActive(true);
+            if (RControllerEvents.buttonTwoPressed)                                         // 'B' button on right controller
+            {
+                tutorialPanels[5].SetActive(false);                                         // vision
+                tutorialPanels[6].SetActive(true);                                          // tutorialEnd
+                currPanel = 6;
+            }
         }
-        else if (press == 6)
+        else if (currPanel == 6)
         {
-            UIPanel.SetActive(false);
+            tutorialPanels[6].SetActive(false);                                         // tutorialEnd
+            statusPanel.SetActive(true);                                                // status panel
         }
+
+    }
+
+    IEnumerator WaitIntro()
+    {
+        yield return new WaitForSeconds(10);
+        introPanel.SetActive(false);
+    }
+
+    IEnumerator WaitFly()
+    {
+        yield return new WaitForSeconds(15);
+        tutorialPanels[1].SetActive(false);                                                 // fly2
+        tutorialPanels[2].SetActive(true);                                                  // fly3
+        nectarBar.SetActive(true);
+        currPanel = 2;
+
+        Ray ray = new Ray(centerEye.transform.position, centerEye.transform.forward);       // cast a ray from the center eye
+        RaycastHit hit;                                                                     // returns the hit variable to indicate what and where the ray 
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.transform.gameObject.tag == "UI")
+            {
+                yield return new WaitForSeconds(10);
+                tutorialPanels[2].SetActive(false);                                         // fly3
+                tutorialPanels[3].SetActive(true);                                          // fly4
+                currPanel = 3;
+            }
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "flower")
+        {
+            onFlower = true;
+        }
+    }
+
+    private void DoLeftButtonOnePressed(object sender, ControllerInteractionEventArgs e)
+    {
+        if (!tutorialInProgress)
+        {
+            StartTutorial();
+        }
+
     }
 }
