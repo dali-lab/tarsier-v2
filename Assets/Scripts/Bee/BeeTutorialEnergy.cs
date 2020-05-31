@@ -21,7 +21,6 @@ public class BeeTutorialEnergy : BeeTutorialBaseClass
     {
         isDone = false;
         haptics = false;
-        nectarBar.SetActive(true);
         StartCoroutine(Wait());
     }
 
@@ -35,11 +34,12 @@ public class BeeTutorialEnergy : BeeTutorialBaseClass
 
     private IEnumerator Wait()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         haptics = true;
+        nectarBar.SetActive(true);
         yield return new WaitForSeconds(6);
-        //gameObject.SetActive(false);
-        //nextPanel.SetActive(true);
+        gameObject.SetActive(false);
+        nextPanel.SetActive(true);
     }
 
     public override void Update()

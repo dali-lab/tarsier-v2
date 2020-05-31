@@ -33,8 +33,8 @@ public class BeeTutorialLanding : BeeTutorialBaseClass
         if (onFlower)
         {
             isDone = true;
-            //gameObject.SetActive(false);
-            //nextPanel.SetActive(true);
+            gameObject.SetActive(false);
+            nextPanel.SetActive(true);
         }
     }
 

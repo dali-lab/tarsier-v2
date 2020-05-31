@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using VRTK;
 
 public abstract class BeeTutorialBaseClass : MonoBehaviour
 {
+    public static UnityAction done;
+
     public enum Tag { BUTTON1, BUTTON2, TRIGGER, GRIP }
 
     public enum Hand { LEFT, RIGHT }

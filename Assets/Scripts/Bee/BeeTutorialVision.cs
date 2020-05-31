@@ -30,8 +30,8 @@ public class BeeTutorialVision : BeeTutorialBaseClass
     private void DoRightButtonTwoPressed(object sender, ControllerInteractionEventArgs e)
     {
         buttonBHighlight.SetActive(false);
-        //gameObject.SetActive(false);
-        //nextPanel.SetActive(true);
+        gameObject.SetActive(false);
+        nextPanel.SetActive(true);
     }
 
     public override void Disable()

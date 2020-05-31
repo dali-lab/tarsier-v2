@@ -50,6 +50,6 @@ public class BeeTutorialFlying : BeeTutorialBaseClass
         haptics = false;
         buttonAHighlight.SetActive(false);
         isDone = true;
-        //nextPanel.SetActive(true);
+        nextPanel.SetActive(true);
     }
 }
