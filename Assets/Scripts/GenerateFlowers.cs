@@ -27,8 +27,9 @@ public class GenerateFlowers : MonoBehaviour
             GameObject flower = Instantiate(flowers[Random.Range(0, flowers.Count)]);
             flower.transform.parent = container.transform; // Set the container to be the new flower's parent
 
-            // Randomly scale the flower
+            // Randomly scale and rotate the flower
             flower.transform.localScale = Vector3.one * Random.Range(.5f, 2f);
+            flower.transform.rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
 
             // Raycast downward from the flower. If it doesn't hit the ground, move it to a new position and try again
             RaycastHit hit;
