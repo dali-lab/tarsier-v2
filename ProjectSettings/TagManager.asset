@@ -7,6 +7,9 @@ TagManager:
   - katydid
   - edible
   - goggles
+  - UI
+  - nectar
+  - flower
   layers:
   - Default
   - TransparentFX
