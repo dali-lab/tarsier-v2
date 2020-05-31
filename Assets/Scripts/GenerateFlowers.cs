@@ -22,6 +22,7 @@ public class GenerateFlowers : MonoBehaviour
             GameObject flower = Instantiate(flowers[Random.Range(0, flowers.Count)]);
             flower.transform.parent = container.transform;
             flower.transform.position = new Vector3(Random.Range(-range, range), gameObject.transform.position.y, Random.Range(-range, range));
+            flower.transform.localScale = Vector3.one * Random.Range(.5f, 2f);
 
             RaycastHit hit;
             if (Physics.Raycast(flower.transform.position, Vector3.down, out hit, Mathf.Infinity))
