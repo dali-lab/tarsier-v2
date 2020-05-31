@@ -50,5 +50,10 @@ MonoBehaviour:
   - {fileID: 1037298833352554206, guid: 1ff8fb38ce0b64b449c777be60cdd0bd, type: 3}
   - {fileID: 2777935092483017733, guid: a20c72707b33c7a498673664a78e37e1, type: 3}
   - {fileID: 5348199247128263532, guid: f9da1d8b3fdad324fabbe3809928f731, type: 3}
-  amount: 1000
   range: 18
+  clusters: 110
+  minAmount: 6
+  maxAmount: 10
+  clusterRange: 0.8
+  minScale: 0.75
+  maxScale: 2
