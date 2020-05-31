@@ -23,4 +23,9 @@ public class BeeTutorialGo : MonoBehaviour
         buttonXHighlight.SetActive(false);
         gameObject.SetActive(false);
     }
+
+    public void OnDisable()
+    {
+        LControllerEvents.ButtonOnePressed += DoLeftButtonOnePressed;
+    }
 }

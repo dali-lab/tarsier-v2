@@ -36,4 +36,9 @@ public class BeeTutorialLanding : MonoBehaviour
     {
         onFlower = true;
     }
+
+    public void OnDisable()
+    {
+        interactTouch.ControllerStartTouchInteractableObject -= flowerTrigger;
+    }
 }

@@ -19,13 +19,15 @@ public class BeeTutorialVision : MonoBehaviour
         buttonBHighlight.SetActive(true);
     }
 
-    public void Update()
-    {
-    }
     private void DoRightButtonTwoPressed(object sender, ControllerInteractionEventArgs e)
     {
         buttonBHighlight.SetActive(false);
         gameObject.SetActive(false);
         nextPanel.SetActive(true);
+    }
+
+    public void OnDisable()
+    {
+        RControllerEvents.ButtonTwoPressed -= DoRightButtonTwoPressed;
     }
 }
