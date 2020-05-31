@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class BeeTutorialLanding : BeeTutorialBaseClass
+public class BeeTutorialLanding : MonoBehaviour
 {
     public GameObject LController;
     public GameObject nextPanel;
@@ -13,33 +13,23 @@ public class BeeTutorialLanding : BeeTutorialBaseClass
 
     private bool onFlower;
 
-    public override void Start()
-    {
-    }
 
-    public override void OnEnable()
+    public void OnEnable()
     {
         interactTouch = LController.GetComponent<VRTK_InteractTouch>();
         interactTouch.ControllerStartTouchInteractableObject += flowerTrigger;
 
         onFlower = false;
-
-        isDone = false;
     }
 
     // Update is called once per frame
-    public override void Update()
+    public void Update()
     {
         if (onFlower)
         {
-            isDone = true;
             gameObject.SetActive(false);
             nextPanel.SetActive(true);
         }
-    }
-
-    public override void Disable()
-    {
     }
 
     private void flowerTrigger(object sender, VRTK.ObjectInteractEventArgs e)

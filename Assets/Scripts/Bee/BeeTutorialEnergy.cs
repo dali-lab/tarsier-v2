@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class BeeTutorialEnergy : BeeTutorialBaseClass
+public class BeeTutorialEnergy : MonoBehaviour
 {
     public GameObject nextPanel;
     public GameObject LController;
@@ -13,13 +13,8 @@ public class BeeTutorialEnergy : BeeTutorialBaseClass
     private VRTK_InteractGrab grabScript;
     private bool haptics;
 
-    public override void Start()
+    public void OnEnable()
     {
-    }
-
-    public override void OnEnable()
-    {
-        isDone = false;
         haptics = false;
         StartCoroutine(Wait());
     }
@@ -40,13 +35,5 @@ public class BeeTutorialEnergy : BeeTutorialBaseClass
         yield return new WaitForSeconds(6);
         gameObject.SetActive(false);
         nextPanel.SetActive(true);
-    }
-
-    public override void Update()
-    {
-    }
-
-    public override void Disable()
-    {
     }
 }

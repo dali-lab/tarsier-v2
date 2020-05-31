@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class BeeTutorialFlying : BeeTutorialBaseClass
+public class BeeTutorialFlying : MonoBehaviour
 {
     public GameObject RController;
 
@@ -13,18 +13,11 @@ public class BeeTutorialFlying : BeeTutorialBaseClass
 
     private bool haptics = false;
 
-    public override void Start()
-    {
-    }
-    public override void Update()
-    {
-    }
 
-    public override void OnEnable()
+    public void OnEnable()
     {
         buttonAHighlight.SetActive(false);
 
-        isDone = false;
         StartCoroutine(WaitHaptics());
     }
 
@@ -36,7 +29,7 @@ public class BeeTutorialFlying : BeeTutorialBaseClass
         }
     }
 
-    public override void Disable()
+    public void Disable()
     {
         buttonAHighlight.SetActive(false);
     }
@@ -49,7 +42,6 @@ public class BeeTutorialFlying : BeeTutorialBaseClass
         yield return new WaitForSeconds(6);
         haptics = false;
         buttonAHighlight.SetActive(false);
-        isDone = true;
         nextPanel.SetActive(true);
     }
 }

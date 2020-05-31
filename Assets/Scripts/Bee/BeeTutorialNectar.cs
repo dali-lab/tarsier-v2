@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class BeeTutorialNectar : BeeTutorialBaseClass
+public class BeeTutorialNectar : MonoBehaviour
 {
     public GameObject RController;
     public GameObject nextPanel;
@@ -13,18 +13,13 @@ public class BeeTutorialNectar : BeeTutorialBaseClass
     private VRTK_InteractGrab grabScript;
 
 
-    public override void Start()
-    {
-    }
-
-    public override void OnEnable()
+    public void OnEnable()
     {
         grabScript = RController.GetComponent<VRTK_InteractGrab>();
         gripHighlight.SetActive(true);
-        isDone = false;
     }
 
-    public override void Update()
+    public void Update()
     {
         if (grabScript.GetGrabbedObject() != null && grabScript.GetGrabbedObject().tag == "nectar")
         {
@@ -34,9 +29,5 @@ public class BeeTutorialNectar : BeeTutorialBaseClass
             gameObject.SetActive(false);
             nextPanel.SetActive(true);
         }
-    }
-
-    public override void Disable()
-    {
     }
 }
