@@ -8,8 +8,8 @@ TagManager:
   - edible
   - goggles
   - UI
-  - flower
   - nectar
+  - flower
   layers:
   - Default
   - TransparentFX

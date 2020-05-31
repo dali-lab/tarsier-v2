@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class TutorialGameController : MonoBehaviour
+public class BeeTutorialController : MonoBehaviour
 {
     public GameObject[] tutorialObjects;
     private int currentIndex = 0;
@@ -13,7 +13,7 @@ public class TutorialGameController : MonoBehaviour
     {
         for (int i = 0; i < tutorialObjects.Length; i++)
         {
-            tutorialObjects[i].GetComponent<BeeTutorialBaseClass>().Disable();
+            tutorialObjects[i].GetComponent<TutorialBaseClass>().Disable();
             tutorialObjects[i].SetActive(false);
         }
 
@@ -23,11 +23,11 @@ public class TutorialGameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BeeTutorialBaseClass script = tutorialObjects[currentIndex].GetComponent<BeeTutorialBaseClass>();
+        TutorialBaseClass script = tutorialObjects[currentIndex].GetComponent<TutorialBaseClass>();
 
         if (script.IsDone() && currentIndex < tutorialObjects.Length - 1)
         {
-            tutorialObjects[currentIndex].GetComponent<BeeTutorialBaseClass>().Disable();
+            tutorialObjects[currentIndex].GetComponent<TutorialBaseClass>().Disable();
             tutorialObjects[currentIndex].SetActive(false);
             currentIndex += 1;
             tutorialObjects[currentIndex].SetActive(true);
