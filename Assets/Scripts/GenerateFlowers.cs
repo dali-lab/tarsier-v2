@@ -54,7 +54,7 @@ public class GenerateFlowers : MonoBehaviour
                 flower.transform.parent = cluster.transform; // Set the cluster to be the new flower's parent
 
                 // Randomly scale and rotate the flower
-                flower.transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
+                flower.transform.localScale = flower.transform.localScale * Random.Range(minScale, maxScale);
                 flower.transform.rotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
 
                 // Put the flower in a random position within the cluster's range

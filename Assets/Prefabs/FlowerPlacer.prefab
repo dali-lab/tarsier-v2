@@ -44,16 +44,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flowers:
-  - {fileID: 6801438415045438056, guid: e5449466297585b40bb942a1bfac3ede, type: 3}
-  - {fileID: 9134048739489044623, guid: d7440bfd157202e4eaf52012115d97dd, type: 3}
-  - {fileID: 8185612340174355421, guid: 17486abb8c2a91840be463688bf4e46b, type: 3}
-  - {fileID: 1037298833352554206, guid: 1ff8fb38ce0b64b449c777be60cdd0bd, type: 3}
-  - {fileID: 2777935092483017733, guid: a20c72707b33c7a498673664a78e37e1, type: 3}
-  - {fileID: 5348199247128263532, guid: f9da1d8b3fdad324fabbe3809928f731, type: 3}
+  - {fileID: 3501777407466571646, guid: cdfb867344977da43ab52eb4ef900bac, type: 3}
+  - {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
+  - {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1, type: 3}
+  - {fileID: 2418857324333110592, guid: 49aa5aecd1d3a564f879536d8bc7f638, type: 3}
+  - {fileID: 3459848275692598824, guid: c3c8f55fdd576a8449a3cc27496fc16a, type: 3}
+  - {fileID: 8709331904014055444, guid: fd38f49f6dd1d50479ce1891436746a0, type: 3}
   range: 18
-  clusters: 110
+  clusters: 100
   minAmount: 6
   maxAmount: 10
-  clusterRange: 0.8
+  clusterRange: 1
   minScale: 0.75
   maxScale: 2
