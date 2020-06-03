@@ -9,6 +9,7 @@ public class fly : MonoBehaviour
     public GameObject windParticles;
     public GameObject RController;
     public SceneFader sceneFader;
+    public AudioSource windSound;
     public float speed = .06f;
 
     private VRTK_ControllerEvents RControllerEvents;
@@ -53,5 +54,23 @@ public class fly : MonoBehaviour
         yield return new WaitForSeconds(1);
         windParticles.SetActive(!windParticles.activeSelf);
         isFlying = !isFlying;
+
+        if (isFlying == false)                                       // fade out sound
+        {
+            float startVolume = windSound.volume;
+            while (windSound.volume > 0)
+            {
+                windSound.volume -= startVolume * Time.deltaTime / 1;
+                yield return null;
+            }
+        }
+        else                                                        // fade in sound
+        {
+            while (windSound.volume < 1)
+            {
+                windSound.volume += 1 * Time.deltaTime / 1;
+                yield return null;
+            }
+        }
     }
 }

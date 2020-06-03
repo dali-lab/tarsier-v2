@@ -28,10 +28,10 @@ public class NectarUI : MonoBehaviour
     {
         while (decrease)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
             if ((progress > 0f))
             {
-                progress -= 0.01f;                             // 100 seconds total
+                progress -= 0.005f;                             // 100 seconds total
                 nectarUISlider.transform.localScale = new Vector3(maxScale.x, maxScale.y * progress, maxScale.z);
             }
             else
@@ -39,5 +39,15 @@ public class NectarUI : MonoBehaviour
                 progress = 1.0f;
             }
         }
+    }
+
+    public float addHealth(float health)
+    {
+        progress += health;
+        if (progress > 1.0f)
+        {
+            progress = 1.0f;
+        }
+        return progress;
     }
 }
