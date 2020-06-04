@@ -22,10 +22,9 @@ public class BeeTutorialLanding : MonoBehaviour
         onFlower = false;
     }
 
-    // Update is called once per frame
     public void Update()
     {
-        if (onFlower)
+        if (onFlower)                                           // if player has teleported to flower, move to next tutorial panel
         {
             onFlower = false;
             gameObject.SetActive(false);

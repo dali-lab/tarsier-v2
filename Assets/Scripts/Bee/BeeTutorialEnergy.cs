@@ -7,8 +7,8 @@ public class BeeTutorialEnergy : MonoBehaviour
 {
     public GameObject nextPanel;
     public GameObject LController;
-    public GameObject nectarBar;
-    public GameObject hapticCube;
+    public GameObject nectarBar;                                                                    // nectar heaalth bar on left hand
+    public GameObject hapticCube;                                                                   // haptics functionality for the controllers
 
     private VRTK_InteractGrab grabScript;
     private bool haptics;
@@ -27,7 +27,7 @@ public class BeeTutorialEnergy : MonoBehaviour
         }
     }
 
-    private IEnumerator Wait()
+    private IEnumerator Wait()                                                      // turns on haptics after tutorial panel so player looks down, then move to next tutorial panel
     {
         yield return new WaitForSeconds(1);
         haptics = true;

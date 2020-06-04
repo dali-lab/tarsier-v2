@@ -8,8 +8,8 @@ public class BeeRightControls : MonoBehaviour
     public Material normalSkybox;
     public Material beeSkybox;
 
-    public GameObject cameraRig;
-    public GameObject centerEye;
+    public GameObject cameraRig;                                    // to move the player when flying and teleport player back to hive when they run out of health
+    public GameObject centerEye;                                    // for flying via headtilt
     public GameObject windParticles;
     public GameObject RController;
 
@@ -61,7 +61,7 @@ public class BeeRightControls : MonoBehaviour
         }
     }
 
-    private void SkyboxSwap()
+    private void SkyboxSwap()                                       // toggle between the human and bee vision skybox
     {
         if (isNormalSkybox)
         {

@@ -6,8 +6,8 @@ using VRTK;
 public class BeeLeftControls : MonoBehaviour
 {
     public GameObject LController;
-    public GameObject controlsButton;
-    public GameObject controlsPanel;
+    public GameObject controlsButton;                                                   // button to tell players to press X to pull up the instructions/controls
+    public GameObject controlsPanel;                                                    // the instruction/controls panel
 
     private VRTK_ControllerEvents LControllerEvents;
 

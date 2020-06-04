@@ -7,9 +7,9 @@ public class BeeTutorialNectar : MonoBehaviour
 {
     public GameObject RController;
     public GameObject nextPanel;
-    public GameObject nectarBar;
-    public GameObject gripHighlight;
-    public GameObject tutorialNectar;
+    public GameObject nectarBar;                                                                        // nectar heaalth bar on left hand
+    public GameObject gripHighlight;                                                                    // indicates which button to click
+    public GameObject tutorialNectar;                                                                   // the nectar glob to pick up in the flower
 
     private VRTK_ControllerEvents RControllerEvents;
     private bool isPressing = false;
@@ -29,7 +29,7 @@ public class BeeTutorialNectar : MonoBehaviour
     public void Update()
     {
         RControllerPoint = RController.transform.position;
-        if (isPressing == true && nectarCollider.bounds.Contains(RControllerPoint))
+        if (isPressing == true && nectarCollider.bounds.Contains(RControllerPoint))     // check to see if player is grabbing the nectar glob
         {
             tutorialNectar.SetActive(false);
             nectarBar.GetComponent<NectarUI>().addHealth(1);                            // set health to max
