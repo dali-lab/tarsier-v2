@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class fly : MonoBehaviour
+public class BeeRightControls : MonoBehaviour
 {
+    public Material normalSkybox;
+    public Material beeSkybox;
+
+    public GameObject cameraRig;
     public GameObject centerEye;
     public GameObject windParticles;
     public GameObject RController;
+
     public SceneFader sceneFader;
     public AudioSource windSound;
     public float speed = .06f;
 
     private VRTK_ControllerEvents RControllerEvents;
     private bool isFlying = false;
+    private bool isNormalSkybox = true;
 
     private void OnEnable()
     {
@@ -24,13 +30,20 @@ public class fly : MonoBehaviour
 
         RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
         RControllerEvents.ButtonOnePressed += DoButtonOnePressed;
+        RControllerEvents.ButtonTwoPressed += DoButtonTwoPressed;
     }
 
-    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)                        // trigger transition, toggle teleport
+    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)                        // fly: trigger transition, toggle teleport
     {
         StartCoroutine(movementTransition());
         RController.GetComponent<VRTK_Pointer>().enabled = !RController.GetComponent<VRTK_Pointer>().enabled;
         RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = !RController.GetComponent<VRTK_StraightPointerRenderer>().enabled;
+    }
+
+    private void DoButtonTwoPressed(object sender, ControllerInteractionEventArgs e)                        // vision: skybox swap
+    {
+        isNormalSkybox = !isNormalSkybox;
+        SkyboxSwap();
     }
 
     private void Update()
@@ -44,7 +57,19 @@ public class fly : MonoBehaviour
         if (isFlying == true)
         {
             Vector3 flyDir = centerEye.transform.forward;
-            transform.position += flyDir.normalized * speed;
+            cameraRig.transform.position += flyDir.normalized * speed;
+        }
+    }
+
+    private void SkyboxSwap()
+    {
+        if (isNormalSkybox)
+        {
+            RenderSettings.skybox = normalSkybox;
+        }
+        else
+        {
+            RenderSettings.skybox = beeSkybox;
         }
     }
 

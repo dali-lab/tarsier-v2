@@ -6,7 +6,7 @@ using VRTK;
 public class BeeTutorialFlying : MonoBehaviour
 {
     public GameObject RController;
-
+    public GameObject beeLeftControls;
     public GameObject nextPanel;
     public GameObject hapticCube;
     public GameObject buttonAHighlight;
@@ -16,7 +16,8 @@ public class BeeTutorialFlying : MonoBehaviour
 
     public void OnEnable()
     {
-        buttonAHighlight.SetActive(false);
+        beeLeftControls.SetActive(false);
+        buttonAHighlight.SetActive(true);
 
         StartCoroutine(WaitHaptics());
     }
@@ -38,10 +39,10 @@ public class BeeTutorialFlying : MonoBehaviour
     {
         yield return new WaitForSeconds(10);
         haptics = true;
-        buttonAHighlight.SetActive(true);
         yield return new WaitForSeconds(6);
         haptics = false;
         buttonAHighlight.SetActive(false);
         nextPanel.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

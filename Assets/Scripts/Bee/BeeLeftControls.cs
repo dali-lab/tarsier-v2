@@ -3,31 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 
-public class BeeTutorialGo : MonoBehaviour
+public class BeeLeftControls : MonoBehaviour
 {
     public GameObject LController;
-    public GameObject buttonXHighlight;
-    public GameObject beeLeftControls;
+    public GameObject controlsButton;
+    public GameObject controlsPanel;
 
     private VRTK_ControllerEvents LControllerEvents;
-
 
     public void OnEnable()
     {
         LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
         LControllerEvents.ButtonOnePressed += DoLeftButtonOnePressed;                       // 'X' button on left controller
-        buttonXHighlight.SetActive(true);
+        controlsButton.SetActive(true);
+        controlsPanel.SetActive(false);
     }
 
     private void DoLeftButtonOnePressed(object sender, ControllerInteractionEventArgs e)
     {
-        buttonXHighlight.SetActive(false);
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
-        beeLeftControls.SetActive(true);
+        controlsPanel.SetActive(!controlsPanel.activeSelf);
     }
 
     public void OnDisable()
     {
         LControllerEvents.ButtonOnePressed += DoLeftButtonOnePressed;
+        controlsButton.SetActive(false);
+        controlsPanel.SetActive(false);
     }
+
 }

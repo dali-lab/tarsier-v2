@@ -27,6 +27,7 @@ public class BeeTutorialLanding : MonoBehaviour
     {
         if (onFlower)
         {
+            onFlower = false;
             gameObject.SetActive(false);
             nextPanel.SetActive(true);
         }
@@ -35,6 +36,7 @@ public class BeeTutorialLanding : MonoBehaviour
     private void flowerTrigger(object sender, VRTK.ObjectInteractEventArgs e)
     {
         onFlower = true;
+        interactTouch.ControllerStartTouchInteractableObject -= flowerTrigger;
     }
 
     public void OnDisable()

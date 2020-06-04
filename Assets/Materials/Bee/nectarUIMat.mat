@@ -73,7 +73,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_96FEC68C: {r: 1, g: 1, b: 0.5283019, a: 0.36078432}
+    - Color_96FEC68C: {r: 0.6981132, g: 0.6981132, b: 0, a: 0.36078432}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

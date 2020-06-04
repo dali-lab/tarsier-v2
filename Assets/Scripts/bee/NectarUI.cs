@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class NectarUI : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject startSpawn;
     public GameObject nectarUISlider;
+    public SceneFader sceneFader;
     private float progress;
     private Vector3 maxScale;
     private bool decrease = true;           // needs to be turned true upon leaving hive
+    private Vector3 startLocation;
 
     // Start is called before the first frame update
     void Start()
     {
+        startLocation = startSpawn.transform.position;
         progress = 1.0f;
         maxScale = nectarUISlider.transform.localScale;
         Vector3 zeroProgress = new Vector3(maxScale.x, 0.0f, maxScale.z);
@@ -36,7 +41,7 @@ public class NectarUI : MonoBehaviour
             }
             else
             {
-                progress = 1.0f;
+                StartCoroutine(BackToHive());                
             }
         }
     }
@@ -49,5 +54,13 @@ public class NectarUI : MonoBehaviour
             progress = 1.0f;
         }
         return progress;
+    }
+
+    private IEnumerator BackToHive()                        // fade to black and unfade for transition
+    {
+        sceneFader.StartFade();
+        progress = 1.0f;
+        player.transform.position = startLocation;
+        yield return new WaitForSeconds(1);
     }
 }

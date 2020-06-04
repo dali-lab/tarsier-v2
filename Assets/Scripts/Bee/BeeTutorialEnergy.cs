@@ -32,7 +32,11 @@ public class BeeTutorialEnergy : MonoBehaviour
         yield return new WaitForSeconds(1);
         haptics = true;
         nectarBar.SetActive(true);
-        yield return new WaitForSeconds(6);
+        nectarBar.GetComponent<NectarUI>().addHealth(1);                            // set health to max
+        yield return new WaitForSeconds(3);
+        haptics = false;
+        hapticCube.SetActive(false);
+        yield return new WaitForSeconds(3);
         gameObject.SetActive(false);
         nextPanel.SetActive(true);
     }
