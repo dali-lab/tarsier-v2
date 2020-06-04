@@ -22,11 +22,11 @@ public class BeeTutorialLanding : MonoBehaviour
         onFlower = false;
     }
 
-    // Update is called once per frame
     public void Update()
     {
-        if (onFlower)
+        if (onFlower)                                           // if player has teleported to flower, move to next tutorial panel
         {
+            onFlower = false;
             gameObject.SetActive(false);
             nextPanel.SetActive(true);
         }
@@ -35,6 +35,7 @@ public class BeeTutorialLanding : MonoBehaviour
     private void flowerTrigger(object sender, VRTK.ObjectInteractEventArgs e)
     {
         onFlower = true;
+        interactTouch.ControllerStartTouchInteractableObject -= flowerTrigger;
     }
 
     public void OnDisable()
