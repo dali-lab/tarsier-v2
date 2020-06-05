@@ -5,7 +5,15 @@
 # Anivision
 The Anivision Project aims to let a user experience the world through the eyes of various animals. The experience focuses on different vision adaptions and the everyday experience of being another animal.
 
-## Setup for development
+![Screenshot of Bee Vision scene](https://i.imgur.com/nKeaC5o.png)
+
+# Architecture
+
+## Tech Stack 🥞
+- Unity3D
+- Maya
+
+## Setup steps
 
 ### Prerequisistes
 
@@ -29,6 +37,16 @@ The VRTK asset and the Oculus Quest assets are already in the repository, and th
 
 The user will start in the Home Lobby scene, where there will be an optional tutorial. To transition to another scene the user will pull a pair of goggles to their face.
 
-## Tech Stack
-- Unity3D
-- Maya
+## Authors
+* Cathy Wu 2021, developer
+* Amon Ferri 2023, developer
+* Bill Tang 2020, developer
+* Dorothy Qu 2019, designer
+* Kristie Chow 2020, PM
+* Jasmine Mai 2020, Mentor
+
+## Acknowledgments 🤝
+We would like to thank our advisor, Sam Gochman, for this time and expertise. We also would like to thank DALI Staff and Professor Mahoney for their advice and continued support.
+
+---
+Designed and developed by [@DALI Lab](https://github.com/dali-lab)
