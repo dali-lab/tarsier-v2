@@ -29,7 +29,7 @@ public class NectarShaderIntensityController : MonoBehaviour
 
     private void updateMaterial()
     {
-        _propBlock.SetInt("_Intensity", globcount);
+        _propBlock.SetInt("_Intensity", globcount * 2 + 1);
         foreach(Renderer r in _renderers) {
             r.SetPropertyBlock(_propBlock);
         }
