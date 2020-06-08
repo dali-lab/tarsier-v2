@@ -20,7 +20,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
-    m_Floats: []
+    m_Floats:
+    - _NectarScale: 20
     m_Colors:
     - Color_C21F7040: {r: 1, g: 1, b: 1, a: 0}
     - _MainColor: {r: 0.6132076, g: 0.18801174, b: 0.18801174, a: 1}

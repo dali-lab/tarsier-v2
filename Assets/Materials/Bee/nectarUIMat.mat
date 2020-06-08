@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NectarUIMat
+  m_Name: nectarUIMat
   m_Shader: {fileID: -6465566751694194690, guid: dd4213bc2f228454f9df64f8df332294,
     type: 3}
   m_ShaderKeywords: 
