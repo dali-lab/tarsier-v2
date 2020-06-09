@@ -4,6 +4,7 @@ using System;
 
 public class NectarGlob : MonoBehaviour 
 {
+    public GameObject nectarBar;                                                                        // nectar health bar on left hand
     private NectarShaderIntensityController controller;
 
     void Start()
@@ -23,6 +24,7 @@ public class NectarGlob : MonoBehaviour
             {
                 onUse();
                 Destroy(gameObject);
+                nectarBar.GetComponent<NectarUI>().addHealth(0.1f);
             }
         }
     }

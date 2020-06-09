@@ -6,15 +6,15 @@ public class MaterialEventManager : MonoBehaviour
     public delegate void MaterialSwapAction(bool uVmode);
     public static event MaterialSwapAction OnMaterialSwap;
 
-    public GameObject leftControllerAlias;
+    public GameObject rightControllerAlias;
 
     public static bool isUV = false;
     private static bool locked = false;
 
     void Start()
     {
-        leftControllerAlias.GetComponent<VRTK_ControllerEvents>().ButtonTwoPressed += new ControllerInteractionEventHandler(DoButtonTwoPress);
-        leftControllerAlias.GetComponent<VRTK_ControllerEvents>().ButtonTwoReleased += new ControllerInteractionEventHandler(DoButtonTwoRelease);
+        rightControllerAlias.GetComponent<VRTK_ControllerEvents>().ButtonTwoPressed += new ControllerInteractionEventHandler(DoButtonTwoPress);
+        rightControllerAlias.GetComponent<VRTK_ControllerEvents>().ButtonTwoReleased += new ControllerInteractionEventHandler(DoButtonTwoRelease);
     }
 
     void DoButtonTwoPress(object sender, ControllerInteractionEventArgs e)
