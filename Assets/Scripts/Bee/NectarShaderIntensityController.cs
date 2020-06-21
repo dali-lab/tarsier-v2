@@ -18,7 +18,6 @@ public class NectarShaderIntensityController : MonoBehaviour
 
     public void incrementGlob()
     {
-        Debug.Log("glob incremented");
         globcount++;
         updateMaterial();
     }
