@@ -13,10 +13,12 @@ public class NectarShaderIntensityController : MonoBehaviour
     {
         _propBlock = new MaterialPropertyBlock();
         _renderers = GetComponentsInChildren<Renderer>();
+        updateMaterial();
     }
 
     public void incrementGlob()
     {
+        Debug.Log("glob incremented");
         globcount++;
         updateMaterial();
     }

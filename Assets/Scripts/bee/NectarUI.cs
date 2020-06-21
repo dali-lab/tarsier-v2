@@ -27,16 +27,13 @@ public class NectarUI : MonoBehaviour
 
     private IEnumerator updateHealth()                                              // health decreases over time
     {
-        yield return new WaitForSeconds(0.5f);
-        if ((progress > 0f))
+        while ((progress > 0f))
         {
+            yield return new WaitForSeconds(0.5f);
             progress -= 0.005f;                                                     // 100 seconds total
             nectarUISlider.transform.localScale = new Vector3(maxScale.x, maxScale.y * progress, maxScale.z);
         }
-        else
-        {
-            StartCoroutine(BackToHive());                
-        }
+        StartCoroutine(BackToHive());                
     }
 
     public float addHealth(float health)                    // function to increase health when picking up nectar globs
@@ -55,5 +52,6 @@ public class NectarUI : MonoBehaviour
         yield return new WaitForSeconds(1);
         progress = 1.0f;
         player.transform.position = startLocation;
+        StartCoroutine(updateHealth());
     }
 }

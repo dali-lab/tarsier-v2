@@ -43,10 +43,14 @@ public class MaterialSwapScript : MonoBehaviour
         if(currGameObject.GetComponent<Renderer>() != null){
             // switch to the correct texture, if valid and switchable
             int index = GetIndexOfMaterial(currGameObject.GetComponent<Renderer>().material);
-            if(index > -1) {
-                if(uvMode) {
+            if (index > -1)
+            {
+                if (uvMode)
+                {
                     currGameObject.GetComponent<Renderer>().material = UVmats[index];
-                } else {
+                }
+                else
+                {
                     currGameObject.GetComponent<Renderer>().material = nUVmats[index];
                 }
             }
