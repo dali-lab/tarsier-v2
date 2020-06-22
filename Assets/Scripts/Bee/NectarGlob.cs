@@ -30,7 +30,6 @@ public class NectarGlob : MonoBehaviour
             controller.globConsumed();
             Destroy(gameObject);
             nectarBar.GetComponent<NectarUI>().addHealth(0.1f);
-            Debug.Log("Cronch");
         }
     }
 }
