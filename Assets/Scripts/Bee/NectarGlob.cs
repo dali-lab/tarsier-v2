@@ -4,11 +4,11 @@ using System;
 
 public class NectarGlob : MonoBehaviour 
 {
-    private NectarShaderIntensityController controller;
+    public GameObject nectarBar;                                                                        // nectar health bar on left hand
+    public NectarShaderIntensityController controller;
 
     void Start()
     {
-        controller = transform.root.GetComponent<NectarShaderIntensityController>();
         if(controller != null) {
             controller.incrementGlob();
         }
@@ -16,13 +16,10 @@ public class NectarGlob : MonoBehaviour
 
     void Update()
     {
-        NectarUI ui = GetComponent<NectarUI>();
-        if(ui != null) {
-            GameObject uiBar = ui.gameObject;
-            if(Vector3.Distance(transform.position, uiBar.transform.position) <= 0.0005)
+        if (nectarBar != null){
+            if (Vector3.Distance(transform.position, nectarBar.transform.position) <= 0.05)
             {
                 onUse();
-                Destroy(gameObject);
             }
         }
     }
@@ -31,7 +28,8 @@ public class NectarGlob : MonoBehaviour
     {
         if(controller != null) {
             controller.globConsumed();
-            Debug.Log("Cronch");
+            Destroy(gameObject);
+            nectarBar.GetComponent<NectarUI>().addHealth(0.1f);
         }
     }
 }
