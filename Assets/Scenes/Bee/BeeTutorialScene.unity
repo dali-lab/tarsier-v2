@@ -446,6 +446,42 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 141819792}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &141819794 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1883185261795400, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 141819792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &141819795 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1391022766006510, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 141819792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &141819796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1384746914293964, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 141819792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &141819797 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1538727058887424, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 141819792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &141819798 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1587602180963074, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 141819792}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &141819799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000013941130086, guid: be540b97364be0a4890e39e62ac89ed1,
+    type: 3}
+  m_PrefabInstance: {fileID: 141819792}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &149527473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,12 +1540,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   autoPopulateObjectReferences: 1
-  actualBoundaries: {fileID: 0}
-  actualHeadset: {fileID: 0}
-  actualLeftController: {fileID: 0}
-  actualRightController: {fileID: 0}
-  modelAliasLeftController: {fileID: 0}
-  modelAliasRightController: {fileID: 0}
+  actualBoundaries: {fileID: 141819799}
+  actualHeadset: {fileID: 141819798}
+  actualLeftController: {fileID: 141819797}
+  actualRightController: {fileID: 141819795}
+  modelAliasLeftController: {fileID: 141819796}
+  modelAliasRightController: {fileID: 141819794}
   cachedSystemSDKInfo:
     baseTypeName: VRTK.SDK_BaseSystem
     fallbackTypeName: VRTK.SDK_FallbackSystem
