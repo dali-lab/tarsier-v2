@@ -5,9 +5,14 @@ using Anivision.Core;
 
 namespace Anivision.Debug
 {
+    /// <summary>
+    /// This script is used to debug and test the InputManager.
+    /// Can also be referred to as an example on how to use the InputManager.
+    /// </summary>
 
     public class SampleInput : MonoBehaviour
     {
+        //booleans that can be selected based on what you want to test
         [Header("Button A Input")]
         public bool DemoButtonAPress;
         public bool DemoButtonARelease;
@@ -84,7 +89,9 @@ namespace Anivision.Debug
 
         void Start()
         {
-            _InputManager = InputManager.Instance;
+            _InputManager = InputManager.Instance; //get singleton instance of InputManager
+
+            //attach all callbacks to input manager
             AttachPressCallbacks();
             AttachReleaseCallbacks();
             AttachTouchCallbacks();
@@ -94,6 +101,7 @@ namespace Anivision.Debug
 
         private void OnDestroy()
         {
+            //avoid memory leaks! Detach callbacks when gameObject in destroyed
             DetachPressCallbacks();
             DetachTouchCallbacks();
             DetachReleaseCallbacks();
@@ -102,6 +110,7 @@ namespace Anivision.Debug
 
         }
 
+        //attach the callbacks that are called when buttons are pressed
         private void AttachPressCallbacks()
         {
             if (DemoButtonAPress) _InputManager.OnButtonAPress += OnButtonDown;
@@ -117,6 +126,7 @@ namespace Anivision.Debug
 
         }
 
+        //attach the callbacks that are called when buttons are pressed
         private void DetachPressCallbacks()
         {
             if (DemoButtonAPress) _InputManager.OnButtonAPress -= OnButtonDown;
@@ -132,6 +142,7 @@ namespace Anivision.Debug
 
         }
 
+        //attach the callbacks that are called when buttons are released
         private void AttachReleaseCallbacks()
         {
             if (DemoButtonARelease) _InputManager.OnButtonARelease += OnButtonUp;
@@ -147,6 +158,7 @@ namespace Anivision.Debug
 
         }
 
+        //detach the callbacks that are called when buttons are released
         private void DetachReleaseCallbacks()
         {
             if (DemoButtonARelease) _InputManager.OnButtonARelease -= OnButtonUp;
@@ -161,6 +173,7 @@ namespace Anivision.Debug
             if (DemoLeftTriggerRelease) _InputManager.OnLeftTriggerRelease -= OnButtonUp;
         }
 
+        //attach the callbacks that are called when capacitive touch buttons are touched
         private void AttachTouchCallbacks()
         {
             if (DemoButtonATouch) _InputManager.OnButtonATouch += OnButtonTouch;
@@ -171,6 +184,7 @@ namespace Anivision.Debug
             if (DemoRightJoystickTouch) _InputManager.OnRightJoystickTouch += OnButtonTouch;
         }
 
+        //detach the callbacks that are called when capacitive touch buttons are touched
         private void DetachTouchCallbacks()
         {
             if (DemoButtonATouch) _InputManager.OnButtonATouch -= OnButtonTouch;
@@ -181,18 +195,21 @@ namespace Anivision.Debug
             if (DemoRightJoystickTouch) _InputManager.OnRightJoystickTouch -= OnButtonTouch;
         }
 
+        //attach the callbacks that are called when joystick movement is detected
         private void AttachMovementCallbacks()
         {
             if (DemoRightJoystickMovement) _InputManager.OnRightJoystickMovement += OnJoystickMovement;
             if (DemoLeftJoystickMovement) _InputManager.OnLeftJoystickMovement += OnJoystickMovement;
         }
 
+        //detach the callbacks that are called when joystick movement is detected
         private void DetachMovementCallbacks()
         {
             if (DemoRightJoystickMovement) _InputManager.OnRightJoystickMovement -= OnJoystickMovement;
             if (DemoLeftJoystickMovement) _InputManager.OnLeftJoystickMovement -= OnJoystickMovement;
         }
 
+        //attach the callbacks that are called to monitor force of triggers and joystick movement
         private void AttachMonitorCallbacks()
         {
             if (DemoLeftGripMonitor) _InputManager.LeftGripMonitor += OnButtonMonitor;
@@ -204,6 +221,7 @@ namespace Anivision.Debug
 
         }
 
+        //detach the callbacks that are called to monitor force of triggers and joystick movement
         private void DetachMonitorCallbacks()
         {
             if (DemoLeftGripMonitor) _InputManager.LeftGripMonitor -= OnButtonMonitor;
@@ -214,6 +232,7 @@ namespace Anivision.Debug
             if (DemoRightTriggerMonitor) _InputManager.RightTriggerMonitor -= OnButtonMonitor;
         }
 
+        //display joystick movement floats
         private void OnJoystickMonitor(Vector2 v)
         {
             if (ForceDisplay != null)
@@ -223,6 +242,7 @@ namespace Anivision.Debug
 
         }
 
+        //display joystick movement direction
         private void OnJoystickMovement(JoystickMovement direction)
         {
             if (DebugDisplay != null)
@@ -231,6 +251,7 @@ namespace Anivision.Debug
             }
         }
 
+        //change cube color when button is released, show debug message
         private void OnButtonUp()
         {
             TurnColor(originalColor);
@@ -241,6 +262,7 @@ namespace Anivision.Debug
             }
         }
 
+        //change cube color when touch capacitive button is touched/untouched, show debug message
         private void OnButtonTouch(bool touched)
         {
             if (touched)
@@ -265,6 +287,7 @@ namespace Anivision.Debug
 
         }
 
+        //change cube color when button is pressed, show debug message
         private void OnButtonDown()
         {
             TurnColor(buttonDownColor);
@@ -275,6 +298,7 @@ namespace Anivision.Debug
             }
         }
 
+        //display force used to press triggers
         private void OnButtonMonitor(float v)
         {
             if (ForceDisplay != null)
