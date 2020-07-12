@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -786,6 +786,11 @@ PrefabInstance:
       propertyPath: DemoButtonATouch
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoRightGripTouch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: m_Name
@@ -1260,7 +1265,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1637481998}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1742617824
+--- !u!1 &1775846094
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1268,48 +1273,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1742617826}
-  - component: {fileID: 1742617825}
+  - component: {fileID: 1775846096}
+  - component: {fileID: 1775846095}
   m_Layer: 0
-  m_Name: InputManager
+  m_Name: RotateHeadset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1742617825
+--- !u!114 &1775846095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742617824}
+  m_GameObject: {fileID: 1775846094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43712c1d793034ae4a0596b279a4985f, type: 3}
+  m_Script: {fileID: 11500000, guid: d502fc1ad597aed46827d709d640f378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeftGripPress: 1
-  LeftGripRelease: 0.35
-  LeftTriggerPress: 0.55
-  LeftTriggerRelease: 0.35
-  RightGripPress: 0.55
-  RightGripRelease: 0.35
-  RightTriggerPress: 0.55
-  RightTriggerRelease: 0.35
---- !u!4 &1742617826
+  cameraRig: {fileID: 1947481229}
+  RightHand: 1
+  LeftHand: 1
+  increment: 15
+  deadZone: 0.165
+  waitTime: 0.2
+--- !u!4 &1775846096
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742617824}
+  m_GameObject: {fileID: 1775846094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.049733553, y: 1.4053214, z: 3.2325022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1816290662
 GameObject:
@@ -6157,6 +6160,11 @@ PrefabInstance:
       propertyPath: DemoButtonAPress
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoRightTriggerTouch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: m_Name
@@ -6270,6 +6278,11 @@ PrefabInstance:
       propertyPath: DemoButtonATouch
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoLeftGripTouch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: m_Name
@@ -6382,6 +6395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: DemoButtonAPress
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoLeftTriggerTouch
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
@@ -6639,3 +6657,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f1548931104c4b7bb337a1e0b66c92d, type: 3}
+--- !u!1001 &2571843567464272212
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2571843568113741236, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_Name
+      value: InputManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741237, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: LeftGripPress
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 13771eee7b2a5499b966190c0cfe24fe, type: 3}

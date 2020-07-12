@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using Anivision.Core;
 
 public class BeeTutorialVision : MonoBehaviour
 {
@@ -9,17 +9,26 @@ public class BeeTutorialVision : MonoBehaviour
     public GameObject nextPanel;
     public GameObject buttonBHighlight;                                                     // indicates which button to click
 
-    private VRTK_ControllerEvents RControllerEvents;
-
+    private InputManager _inputManager;
 
     public void OnEnable()
     {
-        RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
-        RControllerEvents.ButtonTwoPressed += DoRightButtonTwoPressed;                       // 'B' button on right controller
+        _inputManager = InputManager.Instance;
+
+        if (_inputManager == null)
+        {
+            throw new System.Exception("Must have an input manager script in the scene");
+        }
+
+        if (_inputManager != null)
+        {
+            _inputManager.OnButtonBPress += DoRightButtonTwoPressed;
+        }
+            
         buttonBHighlight.SetActive(true);
     }
 
-    private void DoRightButtonTwoPressed(object sender, ControllerInteractionEventArgs e)   // turns off button highlight, moves on the next tutorial panel
+    private void DoRightButtonTwoPressed()   // turns off button highlight, moves on the next tutorial panel
     {
         buttonBHighlight.SetActive(false);
         gameObject.SetActive(false);
@@ -28,6 +37,6 @@ public class BeeTutorialVision : MonoBehaviour
 
     public void OnDisable()
     {
-        RControllerEvents.ButtonTwoPressed -= DoRightButtonTwoPressed;
+        if (_inputManager != null) _inputManager.OnButtonBPress -= DoRightButtonTwoPressed;
     }
 }

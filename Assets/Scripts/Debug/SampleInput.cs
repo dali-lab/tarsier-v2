@@ -49,21 +49,25 @@ namespace Anivision.Debug
 
         [Header("Right Grip Input")]
         public bool DemoRightGripPress;
+        public bool DemoRightGripTouch;
         public bool DemoRightGripRelease;
         public bool DemoRightGripMonitor;
 
         [Header("Left Grip Input")]
         public bool DemoLeftGripPress;
+        public bool DemoLeftGripTouch;
         public bool DemoLeftGripRelease;
         public bool DemoLeftGripMonitor;
 
         [Header("Right Trigger Input")]
         public bool DemoRightTriggerPress;
+        public bool DemoRightTriggerTouch;
         public bool DemoRightTriggerRelease;
         public bool DemoRightTriggerMonitor;
 
         [Header("Left Trigger Input")]
         public bool DemoLeftTriggerPress;
+        public bool DemoLeftTriggerTouch;
         public bool DemoLeftTriggerRelease;
         public bool DemoLeftTriggerMonitor;
 
@@ -182,6 +186,10 @@ namespace Anivision.Debug
             if (DemoButtonYTouch) _InputManager.OnButtonYTouch += OnButtonTouch;
             if (DemoLeftJoystickTouch) _InputManager.OnLeftJoystickTouch += OnButtonTouch;
             if (DemoRightJoystickTouch) _InputManager.OnRightJoystickTouch += OnButtonTouch;
+            if (DemoLeftGripTouch) _InputManager.OnLeftGripTouch += OnButtonTouch;
+            if (DemoRightGripTouch) _InputManager.OnRightGripTouch += OnButtonTouch;
+            if (DemoLeftTriggerTouch) _InputManager.OnLeftTriggerTouch += OnButtonTouch;
+            if (DemoRightTriggerTouch) _InputManager.OnRightTriggerTouch += OnButtonTouch;
         }
 
         //detach the callbacks that are called when capacitive touch buttons are touched
@@ -193,6 +201,10 @@ namespace Anivision.Debug
             if (DemoButtonYTouch) _InputManager.OnButtonYTouch -= OnButtonTouch;
             if (DemoLeftJoystickTouch) _InputManager.OnLeftJoystickTouch -= OnButtonTouch;
             if (DemoRightJoystickTouch) _InputManager.OnRightJoystickTouch -= OnButtonTouch;
+            if (DemoLeftGripTouch) _InputManager.OnLeftGripTouch -= OnButtonTouch;
+            if (DemoRightGripTouch) _InputManager.OnRightGripTouch -= OnButtonTouch;
+            if (DemoLeftTriggerTouch) _InputManager.OnLeftTriggerTouch -= OnButtonTouch;
+            if (DemoRightTriggerTouch) _InputManager.OnRightTriggerTouch -= OnButtonTouch;
         }
 
         //attach the callbacks that are called when joystick movement is detected
@@ -214,8 +226,8 @@ namespace Anivision.Debug
         {
             if (DemoLeftGripMonitor) _InputManager.LeftGripMonitor += OnButtonMonitor;
             if (DemoRightGripMonitor) _InputManager.RightGripMonitor += OnButtonMonitor;
-            if (DemoRightJoystickMonitor) _InputManager.RightJoystickMonitor += OnJoystickMonitor;
-            if (DemoLeftJoystickMonitor) _InputManager.LeftJoystickMonitor += OnJoystickMonitor;
+            if (DemoRightJoystickMonitor) _InputManager.OnRightJoystickMonitor += OnJoystickMonitor;
+            if (DemoLeftJoystickMonitor) _InputManager.OnLeftJoystickMonitor += OnJoystickMonitor;
             if (DemoLeftTriggerMonitor) _InputManager.LeftTriggerMonitor += OnButtonMonitor;
             if (DemoRightTriggerMonitor) _InputManager.RightTriggerMonitor += OnButtonMonitor;
 
@@ -226,8 +238,8 @@ namespace Anivision.Debug
         {
             if (DemoLeftGripMonitor) _InputManager.LeftGripMonitor -= OnButtonMonitor;
             if (DemoRightGripMonitor) _InputManager.RightGripMonitor -= OnButtonMonitor;
-            if (DemoRightJoystickMonitor) _InputManager.RightJoystickMonitor -= OnJoystickMonitor;
-            if (DemoLeftJoystickMonitor) _InputManager.LeftJoystickMonitor -= OnJoystickMonitor;
+            if (DemoRightJoystickMonitor) _InputManager.OnRightJoystickMonitor -= OnJoystickMonitor;
+            if (DemoLeftJoystickMonitor) _InputManager.OnLeftJoystickMonitor -= OnJoystickMonitor;
             if (DemoLeftTriggerMonitor) _InputManager.LeftTriggerMonitor -= OnButtonMonitor;
             if (DemoRightTriggerMonitor) _InputManager.RightTriggerMonitor -= OnButtonMonitor;
         }

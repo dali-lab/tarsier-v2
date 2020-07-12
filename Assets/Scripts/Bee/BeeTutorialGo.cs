@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using VRTK;
+using Anivision.Core;
 
 public class BeeTutorialGo : MonoBehaviour
 {
@@ -11,17 +11,22 @@ public class BeeTutorialGo : MonoBehaviour
     public GameObject beeLeftControls;                                                      // turns on the instructions text so players can pull up an instruction panel
     public SceneFader sceneFader;
 
-    private VRTK_ControllerEvents LControllerEvents;
-
+    private InputManager _inputManager;
 
     public void OnEnable()
     {
-        LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
-        LControllerEvents.ButtonOnePressed += DoLeftButtonOnePressed;                       // 'X' button on left controller
+        _inputManager = InputManager.Instance;
+
+        if (_inputManager == null)
+        {
+            throw new System.Exception("Must have an input manager script in the scene");
+        }
+
+        if (_inputManager != null) _inputManager.OnButtonXPress += DoLeftButtonOnePressed;
         buttonXHighlight.SetActive(true);
     }
 
-    private void DoLeftButtonOnePressed(object sender, ControllerInteractionEventArgs e)    // turns of indicator of which button to press and the panel, turns on the instructions text
+    private void DoLeftButtonOnePressed()    // turns of indicator of which button to press and the panel, turns on the instructions text
     {
         StartCoroutine(MoveToScene());
     }
@@ -38,6 +43,6 @@ public class BeeTutorialGo : MonoBehaviour
 
     public void OnDisable()
     {
-        LControllerEvents.ButtonOnePressed -= DoLeftButtonOnePressed;
+        if (_inputManager != null) _inputManager.OnButtonXPress -= DoLeftButtonOnePressed;
     }
 }

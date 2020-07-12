@@ -20,6 +20,20 @@ namespace Anivision.Core
         RIGHT
     }
 
+    public enum Buttons
+    {
+        BUTTON_A,
+        BUTTON_B,
+        BUTTON_X,
+        BUTTON_Y,
+        RIGHT_TRIGGER,
+        LEFT_TRIGGER,
+        RIGHT_GRIP,
+        LEFT_GRIP,
+        RIGHT_JOYSTICK,
+        LEFT_JOYSTICK
+    }
+
     public sealed class InputManager : MonoBehaviour
     {
 
@@ -43,7 +57,7 @@ namespace Anivision.Core
 
         public UnityAction<bool> onHasController = null; //Called when controllers' connection state changes
 
-        //Right Controller Events
+        //------------------------Right Controller Events--------------------------------------------------------//
         public UnityAction OnButtonAPress = null; //Button A Pressed
         public UnityAction OnButtonARelease = null; //Button A Released
         public UnityAction<bool> OnButtonATouch = null; //Button A Touch state has changed
@@ -57,17 +71,20 @@ namespace Anivision.Core
         public UnityAction<bool> OnRightJoystickTouch = null; //Right joystick touch state has changed
 
         public UnityAction<JoystickMovement> OnRightJoystickMovement = null; //Right Joystick moved more than halfway in a direction
-        public UnityAction<Vector2> RightJoystickMonitor = null; //Monitor right joystick movement
+        public UnityAction<Vector2> OnRightJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
 
         public UnityAction OnRightGripPress = null; //Right Grip Button Pressed
         public UnityAction OnRightGripRelease = null; //Right Grip Button Released
+        public UnityAction<bool> OnRightGripTouch = null; //Right grip touch state has changed
         public UnityAction<float> RightGripMonitor = null; //Monitor force on right grip button
 
         public UnityAction OnRightTriggerPress = null; //Right Trigger Button Pressed
         public UnityAction OnRightTriggerRelease = null; //Right Trigger Button Released
+        public UnityAction<bool> OnRightTriggerTouch = null; //Right trigger touch state has changed
         public UnityAction<float> RightTriggerMonitor = null; //Monitor force on right trigger button
 
-        //Left Controller Events
+
+        //------------------------Left Controller Events--------------------------------------------------------//
         public UnityAction OnButtonXPress = null; //Button X Pressed
         public UnityAction OnButtonXRelease = null; //Button X Released
         public UnityAction<bool> OnButtonXTouch = null; //Button X touch state has changed
@@ -81,22 +98,41 @@ namespace Anivision.Core
         public UnityAction<bool> OnLeftJoystickTouch = null; //Left joystick touch state has changed
 
         public UnityAction<JoystickMovement> OnLeftJoystickMovement = null; //Left Joystick moved more than halfway in a direction       
-        public UnityAction<Vector2> LeftJoystickMonitor = null; //Monitor left joystick movement
+        public UnityAction<Vector2> OnLeftJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
 
         public UnityAction OnLeftGripPress = null; //Left grip button Pressed
         public UnityAction OnLeftGripRelease = null; //Left grip button Released
+        public UnityAction<bool> OnLeftGripTouch = null; //Left grip touch state has changed
         public UnityAction<float> LeftGripMonitor = null; //Monitor force on left grip button
 
         public UnityAction OnLeftTriggerPress = null; //Left Trigger Button Pressed
         public UnityAction OnLeftTriggerRelease = null; //Left Trigger Button Released
+        public UnityAction<bool> OnLeftTriggerTouch = null; //Left trigger touch state has changed
         public UnityAction<float> LeftTriggerMonitor = null; //Monitor force on left trigger button
 
+        //------------------------Touch Booleans--------------------------------------------------------//
         public bool ButtonATouched { get; private set; } //whether button A is currently touched or not
         public bool ButtonBTouched { get; private set; } //whether button B is currently touched or not
         public bool ButtonXTouched { get; private set; } //whether button X is currently touched or not
         public bool ButtonYTouched { get; private set; } //whether button Y is currently touched or not
         public bool LeftJoystickTouched { get; private set; } //whether left joystick is touched or not
         public bool RightJoystickTouched { get; private set; } //whether right joystick is touched or not
+        public bool LeftTriggerTouched { get; private set; } //whether left trigger is touched or not
+        public bool RightTriggerTouched { get; private set; } //whether right trigger is touched or not
+        public bool LeftGripTouched { get; private set; } //whether left grip is touched or not
+        public bool RightGripTouched { get; private set; } //whether right grip is touched or not
+
+        //------------------------Press Booleans--------------------------------------------------------//
+        public bool ButtonAPressed { get; private set; } //whether button A is currently pressed or not
+        public bool ButtonBPressed { get; private set; } //whether button B is currently pressed or not
+        public bool ButtonXPressed { get; private set; } //whether button X is currently pressed or not
+        public bool ButtonYPressed { get; private set; } //whether button Y is currently pressed or not
+        public bool LeftJoystickPressed { get; private set; } //whether left joystick is pressed or not
+        public bool RightJoystickPressed { get; private set; } //whether right joystick is pressed or not
+        public bool LeftTriggerPressed { get; private set; } //whether left trigger is pressed or not
+        public bool RightTriggerPressed { get; private set; } //whether right trigger is pressed or not
+        public bool LeftGripPressed { get; private set; } //whether left grip is pressed or not
+        public bool RightGripPressed { get; private set; } //whether right grip is pressed or not
 
         [Header("Left Hand Force")]
 
@@ -134,12 +170,11 @@ namespace Anivision.Core
         [Range(0.0f, 1.0f)]
         [SerializeField] private float RightTriggerRelease = 0.35f; //determines the force needed on the right trigger button to execute a call to the OnRightTriggerPress function
 
+
         private bool _hasControllers = false;
         private bool _inputActive = true;
-        private bool _leftGripPressed = false;
-        private bool _leftTriggerPressed = false;
-        private bool _rightGripPressed = false;
-        private bool _rightTriggerPressed = false;
+        private float _gripTouchRegisterMinForce = 0.0000000001f; // Grip buttons are not touch capacitive, therefore the grip touch callbacks will be called
+                                                           // if the user presses the grip buttons with a force >= _gripTouchRegisterMinForce
 
         private void Awake()
         {
@@ -181,8 +216,72 @@ namespace Anivision.Core
             OVRManager.HMDUnmounted -= PlayerLost;
         }
 
+        //returns whether the button is currently pressed or not
+        //the script calling this must call this function in its Update function, whether directly or by passing the function call up
+        public bool IsButtonPressed(Buttons b)
+        {
+            switch (b)
+            {
+                case Buttons.BUTTON_A:
+                    return OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.Touch); 
+                case Buttons.BUTTON_B:
+                    return OVRInput.Get(OVRInput.Button.Two, OVRInput.Controller.Touch);
+                case Buttons.BUTTON_X:
+                    return OVRInput.Get(OVRInput.Button.Three, OVRInput.Controller.Touch);
+                case Buttons.BUTTON_Y:
+                    return OVRInput.Get(OVRInput.Button.Four, OVRInput.Controller.Touch);
+                case Buttons.RIGHT_TRIGGER:
+                    return OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
+                case Buttons.LEFT_TRIGGER:
+                    return OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
+                case Buttons.RIGHT_GRIP:
+                    return OVRInput.Get(OVRInput.Button.SecondaryHandTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
+                case Buttons.LEFT_GRIP:
+                    return OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
+                case Buttons.RIGHT_JOYSTICK:
+                    return OVRInput.Get(OVRInput.Button.SecondaryThumbstick, OVRInput.Controller.Touch);
+                case Buttons.LEFT_JOYSTICK:
+                    return OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.Touch);
+                default:
+                    return false;
 
-        //---------FUNCTIONS TO CHECK THE STATE OF BUTTONS, TRIGGER BUTTONS, GRIP BUTTONS, AND JOYSTICKS OF OCULUS TOUCH CONTROLLERS-----------
+            }
+        }
+
+        //returns whether the button is currently touched or not
+        //the script calling this must call this function in its Update function, whether directly or by passing the function call up
+        //grip buttons are not touch capacitive, so the user must be pressing the grip buttons with a force >= _gripTouchRegisterMinForce to return true
+        public bool IsButtonTouched(Buttons b)
+        {
+            switch (b)
+            {
+                case Buttons.BUTTON_A:
+                    return OVRInput.Get(OVRInput.Touch.One, OVRInput.Controller.Touch);
+                case Buttons.BUTTON_B:
+                    return OVRInput.Get(OVRInput.Touch.Two, OVRInput.Controller.Touch);
+                case Buttons.BUTTON_X:
+                    return OVRInput.Get(OVRInput.Touch.Three, OVRInput.Controller.Touch);
+                case Buttons.BUTTON_Y:
+                    return OVRInput.Get(OVRInput.Touch.Four, OVRInput.Controller.Touch);
+                case Buttons.RIGHT_TRIGGER:
+                    return OVRInput.Get(OVRInput.Touch.SecondaryIndexTrigger, OVRInput.Controller.Touch);
+                case Buttons.LEFT_TRIGGER:
+                    return OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger, OVRInput.Controller.Touch);
+                case Buttons.RIGHT_GRIP:
+                    return OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger, OVRInput.Controller.Touch) >= _gripTouchRegisterMinForce;
+                case Buttons.LEFT_GRIP:
+                    return OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.Touch) >= _gripTouchRegisterMinForce;
+                case Buttons.RIGHT_JOYSTICK:
+                    return OVRInput.Get(OVRInput.Touch.SecondaryThumbstick, OVRInput.Controller.Touch);
+                case Buttons.LEFT_JOYSTICK:
+                    return OVRInput.Get(OVRInput.Touch.PrimaryThumbstick, OVRInput.Controller.Touch);
+                default:
+                    return false;
+
+            }
+        }
+
+        //----INTERNAL FUNCTIONS TO CHECK THE STATE OF BUTTONS, TRIGGERS, GRIPS, AND JOYSTICKS OF CONTROLLERS AND CALL CORRESPONDING CALLBACKS----//
 
 
         //Function to check for all button presses excluding grip and trigger buttons
@@ -194,6 +293,8 @@ namespace Anivision.Core
                 {
                     OnButtonAPress();
                 }
+
+                ButtonAPressed = true;
             }
 
             if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.Touch))
@@ -202,6 +303,8 @@ namespace Anivision.Core
                 {
                     OnButtonBPress();
                 }
+
+                ButtonBPressed = true;
             }
 
             if (OVRInput.GetDown(OVRInput.Button.Three, OVRInput.Controller.Touch))
@@ -210,6 +313,8 @@ namespace Anivision.Core
                 {
                     OnButtonXPress();
                 }
+
+                ButtonXPressed = true;
             }
 
             if (OVRInput.GetDown(OVRInput.Button.Four, OVRInput.Controller.Touch))
@@ -218,6 +323,8 @@ namespace Anivision.Core
                 {
                     OnButtonYPress();
                 }
+
+                ButtonYPressed = true;
             }
 
         }
@@ -231,6 +338,8 @@ namespace Anivision.Core
                 {
                     OnButtonARelease();
                 }
+
+                ButtonAPressed = false;
             }
 
 
@@ -241,6 +350,8 @@ namespace Anivision.Core
                 {
                     OnButtonBRelease();
                 }
+
+                ButtonBPressed = false;
             }
 
 
@@ -251,6 +362,8 @@ namespace Anivision.Core
                 {
                     OnButtonXRelease();
                 }
+
+                ButtonXPressed = false;
             }
 
 
@@ -261,6 +374,8 @@ namespace Anivision.Core
                 {
                     OnButtonYRelease();
                 }
+
+                ButtonYPressed = false;
             }
         }
 
@@ -271,26 +386,60 @@ namespace Anivision.Core
             if (OVRInput.Get(OVRInput.Touch.One, OVRInput.Controller.Touch) != ButtonATouched)
             {
                 ButtonATouched = !ButtonATouched;
-                OnButtonATouch(ButtonATouched);
+                if (OnButtonATouch != null)
+                {
+                    OnButtonATouch(ButtonATouched);
+                }
             }
 
 
             if (OVRInput.Get(OVRInput.Touch.Two, OVRInput.Controller.Touch) != ButtonBTouched)
             {
                 ButtonBTouched = !ButtonBTouched;
-                OnButtonBTouch(ButtonBTouched);
+                if (OnButtonBTouch != null)
+                {
+                    OnButtonBTouch(ButtonBTouched);
+                } 
             }
 
             if (OVRInput.Get(OVRInput.Touch.Three, OVRInput.Controller.Touch) != ButtonXTouched)
             {
                 ButtonXTouched = !ButtonXTouched;
-                OnButtonXTouch(ButtonXTouched);
+                if (OnButtonXTouch != null)
+                {
+                    OnButtonXTouch(ButtonXTouched);
+                }
+                
             }
 
             if (OVRInput.Get(OVRInput.Touch.Four, OVRInput.Controller.Touch) != ButtonYTouched)
             {
                 ButtonYTouched = !ButtonYTouched;
-                OnButtonYTouch(ButtonYTouched);
+                if (OnButtonYTouch != null)
+                {
+                    OnButtonYTouch(ButtonYTouched);
+                }
+                
+            }
+
+            //Check Triggers' touch state
+            if (OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger, OVRInput.Controller.Touch) != LeftTriggerTouched)
+            {
+                LeftTriggerTouched = !LeftTriggerTouched;
+                if (OnLeftTriggerTouch != null)
+                {
+                    OnLeftTriggerTouch(LeftTriggerTouched);
+                }
+                
+            }
+
+            if (OVRInput.Get(OVRInput.Touch.SecondaryIndexTrigger, OVRInput.Controller.Touch) != RightTriggerTouched)
+            {
+                RightTriggerTouched = !RightTriggerTouched;
+                if (OnRightTriggerTouch != null)
+                {
+                    OnRightTriggerTouch(RightTriggerTouched);
+                }
             }
 
         }
@@ -304,6 +453,8 @@ namespace Anivision.Core
                 {
                     OnLeftJoystickPress();
                 }
+
+                LeftJoystickPressed = true;
             }
 
             if (OVRInput.GetDown(OVRInput.Button.SecondaryThumbstick, OVRInput.Controller.Touch))
@@ -312,6 +463,8 @@ namespace Anivision.Core
                 {
                     OnRightJoystickPress();
                 }
+
+                RightJoystickPressed = true;
             }
         }
 
@@ -324,6 +477,8 @@ namespace Anivision.Core
                 {
                     OnLeftJoystickRelease();
                 }
+
+                LeftJoystickPressed = false;
             }
 
             if (OVRInput.GetUp(OVRInput.Button.SecondaryThumbstick, OVRInput.Controller.Touch))
@@ -332,7 +487,10 @@ namespace Anivision.Core
                 {
                     OnRightJoystickRelease();
                 }
+
+                RightJoystickPressed = false;
             }
+            
         }
 
         private void CheckJoysticksMovement()
@@ -345,9 +503,9 @@ namespace Anivision.Core
         private void CheckLeftJoystickMovement()
         {
 
-            if (OnLeftJoystickMovement != null)  //true if left joystick has been moved upwards more than halfway
+            if (OnLeftJoystickMovement != null)  
             {
-                if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickUp))
+                if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickUp)) //true if left joystick has been moved upwards more than halfway
                 {
                     OnLeftJoystickMovement(JoystickMovement.UP);
                 }
@@ -370,7 +528,7 @@ namespace Anivision.Core
             }
 
             //access the joystick's current state as a Vector2
-            if (LeftJoystickMonitor != null) LeftJoystickMonitor(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick));
+            if (OnLeftJoystickMonitor != null) OnLeftJoystickMonitor(OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick));
         }
 
         //Check movement of right joystick
@@ -403,7 +561,7 @@ namespace Anivision.Core
             }
 
             //access the joystick's current state as a Vector2
-            if (RightJoystickMonitor != null) RightJoystickMonitor(OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick));
+            if (OnRightJoystickMonitor != null) OnRightJoystickMonitor(OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick));
         }
 
         //Check if a touch/untouch has been sensed by the joysticks
@@ -413,13 +571,49 @@ namespace Anivision.Core
             if (OVRInput.Get(OVRInput.Touch.PrimaryThumbstick, OVRInput.Controller.Touch) != LeftJoystickTouched)
             {
                 LeftJoystickTouched = !LeftJoystickTouched;
-                OnLeftJoystickTouch(LeftJoystickTouched);
+                if (OnLeftJoystickTouch != null)
+                {
+                    OnLeftJoystickTouch(LeftJoystickTouched);
+                }
+                
             }
 
             if (OVRInput.Get(OVRInput.Touch.SecondaryThumbstick, OVRInput.Controller.Touch) != RightJoystickTouched)
             {
                 RightJoystickTouched = !RightJoystickTouched;
-                OnRightJoystickTouch(RightJoystickTouched);
+                if (OnRightJoystickTouch != null)
+                {
+                    OnRightJoystickTouch(RightJoystickTouched);
+                }
+                
+            }
+
+        }
+
+        //Checks if grip buttons have been pressed
+        //Because grip buttons are not touch capacitive, the user must be pressing on the buttons with a force >= 0.01f for this function to be executed
+        private void CheckGripsTouch(float _leftGripForce, float _rightGripForce)
+        {
+            bool _leftGripTouch = _leftGripForce >= _gripTouchRegisterMinForce ? true : false;
+            bool _rightGripTouch = _rightGripForce >= _gripTouchRegisterMinForce ? true : false;
+
+            if (_leftGripTouch != LeftGripTouched)
+            {
+                LeftGripTouched = !LeftGripTouched;
+                if (OnLeftGripTouch != null)
+                {
+                    OnLeftGripTouch(LeftGripTouched);
+                }
+            }
+
+            if (_rightGripTouch != RightGripTouched)
+            {
+                RightGripTouched = !RightGripTouched;
+                if (OnRightGripTouch != null)
+                {
+                    OnRightGripTouch(RightGripTouched);
+                }
+
             }
 
         }
@@ -427,27 +621,31 @@ namespace Anivision.Core
         //Check if the grip buttons have been pressed with a force greater than or equal to the respective properties set in the inspector
         private void CheckGripsPress()
         {
-            float _leftGripForce = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger);
-            float _rightGripForce = OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger);
+            float _leftGripForce = OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.Touch);
+            float _rightGripForce = OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger, OVRInput.Controller.Touch);
 
-            if (_leftGripForce >= LeftGripPress && !_leftGripPressed)
+            //Check for grips "touched"
+            CheckGripsTouch(_leftGripForce, _rightGripForce);
+
+            //Check for grips pressed
+            if (_leftGripForce >= LeftGripPress && !LeftGripPressed)
             {
                 if (OnLeftGripPress != null)
                 {
                     OnLeftGripPress();
                 }
 
-                _leftGripPressed = true;
+                LeftGripPressed = true;
             }
 
-            if (_rightGripForce >= RightGripPress && !_rightGripPressed)
+            if (_rightGripForce >= RightGripPress && !RightGripPressed)
             {
                 if (OnRightGripPress != null)
                 {
                     OnRightGripPress();
                 }
 
-                _rightGripPressed = true;
+                RightGripPressed = true;
             }
 
             //access force currently being applied to grip buttons
@@ -459,24 +657,24 @@ namespace Anivision.Core
         //Check if grip buttons have been released
         private void CheckGripsRelease()
         {
-            if (OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) <= LeftGripRelease && _leftGripPressed)
+            if (OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger) <= LeftGripRelease && LeftGripPressed)
             {
                 if (OnLeftGripRelease != null)
                 {
                     OnLeftGripRelease();
                 }
 
-                _leftGripPressed = false;
+                LeftGripPressed = false;
             }
 
-            if (OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) <= RightGripRelease && _rightGripPressed)
+            if (OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger) <= RightGripRelease && RightGripPressed)
             {
                 if (OnRightGripRelease != null)
                 {
                     OnRightGripRelease();
                 }
 
-                _rightGripPressed = false;
+                RightGripPressed = false;
             }
         }
 
@@ -486,24 +684,24 @@ namespace Anivision.Core
             float _leftTriggerForce = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
             float _rightTriggerForce = OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger);
 
-            if (_leftTriggerForce >= LeftTriggerPress && !_leftTriggerPressed)
+            if (_leftTriggerForce >= LeftTriggerPress && !LeftTriggerPressed)
             {
                 if (OnLeftTriggerPress != null)
                 {
                     OnLeftTriggerPress();
                 }
 
-                _leftTriggerPressed = true;
+                LeftTriggerPressed = true;
             }
 
-            if (_rightTriggerForce >= RightTriggerPress && !_rightTriggerPressed)
+            if (_rightTriggerForce >= RightTriggerPress && !RightTriggerPressed)
             {
                 if (OnRightTriggerPress != null)
                 {
                     OnRightTriggerPress();
                 }
 
-                _rightTriggerPressed = true;
+                RightTriggerPressed = true;
             }
 
             //access force currently being applied to trigger buttons
@@ -516,24 +714,24 @@ namespace Anivision.Core
         //Check if trigger buttons have been released
         private void CheckTriggersRelease()
         {
-            if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) <= LeftTriggerRelease && _leftTriggerPressed)
+            if (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) <= LeftTriggerRelease && LeftTriggerPressed)
             {
                 if (OnLeftTriggerRelease != null)
                 {
                     OnLeftTriggerRelease();
                 }
 
-                _leftTriggerPressed = false;
+                LeftTriggerPressed = false;
             }
 
-            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) <= RightTriggerRelease && _rightTriggerPressed)
+            if (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) <= RightTriggerRelease && RightTriggerPressed)
             {
                 if (OnRightTriggerRelease != null)
                 {
                     OnRightTriggerRelease();
                 }
 
-                _rightTriggerPressed = false;
+                RightTriggerPressed = false;
             }
         }
 

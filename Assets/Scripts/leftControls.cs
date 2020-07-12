@@ -1,42 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using Anivision.Core;
 
 public class leftControls : MonoBehaviour
 {
     public GameObject exitPanel;
-    private VRTK_ControllerEvents controllerEvents;
+    private InputManager _inputManager;
 
     private void OnEnable()
     {
         exitPanel.SetActive(true);
-        controllerEvents = GetComponent<VRTK_ControllerEvents>();
-        if (controllerEvents == null)
+
+        //Get singleton instance of input manager
+        _inputManager = InputManager.Instance;
+
+        if (_inputManager == null)
         {
-            VRTK_Logger.Error(VRTK_Logger.GetCommonMessage(VRTK_Logger.CommonMessageKeys.REQUIRED_COMPONENT_MISSING_FROM_GAMEOBJECT, "VRTK_ControllerEvents_ListenerExample", "VRTK_ControllerEvents", "the same"));
-            return;
+            throw new System.Exception("Must have Input Manager script in scene");
         }
 
-        controllerEvents.ButtonOnePressed += DoButtonOnePressed;
+        _inputManager.OnButtonXPress += DoButtonOnePressed;
+
     }
 
     private void OnDisable()
     {
-        if (controllerEvents != null)
+        if (_inputManager != null)
         {
-            controllerEvents.ButtonOnePressed -= DoButtonOnePressed;
+            _inputManager.OnButtonXPress -= DoButtonOnePressed;
         }
     }
 
-    private void DebugLogger(uint index, string button, string action, ControllerInteractionEventArgs e)
-    {
-        string debugString = "Controller on index '" + index + "' " + button + " has been " + action
-                             + " with a pressure of " + e.buttonPressure + " / Primary Touchpad axis at: " + e.touchpadAxis + " (" + e.touchpadAngle + " degrees)" + " / Secondary Touchpad axis at: " + e.touchpadTwoAxis + " (" + e.touchpadTwoAngle + " degrees)";
-        VRTK_Logger.Info(debugString);
-    }
-
-    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
+    private void DoButtonOnePressed()
     {
         if (!exitPanel.activeSelf)
         {
