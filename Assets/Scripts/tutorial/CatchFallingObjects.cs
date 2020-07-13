@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CatchFallingObjects : MonoBehaviour
 {
-
     private Vector3 originalPosition;
     private int originalY;
     private int originalZ;
@@ -21,7 +20,8 @@ public class CatchFallingObjects : MonoBehaviour
     {
         if (gameObject.transform.position.y <= minY)
         {
-            gameObject.transform.position = originalPosition;
+            GameObject g = Instantiate(gameObject, originalPosition, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

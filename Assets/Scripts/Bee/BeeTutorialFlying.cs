@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using Anivision.Core;
 
 public class BeeTutorialFlying : MonoBehaviour
 {
@@ -12,13 +12,18 @@ public class BeeTutorialFlying : MonoBehaviour
     public GameObject buttonAHighlight;                                                     // indicates which button to click
 
     private bool haptics = false;
-    private VRTK_ControllerEvents RControllerEvents;
-
+    private InputManager _inputManager;
 
     public void OnEnable()
     {
-        RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
-        RControllerEvents.ButtonOnePressed += DoRightButtonOnePressed;                       // 'A' button on right controller
+        _inputManager = InputManager.Instance;
+
+        if (_inputManager == null)
+        {
+            throw new System.Exception("Must have an input manager script in the scene");
+        }
+
+        if (_inputManager != null) _inputManager.OnButtonAPress += DoRightButtonOnePressed;
 
         beeLeftControls.SetActive(false);
         buttonAHighlight.SetActive(true);
@@ -32,7 +37,7 @@ public class BeeTutorialFlying : MonoBehaviour
         }
     }
 
-    private void DoRightButtonOnePressed(object sender, ControllerInteractionEventArgs e)
+    private void DoRightButtonOnePressed()
     {
         gameObject.GetComponent<MeshRenderer>().enabled = false;                                // turns off instructions panel
         StartCoroutine(WaitHaptics());
@@ -53,6 +58,6 @@ public class BeeTutorialFlying : MonoBehaviour
     public void Disable()
     {
         buttonAHighlight.SetActive(false);
-        RControllerEvents.ButtonOnePressed -= DoRightButtonOnePressed;                       // 'A' button on right controller
+        if (_inputManager != null) _inputManager.OnButtonAPress -= DoRightButtonOnePressed;                       // 'A' button on right controller
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using Anivision.Core;
 
 public class BeeTutorialNectar : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class BeeTutorialNectar : MonoBehaviour
     public GameObject gripHighlight;                                                                    // indicates which button to click
     public GameObject tutorialNectar;                                                                   // the nectar glob to pick up in the flower
 
-    private VRTK_ControllerEvents RControllerEvents;
+    private InputManager _inputManager;
     private bool isPressing = false;
     private Vector3 RControllerPoint;
     private Collider nectarCollider;
@@ -19,10 +19,21 @@ public class BeeTutorialNectar : MonoBehaviour
 
     public void OnEnable()
     {
+        _inputManager = InputManager.Instance;
+
+        if (_inputManager == null)
+        {
+            throw new System.Exception("Must have an input manager script in the scene");
+        }
+
         gripHighlight.SetActive(true);
-        RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
-        RControllerEvents.GripPressed += DoRightGripPressed;
-        RControllerEvents.GripReleased += DoRightGripReleased;
+
+        if (_inputManager != null)
+        {
+            _inputManager.OnRightGripPress += DoRightGripPressed;
+            _inputManager.OnRightGripRelease += DoRightGripReleased;
+        }
+            
         nectarCollider = tutorialNectar.GetComponent<Collider>();
     }
 
@@ -39,19 +50,23 @@ public class BeeTutorialNectar : MonoBehaviour
         }
     }
 
-    private void DoRightGripPressed(object sender, ControllerInteractionEventArgs e)
+    private void DoRightGripPressed()
     {
         isPressing = true;
     }
 
-    private void DoRightGripReleased(object sender, ControllerInteractionEventArgs e)
+    private void DoRightGripReleased()
     {
         isPressing = false;
     }
 
     public void OnDisable()
     {
-        RControllerEvents.GripPressed -= DoRightGripPressed;
-        RControllerEvents.GripReleased -= DoRightGripReleased;
+        if (_inputManager != null)
+        {
+            _inputManager.OnRightGripPress -= DoRightGripPressed;
+            _inputManager.OnRightGripRelease -= DoRightGripReleased;
+        }
+            
     }
 }

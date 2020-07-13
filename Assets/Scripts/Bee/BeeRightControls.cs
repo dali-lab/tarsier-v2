@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using Anivision.Core;
 
 public class BeeRightControls : MonoBehaviour
 {
@@ -17,30 +17,44 @@ public class BeeRightControls : MonoBehaviour
     public AudioSource windSound;
     public float speed = .06f;
 
-    private VRTK_ControllerEvents RControllerEvents;
+    private InputManager _inputManager;
     private bool isFlying = false;
     private bool isNormalSkybox = true;
 
     private void OnEnable()
     {
+        _inputManager = InputManager.Instance;
+
+        if (_inputManager == null)
+        {
+            throw new System.Exception("Must have an input manager script in the scene");
+        }
+
         windParticles.SetActive(false);
 
-        RController.GetComponent<VRTK_Pointer>().enabled = true;
-        RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = true;
+        // TODO: Replace VRTK teleport with our own systm
+        //RController.GetComponent<VRTK_Pointer>().enabled = true;
+        //RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = true;
 
-        RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
-        RControllerEvents.ButtonOnePressed += DoButtonOnePressed;
-        RControllerEvents.ButtonTwoPressed += DoButtonTwoPressed;
+        if (_inputManager != null)
+        {
+            _inputManager.OnButtonAPress += DoButtonOnePressed;
+            _inputManager.OnButtonBPress += DoButtonTwoPressed;
+        }
+            
+      
     }
 
-    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)                        // fly: trigger transition, toggle teleport
+    private void DoButtonOnePressed()                        // fly: trigger transition, toggle teleport
     {
         StartCoroutine(movementTransition());
-        RController.GetComponent<VRTK_Pointer>().enabled = !RController.GetComponent<VRTK_Pointer>().enabled;
-        RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = !RController.GetComponent<VRTK_StraightPointerRenderer>().enabled;
+
+        // TODO: Replace VRTK teleport with our own systm
+        //RController.GetComponent<VRTK_Pointer>().enabled = !RController.GetComponent<VRTK_Pointer>().enabled;
+        //RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = !RController.GetComponent<VRTK_StraightPointerRenderer>().enabled;
     }
 
-    private void DoButtonTwoPressed(object sender, ControllerInteractionEventArgs e)                        // vision: skybox swap
+    private void DoButtonTwoPressed()                        // vision: skybox swap
     {
         isNormalSkybox = !isNormalSkybox;
         SkyboxSwap();
@@ -97,5 +111,15 @@ public class BeeRightControls : MonoBehaviour
                 yield return null;
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        if (_inputManager != null)
+        {
+            _inputManager.OnButtonAPress -= DoButtonOnePressed;
+            _inputManager.OnButtonBPress -= DoButtonTwoPressed;
+        }
+        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using VRTK;
+using Anivision.Core;
+
 public class MaterialEventManager : MonoBehaviour 
 {
     public delegate void MaterialSwapAction(bool uVmode);
@@ -11,20 +12,34 @@ public class MaterialEventManager : MonoBehaviour
     public static bool isUV = false;
     private static bool locked = false;
 
+    private InputManager _inputManager;
+
     void Start()
     {
-        rightControllerAlias.GetComponent<VRTK_ControllerEvents>().ButtonTwoPressed += new ControllerInteractionEventHandler(DoButtonTwoPress);
-        rightControllerAlias.GetComponent<VRTK_ControllerEvents>().ButtonTwoReleased += new ControllerInteractionEventHandler(DoButtonTwoRelease);
+        _inputManager = InputManager.Instance;
+
+        if (_inputManager == null)
+        {
+            throw new System.Exception("There must be an input manager script in the scene");
+        }
+
+        if (_inputManager != null)
+        {
+            _inputManager.OnButtonBPress += DoButtonTwoPress;
+            _inputManager.OnButtonBRelease += DoButtonTwoRelease;
+        }
+           
+       
     }
 
-    void DoButtonTwoPress(object sender, ControllerInteractionEventArgs e)
+    void DoButtonTwoPress()
     {
         Debug.Log("we got a press here");
         SendMaterialSwapEvent();
         locked = true;
     }
 
-    void DoButtonTwoRelease(object sender, ControllerInteractionEventArgs e)
+    void DoButtonTwoRelease()
     {
         locked = false;
     }
@@ -44,6 +59,15 @@ public class MaterialEventManager : MonoBehaviour
 
     public static void UnlockPress() {
         locked = false;
+    }
+
+    private void OnDestroy()
+    {
+        if (_inputManager != null)
+        {
+            _inputManager.OnButtonBPress -= DoButtonTwoPress;
+            _inputManager.OnButtonBRelease -= DoButtonTwoRelease;
+        }
     }
 }
 

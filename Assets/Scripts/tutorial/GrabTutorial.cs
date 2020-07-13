@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
 
 public class GrabTutorial : TutorialBaseClass
 {
@@ -16,14 +15,9 @@ public class GrabTutorial : TutorialBaseClass
     public Animator tableAnim;
     public Animator gogglesAnim;
 
-    private VRTK_ControllerEvents RControllerEvents;
-    private VRTK_ControllerEvents LControllerEvents;
-
     // Start is called before the first frame update
     public override void Start()
     {
-        RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
-        LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
 
         textScreens[0].SetActive(true);
 
@@ -31,9 +25,10 @@ public class GrabTutorial : TutorialBaseClass
         table.SetActive(true);
         goggles.SetActive(true);
 
+        //TODO: Replace VRTK Grab with own grab system
         // turn on components to grab
-        RController.GetComponent<VRTK_InteractGrab>().enabled = true;
-        RController.GetComponent<VRTK_InteractTouch>().enabled = true;
+        //RController.GetComponent<VRTK_InteractGrab>().enabled = true;
+        //RController.GetComponent<VRTK_InteractTouch>().enabled = true;
 
         tableAnim.SetBool("on", true);
         gogglesAnim.SetBool("on", true);
@@ -75,9 +70,10 @@ public class GrabTutorial : TutorialBaseClass
         {
             goggles.SetActive(false);
         }
-        
+
+        //TODO: Replace VRTK Grab with own grab system
         // turn off components to grab
-        RController.GetComponent<VRTK_InteractGrab>().enabled = false;
-        RController.GetComponent<VRTK_InteractTouch>().enabled = false;
+        //RController.GetComponent<VRTK_InteractGrab>().enabled = false;
+        //RController.GetComponent<VRTK_InteractTouch>().enabled = false;
     }
 }
