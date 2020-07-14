@@ -35,12 +35,12 @@ public class Rotate : MonoBehaviour
         {
             if (RightHand)
             {
-                _inputManager.OnRightJoystickMonitor += RotateCamera;
+                _inputManager.AttachInputHandler(RotateCamera, InputManager.Joystick.RIGHT);
             }
 
             if (LeftHand)
             {
-                _inputManager.OnLeftJoystickMonitor += RotateCamera;
+                _inputManager.AttachInputHandler(RotateCamera, InputManager.Joystick.LEFT);
             }
         }
     }
@@ -74,12 +74,12 @@ public class Rotate : MonoBehaviour
         {
             if (RightHand)
             {
-                _inputManager.OnRightJoystickMonitor -= RotateCamera;
+                _inputManager.DetachInputHandler(RotateCamera, InputManager.Joystick.RIGHT);
             }
 
             if (LeftHand)
             {
-                _inputManager.OnLeftJoystickMonitor -= RotateCamera;
+                _inputManager.DetachInputHandler(RotateCamera, InputManager.Joystick.LEFT);
             }
         }
     }

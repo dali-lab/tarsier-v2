@@ -25,21 +25,21 @@ public class MaterialEventManager : MonoBehaviour
 
         if (_inputManager != null)
         {
-            _inputManager.OnButtonBPress += DoButtonTwoPress;
-            _inputManager.OnButtonBRelease += DoButtonTwoRelease;
+            _inputManager.AttachInputHandler(StartMaterialSwap, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+            _inputManager.AttachInputHandler(UnlockMaterialSwap, InputManager.InputState.ON_RELEASE, InputManager.Button.B);
         }
            
        
     }
 
-    void DoButtonTwoPress()
+    void StartMaterialSwap()
     {
         Debug.Log("we got a press here");
         SendMaterialSwapEvent();
         locked = true;
     }
 
-    void DoButtonTwoRelease()
+    void UnlockMaterialSwap()
     {
         locked = false;
     }
@@ -65,8 +65,8 @@ public class MaterialEventManager : MonoBehaviour
     {
         if (_inputManager != null)
         {
-            _inputManager.OnButtonBPress -= DoButtonTwoPress;
-            _inputManager.OnButtonBRelease -= DoButtonTwoRelease;
+            _inputManager.AttachInputHandler(StartMaterialSwap, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+            _inputManager.AttachInputHandler(UnlockMaterialSwap, InputManager.InputState.ON_RELEASE, InputManager.Button.B);
         }
     }
 }

@@ -21,7 +21,7 @@ public class rightControls : MonoBehaviour
         _inputManager = InputManager.Instance;
 
         if (_inputManager == null) throw new System.Exception("Must have Input Manager script in scene");
-        if (_inputManager != null) _inputManager.OnButtonAPress += DoButtonOnePressed;
+        if (_inputManager != null) _inputManager.AttachInputHandler(DoButtonOnePressed, InputManager.InputState.ON_PRESS, InputManager.Button.A);
 
     }
 
@@ -29,7 +29,7 @@ public class rightControls : MonoBehaviour
     {
         if (_inputManager != null)
         {
-            _inputManager.OnButtonAPress -= DoButtonOnePressed;
+            _inputManager.DetachInputHandler(DoButtonOnePressed, InputManager.InputState.ON_PRESS, InputManager.Button.A);
         }
         
     }

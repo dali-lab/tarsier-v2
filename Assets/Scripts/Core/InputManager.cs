@@ -261,7 +261,7 @@ namespace Anivision.Core
         /// <param name="callback"></param>
         /// <param name="state"></param>
         /// <param name="button"></param>
-        public void AttachInputEventHandler(UnityAction callback, InputState state, Button button)
+        public void AttachInputHandler(UnityAction callback, InputState state, Button button)
         {
             switch(state)
             {
@@ -289,7 +289,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="button"></param>
-        public void AttachInputEventHandler(UnityAction<float> callback, Trigger trigger)
+        public void AttachInputHandler(UnityAction<float> callback, Trigger trigger)
         {
             AttachTriggerMonitorCallback(callback, trigger);
         }
@@ -299,7 +299,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="button"></param>
-        public void AttachInputEventHandler(UnityAction<float> callback, Grip grip)
+        public void AttachInputHandler(UnityAction<float> callback, Grip grip)
         {
             AttachGripMonitorCallback(callback, grip);
         }
@@ -309,7 +309,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="joystick"></param>
-        public void AttachInputEventHandler(UnityAction<Vector2> callback, Joystick joystick)
+        public void AttachInputHandler(UnityAction<Vector2> callback, Joystick joystick)
         {
             AttachJoystickMonitorCallback(callback, joystick);
         }
@@ -319,7 +319,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="joystick"></param>
-        public void AttachInputEventHandler(UnityAction<Direction> callback, Joystick joystick)
+        public void AttachInputHandler(UnityAction<Direction> callback, Joystick joystick)
         {
             AttachJoystickMovementCallback(callback, joystick);
         }
@@ -331,7 +331,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="button"></param>
-        public void DetachInputEventHandler(UnityAction callback, InputState state, Button button)
+        public void DetachInputHandler(UnityAction callback, InputState state, Button button)
         {
             switch (state)
             {
@@ -359,7 +359,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="trigger"></param>
-        public void DetachInputEventHandler(UnityAction<float> callback, Trigger trigger)
+        public void DetachInputHandler(UnityAction<float> callback, Trigger trigger)
         {
             DetachTriggerMonitorCallback(callback, trigger);
         }
@@ -369,7 +369,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="grip"></param>
-        public void DetachInputEventHandler(UnityAction<float> callback, Grip grip)
+        public void DetachInputHandler(UnityAction<float> callback, Grip grip)
         {
             DetachGripMonitorCallback(callback, grip);
         }
@@ -379,7 +379,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="joystick"></param>
-        public void DetachInputEventHandler(UnityAction<Vector2> callback, Joystick joystick)
+        public void DetachInputHandler(UnityAction<Vector2> callback, Joystick joystick)
         {
             DetachJoystickMonitorCallback(callback, joystick);
         }
@@ -389,7 +389,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="joystick"></param>
-        public void DetachInputEventHandler(UnityAction<Direction> callback, Joystick joystick)
+        public void DetachInputHandler(UnityAction<Direction> callback, Joystick joystick)
         {
             DetachJoystickMovementCallback(callback, joystick);
         }

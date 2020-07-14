@@ -22,11 +22,11 @@ public class BeeTutorialGo : MonoBehaviour
             throw new System.Exception("Must have an input manager script in the scene");
         }
 
-        if (_inputManager != null) _inputManager.OnButtonXPress += DoLeftButtonOnePressed;
+        if (_inputManager != null) _inputManager.AttachInputHandler(StartSceneChange, InputManager.InputState.ON_PRESS, InputManager.Button.X);
         buttonXHighlight.SetActive(true);
     }
 
-    private void DoLeftButtonOnePressed()    // turns of indicator of which button to press and the panel, turns on the instructions text
+    private void StartSceneChange()    // turns of indicator of which button to press and the panel, turns on the instructions text
     {
         StartCoroutine(MoveToScene());
     }
@@ -43,6 +43,6 @@ public class BeeTutorialGo : MonoBehaviour
 
     public void OnDisable()
     {
-        if (_inputManager != null) _inputManager.OnButtonXPress -= DoLeftButtonOnePressed;
+        if (_inputManager != null) _inputManager.DetachInputHandler(StartSceneChange, InputManager.InputState.ON_PRESS, InputManager.Button.X);
     }
 }

@@ -78,40 +78,40 @@ namespace Anivision.Debug
         private void AttachCallbacks()
         {
             //attach button callbacks
-            if (DemoButtonPress) _InputManager.AttachInputEventHandler(OnButtonDown, InputManager.InputState.ON_PRESS, Button);
-            if (DemoButtonRelease) _InputManager.AttachInputEventHandler(OnButtonUp, InputManager.InputState.ON_RELEASE, Button);
-            if (DemoButtonTouchStart) _InputManager.AttachInputEventHandler(OnButtonTouchStart, InputManager.InputState.ON_TOUCH_START, Button);
-            if (DemoButtonTouchEnd) _InputManager.AttachInputEventHandler(OnButtonTouchEnd, InputManager.InputState.ON_TOUCH_END, Button);
+            if (DemoButtonPress) _InputManager.AttachInputHandler(OnButtonDown, InputManager.InputState.ON_PRESS, Button);
+            if (DemoButtonRelease) _InputManager.AttachInputHandler(OnButtonUp, InputManager.InputState.ON_RELEASE, Button);
+            if (DemoButtonTouchStart) _InputManager.AttachInputHandler(OnButtonTouchStart, InputManager.InputState.ON_TOUCH_START, Button);
+            if (DemoButtonTouchEnd) _InputManager.AttachInputHandler(OnButtonTouchEnd, InputManager.InputState.ON_TOUCH_END, Button);
 
             //attach joystick callbacks
-            if (DemoJoystickMovement) _InputManager.AttachInputEventHandler(OnJoystickMovement, Joystick);
-            if (DemoJoystickMonitor) _InputManager.AttachInputEventHandler(OnJoystickMonitor, Joystick);
+            if (DemoJoystickMovement) _InputManager.AttachInputHandler(OnJoystickMovement, Joystick);
+            if (DemoJoystickMonitor) _InputManager.AttachInputHandler(OnJoystickMonitor, Joystick);
 
             //attach trigger callback
-            if(DemoTriggerMonitor) _InputManager.AttachInputEventHandler(OnButtonMonitor, Trigger);
+            if(DemoTriggerMonitor) _InputManager.AttachInputHandler(OnButtonMonitor, Trigger);
 
             //attach grip callback
-            if (DemoGripMonitor) _InputManager.AttachInputEventHandler(OnButtonMonitor, Grip);
+            if (DemoGripMonitor) _InputManager.AttachInputHandler(OnButtonMonitor, Grip);
         }
 
         //detach the callbacks
         private void DetachCallbacks()
         {
             //detach button callbacks
-            if (DemoButtonPress) _InputManager.DetachInputEventHandler(OnButtonDown, InputManager.InputState.ON_PRESS, Button);
-            if (DemoButtonRelease) _InputManager.DetachInputEventHandler(OnButtonUp, InputManager.InputState.ON_RELEASE, Button);
-            if (DemoButtonTouchStart) _InputManager.DetachInputEventHandler(OnButtonTouchStart, InputManager.InputState.ON_TOUCH_START, Button);
-            if (DemoButtonTouchEnd) _InputManager.DetachInputEventHandler(OnButtonTouchEnd, InputManager.InputState.ON_TOUCH_END, Button);
+            if (DemoButtonPress) _InputManager.DetachInputHandler(OnButtonDown, InputManager.InputState.ON_PRESS, Button);
+            if (DemoButtonRelease) _InputManager.DetachInputHandler(OnButtonUp, InputManager.InputState.ON_RELEASE, Button);
+            if (DemoButtonTouchStart) _InputManager.DetachInputHandler(OnButtonTouchStart, InputManager.InputState.ON_TOUCH_START, Button);
+            if (DemoButtonTouchEnd) _InputManager.DetachInputHandler(OnButtonTouchEnd, InputManager.InputState.ON_TOUCH_END, Button);
 
             //detach joystick callbacks
-            if (DemoJoystickMovement) _InputManager.DetachInputEventHandler(OnJoystickMovement, Joystick);
-            if (DemoJoystickMonitor) _InputManager.DetachInputEventHandler(OnJoystickMonitor, Joystick);
+            if (DemoJoystickMovement) _InputManager.DetachInputHandler(OnJoystickMovement, Joystick);
+            if (DemoJoystickMonitor) _InputManager.DetachInputHandler(OnJoystickMonitor, Joystick);
 
             //detach trigger callback
-            if (DemoTriggerMonitor) _InputManager.DetachInputEventHandler(OnButtonMonitor, Trigger);
+            if (DemoTriggerMonitor) _InputManager.DetachInputHandler(OnButtonMonitor, Trigger);
 
             //detach grip callback
-            if (DemoGripMonitor) _InputManager.DetachInputEventHandler(OnButtonMonitor, Grip);
+            if (DemoGripMonitor) _InputManager.DetachInputHandler(OnButtonMonitor, Grip);
         }
 
 
