@@ -406,6 +406,31 @@ PrefabInstance:
       propertyPath: DemoButtonYTouch
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Button
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: m_Name
@@ -528,6 +553,31 @@ PrefabInstance:
     - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: DemoButtonXTouch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Button
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
@@ -762,14 +812,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969c9efa821bfb44caaac2077cd658b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightHand: 1
-  FadeSpeed: 4
-  HighlightObject: {fileID: 957455578}
-  buttonOneColor: {r: 1, g: 0, b: 0, a: 1}
-  buttonTwoColor: {r: 1, g: 0, b: 0, a: 1}
-  touchpadColor: {r: 1, g: 0, b: 0, a: 1}
-  triggerColor: {r: 1, g: 0, b: 0, a: 1}
-  gripColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &957455578
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +997,31 @@ PrefabInstance:
       propertyPath: DemoButtonBTouch
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Button
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: m_Name
@@ -1070,6 +1137,36 @@ PrefabInstance:
     - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: DemoRightGripTouch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Button
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoGripMonitor
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
@@ -1585,6 +1682,41 @@ PrefabInstance:
       propertyPath: DemoLeftTriggerMonitor
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Button
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoJoystickMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoJoystickMonitor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: m_Name
@@ -1632,12 +1764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d502fc1ad597aed46827d709d640f378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraRig: {fileID: 1947481229}
-  RightHand: 1
-  LeftHand: 1
-  increment: 15
-  deadZone: 0.165
-  waitTime: 0.2
 --- !u!4 &1775846096
 Transform:
   m_ObjectHideFlags: 0
@@ -6503,6 +6629,36 @@ PrefabInstance:
       propertyPath: DemoRightTriggerTouch
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Button
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoTriggerMonitor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: m_Name
@@ -6619,6 +6775,41 @@ PrefabInstance:
     - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: DemoLeftGripTouch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Button
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Grip
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoGripMonitor
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
@@ -6739,6 +6930,41 @@ PrefabInstance:
       propertyPath: DemoLeftTriggerTouch
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Button
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Trigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoTriggerMonitor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
       propertyPath: m_Name
@@ -6784,14 +7010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969c9efa821bfb44caaac2077cd658b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightHand: 0
-  FadeSpeed: 4
-  HighlightObject: {fileID: 185012605}
-  buttonOneColor: {r: 1, g: 0, b: 0, a: 1}
-  buttonTwoColor: {r: 1, g: 0, b: 0, a: 1}
-  touchpadColor: {r: 1, g: 0, b: 0, a: 1}
-  triggerColor: {r: 1, g: 0, b: 0, a: 1}
-  gripColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &2081480511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6893,6 +7111,46 @@ PrefabInstance:
         type: 3}
       propertyPath: DemoButtonATouch
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Button
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: Joystick
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoJoystickMovement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoJoystickMonitor
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
@@ -7013,6 +7271,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonPress
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonRelease
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1321916875248062310, guid: 0f1548931104c4b7bb337a1e0b66c92d,
+        type: 3}
+      propertyPath: DemoButtonTouchEnd
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1321916875248062313, guid: 0f1548931104c4b7bb337a1e0b66c92d,
         type: 3}
