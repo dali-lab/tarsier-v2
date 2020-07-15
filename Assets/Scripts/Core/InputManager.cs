@@ -20,7 +20,7 @@ namespace Anivision.Core
         RIGHT
     }
 
-    public enum Buttons
+    public enum Button
     {
         BUTTON_A,
         BUTTON_B,
@@ -218,29 +218,29 @@ namespace Anivision.Core
 
         //returns whether the button is currently pressed or not
         //the script calling this must call this function in its Update function, whether directly or by passing the function call up
-        public bool IsButtonPressed(Buttons b)
+        public bool IsButtonPressed(Button b)
         {
             switch (b)
             {
-                case Buttons.BUTTON_A:
+                case Button.BUTTON_A:
                     return OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.Touch); 
-                case Buttons.BUTTON_B:
+                case Button.BUTTON_B:
                     return OVRInput.Get(OVRInput.Button.Two, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_X:
+                case Button.BUTTON_X:
                     return OVRInput.Get(OVRInput.Button.Three, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_Y:
+                case Button.BUTTON_Y:
                     return OVRInput.Get(OVRInput.Button.Four, OVRInput.Controller.Touch);
-                case Buttons.RIGHT_TRIGGER:
+                case Button.RIGHT_TRIGGER:
                     return OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
-                case Buttons.LEFT_TRIGGER:
+                case Button.LEFT_TRIGGER:
                     return OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
-                case Buttons.RIGHT_GRIP:
+                case Button.RIGHT_GRIP:
                     return OVRInput.Get(OVRInput.Button.SecondaryHandTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
-                case Buttons.LEFT_GRIP:
+                case Button.LEFT_GRIP:
                     return OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
-                case Buttons.RIGHT_JOYSTICK:
+                case Button.RIGHT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Button.SecondaryThumbstick, OVRInput.Controller.Touch);
-                case Buttons.LEFT_JOYSTICK:
+                case Button.LEFT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.Touch);
                 default:
                     return false;
@@ -251,29 +251,29 @@ namespace Anivision.Core
         //returns whether the button is currently touched or not
         //the script calling this must call this function in its Update function, whether directly or by passing the function call up
         //grip buttons are not touch capacitive, so the user must be pressing the grip buttons with a force >= _gripTouchRegisterMinForce to return true
-        public bool IsButtonTouched(Buttons b)
+        public bool IsButtonTouched(Button b)
         {
             switch (b)
             {
-                case Buttons.BUTTON_A:
+                case Button.BUTTON_A:
                     return OVRInput.Get(OVRInput.Touch.One, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_B:
+                case Button.BUTTON_B:
                     return OVRInput.Get(OVRInput.Touch.Two, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_X:
+                case Button.BUTTON_X:
                     return OVRInput.Get(OVRInput.Touch.Three, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_Y:
+                case Button.BUTTON_Y:
                     return OVRInput.Get(OVRInput.Touch.Four, OVRInput.Controller.Touch);
-                case Buttons.RIGHT_TRIGGER:
+                case Button.RIGHT_TRIGGER:
                     return OVRInput.Get(OVRInput.Touch.SecondaryIndexTrigger, OVRInput.Controller.Touch);
-                case Buttons.LEFT_TRIGGER:
+                case Button.LEFT_TRIGGER:
                     return OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger, OVRInput.Controller.Touch);
-                case Buttons.RIGHT_GRIP:
+                case Button.RIGHT_GRIP:
                     return OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger, OVRInput.Controller.Touch) >= _gripTouchRegisterMinForce;
-                case Buttons.LEFT_GRIP:
+                case Button.LEFT_GRIP:
                     return OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.Touch) >= _gripTouchRegisterMinForce;
-                case Buttons.RIGHT_JOYSTICK:
+                case Button.RIGHT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Touch.SecondaryThumbstick, OVRInput.Controller.Touch);
-                case Buttons.LEFT_JOYSTICK:
+                case Button.LEFT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Touch.PrimaryThumbstick, OVRInput.Controller.Touch);
                 default:
                     return false;
