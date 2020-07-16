@@ -428,7 +428,7 @@ namespace Anivision.Core
                 case Button.LEFT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.Touch);
                 default:
-                    UnityEngine.Debug.Log("Error: Could not recognize button type when checking for press");
+                    UnityEngine.Debug.LogError("Error: Could not recognize button type when checking for press");
                     return false;
 
             }
@@ -468,7 +468,7 @@ namespace Anivision.Core
                 case Button.LEFT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Touch.PrimaryThumbstick, OVRInput.Controller.Touch);
                 default:
-                    UnityEngine.Debug.Log("Error: Could not recognize button type when checking for touch");
+                    UnityEngine.Debug.LogError("Error: Could not recognize button type when checking for touch");
                     return false;
 
             }
