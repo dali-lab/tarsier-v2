@@ -11,16 +11,22 @@ namespace Anivision.PlayerInteraction
         public OVRCameraRig cameraRig;
         [Tooltip("The transform from which the teleport raycast will eminate from. Probably the Left or Right Hand Anchor.")]
         public Transform rayOrigin;
+        [Header("Teleport Settings & Controls")]
         [Tooltip("The Layer Mask of layers that the teleportation raycast can collide with. (The ray will pass through layers not on this list).")]
-        public LayerMask layerMask;
+        public LayerMask validRaycastLayers;
         [Tooltip("The Layer Mask of layers that are valid destinations for a teleport. Players will only be able to teleport to objects on these layers.")]
-        public LayerMask validLayers;
+        public LayerMask validTeleportLayers;
         [Tooltip("The trigger used to determine when the player is attempting to teleport.")]
         public Button teleportButton;
         [Tooltip("How far the trigger must be pulled before a raycast occurs.")]
         public float teleportRange = 500f;
+        [Header("Renderer Settings")]
         [Tooltip("The line renderer to use to visualize the raycast.")]
         public LineRenderer lineRenderer;
+        [Tooltip("The color to give the line renderer when the teleport is valid.")]
+        public Color validColor = Color.green;
+        [Tooltip("The color to give the line renderer when the teleport is invalid.")]
+        public Color invalidColor = Color.red;
 
         // Whether the current teleportation attempt is valid (The raycast hit a layer in the 'validLayers' Layer Mask)
         private bool valid;
@@ -53,10 +59,10 @@ namespace Anivision.PlayerInteraction
 
                 // Send a raycast out from the rayOrigin
                 RaycastHit hit;
-                if (Physics.Raycast(rayOrigin.position, rayOrigin.rotation * Vector3.forward, out hit, teleportRange, layerMask))
+                if (Physics.Raycast(rayOrigin.position, rayOrigin.forward, out hit, teleportRange, validRaycastLayers))
                 {
                     // Determine if the hit game object's layer is one of the valid layers. (from https://answers.unity.com/questions/50279/check-if-layer-is-in-layermask.html)
-                    valid = validLayers == (validLayers | (1 << hit.transform.gameObject.layer));
+                    valid = validTeleportLayers == (validTeleportLayers | (1 << hit.transform.gameObject.layer));
                     // If the layer is valid, save the hit location
                     if (valid)
                     {
@@ -70,7 +76,7 @@ namespace Anivision.PlayerInteraction
                     // If raycast does not hit, then the teleport cannot be valid
                     valid = false;
                     // Set the second point on the renderer to the max distance in front of the origin
-                    points[1] = rayOrigin.position + rayOrigin.rotation * Vector3.forward * teleportRange;
+                    points[1] = rayOrigin.position + rayOrigin.forward * teleportRange;
                 }
                 // Update the line renderer's points
                 lineRenderer.SetPositions(points);
@@ -90,22 +96,26 @@ namespace Anivision.PlayerInteraction
                 lineRenderer.enabled = false;
             }
 
+            // Set the line renderer's color based on whether the teleport is valid
+            SetLineRendererColor(valid, validColor, invalidColor);
+        }
 
-
-            // Set the line renderer's color
+        // Set the line renderer's color based on whether the teleport is valid
+        private void SetLineRendererColor(bool valid, Color validColor, Color invalidColor)
+        {
             if (lineRenderer.enabled)
             {
                 if (valid)
                 {
                     // If the teleport is valid, make the line renderer green
-                    lineRenderer.startColor = Color.green;
-                    lineRenderer.endColor = Color.green;
+                    lineRenderer.startColor = validColor;
+                    lineRenderer.endColor = validColor;
                 }
                 else
                 {
                     // If the teleport is invalid, make the line renderer red
-                    lineRenderer.startColor = Color.red;
-                    lineRenderer.endColor = Color.red;
+                    lineRenderer.startColor = invalidColor;
+                    lineRenderer.endColor = invalidColor;
                 }
             }
         }
