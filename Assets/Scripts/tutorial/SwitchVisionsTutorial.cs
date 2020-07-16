@@ -82,7 +82,7 @@ public class SwitchVisionsTutorial : TutorialBaseClass
     // Update is called once per frame
     public override void Update()
     {
-        if (_inputManager.IsButtonPressed(Buttons.BUTTON_A))
+        if (_inputManager.IsButtonPressed(Button.BUTTON_A))
         {
             if (currentIndex == 0)
             {
