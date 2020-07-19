@@ -27,20 +27,13 @@ public class BeeTutorialNectar : MonoBehaviour
         }
 
         gripHighlight.SetActive(true);
-
-        if (_inputManager != null)
-        {
-            _inputManager.OnRightGripPress += DoRightGripPressed;
-            _inputManager.OnRightGripRelease += DoRightGripReleased;
-        }
-            
         nectarCollider = tutorialNectar.GetComponent<Collider>();
     }
 
     public void Update()
     {
         RControllerPoint = RController.transform.position;
-        if (isPressing == true && nectarCollider.bounds.Contains(RControllerPoint))     // check to see if player is grabbing the nectar glob
+        if (_inputManager.IsButtonPressed(InputManager.Button.RIGHT_GRIP) && nectarCollider.bounds.Contains(RControllerPoint))     // check to see if player is grabbing the nectar glob
         {
             tutorialNectar.SetActive(false);
             nectarBar.GetComponent<NectarUI>().addHealth(1);                            // set health to max
@@ -50,23 +43,4 @@ public class BeeTutorialNectar : MonoBehaviour
         }
     }
 
-    private void DoRightGripPressed()
-    {
-        isPressing = true;
-    }
-
-    private void DoRightGripReleased()
-    {
-        isPressing = false;
-    }
-
-    public void OnDisable()
-    {
-        if (_inputManager != null)
-        {
-            _inputManager.OnRightGripPress -= DoRightGripPressed;
-            _inputManager.OnRightGripRelease -= DoRightGripReleased;
-        }
-            
-    }
 }

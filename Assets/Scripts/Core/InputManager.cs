@@ -6,36 +6,64 @@ using UnityEngine.Events;
 namespace Anivision.Core
 {
     /// <summary>
-    /// This script allows other scripts to subscribe to events that are executed when buttons on the
-    /// Oculus Touch Controllers are pressed, released, and touched
-    /// Also allows scripts to subscribe to events when joystick is moved
+    /// The InputManager script allows other scripts to subscribe to events that are executed when buttons on the
+    /// Oculus Touch Controllers are pressed, released, and touched.
+    /// Also allows scripts to subscribe to events when joystick is moved.
+    /// Basically a wrapper for OVRInput.
     ///
     /// </summary>
 
-    public enum JoystickMovement
-    {
-        UP,
-        DOWN,
-        LEFT,
-        RIGHT
-    }
-
-    public enum Buttons
-    {
-        BUTTON_A,
-        BUTTON_B,
-        BUTTON_X,
-        BUTTON_Y,
-        RIGHT_TRIGGER,
-        LEFT_TRIGGER,
-        RIGHT_GRIP,
-        LEFT_GRIP,
-        RIGHT_JOYSTICK,
-        LEFT_JOYSTICK
-    }
-
     public sealed class InputManager : MonoBehaviour
     {
+
+        public enum Direction
+        {
+            UP,
+            DOWN,
+            LEFT,
+            RIGHT
+        }
+
+        public enum InputState
+        {
+            ON_PRESS,
+            ON_RELEASE,
+            ON_TOUCH_START,
+            ON_TOUCH_END
+
+        }
+
+        public enum Button
+        {
+            A,
+            B,
+            X,
+            Y,
+            RIGHT_TRIGGER,
+            LEFT_TRIGGER,
+            RIGHT_GRIP,
+            LEFT_GRIP,
+            RIGHT_JOYSTICK,
+            LEFT_JOYSTICK
+        }
+
+        public enum Trigger
+        {
+            RIGHT,
+            LEFT
+        }
+
+        public enum Grip
+        {
+            RIGHT,
+            LEFT
+        }
+
+        public enum Joystick
+        {
+            RIGHT,
+            LEFT
+        }
 
         public static InputManager Instance { get; private set; }
 
@@ -58,57 +86,67 @@ namespace Anivision.Core
         public UnityAction<bool> onHasController = null; //Called when controllers' connection state changes
 
         //------------------------Right Controller Events--------------------------------------------------------//
-        public UnityAction OnButtonAPress = null; //Button A Pressed
-        public UnityAction OnButtonARelease = null; //Button A Released
-        public UnityAction<bool> OnButtonATouch = null; //Button A Touch state has changed
+        private UnityAction OnButtonAPress = null; //Button A Pressed
+        private UnityAction OnButtonARelease = null; //Button A Released
+        private UnityAction OnButtonATouchStart = null; //Button A touch has been detected
+        private UnityAction OnButtonATouchEnd = null; //Button A touch has ended
 
-        public UnityAction OnButtonBPress = null; //Button B Pressed
-        public UnityAction OnButtonBRelease = null; //Button B Released
-        public UnityAction<bool> OnButtonBTouch = null; //Button B Touch state has changed
+        private UnityAction OnButtonBPress = null; //Button B Pressed
+        private UnityAction OnButtonBRelease = null; //Button B Released
+        private UnityAction OnButtonBTouchStart = null; //Button B touch has been detected
+        private UnityAction OnButtonBTouchEnd = null; //Button B touch has ended
 
-        public UnityAction OnRightJoystickPress = null; //Right Joystick Pressed
-        public UnityAction OnRightJoystickRelease = null; //Right Joystick Released
-        public UnityAction<bool> OnRightJoystickTouch = null; //Right joystick touch state has changed
+        private UnityAction OnRightJoystickPress = null; //Right Joystick Pressed
+        private UnityAction OnRightJoystickRelease = null; //Right Joystick Released
+        private UnityAction OnRightJoystickTouchStart = null; //Right joystick touch has been detected
+        private UnityAction OnRightJoystickTouchEnd = null; //Right joystick touch has ended
 
-        public UnityAction<JoystickMovement> OnRightJoystickMovement = null; //Right Joystick moved more than halfway in a direction
-        public UnityAction<Vector2> OnRightJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
+        private UnityAction<Direction> OnRightJoystickMovement = null; //Right Joystick moved more than halfway in a direction
+        private UnityAction<Vector2> OnRightJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
 
-        public UnityAction OnRightGripPress = null; //Right Grip Button Pressed
-        public UnityAction OnRightGripRelease = null; //Right Grip Button Released
-        public UnityAction<bool> OnRightGripTouch = null; //Right grip touch state has changed
-        public UnityAction<float> RightGripMonitor = null; //Monitor force on right grip button
+        private UnityAction OnRightGripPress = null; //Right Grip Button Pressed
+        private UnityAction OnRightGripRelease = null; //Right Grip Button Released
+        private UnityAction OnRightGripTouchStart = null; //Right grip touch state has changed
+        private UnityAction OnRightGripTouchEnd = null; //Right grip touch state has changed
+        private UnityAction<float> OnRightGripMonitor = null; //Monitor force on right grip button
 
-        public UnityAction OnRightTriggerPress = null; //Right Trigger Button Pressed
-        public UnityAction OnRightTriggerRelease = null; //Right Trigger Button Released
-        public UnityAction<bool> OnRightTriggerTouch = null; //Right trigger touch state has changed
-        public UnityAction<float> RightTriggerMonitor = null; //Monitor force on right trigger button
+        private UnityAction OnRightTriggerPress = null; //Right Trigger Button Pressed
+        private UnityAction OnRightTriggerRelease = null; //Right Trigger Button Released
+        private UnityAction OnRightTriggerTouchStart = null; //Right trigger touch has been detected
+        private UnityAction OnRightTriggerTouchEnd = null; //Right trigger touch has ended
+        private UnityAction<float> OnRightTriggerMonitor = null; //Monitor force on right trigger button
 
 
         //------------------------Left Controller Events--------------------------------------------------------//
-        public UnityAction OnButtonXPress = null; //Button X Pressed
-        public UnityAction OnButtonXRelease = null; //Button X Released
-        public UnityAction<bool> OnButtonXTouch = null; //Button X touch state has changed
+        private UnityAction OnButtonXPress = null; //Button X Pressed
+        private UnityAction OnButtonXRelease = null; //Button X Released
+        private UnityAction OnButtonXTouchStart = null; //Button X touch has been detected
+        private UnityAction OnButtonXTouchEnd = null; //Button X touch has ended
 
-        public UnityAction OnButtonYPress = null; //Button Y Pressed
-        public UnityAction OnButtonYRelease = null; //Button Y Released
-        public UnityAction<bool> OnButtonYTouch = null; //Button Y touch state has changed
+        private UnityAction OnButtonYPress = null; //Button Y Pressed
+        private UnityAction OnButtonYRelease = null; //Button Y Released
+        private UnityAction OnButtonYTouchStart = null; //Button Y touch has been detected
+        private UnityAction OnButtonYTouchEnd = null; //Button Y touch has ended
 
-        public UnityAction OnLeftJoystickPress = null; //Left Joystick Pressed
-        public UnityAction OnLeftJoystickRelease = null; //Left Joystick Released
-        public UnityAction<bool> OnLeftJoystickTouch = null; //Left joystick touch state has changed
+        private UnityAction OnLeftJoystickPress = null; //Left Joystick Pressed
+        private UnityAction OnLeftJoystickRelease = null; //Left Joystick Released
+        private UnityAction OnLeftJoystickTouchStart = null; //Left joystick touch has been detected
+        private UnityAction OnLeftJoystickTouchEnd = null; //Left joystick touch has ended
 
-        public UnityAction<JoystickMovement> OnLeftJoystickMovement = null; //Left Joystick moved more than halfway in a direction       
-        public UnityAction<Vector2> OnLeftJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
+        private UnityAction<Direction> OnLeftJoystickMovement = null; //Left Joystick moved more than halfway in a direction       
+        private UnityAction<Vector2> OnLeftJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
 
-        public UnityAction OnLeftGripPress = null; //Left grip button Pressed
-        public UnityAction OnLeftGripRelease = null; //Left grip button Released
-        public UnityAction<bool> OnLeftGripTouch = null; //Left grip touch state has changed
-        public UnityAction<float> LeftGripMonitor = null; //Monitor force on left grip button
+        private UnityAction OnLeftGripPress = null; //Left grip button Pressed
+        private UnityAction OnLeftGripRelease = null; //Left grip button Released
+        private UnityAction OnLeftGripTouchStart = null; //Left grip touch state has changed
+        private UnityAction OnLeftGripTouchEnd = null; //Left grip touch state has changed
+        private UnityAction<float> OnLeftGripMonitor = null; //Monitor force on left grip button
 
-        public UnityAction OnLeftTriggerPress = null; //Left Trigger Button Pressed
-        public UnityAction OnLeftTriggerRelease = null; //Left Trigger Button Released
-        public UnityAction<bool> OnLeftTriggerTouch = null; //Left trigger touch state has changed
-        public UnityAction<float> LeftTriggerMonitor = null; //Monitor force on left trigger button
+        private UnityAction OnLeftTriggerPress = null; //Left Trigger Button Pressed
+        private UnityAction OnLeftTriggerRelease = null; //Left Trigger Button Released
+        private UnityAction OnLeftTriggerTouchStart = null; //Left trigger touch has been detected
+        private UnityAction OnLeftTriggerTouchEnd = null; //Left trigger touch has ended
+        private UnityAction<float> OnLeftTriggerMonitor = null; //Monitor force on left trigger button
 
         //------------------------Touch Booleans--------------------------------------------------------//
         public bool ButtonATouched { get; private set; } //whether button A is currently touched or not
@@ -174,8 +212,8 @@ namespace Anivision.Core
         private bool _hasControllers = false;
         private bool _inputActive = true;
         private float _gripTouchRegisterMinForce = 0.0000000001f; // Grip buttons are not touch capacitive, therefore the grip touch callbacks will be called
-                                                           // if the user presses the grip buttons with a force >= _gripTouchRegisterMinForce
-
+                                                                  // if the user presses the grip buttons with a force >= _gripTouchRegisterMinForce
+ 
         private void Awake()
         {
             if (Instance != null)
@@ -190,7 +228,6 @@ namespace Anivision.Core
             }
         }
 
-        // Update is called once per frame
         void Update()
         {
             if (!_inputActive) return;
@@ -216,66 +253,222 @@ namespace Anivision.Core
             OVRManager.HMDUnmounted -= PlayerLost;
         }
 
-        //returns whether the button is currently pressed or not
-        //the script calling this must call this function in its Update function, whether directly or by passing the function call up
-        public bool IsButtonPressed(Buttons b)
+        //----------------------------PUBLIC FUNCTIONS TO ATTACH CALLBACKS----------------------------------------//
+
+        /// <summary>
+        /// Attach a callback that will be called whenever the button has entered the specified state
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="state"></param>
+        /// <param name="button"></param>
+        public void AttachInputHandler(UnityAction callback, InputState state, Button button)
         {
-            switch (b)
+            switch(state)
             {
-                case Buttons.BUTTON_A:
+                case InputState.ON_PRESS:
+                    AttachPressCallback(callback, button);
+                    break;
+                case InputState.ON_RELEASE:
+                    AttachReleaseCallback(callback, button);
+                    break;
+                case InputState.ON_TOUCH_START:
+                    AttachTouchStartCallback(callback, button);
+                    break;
+                case InputState.ON_TOUCH_END:
+                    AttachTouchEndCallback(callback, button);
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Cannot attach input event handler. Unable to recognize specified input state: " + state);
+                    break;
+
+            }
+        }
+
+        /// <summary>
+        /// Attach a callback to monitor the force applied to the specified trigger
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="button"></param>
+        public void AttachInputHandler(UnityAction<float> callback, Trigger trigger)
+        {
+            AttachTriggerMonitorCallback(callback, trigger);
+        }
+
+        /// <summary>
+        /// Attach a callback to monitor the force applied to the specified grip
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="button"></param>
+        public void AttachInputHandler(UnityAction<float> callback, Grip grip)
+        {
+            AttachGripMonitorCallback(callback, grip);
+        }
+
+        /// <summary>
+        /// Attach a callback to monitor the movement of the specified joystick
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="joystick"></param>
+        public void AttachInputHandler(UnityAction<Vector2> callback, Joystick joystick)
+        {
+            AttachJoystickMonitorCallback(callback, joystick);
+        }
+
+        /// <summary>
+        /// Attach a callback that will be called whenever the joystick moves more than halfway in any direction
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="joystick"></param>
+        public void AttachInputHandler(UnityAction<Direction> callback, Joystick joystick)
+        {
+            AttachJoystickMovementCallback(callback, joystick);
+        }
+
+        //----------------------------PUBLIC FUNCTIONS TO DETACH CALLBACKS----------------------------------------------------//
+
+        /// <summary>
+        /// Detach callback
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="button"></param>
+        public void DetachInputHandler(UnityAction callback, InputState state, Button button)
+        {
+            switch (state)
+            {
+                case InputState.ON_PRESS:
+                    DetachPressCallback(callback, button);
+                    break;
+                case InputState.ON_RELEASE:
+                    DetachReleaseCallback(callback, button);
+                    break;
+                case InputState.ON_TOUCH_START:
+                    DetachTouchStartCallback(callback, button);
+                    break;
+                case InputState.ON_TOUCH_END:
+                    DetachTouchEndCallback(callback, button);
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Cannot detach input event handler. Unable to recognize specified input state: " + state);
+                    break;
+
+            }
+        }
+
+        /// <summary>
+        /// Detach callback
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="trigger"></param>
+        public void DetachInputHandler(UnityAction<float> callback, Trigger trigger)
+        {
+            DetachTriggerMonitorCallback(callback, trigger);
+        }
+
+        /// <summary>
+        /// Detach callback
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="grip"></param>
+        public void DetachInputHandler(UnityAction<float> callback, Grip grip)
+        {
+            DetachGripMonitorCallback(callback, grip);
+        }
+
+        /// <summary>
+        /// Detach callback
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="joystick"></param>
+        public void DetachInputHandler(UnityAction<Vector2> callback, Joystick joystick)
+        {
+            DetachJoystickMonitorCallback(callback, joystick);
+        }
+
+        /// <summary>
+        /// Detach callback
+        /// </summary>
+        /// <param name="callback"></param>
+        /// <param name="joystick"></param>
+        public void DetachInputHandler(UnityAction<Direction> callback, Joystick joystick)
+        {
+            DetachJoystickMovementCallback(callback, joystick);
+        }
+
+
+        //------------------------PUBLIC FUNCTIONS TO CHECK THE STATE OF BUTTONS, TRIGGERS, AND GRIPS-------------------------------//
+
+        /// <summary>
+        /// Returns whether the button is currently pressed or not. The script calling this
+        /// must call this function in its Update function, whether directly or by passing the function call up.
+        /// </summary>
+        /// <param name="button"></param>
+        /// <returns>A boolean on whether the button is being pressed or not</returns>
+        public bool IsButtonPressed(Button button)
+        {
+            switch (button)
+            {
+                case Button.A:
                     return OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.Touch); 
-                case Buttons.BUTTON_B:
+                case Button.B:
                     return OVRInput.Get(OVRInput.Button.Two, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_X:
+                case Button.X:
                     return OVRInput.Get(OVRInput.Button.Three, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_Y:
+                case Button.Y:
                     return OVRInput.Get(OVRInput.Button.Four, OVRInput.Controller.Touch);
-                case Buttons.RIGHT_TRIGGER:
+                case Button.RIGHT_TRIGGER:
                     return OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
-                case Buttons.LEFT_TRIGGER:
+                case Button.LEFT_TRIGGER:
                     return OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
-                case Buttons.RIGHT_GRIP:
+                case Button.RIGHT_GRIP:
                     return OVRInput.Get(OVRInput.Button.SecondaryHandTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
-                case Buttons.LEFT_GRIP:
+                case Button.LEFT_GRIP:
                     return OVRInput.Get(OVRInput.Button.PrimaryHandTrigger, OVRInput.Controller.Touch); //returns true if pressed more than halfway
-                case Buttons.RIGHT_JOYSTICK:
+                case Button.RIGHT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Button.SecondaryThumbstick, OVRInput.Controller.Touch);
-                case Buttons.LEFT_JOYSTICK:
+                case Button.LEFT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.Touch);
                 default:
+                    UnityEngine.Debug.LogError("Error: Could not recognize button type when checking for press");
                     return false;
 
             }
         }
 
-        //returns whether the button is currently touched or not
-        //the script calling this must call this function in its Update function, whether directly or by passing the function call up
-        //grip buttons are not touch capacitive, so the user must be pressing the grip buttons with a force >= _gripTouchRegisterMinForce to return true
-        public bool IsButtonTouched(Buttons b)
+        /// <summary>
+        /// Returns whether the button is currently touched or not. The script calling this
+        /// must call this function in its Update function, whether directly or by passing the function call up.
+        /// Grip buttons are not touch capacitive, so the user must be pressing the grip buttons with a force greater than or equal to
+        /// _gripTouchRegisterMinForce to return true.
+        /// </summary>
+        /// <param name="button"></param>
+        /// <returns>A boolean on whether the button is being touched or not</returns>
+        
+        public bool IsButtonTouched(Button button)
         {
-            switch (b)
+            switch (button)
             {
-                case Buttons.BUTTON_A:
+                case Button.A:
                     return OVRInput.Get(OVRInput.Touch.One, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_B:
+                case Button.B:
                     return OVRInput.Get(OVRInput.Touch.Two, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_X:
+                case Button.X:
                     return OVRInput.Get(OVRInput.Touch.Three, OVRInput.Controller.Touch);
-                case Buttons.BUTTON_Y:
+                case Button.Y:
                     return OVRInput.Get(OVRInput.Touch.Four, OVRInput.Controller.Touch);
-                case Buttons.RIGHT_TRIGGER:
+                case Button.RIGHT_TRIGGER:
                     return OVRInput.Get(OVRInput.Touch.SecondaryIndexTrigger, OVRInput.Controller.Touch);
-                case Buttons.LEFT_TRIGGER:
+                case Button.LEFT_TRIGGER:
                     return OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger, OVRInput.Controller.Touch);
-                case Buttons.RIGHT_GRIP:
+                case Button.RIGHT_GRIP:
                     return OVRInput.Get(OVRInput.Axis1D.SecondaryHandTrigger, OVRInput.Controller.Touch) >= _gripTouchRegisterMinForce;
-                case Buttons.LEFT_GRIP:
+                case Button.LEFT_GRIP:
                     return OVRInput.Get(OVRInput.Axis1D.PrimaryHandTrigger, OVRInput.Controller.Touch) >= _gripTouchRegisterMinForce;
-                case Buttons.RIGHT_JOYSTICK:
+                case Button.RIGHT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Touch.SecondaryThumbstick, OVRInput.Controller.Touch);
-                case Buttons.LEFT_JOYSTICK:
+                case Button.LEFT_JOYSTICK:
                     return OVRInput.Get(OVRInput.Touch.PrimaryThumbstick, OVRInput.Controller.Touch);
                 default:
+                    UnityEngine.Debug.LogError("Error: Could not recognize button type when checking for touch");
                     return false;
 
             }
@@ -283,6 +476,470 @@ namespace Anivision.Core
 
         //----INTERNAL FUNCTIONS TO CHECK THE STATE OF BUTTONS, TRIGGERS, GRIPS, AND JOYSTICKS OF CONTROLLERS AND CALL CORRESPONDING CALLBACKS----//
 
+        //attach callback to specific button's on-press UnityAction
+        private void AttachPressCallback(UnityAction callback, Button button)
+        {
+            switch (button)
+            {
+                case Button.A:
+                    OnButtonAPress += callback;
+                    break;
+                case Button.B:
+                    OnButtonBPress += callback;
+                    break;
+                case Button.X:
+                    OnButtonXPress += callback;
+                    break;
+                case Button.Y:
+                    OnButtonYPress += callback;
+                    break;
+                case Button.LEFT_GRIP:
+                    OnLeftGripPress += callback;
+                    break;
+                case Button.RIGHT_GRIP:
+                    OnRightGripPress += callback;
+                    break;
+                case Button.LEFT_TRIGGER:
+                    OnLeftTriggerPress += callback;
+                    break;
+                case Button.RIGHT_TRIGGER:
+                    OnRightTriggerPress += callback;
+                    break;
+                case Button.LEFT_JOYSTICK:
+                    OnLeftJoystickPress += callback;
+                    break;
+                case Button.RIGHT_JOYSTICK:
+                    OnRightJoystickPress += callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach press callback to specified button: " + button);
+                    break;
+            }
+        }
+
+        //detach callback from specific button's on-press UnityAction
+        private void DetachPressCallback(UnityAction callback, Button button)
+        {
+            switch (button)
+            {
+                case Button.A:
+                    OnButtonAPress -= callback;
+                    break;
+                case Button.B:
+                    OnButtonBPress -= callback;
+                    break;
+                case Button.X:
+                    OnButtonXPress -= callback;
+                    break;
+                case Button.Y:
+                    OnButtonYPress -= callback;
+                    break;
+                case Button.LEFT_GRIP:
+                    OnLeftGripPress -= callback;
+                    break;
+                case Button.RIGHT_GRIP:
+                    OnRightGripPress -= callback;
+                    break;
+                case Button.LEFT_TRIGGER:
+                    OnLeftTriggerPress -= callback;
+                    break;
+                case Button.RIGHT_TRIGGER:
+                    OnRightTriggerPress -= callback;
+                    break;
+                case Button.LEFT_JOYSTICK:
+                    OnLeftJoystickPress -= callback;
+                    break;
+                case Button.RIGHT_JOYSTICK:
+                    OnRightJoystickPress -= callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to detach press callback to specified button: " + button);
+                    break;
+            }
+        }
+
+        //attach callback to specific button's on-release UnityAction
+        private void AttachReleaseCallback(UnityAction callback, Button button)
+        {
+            switch (button)
+            {
+                case Button.A:
+                    OnButtonARelease += callback;
+                    break;
+                case Button.B:
+                    OnButtonBRelease += callback;
+                    break;
+                case Button.X:
+                    OnButtonXRelease += callback;
+                    break;
+                case Button.Y:
+                    OnButtonYRelease += callback;
+                    break;
+                case Button.LEFT_GRIP:
+                    OnLeftGripRelease += callback;
+                    break;
+                case Button.RIGHT_GRIP:
+                    OnRightGripRelease += callback;
+                    break;
+                case Button.LEFT_TRIGGER:
+                    OnLeftTriggerRelease += callback;
+                    break;
+                case Button.RIGHT_TRIGGER:
+                    OnRightTriggerRelease += callback;
+                    break;
+                case Button.LEFT_JOYSTICK:
+                    OnLeftJoystickRelease += callback;
+                    break;
+                case Button.RIGHT_JOYSTICK:
+                    OnRightJoystickRelease += callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach release callback to specified button: " + button);
+                    break;
+            }
+        }
+
+        //detach callback from specific button's on-release UnityAction
+        private void DetachReleaseCallback(UnityAction callback, Button button)
+        {
+            switch (button)
+            {
+                case Button.A:
+                    OnButtonARelease -= callback;
+                    break;
+                case Button.B:
+                    OnButtonBRelease -= callback;
+                    break;
+                case Button.X:
+                    OnButtonXRelease -= callback;
+                    break;
+                case Button.Y:
+                    OnButtonYRelease -= callback;
+                    break;
+                case Button.LEFT_GRIP:
+                    OnLeftGripRelease -= callback;
+                    break;
+                case Button.RIGHT_GRIP:
+                    OnRightGripRelease -= callback;
+                    break;
+                case Button.LEFT_TRIGGER:
+                    OnLeftTriggerRelease -= callback;
+                    break;
+                case Button.RIGHT_TRIGGER:
+                    OnRightTriggerRelease -= callback;
+                    break;
+                case Button.LEFT_JOYSTICK:
+                    OnLeftJoystickRelease -= callback;
+                    break;
+                case Button.RIGHT_JOYSTICK:
+                    OnRightJoystickRelease -= callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach release callback to specified button: " + button);
+                    break;
+            }
+        }
+
+        //attach callback to specific button's on touch start UnityAction
+        private void AttachTouchStartCallback(UnityAction callback, Button button)
+        {
+            switch (button)
+            {
+                case Button.A:
+                    OnButtonATouchStart += callback;
+                    break;
+                case Button.B:
+                    OnButtonBTouchStart += callback;
+                    break;
+                case Button.X:
+                    OnButtonXTouchStart += callback;
+                    break;
+                case Button.Y:
+                    OnButtonYTouchStart += callback;
+                    break;
+                case Button.LEFT_GRIP:
+                    OnLeftGripTouchStart += callback;
+                    break;
+                case Button.RIGHT_GRIP:
+                    OnRightGripTouchStart += callback;
+                    break;
+                case Button.LEFT_TRIGGER:
+                    OnLeftTriggerTouchStart += callback;
+                    break;
+                case Button.RIGHT_TRIGGER:
+                    OnRightTriggerTouchStart += callback;
+                    break;
+                case Button.LEFT_JOYSTICK:
+                    OnLeftJoystickTouchStart += callback;
+                    break;
+                case Button.RIGHT_JOYSTICK:
+                    OnRightJoystickTouchStart += callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach touch start callback to specified button: " + button);
+                    break;
+            }
+        }
+
+        //detach callback from specific button's on touch start UnityAction
+        private void DetachTouchStartCallback(UnityAction callback, Button button)
+        {
+            switch (button)
+            {
+                case Button.A:
+                    OnButtonATouchStart -= callback;
+                    break;
+                case Button.B:
+                    OnButtonBTouchStart -= callback;
+                    break;
+                case Button.X:
+                    OnButtonXTouchStart -= callback;
+                    break;
+                case Button.Y:
+                    OnButtonYTouchStart -= callback;
+                    break;
+                case Button.LEFT_GRIP:
+                    OnLeftGripTouchStart -= callback;
+                    break;
+                case Button.RIGHT_GRIP:
+                    OnRightGripTouchStart -= callback;
+                    break;
+                case Button.LEFT_TRIGGER:
+                    OnLeftTriggerTouchStart -= callback;
+                    break;
+                case Button.RIGHT_TRIGGER:
+                    OnRightTriggerTouchStart -= callback;
+                    break;
+                case Button.LEFT_JOYSTICK:
+                    OnLeftJoystickTouchStart -= callback;
+                    break;
+                case Button.RIGHT_JOYSTICK:
+                    OnRightJoystickTouchStart -= callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to detach touch start callback to specified button: " + button);
+                    break;
+            }
+        }
+
+
+        //attach callback to specific button's on touch end UnityAction
+        private void AttachTouchEndCallback(UnityAction callback, Button button)
+        {
+            switch (button)
+            {
+                case Button.A:
+                    OnButtonATouchEnd += callback;
+                    break;
+                case Button.B:
+                    OnButtonBTouchEnd += callback;
+                    break;
+                case Button.X:
+                    OnButtonXTouchEnd += callback;
+                    break;
+                case Button.Y:
+                    OnButtonYTouchEnd += callback;
+                    break;
+                case Button.LEFT_GRIP:
+                    OnLeftGripTouchEnd += callback;
+                    break;
+                case Button.RIGHT_GRIP:
+                    OnRightGripTouchEnd += callback;
+                    break;
+                case Button.LEFT_TRIGGER:
+                    OnLeftTriggerTouchEnd += callback;
+                    break;
+                case Button.RIGHT_TRIGGER:
+                    OnRightTriggerTouchEnd += callback;
+                    break;
+                case Button.LEFT_JOYSTICK:
+                    OnLeftJoystickTouchEnd += callback;
+                    break;
+                case Button.RIGHT_JOYSTICK:
+                    OnRightJoystickTouchEnd += callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach touch end callback to specified button: " + button);
+                    break;
+            }
+        }
+
+        //detach callback to specific button's on touch end UnityAction
+        private void DetachTouchEndCallback(UnityAction callback, Button button)
+        {
+            switch (button)
+            {
+                case Button.A:
+                    OnButtonATouchEnd -= callback;
+                    break;
+                case Button.B:
+                    OnButtonBTouchEnd -= callback;
+                    break;
+                case Button.X:
+                    OnButtonXTouchEnd -= callback;
+                    break;
+                case Button.Y:
+                    OnButtonYTouchEnd -= callback;
+                    break;
+                case Button.LEFT_GRIP:
+                    OnLeftGripTouchEnd -= callback;
+                    break;
+                case Button.RIGHT_GRIP:
+                    OnRightGripTouchEnd -= callback;
+                    break;
+                case Button.LEFT_TRIGGER:
+                    OnLeftTriggerTouchEnd -= callback;
+                    break;
+                case Button.RIGHT_TRIGGER:
+                    OnRightTriggerTouchEnd -= callback;
+                    break;
+                case Button.LEFT_JOYSTICK:
+                    OnLeftJoystickTouchEnd -= callback;
+                    break;
+                case Button.RIGHT_JOYSTICK:
+                    OnRightJoystickTouchEnd -= callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to detach touch end callback to specified button: " + button);
+                    break;
+            }
+        }
+
+        //attach callback to trigger button's on monitor UnityAction
+        private void AttachTriggerMonitorCallback(UnityAction<float> callback, Trigger trigger)
+        {
+            switch (trigger)
+            {
+                case Trigger.RIGHT:
+                    OnRightTriggerMonitor += callback;
+                    break;
+                case Trigger.LEFT:
+                    OnLeftTriggerMonitor += callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach monitor callback to specified trigger: " + trigger);
+                    break;
+            }
+        }
+
+        //detach callback from trigger button's on monitor UnityAction
+        private void DetachTriggerMonitorCallback(UnityAction<float> callback, Trigger trigger)
+        {
+            switch (trigger)
+            {
+                case Trigger.RIGHT:
+                    OnRightTriggerMonitor -= callback;
+                    break;
+                case Trigger.LEFT:
+                    OnLeftTriggerMonitor -= callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach monitor callback to specified trigger: " + trigger);
+                    break;
+            }
+        }
+
+        //attach callback to grip button's on monitor UnityAction
+        private void AttachGripMonitorCallback(UnityAction<float> callback, Grip grip)
+        {
+            switch (grip)
+            {
+                case Grip.RIGHT:
+                    OnRightGripMonitor += callback;
+                    break;
+                case Grip.LEFT:
+                    OnLeftGripMonitor += callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach monitor callback to specified grip: " + grip);
+                    break;
+            }
+        }
+
+        //detach callback from grip button's on monitor UnityAction
+        private void DetachGripMonitorCallback(UnityAction<float> callback, Grip grip)
+        {
+            switch (grip)
+            {
+                case Grip.RIGHT:
+                    OnRightGripMonitor -= callback;
+                    break;
+                case Grip.LEFT:
+                    OnLeftGripMonitor -= callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach monitor callback to specified grip: " + grip);
+                    break;
+            }
+        }
+
+        //attach callback to joystick's on monitor UnityAction
+        private void AttachJoystickMonitorCallback(UnityAction<Vector2> callback, Joystick joystick)
+        {
+            switch (joystick)
+            {
+                case Joystick.RIGHT:
+                    OnRightJoystickMonitor += callback;
+                    break;
+                case Joystick.LEFT:
+                    OnLeftJoystickMonitor += callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach monitor callback to specified josytick: " + joystick);
+                    break;
+            }
+        }
+
+        //detach callback from joystick's on monitor UnityAction
+        private void DetachJoystickMonitorCallback(UnityAction<Vector2> callback, Joystick joystick)
+        {
+            switch (joystick)
+            {
+                case Joystick.RIGHT:
+                    OnRightJoystickMonitor -= callback;
+                    break;
+                case Joystick.LEFT:
+                    OnLeftJoystickMonitor -= callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach monitor callback to specified trigger: " + joystick);
+                    break;
+            }
+        }
+
+        //attach callback to joystick's on movement UnityAction
+        private void AttachJoystickMovementCallback(UnityAction<Direction> callback, Joystick joystick)
+        {
+            switch (joystick)
+            {
+                case Joystick.RIGHT:
+                    OnRightJoystickMovement += callback;
+                    break;
+                case Joystick.LEFT:
+                    OnLeftJoystickMovement += callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach monitor callback to specified josytick: " + joystick);
+                    break;
+            }
+        }
+
+        //detach callback from joystick's on movement UnityAction
+        private void DetachJoystickMovementCallback(UnityAction<Direction> callback, Joystick joystick)
+        {
+            switch (joystick)
+            {
+                case Joystick.RIGHT:
+                    OnRightJoystickMovement -= callback;
+                    break;
+                case Joystick.LEFT:
+                    OnLeftJoystickMovement -= callback;
+                    break;
+                default:
+                    UnityEngine.Debug.LogError("Error: Unable to attach monitor callback to specified trigger: " + joystick);
+                    break;
+            }
+        }
 
         //Function to check for all button presses excluding grip and trigger buttons
         private void CheckButtonsPress()
@@ -383,63 +1040,135 @@ namespace Anivision.Core
         private void CheckButtonsTouch()
         {
 
-            if (OVRInput.Get(OVRInput.Touch.One, OVRInput.Controller.Touch) != ButtonATouched)
+            bool _buttonATouch = OVRInput.Get(OVRInput.Touch.One, OVRInput.Controller.Touch);
+            bool _buttonBTouch = OVRInput.Get(OVRInput.Touch.Two, OVRInput.Controller.Touch);
+            bool _buttonXTouch = OVRInput.Get(OVRInput.Touch.Three, OVRInput.Controller.Touch);
+            bool _buttonYTouch = OVRInput.Get(OVRInput.Touch.Four, OVRInput.Controller.Touch);
+            bool _leftTriggerTouch = OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger, OVRInput.Controller.Touch);
+            bool _rightTriggerTouch = OVRInput.Get(OVRInput.Touch.SecondaryIndexTrigger, OVRInput.Controller.Touch);
+
+            if (_buttonATouch != ButtonATouched)
             {
+                if (_buttonATouch) //button went from untouched to touched
+                {
+                    if (OnButtonATouchStart != null)
+                    {
+                        OnButtonATouchStart();
+                    }
+                }
+                else //button went from touched to untouched
+                {
+                    if (OnButtonATouchEnd != null)
+                    {
+                        OnButtonATouchEnd();
+                    }
+                }
+                
                 ButtonATouched = !ButtonATouched;
-                if (OnButtonATouch != null)
-                {
-                    OnButtonATouch(ButtonATouched);
-                }
             }
 
-
-            if (OVRInput.Get(OVRInput.Touch.Two, OVRInput.Controller.Touch) != ButtonBTouched)
+            if (_buttonBTouch != ButtonBTouched)
             {
+                if (_buttonBTouch) //button went from untouched to touched
+                {
+                    if (OnButtonBTouchStart != null)
+                    {
+                        OnButtonBTouchStart();
+                    }
+                }
+                else //button went from touched to untouched
+                {
+                    if (OnButtonBTouchEnd != null)
+                    {
+                        OnButtonBTouchEnd();
+                    }
+                }
+
                 ButtonBTouched = !ButtonBTouched;
-                if (OnButtonBTouch != null)
-                {
-                    OnButtonBTouch(ButtonBTouched);
-                } 
             }
 
-            if (OVRInput.Get(OVRInput.Touch.Three, OVRInput.Controller.Touch) != ButtonXTouched)
+            if (_buttonXTouch != ButtonXTouched)
             {
+                if (_buttonXTouch) //button went from untouched to touched
+                {
+                    if (OnButtonXTouchStart != null)
+                    {
+                        OnButtonXTouchStart();
+                    }
+                }
+                else //button went from touched to untouched
+                {
+                    if (OnButtonXTouchEnd != null)
+                    {
+                        OnButtonXTouchEnd();
+                    }
+                }
+
                 ButtonXTouched = !ButtonXTouched;
-                if (OnButtonXTouch != null)
-                {
-                    OnButtonXTouch(ButtonXTouched);
-                }
-                
             }
 
-            if (OVRInput.Get(OVRInput.Touch.Four, OVRInput.Controller.Touch) != ButtonYTouched)
+            if (_buttonYTouch != ButtonYTouched)
             {
-                ButtonYTouched = !ButtonYTouched;
-                if (OnButtonYTouch != null)
+                if (_buttonYTouch) //button went from untouched to touched
                 {
-                    OnButtonYTouch(ButtonYTouched);
+                    if (OnButtonYTouchStart != null)
+                    {
+                        OnButtonYTouchStart();
+                    }
                 }
-                
+                else //button went from touched to untouched
+                {
+                    if (OnButtonYTouchEnd != null)
+                    {
+                        OnButtonYTouchEnd();
+                    }
+                }
+
+                ButtonYTouched = !ButtonYTouched;
             }
 
             //Check Triggers' touch state
-            if (OVRInput.Get(OVRInput.Touch.PrimaryIndexTrigger, OVRInput.Controller.Touch) != LeftTriggerTouched)
+            if (_leftTriggerTouch != LeftTriggerTouched)
             {
-                LeftTriggerTouched = !LeftTriggerTouched;
-                if (OnLeftTriggerTouch != null)
+                if (_leftTriggerTouch) //button went from untouched to touched
                 {
-                    OnLeftTriggerTouch(LeftTriggerTouched);
+                    if (OnLeftTriggerTouchStart != null)
+                    {
+                        OnLeftTriggerTouchStart();
+                    }
                 }
-                
+                else //button went from untouched to touched
+                {
+                    if (OnLeftTriggerTouchEnd != null)
+                    {
+                        OnLeftTriggerTouchEnd();
+                    }
+                }
+
+                LeftTriggerTouched = !LeftTriggerTouched;
+
             }
 
-            if (OVRInput.Get(OVRInput.Touch.SecondaryIndexTrigger, OVRInput.Controller.Touch) != RightTriggerTouched)
+
+            if (_rightTriggerTouch != RightTriggerTouched)
             {
-                RightTriggerTouched = !RightTriggerTouched;
-                if (OnRightTriggerTouch != null)
+                if (_rightTriggerTouch) //button went from untouched to touched
                 {
-                    OnRightTriggerTouch(RightTriggerTouched);
+                    if (OnRightTriggerTouchStart != null)
+                    {
+                        OnRightTriggerTouchStart();
+                    }
                 }
+                else //button went from untouched to touched
+                {
+                    if (OnRightTriggerTouchEnd != null)
+                    {
+                        OnRightTriggerTouchEnd();
+                    }
+                }
+
+                RightTriggerTouched = !RightTriggerTouched;
+
             }
 
         }
@@ -507,22 +1236,22 @@ namespace Anivision.Core
             {
                 if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickUp)) //true if left joystick has been moved upwards more than halfway
                 {
-                    OnLeftJoystickMovement(JoystickMovement.UP);
+                    OnLeftJoystickMovement(Direction.UP);
                 }
 
                 if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickDown)) //true if left joystick has been moved downwards more than halfway
                 {
-                    OnLeftJoystickMovement(JoystickMovement.DOWN);
+                    OnLeftJoystickMovement(Direction.DOWN);
                 }
 
                 if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft)) //true if left joystick has been moved left more than halfway
                 {
-                    OnLeftJoystickMovement(JoystickMovement.LEFT);
+                    OnLeftJoystickMovement(Direction.LEFT);
                 }
 
                 if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight)) //true if left joystick has been moved right more than halfway
                 {
-                    OnLeftJoystickMovement(JoystickMovement.RIGHT);
+                    OnLeftJoystickMovement(Direction.RIGHT);
                 }
 
             }
@@ -539,23 +1268,23 @@ namespace Anivision.Core
             {
                 if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickUp)) //true if right joystick has been moved upwards more than halfway
                 {
-                    OnRightJoystickMovement(JoystickMovement.UP);
+                    OnRightJoystickMovement(Direction.UP);
 
                 }
 
                 if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickDown)) //true if right joystick has been moved downwards more than halfway
                 {
-                    OnRightJoystickMovement(JoystickMovement.DOWN);
+                    OnRightJoystickMovement(Direction.DOWN);
                 }
 
                 if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickLeft)) //true if right joystick has been moved left more than halfway
                 {
-                    OnRightJoystickMovement(JoystickMovement.LEFT);
+                    OnRightJoystickMovement(Direction.LEFT);
                 }
 
                 if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickRight)) //true if right joystick has been moved right more than halfway
                 {
-                    OnRightJoystickMovement(JoystickMovement.RIGHT);
+                    OnRightJoystickMovement(Direction.RIGHT);
 
                 }
             }
@@ -567,25 +1296,50 @@ namespace Anivision.Core
         //Check if a touch/untouch has been sensed by the joysticks
         private void CheckJoysticksTouch()
         {
+            bool _leftJoystickTouch = OVRInput.Get(OVRInput.Touch.PrimaryThumbstick, OVRInput.Controller.Touch);
+            bool _rightJoystickTouch = OVRInput.Get(OVRInput.Touch.SecondaryThumbstick, OVRInput.Controller.Touch);
 
-            if (OVRInput.Get(OVRInput.Touch.PrimaryThumbstick, OVRInput.Controller.Touch) != LeftJoystickTouched)
+            if (_leftJoystickTouch != LeftJoystickTouched)
             {
-                LeftJoystickTouched = !LeftJoystickTouched;
-                if (OnLeftJoystickTouch != null)
+
+                if (_leftJoystickTouch) //button went from untouched to touched
                 {
-                    OnLeftJoystickTouch(LeftJoystickTouched);
+                    if (OnLeftJoystickTouchStart != null)
+                    {
+                        OnLeftJoystickTouchStart();
+                    }
                 }
+                else //button went from touched to untouched
+                {
+                    if (OnLeftJoystickTouchEnd != null)
+                    {
+                        OnLeftJoystickTouchEnd();
+                    }
+                }
+
+                LeftJoystickTouched = !LeftJoystickTouched;
                 
             }
 
-            if (OVRInput.Get(OVRInput.Touch.SecondaryThumbstick, OVRInput.Controller.Touch) != RightJoystickTouched)
+            if (_rightJoystickTouch != RightJoystickTouched)
             {
-                RightJoystickTouched = !RightJoystickTouched;
-                if (OnRightJoystickTouch != null)
+                if (_rightJoystickTouch) //button went from untouched to touched
                 {
-                    OnRightJoystickTouch(RightJoystickTouched);
+                    if (OnRightJoystickTouchStart != null)
+                    {
+                        OnRightJoystickTouchStart();
+                    }
                 }
-                
+                else //button went from touched to untouched
+                {
+                    if (OnRightJoystickTouchEnd != null)
+                    {
+                        OnRightJoystickTouchEnd();
+                    }
+                }
+
+                RightJoystickTouched = !RightJoystickTouched;
+
             }
 
         }
@@ -599,20 +1353,43 @@ namespace Anivision.Core
 
             if (_leftGripTouch != LeftGripTouched)
             {
-                LeftGripTouched = !LeftGripTouched;
-                if (OnLeftGripTouch != null)
+                if (_leftGripTouch) //button went from untouched to touched
                 {
-                    OnLeftGripTouch(LeftGripTouched);
+                    if (OnLeftGripTouchStart != null)
+                    {
+                        OnLeftGripTouchStart();
+                    }
                 }
+                else //button went from touched to untouched
+                {
+                    if (OnLeftGripTouchEnd != null)
+                    {
+                        OnLeftGripTouchEnd();
+                    }
+                }
+
+                LeftGripTouched = !LeftGripTouched;
+                
             }
 
             if (_rightGripTouch != RightGripTouched)
             {
-                RightGripTouched = !RightGripTouched;
-                if (OnRightGripTouch != null)
+                if (_rightGripTouch) //button went from untouched to touched
                 {
-                    OnRightGripTouch(RightGripTouched);
+                    if (OnRightGripTouchStart != null)
+                    {
+                        OnRightGripTouchStart();
+                    }
                 }
+                else
+                {
+                    if (OnRightGripTouchEnd != null)
+                    {
+                        OnRightGripTouchEnd();
+                    }
+                }
+
+                RightGripTouched = !RightGripTouched;
 
             }
 
@@ -649,8 +1426,8 @@ namespace Anivision.Core
             }
 
             //access force currently being applied to grip buttons
-            if (LeftGripMonitor != null) LeftGripMonitor(_leftGripForce);
-            if (RightGripMonitor != null) RightGripMonitor(_rightGripForce);
+            if (OnLeftGripMonitor != null) OnLeftGripMonitor(_leftGripForce);
+            if (OnRightGripMonitor != null) OnRightGripMonitor(_rightGripForce);
 
         }
 
@@ -705,8 +1482,8 @@ namespace Anivision.Core
             }
 
             //access force currently being applied to trigger buttons
-            if (LeftTriggerMonitor != null) LeftTriggerMonitor(_leftTriggerForce);
-            if (RightTriggerMonitor != null) RightTriggerMonitor(_rightTriggerForce);
+            if (OnLeftTriggerMonitor != null) OnLeftTriggerMonitor(_leftTriggerForce);
+            if (OnRightTriggerMonitor != null) OnRightTriggerMonitor(_rightTriggerForce);
 
 
         }

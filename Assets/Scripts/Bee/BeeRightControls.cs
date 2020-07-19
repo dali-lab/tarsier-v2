@@ -38,14 +38,14 @@ public class BeeRightControls : MonoBehaviour
 
         if (_inputManager != null)
         {
-            _inputManager.OnButtonAPress += DoButtonOnePressed;
-            _inputManager.OnButtonBPress += DoButtonTwoPressed;
+            _inputManager.AttachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+            _inputManager.AttachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.B);
         }
             
       
     }
 
-    private void DoButtonOnePressed()                        // fly: trigger transition, toggle teleport
+    private void StartMovementTransition()                        // fly: trigger transition, toggle teleport
     {
         StartCoroutine(movementTransition());
 
@@ -54,7 +54,7 @@ public class BeeRightControls : MonoBehaviour
         //RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = !RController.GetComponent<VRTK_StraightPointerRenderer>().enabled;
     }
 
-    private void DoButtonTwoPressed()                        // vision: skybox swap
+    private void StartSkyboxSwap()                        // vision: skybox swap
     {
         isNormalSkybox = !isNormalSkybox;
         SkyboxSwap();
@@ -117,8 +117,8 @@ public class BeeRightControls : MonoBehaviour
     {
         if (_inputManager != null)
         {
-            _inputManager.OnButtonAPress -= DoButtonOnePressed;
-            _inputManager.OnButtonBPress -= DoButtonTwoPressed;
+            _inputManager.DetachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+            _inputManager.DetachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.B);
         }
         
     }
