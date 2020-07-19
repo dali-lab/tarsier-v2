@@ -20,19 +20,19 @@ public class BeeLeftControls : MonoBehaviour
             throw new System.Exception("Must have an input manager script in the scene");
         }
 
-        if (_inputManager != null) _inputManager.OnButtonXPress += DoLeftButtonOnePressed;
+        if (_inputManager != null) _inputManager.AttachInputHandler(SetControlsPanel, InputManager.InputState.ON_PRESS, InputManager.Button.X);
         controlsButton.SetActive(true);
         controlsPanel.SetActive(false);
     }
 
-    private void DoLeftButtonOnePressed()
+    private void SetControlsPanel()
     {
         controlsPanel.SetActive(!controlsPanel.activeSelf);
     }
 
     public void OnDisable()
     {
-        if (_inputManager != null) _inputManager.OnButtonXPress -= DoLeftButtonOnePressed;
+        if (_inputManager != null) _inputManager.DetachInputHandler(SetControlsPanel, InputManager.InputState.ON_PRESS, InputManager.Button.X);
         controlsButton.SetActive(false);
         controlsPanel.SetActive(false);
     }

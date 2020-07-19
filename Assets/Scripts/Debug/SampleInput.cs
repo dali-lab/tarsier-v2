@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Anivision.Core;
 
 namespace Anivision.Debug
@@ -12,64 +13,26 @@ namespace Anivision.Debug
 
     public class SampleInput : MonoBehaviour
     {
-        //booleans that can be selected based on what you want to test
-        [Header("Button A Input")]
-        public bool DemoButtonAPress;
-        public bool DemoButtonARelease;
-        public bool DemoButtonATouch;
+        [Header("Button Input")]
+        [Space(10f)]
+        public InputManager.Button Button;
+        public bool DemoButtonPress;
+        public bool DemoButtonRelease;
+        public bool DemoButtonTouchStart;
+        public bool DemoButtonTouchEnd;
 
-        [Header("Button B Input")]
-        public bool DemoButtonBPress;
-        public bool DemoButtonBRelease;
-        public bool DemoButtonBTouch;
+        [Header("Joystick Input")]
+        public InputManager.Joystick Joystick;
+        public bool DemoJoystickMovement;
+        public bool DemoJoystickMonitor;
 
-        [Header("Button X Input")]
-        public bool DemoButtonXPress;
-        public bool DemoButtonXRelease;
-        public bool DemoButtonXTouch;
+        [Header("Trigger Input")]
+        public InputManager.Trigger Trigger;
+        public bool DemoTriggerMonitor;
 
-        [Header("Button Y Input")]
-        public bool DemoButtonYPress;
-        public bool DemoButtonYRelease;
-        public bool DemoButtonYTouch;
-
-        [Header("Right Joystick Input")]
-        public bool DemoRightJoystickPress;
-        public bool DemoRightJoystickRelease;
-        public bool DemoRightJoystickTouch;
-        public bool DemoRightJoystickMovement;
-        public bool DemoRightJoystickMonitor;
-
-        [Header("Left Joystick Input")]
-        public bool DemoLeftJoystickPress;
-        public bool DemoLeftJoystickRelease;
-        public bool DemoLeftJoystickTouch;
-        public bool DemoLeftJoystickMovement;
-        public bool DemoLeftJoystickMonitor;
-
-        [Header("Right Grip Input")]
-        public bool DemoRightGripPress;
-        public bool DemoRightGripTouch;
-        public bool DemoRightGripRelease;
-        public bool DemoRightGripMonitor;
-
-        [Header("Left Grip Input")]
-        public bool DemoLeftGripPress;
-        public bool DemoLeftGripTouch;
-        public bool DemoLeftGripRelease;
-        public bool DemoLeftGripMonitor;
-
-        [Header("Right Trigger Input")]
-        public bool DemoRightTriggerPress;
-        public bool DemoRightTriggerTouch;
-        public bool DemoRightTriggerRelease;
-        public bool DemoRightTriggerMonitor;
-
-        [Header("Left Trigger Input")]
-        public bool DemoLeftTriggerPress;
-        public bool DemoLeftTriggerTouch;
-        public bool DemoLeftTriggerRelease;
-        public bool DemoLeftTriggerMonitor;
+        [Header("Grip Input")]
+        public InputManager.Grip Grip;
+        public bool DemoGripMonitor;
 
         [Space(10f)]
         public TextMesh ForceDisplay;
@@ -95,154 +58,62 @@ namespace Anivision.Debug
         {
             _InputManager = InputManager.Instance; //get singleton instance of InputManager
 
-            //attach all callbacks to input manager
-            AttachPressCallbacks();
-            AttachReleaseCallbacks();
-            AttachTouchCallbacks();
-            AttachMonitorCallbacks();
-            AttachMovementCallbacks();
+            if (_InputManager != null)
+            {
+                AttachCallbacks();
+            }
         }
 
         private void OnDestroy()
         {
             //avoid memory leaks! Detach callbacks when gameObject in destroyed
-            DetachPressCallbacks();
-            DetachTouchCallbacks();
-            DetachReleaseCallbacks();
-            DetachMonitorCallbacks();
-            DetachMovementCallbacks();
+            if (_InputManager != null)
+            {
+                DetachCallbacks();
+            }
 
         }
 
-        //attach the callbacks that are called when buttons are pressed
-        private void AttachPressCallbacks()
+        //attach the callbacks
+        private void AttachCallbacks()
         {
-            if (DemoButtonAPress) _InputManager.OnButtonAPress += OnButtonDown;
-            if (DemoButtonBPress) _InputManager.OnButtonBPress += OnButtonDown;
-            if (DemoButtonXPress) _InputManager.OnButtonXPress += OnButtonDown;
-            if (DemoButtonYPress) _InputManager.OnButtonYPress += OnButtonDown;
-            if (DemoLeftJoystickPress) _InputManager.OnLeftJoystickPress += OnButtonDown;
-            if (DemoRightJoystickPress) _InputManager.OnRightJoystickPress += OnButtonDown;
-            if (DemoRightGripPress) _InputManager.OnRightGripPress += OnButtonDown;
-            if (DemoLeftGripPress) _InputManager.OnLeftGripPress += OnButtonDown;
-            if (DemoRightTriggerPress) _InputManager.OnRightTriggerPress += OnButtonDown;
-            if (DemoLeftTriggerPress) _InputManager.OnLeftTriggerPress += OnButtonDown;
+            //attach button callbacks
+            if (DemoButtonPress) _InputManager.AttachInputHandler(OnButtonDown, InputManager.InputState.ON_PRESS, Button);
+            if (DemoButtonRelease) _InputManager.AttachInputHandler(OnButtonUp, InputManager.InputState.ON_RELEASE, Button);
+            if (DemoButtonTouchStart) _InputManager.AttachInputHandler(OnButtonTouchStart, InputManager.InputState.ON_TOUCH_START, Button);
+            if (DemoButtonTouchEnd) _InputManager.AttachInputHandler(OnButtonTouchEnd, InputManager.InputState.ON_TOUCH_END, Button);
 
+            //attach joystick callbacks
+            if (DemoJoystickMovement) _InputManager.AttachInputHandler(OnJoystickMovement, Joystick);
+            if (DemoJoystickMonitor) _InputManager.AttachInputHandler(OnJoystickMonitor, Joystick);
+
+            //attach trigger callback
+            if(DemoTriggerMonitor) _InputManager.AttachInputHandler(OnButtonMonitor, Trigger);
+
+            //attach grip callback
+            if (DemoGripMonitor) _InputManager.AttachInputHandler(OnButtonMonitor, Grip);
         }
 
-        //attach the callbacks that are called when buttons are pressed
-        private void DetachPressCallbacks()
+        //detach the callbacks
+        private void DetachCallbacks()
         {
-            if (DemoButtonAPress) _InputManager.OnButtonAPress -= OnButtonDown;
-            if (DemoButtonBPress) _InputManager.OnButtonBPress -= OnButtonDown;
-            if (DemoButtonXPress) _InputManager.OnButtonXPress -= OnButtonDown;
-            if (DemoButtonYPress) _InputManager.OnButtonYPress -= OnButtonDown;
-            if (DemoLeftJoystickPress) _InputManager.OnLeftJoystickPress -= OnButtonDown;
-            if (DemoRightJoystickPress) _InputManager.OnRightJoystickPress -= OnButtonDown;
-            if (DemoRightGripPress) _InputManager.OnRightGripPress -= OnButtonDown;
-            if (DemoLeftGripPress) _InputManager.OnLeftGripPress -= OnButtonDown;
-            if (DemoRightTriggerPress) _InputManager.OnRightTriggerPress -= OnButtonDown;
-            if (DemoLeftTriggerPress) _InputManager.OnLeftTriggerPress -= OnButtonDown;
+            //detach button callbacks
+            if (DemoButtonPress) _InputManager.DetachInputHandler(OnButtonDown, InputManager.InputState.ON_PRESS, Button);
+            if (DemoButtonRelease) _InputManager.DetachInputHandler(OnButtonUp, InputManager.InputState.ON_RELEASE, Button);
+            if (DemoButtonTouchStart) _InputManager.DetachInputHandler(OnButtonTouchStart, InputManager.InputState.ON_TOUCH_START, Button);
+            if (DemoButtonTouchEnd) _InputManager.DetachInputHandler(OnButtonTouchEnd, InputManager.InputState.ON_TOUCH_END, Button);
 
+            //detach joystick callbacks
+            if (DemoJoystickMovement) _InputManager.DetachInputHandler(OnJoystickMovement, Joystick);
+            if (DemoJoystickMonitor) _InputManager.DetachInputHandler(OnJoystickMonitor, Joystick);
+
+            //detach trigger callback
+            if (DemoTriggerMonitor) _InputManager.DetachInputHandler(OnButtonMonitor, Trigger);
+
+            //detach grip callback
+            if (DemoGripMonitor) _InputManager.DetachInputHandler(OnButtonMonitor, Grip);
         }
 
-        //attach the callbacks that are called when buttons are released
-        private void AttachReleaseCallbacks()
-        {
-            if (DemoButtonARelease) _InputManager.OnButtonARelease += OnButtonUp;
-            if (DemoButtonBRelease) _InputManager.OnButtonBRelease += OnButtonUp;
-            if (DemoButtonXRelease) _InputManager.OnButtonXRelease += OnButtonUp;
-            if (DemoButtonYRelease) _InputManager.OnButtonYRelease += OnButtonUp;
-            if (DemoLeftJoystickRelease) _InputManager.OnLeftJoystickRelease += OnButtonUp;
-            if (DemoRightJoystickRelease) _InputManager.OnRightJoystickRelease += OnButtonUp;
-            if (DemoRightGripRelease) _InputManager.OnRightGripRelease += OnButtonUp;
-            if (DemoLeftGripRelease) _InputManager.OnLeftGripRelease += OnButtonUp;
-            if (DemoRightTriggerRelease) _InputManager.OnRightTriggerRelease += OnButtonUp;
-            if (DemoLeftTriggerRelease) _InputManager.OnLeftTriggerRelease += OnButtonUp;
-
-        }
-
-        //detach the callbacks that are called when buttons are released
-        private void DetachReleaseCallbacks()
-        {
-            if (DemoButtonARelease) _InputManager.OnButtonARelease -= OnButtonUp;
-            if (DemoButtonBRelease) _InputManager.OnButtonBRelease -= OnButtonUp;
-            if (DemoButtonXRelease) _InputManager.OnButtonXRelease -= OnButtonUp;
-            if (DemoButtonYRelease) _InputManager.OnButtonYRelease -= OnButtonUp;
-            if (DemoLeftJoystickRelease) _InputManager.OnLeftJoystickRelease -= OnButtonUp;
-            if (DemoRightJoystickRelease) _InputManager.OnRightJoystickRelease -= OnButtonUp;
-            if (DemoRightGripRelease) _InputManager.OnRightGripRelease -= OnButtonUp;
-            if (DemoLeftGripRelease) _InputManager.OnLeftGripRelease -= OnButtonUp;
-            if (DemoRightTriggerRelease) _InputManager.OnRightTriggerRelease -= OnButtonUp;
-            if (DemoLeftTriggerRelease) _InputManager.OnLeftTriggerRelease -= OnButtonUp;
-        }
-
-        //attach the callbacks that are called when capacitive touch buttons are touched
-        private void AttachTouchCallbacks()
-        {
-            if (DemoButtonATouch) _InputManager.OnButtonATouch += OnButtonTouch;
-            if (DemoButtonBTouch) _InputManager.OnButtonBTouch += OnButtonTouch;
-            if (DemoButtonXTouch) _InputManager.OnButtonXTouch += OnButtonTouch;
-            if (DemoButtonYTouch) _InputManager.OnButtonYTouch += OnButtonTouch;
-            if (DemoLeftJoystickTouch) _InputManager.OnLeftJoystickTouch += OnButtonTouch;
-            if (DemoRightJoystickTouch) _InputManager.OnRightJoystickTouch += OnButtonTouch;
-            if (DemoLeftGripTouch) _InputManager.OnLeftGripTouch += OnButtonTouch;
-            if (DemoRightGripTouch) _InputManager.OnRightGripTouch += OnButtonTouch;
-            if (DemoLeftTriggerTouch) _InputManager.OnLeftTriggerTouch += OnButtonTouch;
-            if (DemoRightTriggerTouch) _InputManager.OnRightTriggerTouch += OnButtonTouch;
-        }
-
-        //detach the callbacks that are called when capacitive touch buttons are touched
-        private void DetachTouchCallbacks()
-        {
-            if (DemoButtonATouch) _InputManager.OnButtonATouch -= OnButtonTouch;
-            if (DemoButtonBTouch) _InputManager.OnButtonBTouch -= OnButtonTouch;
-            if (DemoButtonXTouch) _InputManager.OnButtonXTouch -= OnButtonTouch;
-            if (DemoButtonYTouch) _InputManager.OnButtonYTouch -= OnButtonTouch;
-            if (DemoLeftJoystickTouch) _InputManager.OnLeftJoystickTouch -= OnButtonTouch;
-            if (DemoRightJoystickTouch) _InputManager.OnRightJoystickTouch -= OnButtonTouch;
-            if (DemoLeftGripTouch) _InputManager.OnLeftGripTouch -= OnButtonTouch;
-            if (DemoRightGripTouch) _InputManager.OnRightGripTouch -= OnButtonTouch;
-            if (DemoLeftTriggerTouch) _InputManager.OnLeftTriggerTouch -= OnButtonTouch;
-            if (DemoRightTriggerTouch) _InputManager.OnRightTriggerTouch -= OnButtonTouch;
-        }
-
-        //attach the callbacks that are called when joystick movement is detected
-        private void AttachMovementCallbacks()
-        {
-            if (DemoRightJoystickMovement) _InputManager.OnRightJoystickMovement += OnJoystickMovement;
-            if (DemoLeftJoystickMovement) _InputManager.OnLeftJoystickMovement += OnJoystickMovement;
-        }
-
-        //detach the callbacks that are called when joystick movement is detected
-        private void DetachMovementCallbacks()
-        {
-            if (DemoRightJoystickMovement) _InputManager.OnRightJoystickMovement -= OnJoystickMovement;
-            if (DemoLeftJoystickMovement) _InputManager.OnLeftJoystickMovement -= OnJoystickMovement;
-        }
-
-        //attach the callbacks that are called to monitor force of triggers and joystick movement
-        private void AttachMonitorCallbacks()
-        {
-            if (DemoLeftGripMonitor) _InputManager.LeftGripMonitor += OnButtonMonitor;
-            if (DemoRightGripMonitor) _InputManager.RightGripMonitor += OnButtonMonitor;
-            if (DemoRightJoystickMonitor) _InputManager.OnRightJoystickMonitor += OnJoystickMonitor;
-            if (DemoLeftJoystickMonitor) _InputManager.OnLeftJoystickMonitor += OnJoystickMonitor;
-            if (DemoLeftTriggerMonitor) _InputManager.LeftTriggerMonitor += OnButtonMonitor;
-            if (DemoRightTriggerMonitor) _InputManager.RightTriggerMonitor += OnButtonMonitor;
-
-        }
-
-        //detach the callbacks that are called to monitor force of triggers and joystick movement
-        private void DetachMonitorCallbacks()
-        {
-            if (DemoLeftGripMonitor) _InputManager.LeftGripMonitor -= OnButtonMonitor;
-            if (DemoRightGripMonitor) _InputManager.RightGripMonitor -= OnButtonMonitor;
-            if (DemoRightJoystickMonitor) _InputManager.OnRightJoystickMonitor -= OnJoystickMonitor;
-            if (DemoLeftJoystickMonitor) _InputManager.OnLeftJoystickMonitor -= OnJoystickMonitor;
-            if (DemoLeftTriggerMonitor) _InputManager.LeftTriggerMonitor -= OnButtonMonitor;
-            if (DemoRightTriggerMonitor) _InputManager.RightTriggerMonitor -= OnButtonMonitor;
-        }
 
         //display joystick movement floats
         private void OnJoystickMonitor(Vector2 v)
@@ -255,7 +126,7 @@ namespace Anivision.Debug
         }
 
         //display joystick movement direction
-        private void OnJoystickMovement(JoystickMovement direction)
+        private void OnJoystickMovement(InputManager.Direction direction)
         {
             if (DebugDisplay != null)
             {
@@ -274,27 +145,26 @@ namespace Anivision.Debug
             }
         }
 
-        //change cube color when touch capacitive button is touched/untouched, show debug message
-        private void OnButtonTouch(bool touched)
+        //change cube color when touch capacitive button is touched, show debug message
+        private void OnButtonTouchStart()
         {
-            if (touched)
+            TurnColor(buttonTouchColor);
+
+            if (DebugDisplay != null)
             {
-                TurnColor(buttonTouchColor);
-
-                if (DebugDisplay != null)
-                {
-                    DebugDisplay.text = "Button Touched";
-                }
-
+                DebugDisplay.text = "Button Touched";
             }
-            else
-            {
-                TurnColor(originalColor);
 
-                if (DebugDisplay != null)
-                {
-                    DebugDisplay.text = "Button Untouched";
-                }
+        }
+
+        //change cube color when touch capacitive button is untouched, show debug message
+        private void OnButtonTouchEnd()
+        {
+            TurnColor(originalColor);
+
+            if (DebugDisplay != null)
+            {
+                DebugDisplay.text = "Button Untouched";
             }
 
         }

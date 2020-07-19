@@ -22,13 +22,13 @@ public class BeeTutorialVision : MonoBehaviour
 
         if (_inputManager != null)
         {
-            _inputManager.OnButtonBPress += DoRightButtonTwoPressed;
+            _inputManager.AttachInputHandler(TurnOffHighlights, InputManager.InputState.ON_PRESS, InputManager.Button.B);
         }
             
         buttonBHighlight.SetActive(true);
     }
 
-    private void DoRightButtonTwoPressed()   // turns off button highlight, moves on the next tutorial panel
+    private void TurnOffHighlights()   // turns off button highlight, moves on the next tutorial panel
     {
         buttonBHighlight.SetActive(false);
         gameObject.SetActive(false);
@@ -37,6 +37,6 @@ public class BeeTutorialVision : MonoBehaviour
 
     public void OnDisable()
     {
-        if (_inputManager != null) _inputManager.OnButtonBPress -= DoRightButtonTwoPressed;
+        if (_inputManager != null) _inputManager.DetachInputHandler(TurnOffHighlights, InputManager.InputState.ON_PRESS, InputManager.Button.B);
     }
 }

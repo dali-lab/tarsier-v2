@@ -46,7 +46,8 @@ public class SwitchVisionsTutorial : TutorialBaseClass
 
         if (_inputManager != null)
         {
-            _inputManager.OnButtonAPress += changeVisions;
+            _inputManager.AttachInputHandler(changeVisions, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+               
         }
 
         textScreens[0].SetActive(true);
@@ -82,7 +83,7 @@ public class SwitchVisionsTutorial : TutorialBaseClass
     // Update is called once per frame
     public override void Update()
     {
-        if (_inputManager.IsButtonPressed(Button.BUTTON_A))
+        if (_inputManager.IsButtonPressed(InputManager.Button.A))
         {
             if (currentIndex == 0)
             {
@@ -152,7 +153,7 @@ public class SwitchVisionsTutorial : TutorialBaseClass
 
         if (_inputManager != null)
         {
-            _inputManager.OnButtonAPress -= changeVisions;
+            _inputManager.DetachInputHandler(changeVisions, InputManager.InputState.ON_PRESS, InputManager.Button.A);
         }
     }
 

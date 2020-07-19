@@ -17,7 +17,7 @@ namespace Anivision.PlayerInteraction
         [Tooltip("The Layer Mask of layers that are valid destinations for a teleport. Players will only be able to teleport to objects on these layers.")]
         public LayerMask validTeleportLayers;
         [Tooltip("The trigger used to determine when the player is attempting to teleport.")]
-        public Button teleportButton;
+        public InputManager.Button teleportButton;
         [Tooltip("How far the trigger must be pulled before a raycast occurs.")]
         public float teleportRange = 500f;
         [Header("Renderer Settings")]

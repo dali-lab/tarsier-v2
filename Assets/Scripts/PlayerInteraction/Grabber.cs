@@ -8,7 +8,7 @@ namespace Anivision.PlayerInteraction
     public class Grabber : MonoBehaviour
     {
         [Tooltip("Button to press to grab")]
-        public Button grabButton;
+        public InputManager.Button grabButton;
         
         // The input manager to use to check for button presses
         private InputManager inputManager;

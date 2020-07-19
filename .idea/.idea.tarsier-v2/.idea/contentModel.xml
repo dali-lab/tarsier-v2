@@ -771,6 +771,12 @@
           <e p="bugSpawn.cs" t="Include" />
           <e p="bugWander.cs" t="Include" />
           <e p="changeScene.cs" t="Include" />
+          <e p="Core" t="Include">
+            <e p="InputManager.cs" t="Include" />
+          </e>
+          <e p="Debug" t="Include">
+            <e p="SampleInput.cs" t="Include" />
+          </e>
           <e p="GenerateFlowers.cs" t="Include" />
           <e p="GogglesSceneSwitchObject.cs" t="Include" />
           <e p="headsetCollide.cs" t="Include" />
@@ -781,6 +787,11 @@
             <e p="MaterialSwapScript.cs" t="Include" />
           </e>
           <e p="Pixelation.cs" t="Include" />
+          <e p="PlayerInteraction" t="Include">
+            <e p="Grabbable.cs" t="Include" />
+            <e p="Grabber.cs" t="Include" />
+            <e p="Teleport.cs" t="Include" />
+          </e>
           <e p="returnToLobby.cs" t="Include" />
           <e p="rightControls.cs" t="Include" />
           <e p="Rotate.cs" t="Include" />
@@ -794,7 +805,6 @@
             <e p="GrabTutorial.cs" t="Include" />
             <e p="SwitchVisionsTutorial.cs" t="Include" />
             <e p="TeleportTutorial.cs" t="Include" />
-            <e p="tutorial.cs" t="Include" />
             <e p="TutorialBaseClass.cs" t="Include" />
             <e p="TutorialGameController.cs" t="Include" />
           </e>

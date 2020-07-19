@@ -89,20 +89,20 @@ public class ButtonPressTutorial : TutorialBaseClass
             GameObject L1 = (GameObject)(buttonsHashed[HashKeys.LEFT_BUTTON1]);
             GameObject L2 = (GameObject)(buttonsHashed[HashKeys.LEFT_BUTTON2]);
 
-            if (_inputManager.IsButtonPressed(Button.BUTTON_A))
+            if (_inputManager.IsButtonPressed(InputManager.Button.A))
             {
                 R1.SetActive(false);                 // turn off glow on R button 1
             }
-            if (_inputManager.IsButtonPressed(Button.BUTTON_B))
+            if (_inputManager.IsButtonPressed(InputManager.Button.B))
             {
                 R2.SetActive(false);                 // turn off glow on R button 2
                
             }
-            if (_inputManager.IsButtonPressed(Button.BUTTON_X))
+            if (_inputManager.IsButtonPressed(InputManager.Button.X))
             {
                 L1.SetActive(false);                 // turn off glow on L button 1
             }
-            if (_inputManager.IsButtonPressed(Button.BUTTON_Y))
+            if (_inputManager.IsButtonPressed(InputManager.Button.Y))
             {
                 L2.SetActive(false);                 // turn off glow on L button 2
             }
@@ -124,11 +124,11 @@ public class ButtonPressTutorial : TutorialBaseClass
             GameObject RTrigger = (GameObject)buttonsHashed[HashKeys.RIGHT_TRIGGER];
             GameObject LTrigger = (GameObject)buttonsHashed[HashKeys.LEFT_TRIGGER];
 
-            if (_inputManager.IsButtonPressed(Button.RIGHT_TRIGGER))
+            if (_inputManager.IsButtonPressed(InputManager.Button.RIGHT_TRIGGER))
             {
                 RTrigger.SetActive(false);                 // turn off glow on R trigger
             }
-            if (_inputManager.IsButtonPressed(Button.LEFT_TRIGGER))
+            if (_inputManager.IsButtonPressed(InputManager.Button.LEFT_TRIGGER))
             {
                 LTrigger.SetActive(false);                 // turn off glow on L trigger
             }
@@ -151,11 +151,11 @@ public class ButtonPressTutorial : TutorialBaseClass
             GameObject RGrip = (GameObject)buttonsHashed[HashKeys.RIGHT_GRIP];
             GameObject LGrip = (GameObject)buttonsHashed[HashKeys.LEFT_GRIP];
 
-            if (_inputManager.IsButtonPressed(Button.RIGHT_GRIP))
+            if (_inputManager.IsButtonPressed(InputManager.Button.RIGHT_GRIP))
             {
                 RGrip.SetActive(false);                 // turn off glow on R grip
             }
-            if (_inputManager.IsButtonPressed(Button.LEFT_GRIP))
+            if (_inputManager.IsButtonPressed(InputManager.Button.LEFT_GRIP))
             {
                 LGrip.SetActive(false);                 // turn off glow on L grip
             }

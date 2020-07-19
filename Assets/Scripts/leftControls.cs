@@ -20,7 +20,7 @@ public class leftControls : MonoBehaviour
             throw new System.Exception("Must have Input Manager script in scene");
         }
 
-        _inputManager.OnButtonXPress += DoButtonOnePressed;
+        if (_inputManager != null) _inputManager.AttachInputHandler(SetExitPanel, InputManager.InputState.ON_PRESS, InputManager.Button.X);
 
     }
 
@@ -28,11 +28,11 @@ public class leftControls : MonoBehaviour
     {
         if (_inputManager != null)
         {
-            _inputManager.OnButtonXPress -= DoButtonOnePressed;
+            _inputManager.DetachInputHandler(SetExitPanel, InputManager.InputState.ON_PRESS, InputManager.Button.X);
         }
     }
 
-    private void DoButtonOnePressed()
+    private void SetExitPanel()
     {
         if (!exitPanel.activeSelf)
         {
