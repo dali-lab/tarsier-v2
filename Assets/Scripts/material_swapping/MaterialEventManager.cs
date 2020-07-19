@@ -34,7 +34,6 @@ public class MaterialEventManager : MonoBehaviour
 
     void StartMaterialSwap()
     {
-        Debug.Log("we got a press here");
         SendMaterialSwapEvent();
         locked = true;
     }
