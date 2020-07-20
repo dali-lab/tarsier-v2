@@ -11,7 +11,7 @@ public class BeeLeftControls : MonoBehaviour
 
     private InputManager _inputManager;
 
-    public void OnEnable()
+    void Start()
     {
         _inputManager = InputManager.Instance;
 

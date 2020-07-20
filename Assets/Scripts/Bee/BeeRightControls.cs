@@ -21,7 +21,7 @@ public class BeeRightControls : MonoBehaviour
     private bool isFlying = false;
     private bool isNormalSkybox = true;
 
-    private void OnEnable()
+    void Start()
     {
         _inputManager = InputManager.Instance;
 
