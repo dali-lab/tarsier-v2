@@ -11,7 +11,6 @@ public class BeeRightControls : MonoBehaviour
     public GameObject cameraRig;                                    // to move the player when flying and teleport player back to hive when they run out of health
     public GameObject centerEye;                                    // for flying via headtilt
     public GameObject windParticles;
-    //public GameObject RController;
 
     public SceneFader sceneFader;
     public AudioSource windSound;

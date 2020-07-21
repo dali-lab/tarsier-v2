@@ -7,8 +7,6 @@ public class MaterialEventManager : MonoBehaviour
     public delegate void MaterialSwapAction(bool uVmode);
     public static event MaterialSwapAction OnMaterialSwap;
 
-    //public GameObject rightControllerAlias;
-
     public static bool isUV = false;
     private static bool locked = false;
 
