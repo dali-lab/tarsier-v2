@@ -20,7 +20,8 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
-    m_Floats: []
+    m_Floats:
+    - _Intensity: 1
     m_Colors:
-    - Color_C21F7040: {r: 0, g: 1, b: 0.5, a: 0}
-    - _MainColor: {r: 0, g: 0, b: 0, a: 0}
+    - Color_C21F7040: {r: 0, g: 0, b: 0, a: 0}
+    - _MainColor: {r: 0.36078432, g: 0.12156863, b: 0.09019608, a: 0}
