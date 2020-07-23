@@ -1,0 +1,97 @@
+using System.Collections.Generic;
+using UnityEngine;
+using Anivision.Core;
+
+namespace Anivision.Vision
+{
+    public class VisionParameters
+    {
+        public Animal Animal { get; private set; }
+        public bool HasUvVision { get; private set; }
+        public Colorblindness Colorblindness { get; private set; }
+        public bool SwapMaterials { get; private set; }
+        public Matrix4x4 ColorblindMatrix { get; private set; }
+
+        public readonly Dictionary<Colorblindness, Matrix4x4> ColorblindMatrixReference = new Dictionary<Colorblindness, Matrix4x4>
+        {
+            {Colorblindness.Protanopia, new Matrix4x4(
+                new Vector4(0.567f,0.433f, 0f, 0f), 
+                new Vector4(0.558f,0.442f, 0f, 0f), 
+                new Vector4(0f,0.242f,0.758f, 0f), 
+                new Vector4(0f, 0f, 0f, 1f))
+            },
+            {Colorblindness.Protanomaly, new Matrix4x4(
+                new Vector4(0.817f,0.183f, 0f, 0f), 
+                new Vector4(0.333f,0.667f, 0f, 0f), 
+                new Vector4(0f,0.125f,0.875f, 0f), 
+                new Vector4(0f, 0f, 0f, 1f))
+            },
+            {Colorblindness.Deuteranopia, new Matrix4x4(
+                new Vector4(0.625f,0.375f, 0f, 0f), 
+                new Vector4(0.7f,0.3f, 0f, 0f), 
+                new Vector4(0f,0.3f,0.7f, 0f), 
+                new Vector4(0f, 0f, 0f, 1f))
+            },
+            {Colorblindness.Deuteranomaly, new Matrix4x4(
+                new Vector4(0.8f,0.2f,0,0), 
+                new Vector4(0.258f,0.742f,0,0),
+                new Vector4(0f,0.142f,0.858f),
+                new Vector4(0f, 0f, 0f, 1f))
+            },
+            {Colorblindness.Tritanopia, new Matrix4x4(
+                new Vector4(0.95f,0.05f, 0f, 0f), 
+                new Vector4(0f,0.433f,0.567f, 0f), 
+                new Vector4(0f,0.475f,0.525f, 0f), 
+                new Vector4(0f, 0f, 0f, 1f))
+            },
+            {Colorblindness.Tritanomaly, new Matrix4x4(
+                new Vector4(0.967f,0.033f, 0f, 0f), 
+                new Vector4(0f,0.733f,0.267f, 0f), 
+                new Vector4(0f,0.183f,0.817f, 0f), 
+                new Vector4(0f, 0f, 0f, 1f))
+            },
+            {Colorblindness.Achromatopsia, new Matrix4x4(
+                new Vector4(0.299f,0.587f,0.114f, 0f), 
+                new Vector4(0.299f,0.587f,0.114f, 0f), 
+                new Vector4(0.299f,0.587f,0.114f, 0f), 
+                new Vector4(0f, 0f, 0f, 1f))
+            },
+            {Colorblindness.Achromatomaly, new Matrix4x4(
+                new Vector4(0.618f,0.320f,0.062f, 0f), 
+                new Vector4(0.163f,0.775f,0.062f, 0f), 
+                new Vector4(0.163f,0.320f,0.516f, 0f), 
+                new Vector4(0f, 0f, 0f, 1f))
+            },
+            {Colorblindness.None, Matrix4x4.identity}
+        };
+
+        public VisionParameters(Animal animal, bool hasUvVision, Colorblindness colorblindness, Matrix4x4? customColorblindMatrix, bool swapMaterials)
+        {
+            Animal = animal;
+            HasUvVision = hasUvVision;
+            Colorblindness = colorblindness;
+            SwapMaterials = swapMaterials;
+
+            if (colorblindness == Colorblindness.Custom)
+            {
+                if (customColorblindMatrix.HasValue)
+                {
+                    ColorblindMatrix = customColorblindMatrix.Value;
+                }
+                else
+                {
+                    UnityEngine.Debug.LogError("If Colorblindness is a custom type of colorblindness, must pass in a 4x4 matrix that contains channel ouput weights");
+                    ColorblindMatrix = Matrix4x4.identity;
+                }
+                
+            }
+            else
+            {
+                ColorblindMatrix = ColorblindMatrixReference[colorblindness];
+            }
+        }
+    }
+    
+    
+
+}

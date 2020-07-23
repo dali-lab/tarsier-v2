@@ -65,7 +65,21 @@ namespace Anivision.Core
             LEFT
         }
 
-        public static InputManager Instance { get; private set; }
+        private static InputManager _inputManager;
+        public static InputManager Instance { get
+        {
+            if (!_inputManager)
+            {
+                _inputManager = FindObjectOfType (typeof (InputManager)) as InputManager;
+
+                if (!_inputManager)
+                {
+                    UnityEngine.Debug.LogError("There needs to be one active InputManger script on a GameObject in your scene.");
+                }
+            }
+
+            return _inputManager;
+        } }
 
         /* Note: this script uses virtual mappings. Generally, the mappings follow as below:
          * 
@@ -214,19 +228,19 @@ namespace Anivision.Core
         private float _gripTouchRegisterMinForce = 0.0000000001f; // Grip buttons are not touch capacitive, therefore the grip touch callbacks will be called
                                                                   // if the user presses the grip buttons with a force >= _gripTouchRegisterMinForce
  
-        private void Awake()
-        {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-
-            } else
-            {
-                Instance = this;
-                OVRManager.HMDMounted += PlayerFound;
-                OVRManager.HMDUnmounted += PlayerLost;
-            }
-        }
+        // private void Awake()
+        // {
+        //     if (Instance != null)
+        //     {
+        //         Destroy(gameObject);
+        //
+        //     } else
+        //     {
+        //         Instance = this;
+        //         OVRManager.HMDMounted += PlayerFound;
+        //         OVRManager.HMDUnmounted += PlayerLost;
+        //     }
+        // }
 
         void Update()
         {

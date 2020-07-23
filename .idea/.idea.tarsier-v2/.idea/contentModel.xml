@@ -772,6 +772,9 @@
           <e p="bugWander.cs" t="Include" />
           <e p="changeScene.cs" t="Include" />
           <e p="Core" t="Include">
+            <e p="AnimalController.cs" t="Include" />
+            <e p="AnimalEnums.cs" t="Include" />
+            <e p="AnimalManager.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
           </e>
           <e p="Debug" t="Include">
@@ -788,8 +791,10 @@
           </e>
           <e p="Pixelation.cs" t="Include" />
           <e p="PlayerInteraction" t="Include">
+            <e p="AnimalMovement.cs" t="Include" />
             <e p="Grabbable.cs" t="Include" />
             <e p="Grabber.cs" t="Include" />
+            <e p="MovementParameters.cs" t="Include" />
             <e p="Teleport.cs" t="Include" />
           </e>
           <e p="returnToLobby.cs" t="Include" />
@@ -807,6 +812,12 @@
             <e p="TeleportTutorial.cs" t="Include" />
             <e p="TutorialBaseClass.cs" t="Include" />
             <e p="TutorialGameController.cs" t="Include" />
+          </e>
+          <e p="Vision" t="Include">
+            <e p="AnimalVision.cs" t="Include" />
+            <e p="Colorblind.cs" t="Include" />
+            <e p="UV.cs" t="Include" />
+            <e p="VisionParameters.cs" t="Include" />
           </e>
         </e>
       </e>
