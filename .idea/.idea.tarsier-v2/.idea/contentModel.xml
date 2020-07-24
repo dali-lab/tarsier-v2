@@ -816,7 +816,9 @@
           <e p="Vision" t="Include">
             <e p="AnimalVision.cs" t="Include" />
             <e p="Colorblind.cs" t="Include" />
+            <e p="MaterialController.cs" t="Include" />
             <e p="UV.cs" t="Include" />
+            <e p="VisionEffects.cs" t="Include" />
             <e p="VisionParameters.cs" t="Include" />
           </e>
         </e>

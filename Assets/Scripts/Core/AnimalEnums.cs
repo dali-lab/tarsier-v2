@@ -26,4 +26,14 @@ namespace Anivision.Core
         Bee,
         Tarsier
     }
+    
+    /// <summary>
+    /// Enum for vision effects that are applied to renderer's materials
+    /// </summary>
+    public enum MaterialVisionEffect
+    {
+        Colorblind,
+        UV,
+        MaterialSwap
+    }
 }

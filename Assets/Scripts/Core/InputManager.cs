@@ -227,20 +227,7 @@ namespace Anivision.Core
         private bool _inputActive = true;
         private float _gripTouchRegisterMinForce = 0.0000000001f; // Grip buttons are not touch capacitive, therefore the grip touch callbacks will be called
                                                                   // if the user presses the grip buttons with a force >= _gripTouchRegisterMinForce
- 
-        // private void Awake()
-        // {
-        //     if (Instance != null)
-        //     {
-        //         Destroy(gameObject);
-        //
-        //     } else
-        //     {
-        //         Instance = this;
-        //         OVRManager.HMDMounted += PlayerFound;
-        //         OVRManager.HMDUnmounted += PlayerLost;
-        //     }
-        // }
+
 
         void Update()
         {

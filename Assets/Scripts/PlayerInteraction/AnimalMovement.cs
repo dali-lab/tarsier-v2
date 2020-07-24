@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using Anivision.Core;
 using Anivision.PlayerInteraction;
 using Anivision.Vision;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditorInternal;
+#endif
 using UnityEngine;
 
 namespace Anivision.PlayerInteraction
@@ -31,8 +33,8 @@ namespace Anivision.PlayerInteraction
             }
             return new MovementParameters(canFly, canTeleport, validRaycastLayers, validTeleportLayers, teleportRange);
         }
-    }
-    
+        
+#if UNITY_EDITOR
     /// <summary>
     /// Custom editor for AnimalMovement script
     /// </summary>
@@ -95,4 +97,7 @@ namespace Anivision.PlayerInteraction
             return field;
         }
     }
+#endif
+    }
+    
 }

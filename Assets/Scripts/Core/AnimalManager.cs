@@ -13,42 +13,38 @@ namespace Anivision.Core
     /// </summary>
     public class AnimalManager : MonoBehaviour
     {
-        public static AnimalManager Instance; //singleton instance
+        private static AnimalManager _animalManager;
+        //singleton instance
+        public static AnimalManager Instance { get
+        {
+            if (!_animalManager)
+            {
+                _animalManager = FindObjectOfType (typeof (AnimalManager)) as AnimalManager;
+
+                if (!_animalManager)
+                {
+                    UnityEngine.Debug.LogError("There needs to be one active InputManger script on a GameObject in your scene.");
+                }
+            }
+
+            return _animalManager;
+        } } 
+
         
         [Tooltip("List of animals supported by the scene")]
         public AnimalController[] AnimalControllers; //list of animals that the scene supports
         [Tooltip("The button that the animal switch should be linked to")]
         public InputManager.Button AnimalSwitchButton;
-        public UnityEvent<VisionParameters> VisionSwitch; //called when animal is switched 
-        public UnityEvent<MovementParameters> MovementSwitch; //called when animal is switched 
+        public class VisionSwitchEvent : UnityEvent<VisionParameters>{}
+        public class MovementSwitchEvent : UnityEvent<MovementParameters>{}
+        public VisionSwitchEvent VisionSwitch = new VisionSwitchEvent(); //called when animal is switched 
+        public MovementSwitchEvent MovementSwitch = new MovementSwitchEvent(); //called when animal is switched 
         
-        private int index = 0; //used to keep track of current animal in list
+        private int _index = 0; //used to keep track of current animal in list
         private InputManager _inputManager;
 
-        private void Awake()
-        {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-
-            } else
-            {
-                Instance = this;
-                if (VisionSwitch == null)
-                {
-                    VisionSwitch = new VisionSwitchEvent();
-                }
-                
-                if (MovementSwitch == null)
-                {
-                    MovementSwitch = new MovementSwitchEvent();
-                }
-            }
-
-        }
-        
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             
             // _inputManager = InputManager.Instance;
@@ -59,7 +55,7 @@ namespace Anivision.Core
             // }
             
             // _inputManager.AttachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, AnimalSwitchButton);
-            SwitchAnimal();
+            SwitchAnimal(); //switch animal to first animal in the list
         }
 
         private void Update()
@@ -69,36 +65,31 @@ namespace Anivision.Core
                 SwitchAnimal();
             }
         }
-
+        
+        //switch the animal that we are currently on to the next one in the list
         private void SwitchAnimal()
         {
             if (AnimalControllers.Length > 0)
             {
-                if (VisionSwitch != null) VisionSwitch.Invoke(AnimalControllers[index].VisionParameters);
-                if (MovementSwitch != null) MovementSwitch.Invoke(AnimalControllers[index].MovementParameters);
-                if (index == AnimalControllers.Length - 1)
+                VisionSwitch.Invoke(AnimalControllers[_index].VisionParameters);
+                MovementSwitch.Invoke(AnimalControllers[_index].MovementParameters);
+                if (_index == AnimalControllers.Length - 1)
                 {
-                    index = 0;
+                    _index = 0;
                 }
                 else
                 {
-                    index++;
+                    _index++;
                 }
             }
         }
 
         private void OnDestroy()
         {
-            _inputManager.DetachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, AnimalSwitchButton);
+            // _inputManager.DetachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, AnimalSwitchButton);
         }
     }
     
-    public class VisionSwitchEvent : UnityEvent<VisionParameters>
-    {
-    }
     
-    public class MovementSwitchEvent : UnityEvent<MovementParameters>
-    {
-    }
 }
 

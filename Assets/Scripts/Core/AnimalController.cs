@@ -18,7 +18,7 @@ namespace Anivision.Core
         public MovementParameters MovementParameters { get; private set; }
 
         // Start is called before the first frame update
-        private void Start()
+        private void Awake()
         {
             VisionParameters = GetComponent<AnimalVision>().ConstructVisionParametersObject(animal);
             MovementParameters = GetComponent<AnimalMovement>().ConstructMovementParametersObject();
