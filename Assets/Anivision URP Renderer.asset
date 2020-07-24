@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6588d3f90521b44900fea3abfe28a8, type: 3}
   m_Name: Colorblind
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
     Event: 400
     blitMaterial: {fileID: 2100000, guid: 4ba54becbadd1cd4dbc803176af7f971, type: 2}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6588d3f90521b44900fea3abfe28a8, type: 3}
   m_Name: UV
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   settings:
     Event: 400
     blitMaterial: {fileID: 2100000, guid: 23e9bbe6982b4764197678c6a15dd250, type: 2}
