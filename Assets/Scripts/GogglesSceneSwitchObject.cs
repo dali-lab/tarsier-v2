@@ -25,7 +25,7 @@ public class GogglesSceneSwitchObject : MonoBehaviour
         }
     }
 
-    void Start()
+    void OnEnable()
     {
         // Add a callback so that when the fade finishes, the scene switches
         SceneFader.OnFadeComplete += SwitchScene;
