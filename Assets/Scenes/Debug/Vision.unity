@@ -256,7 +256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &133604574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,8 +743,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UVAmount: 0.5
+  UVAmount: 1
   materialBaseColorName: _BaseColor
+  materialBaseTextureName: _BaseMap
+  UVTexture: {fileID: 2800000, guid: fff70cc323e7244f0a6fed5ecb11a9a1, type: 3}
 --- !u!65 &1915472592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -776,7 +778,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 51eda9e20ce344c49ab78e8e5f06b44a, type: 2}
+  - {fileID: 2100000, guid: 1d252bf4d5f4544d39cab982e9ffe6d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

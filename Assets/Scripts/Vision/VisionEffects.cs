@@ -15,7 +15,8 @@ namespace Anivision.Vision
             return originalColors;
         }
         
-        //save original colors in hash table so that we can retrieve it easily later.
+        //save original colors in hash table so that we can retrieve it easily later. 
+        //TODO: REFACTOR TO BE BETTER GBC
         private static void SaveOriginalColorsRecursive(Transform t, Dictionary<Material, Color> _originalColors, string materialBaseColorName)
         {
             GameObject currGameObject = t.gameObject;
