@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using Anivision.Core;
 
 public class BeeLeftControls : MonoBehaviour
 {
@@ -9,24 +9,30 @@ public class BeeLeftControls : MonoBehaviour
     public GameObject controlsButton;                                                   // button to tell players to press X to pull up the instructions/controls
     public GameObject controlsPanel;                                                    // the instruction/controls panel
 
-    private VRTK_ControllerEvents LControllerEvents;
+    private InputManager _inputManager;
 
     public void OnEnable()
     {
-        LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
-        LControllerEvents.ButtonOnePressed += DoLeftButtonOnePressed;                       // 'X' button on left controller
+        _inputManager = InputManager.Instance;
+
+        if (_inputManager == null)
+        {
+            throw new System.Exception("Must have an input manager script in the scene");
+        }
+
+        if (_inputManager != null) _inputManager.AttachInputHandler(SetControlsPanel, InputManager.InputState.ON_PRESS, InputManager.Button.X);
         controlsButton.SetActive(true);
         controlsPanel.SetActive(false);
     }
 
-    private void DoLeftButtonOnePressed(object sender, ControllerInteractionEventArgs e)
+    private void SetControlsPanel()
     {
         controlsPanel.SetActive(!controlsPanel.activeSelf);
     }
 
     public void OnDisable()
     {
-        LControllerEvents.ButtonOnePressed += DoLeftButtonOnePressed;
+        if (_inputManager != null) _inputManager.DetachInputHandler(SetControlsPanel, InputManager.InputState.ON_PRESS, InputManager.Button.X);
         controlsButton.SetActive(false);
         controlsPanel.SetActive(false);
     }

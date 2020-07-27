@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using Anivision.Core;
 
 public class rightControls : MonoBehaviour
 {
@@ -11,39 +11,32 @@ public class rightControls : MonoBehaviour
     //public AudioSource audioSource;
 
     public Light directionalLight;
-
-    private VRTK_ControllerEvents controllerEvents;
+    private InputManager _inputManager;
 
     private bool tarsierVision = false;
 
     private void OnEnable()
     {
-        controllerEvents = GetComponent<VRTK_ControllerEvents>();
-        if (controllerEvents == null)
-        {
-            VRTK_Logger.Error(VRTK_Logger.GetCommonMessage(VRTK_Logger.CommonMessageKeys.REQUIRED_COMPONENT_MISSING_FROM_GAMEOBJECT, "VRTK_ControllerEvents_ListenerExample", "VRTK_ControllerEvents", "the same"));
-            return;
-        }
+        //Get singleton instance of input manager
+        _inputManager = InputManager.Instance;
 
-        controllerEvents.ButtonOnePressed += DoButtonOnePressed;
+        if (_inputManager == null) throw new System.Exception("Must have Input Manager script in scene");
+        if (_inputManager != null) _inputManager.AttachInputHandler(DoButtonOnePressed, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+
     }
 
     private void OnDisable()
     {
-        if (controllerEvents != null)
+        if (_inputManager != null)
         {
-            controllerEvents.ButtonOnePressed -= DoButtonOnePressed;
+            _inputManager.DetachInputHandler(DoButtonOnePressed, InputManager.InputState.ON_PRESS, InputManager.Button.A);
         }
+        
     }
 
-    private void DebugLogger(uint index, string button, string action, ControllerInteractionEventArgs e)
-    {
-        string debugString = "Controller on index '" + index + "' " + button + " has been " + action
-                             + " with a pressure of " + e.buttonPressure + " / Primary Touchpad axis at: " + e.touchpadAxis + " (" + e.touchpadAngle + " degrees)" + " / Secondary Touchpad axis at: " + e.touchpadTwoAxis + " (" + e.touchpadTwoAngle + " degrees)";
-        VRTK_Logger.Info(debugString);
-    }
+    
 
-    private void DoButtonOnePressed(object sender, ControllerInteractionEventArgs e)
+    private void DoButtonOnePressed()
     {
         tarsierVision = !tarsierVision;
         // material changes

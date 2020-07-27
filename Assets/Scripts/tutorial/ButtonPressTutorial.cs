@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
-using VRTK;
+using Anivision.Core;
 
 public class ButtonPressTutorial : TutorialBaseClass
 {
@@ -25,8 +25,7 @@ public class ButtonPressTutorial : TutorialBaseClass
 
     public TutorialButton[] buttons;
 
-    private VRTK_ControllerEvents RControllerEvents;
-    private VRTK_ControllerEvents LControllerEvents;
+    private InputManager _inputManager;
 
     private Hashtable buttonsHashed;
 
@@ -35,8 +34,8 @@ public class ButtonPressTutorial : TutorialBaseClass
     // Start is called before the first frame update
     public override void Start()
     {
-        RControllerEvents = RController.GetComponent<VRTK_ControllerEvents>();
-        LControllerEvents = LController.GetComponent<VRTK_ControllerEvents>();
+        //get singleton instance of input manager
+        _inputManager = InputManager.Instance;
 
         buttonsHashed = new Hashtable();
 
@@ -49,6 +48,8 @@ public class ButtonPressTutorial : TutorialBaseClass
         }
 
         isDone = false;
+
+        // TODO: Figure out how to update this, as this is obsolete
         InputTracking.Recenter();
 
         StartCoroutine(Wait());
@@ -72,6 +73,8 @@ public class ButtonPressTutorial : TutorialBaseClass
                 buttons[i].button.SetActive(true);
             }
         }
+
+        // TODO: Figure out how to update this, as this is obsolete
         InputTracking.Recenter();
     }
 
@@ -86,20 +89,20 @@ public class ButtonPressTutorial : TutorialBaseClass
             GameObject L1 = (GameObject)(buttonsHashed[HashKeys.LEFT_BUTTON1]);
             GameObject L2 = (GameObject)(buttonsHashed[HashKeys.LEFT_BUTTON2]);
 
-            if (RControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress))
+            if (_inputManager.IsButtonPressed(InputManager.Button.A))
             {
                 R1.SetActive(false);                 // turn off glow on R button 1
             }
-            if (RControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonTwoPress))
+            if (_inputManager.IsButtonPressed(InputManager.Button.B))
             {
                 R2.SetActive(false);                 // turn off glow on R button 2
                
             }
-            if (LControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonOnePress))
+            if (_inputManager.IsButtonPressed(InputManager.Button.X))
             {
                 L1.SetActive(false);                 // turn off glow on L button 1
             }
-            if (LControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.ButtonTwoPress))
+            if (_inputManager.IsButtonPressed(InputManager.Button.Y))
             {
                 L2.SetActive(false);                 // turn off glow on L button 2
             }
@@ -121,11 +124,11 @@ public class ButtonPressTutorial : TutorialBaseClass
             GameObject RTrigger = (GameObject)buttonsHashed[HashKeys.RIGHT_TRIGGER];
             GameObject LTrigger = (GameObject)buttonsHashed[HashKeys.LEFT_TRIGGER];
 
-            if (RControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.TriggerPress))
+            if (_inputManager.IsButtonPressed(InputManager.Button.RIGHT_TRIGGER))
             {
                 RTrigger.SetActive(false);                 // turn off glow on R trigger
             }
-            if (LControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.TriggerPress))
+            if (_inputManager.IsButtonPressed(InputManager.Button.LEFT_TRIGGER))
             {
                 LTrigger.SetActive(false);                 // turn off glow on L trigger
             }
@@ -148,11 +151,11 @@ public class ButtonPressTutorial : TutorialBaseClass
             GameObject RGrip = (GameObject)buttonsHashed[HashKeys.RIGHT_GRIP];
             GameObject LGrip = (GameObject)buttonsHashed[HashKeys.LEFT_GRIP];
 
-            if (RControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.GripPress))
+            if (_inputManager.IsButtonPressed(InputManager.Button.RIGHT_GRIP))
             {
                 RGrip.SetActive(false);                 // turn off glow on R grip
             }
-            if (LControllerEvents.IsButtonPressed(VRTK_ControllerEvents.ButtonAlias.GripPress))
+            if (_inputManager.IsButtonPressed(InputManager.Button.LEFT_GRIP))
             {
                 LGrip.SetActive(false);                 // turn off glow on L grip
             }

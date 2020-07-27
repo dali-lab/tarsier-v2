@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
 
 public class startButton : MonoBehaviour
 {
@@ -48,8 +47,6 @@ public class startButton : MonoBehaviour
         Transform leftT = leftController.GetComponent(typeof(Transform)) as Transform;
         Transform rightT = rightController.GetComponent(typeof(Transform)) as Transform;
         Transform buttonT = button.GetComponent(typeof(Transform)) as Transform;
-
-        VRTK_ControllerEvents leftControllerEvents = leftController.GetComponent<VRTK_ControllerEvents>();
 
         if (Vector3.Distance(rightT.position, buttonT.position) <= .1 || Vector3.Distance(leftT.position, buttonT.position) <= .1)
         {

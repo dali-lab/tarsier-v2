@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
 
 public class BeeTutorialEnergy : MonoBehaviour
 {
@@ -10,7 +9,6 @@ public class BeeTutorialEnergy : MonoBehaviour
     public GameObject nectarBar;                                                                    // nectar heaalth bar on left hand
     public GameObject hapticCube;                                                                   // haptics functionality for the controllers
 
-    private VRTK_InteractGrab grabScript;
     private bool haptics;
 
     public void OnEnable()

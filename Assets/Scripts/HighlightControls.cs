@@ -4,15 +4,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
+using Anivision.Core;
 
 public class HighlightControls : MonoBehaviour
 {
-    // VRTK's event system for when buttons are touched or pressed (or anything)
-    protected VRTK_ControllerEvents controllerEvents;
 
-    // Whether or not this script is on the right controller (true if on the right controller, false if on the left)
+    //Input manager for when buttons are touched/pressed
+    protected InputManager _inputManager;
+
+    // Whether or not script is on the right hand; if true, it is on the right hand, if false, on the left hand 
     public bool RightHand;
+
     // How fast to fade the highlights in and out
     public float FadeSpeed = 4;
     // What object to instantiate as the highlight, what object is overlayed on the buttons
@@ -24,54 +26,129 @@ public class HighlightControls : MonoBehaviour
     public Color triggerColor = Color.white;
     public Color gripColor = Color.white;
 
-    // GameObjects for each button's HighlightObject
-    private GameObject ButtonOne;
-    private GameObject ButtonTwo;
-    private GameObject Touchpad;
-    private GameObject Trigger;
-    private GameObject Grip;
+    // GameObjects for Right hand
+    private GameObject rButtonA;
+    private GameObject rButtonB;
+    private GameObject rTouchpad;
+    private GameObject rTrigger;
+    private GameObject rGrip;
 
-    private MaterialPropertyBlock buttonOneBlock;
-    private MaterialPropertyBlock buttonTwoBlock;
-    private MaterialPropertyBlock touchpadBlock;
-    private MaterialPropertyBlock triggerBlock;
-    private MaterialPropertyBlock gripBlock;
+    // GameObjects for Left Hand
+    private GameObject lButtonX;
+    private GameObject lButtonY;
+    private GameObject lTouchpad;
+    private GameObject lTrigger;
+    private GameObject lGrip;
+
+    //Material blocks
+    private MaterialPropertyBlock rButtonABlock;
+    private MaterialPropertyBlock rButtonBBlock;
+    private MaterialPropertyBlock rTouchpadBlock;
+    private MaterialPropertyBlock rTriggerBlock;
+    private MaterialPropertyBlock rGripBlock;
+
+    private MaterialPropertyBlock lButtonXBlock;
+    private MaterialPropertyBlock lButtonYBlock;
+    private MaterialPropertyBlock lTouchpadBlock;
+    private MaterialPropertyBlock lTriggerBlock;
+    private MaterialPropertyBlock lGripBlock;
+
 
     private void Start()
     {
-        // Get the VRTK ControllerEvents script attached to the same GameObject as this script
-        controllerEvents = GetComponent<VRTK_ControllerEvents>();
 
-        // Mirror the positions of the buttons if the script is on the right controller
-        // (I found the initial values using the left hand)
-        float sign = 1f;
-        if (RightHand)
+        //Get singleton instance of input manager
+        _inputManager = InputManager.Instance;
+
+        if (_inputManager == null)
         {
-            sign = -1f;
+            throw new System.Exception("Must have Input Manager script in scene");
         }
 
-        // Create the highlight objects (I pretty much just used trial and error for their position and size)
-        ButtonOne = CreateHighlight(new Vector3(-0.00146f * sign, -0.00313f, -0.00488f), new Vector3(0.012f, 0.012f, 0.012f));
-        ButtonTwo = CreateHighlight(new Vector3(0.0023f * sign, -0.0007f, 0.0088f), new Vector3(0.012f, 0.012f, 0.012f));
-        Touchpad = CreateHighlight(new Vector3(-0.01791f * sign, 0.0067f, 0.0079f), new Vector3(0.016f, 0.016f, 0.016f));
-        Trigger = CreateHighlight(new Vector3(-0.0095f * sign, -0.0207f, 0.0218f), new Vector3(0.028f, 0.028f, 0.028f));
-        Grip = CreateHighlight(new Vector3(0.0028f * sign, -0.0302f, -0.0226f), new Vector3(0.026f, 0.026f, 0.026f));
-
-        buttonOneBlock = CreateBlock(buttonOneColor, ButtonOne);
-        buttonTwoBlock = CreateBlock(buttonTwoColor, ButtonTwo);
-        touchpadBlock = CreateBlock(touchpadColor, Touchpad);
-        triggerBlock = CreateBlock(triggerColor, Trigger);
-        gripBlock = CreateBlock(gripColor, Grip);
+        if (_inputManager != null)
+        {
+            // Create the highlight objects (I pretty much just used trial and error for their position and size)
+            if (RightHand)
+            {
+                CreateHighlightsRightHand();
+            } else
+            {
+                CreateHighlightsLeftHand();
+            }
+            
+           
+        }
+           
+        
     }
 
     private void Update()
     {
-        // Update the highlights for every button, based on whether or not the button is pressed
-        UpdateHighlight(ButtonOne, controllerEvents.buttonOneTouched, buttonOneBlock);
-        UpdateHighlight(ButtonTwo, controllerEvents.buttonTwoTouched, buttonTwoBlock);
-        UpdateHighlight(Touchpad, controllerEvents.touchpadTouched, touchpadBlock);
-        UpdateHighlight(Trigger, controllerEvents.triggerTouched, triggerBlock);
-        UpdateHighlight(Grip, controllerEvents.gripHairlinePressed, gripBlock);
+        if (_inputManager == null)
+        {
+            throw new System.Exception("Must have Input Manager script in scene");
+        }
+
+        if (RightHand)
+        {
+            UpdateRightHandHighlights();
+        } else
+        {
+            UpdateLeftHandHighlights();
+        }
+
+    }
+
+    // Update the highlights for every button, based on whether or not the button is pressed
+    private void UpdateRightHandHighlights()
+    {
+        UpdateHighlight(rButtonA, _inputManager.ButtonATouched, rButtonABlock);
+        UpdateHighlight(rButtonB, _inputManager.ButtonBTouched, rButtonBBlock);
+        UpdateHighlight(rTouchpad, _inputManager.RightJoystickTouched, rTouchpadBlock);
+        UpdateHighlight(rTrigger, _inputManager.RightTriggerTouched, rTriggerBlock);
+        UpdateHighlight(rGrip, _inputManager.RightGripTouched, rGripBlock);
+    }
+
+    // Update the highlights for every button, based on whether or not the button is pressed
+    private void UpdateLeftHandHighlights()
+    {
+        UpdateHighlight(lButtonX, _inputManager.ButtonXTouched, lButtonXBlock);
+        UpdateHighlight(lButtonY, _inputManager.ButtonYTouched, lButtonYBlock);
+        UpdateHighlight(lTouchpad, _inputManager.LeftJoystickTouched, lTouchpadBlock);
+        UpdateHighlight(lTrigger, _inputManager.LeftTriggerTouched, lTriggerBlock);
+        UpdateHighlight(lGrip, _inputManager.LeftGripTouched, lGripBlock);
+    }
+
+    private void CreateHighlightsLeftHand()
+    {
+        // Create the highlight objects (I pretty much just used trial and error for their position and size)
+        lButtonX = CreateHighlight(new Vector3(-0.00146f, -0.00313f, -0.00488f), new Vector3(0.012f, 0.012f, 0.012f));
+        lButtonY = CreateHighlight(new Vector3(0.0023f, -0.0007f, 0.0088f), new Vector3(0.012f, 0.012f, 0.012f));
+        lTouchpad = CreateHighlight(new Vector3(-0.01791f, 0.0067f, 0.0079f), new Vector3(0.016f, 0.016f, 0.016f));
+        lTrigger = CreateHighlight(new Vector3(-0.0095f, -0.0207f, 0.0218f), new Vector3(0.028f, 0.028f, 0.028f));
+        lGrip = CreateHighlight(new Vector3(0.0028f, -0.0302f, -0.0226f), new Vector3(0.026f, 0.026f, 0.026f));
+
+        lButtonXBlock = CreateBlock(buttonOneColor, lButtonX);
+        lButtonYBlock = CreateBlock(buttonTwoColor, lButtonY);
+        lTouchpadBlock = CreateBlock(touchpadColor, lTouchpad);
+        lTriggerBlock = CreateBlock(triggerColor, lTrigger);
+        lGripBlock = CreateBlock(gripColor, lGrip);
+    }
+
+    private void CreateHighlightsRightHand()
+    {
+        //Flip the sign for the right hand
+        rButtonA = CreateHighlight(new Vector3(-0.00146f * -1, -0.00313f, -0.00488f), new Vector3(0.012f, 0.012f, 0.012f));
+        rButtonB = CreateHighlight(new Vector3(0.0023f * -1, -0.0007f, 0.0088f), new Vector3(0.012f, 0.012f, 0.012f));
+        rTouchpad = CreateHighlight(new Vector3(-0.01791f * -1, 0.0067f, 0.0079f), new Vector3(0.016f, 0.016f, 0.016f));
+        rTrigger = CreateHighlight(new Vector3(-0.0095f * -1, -0.0207f, 0.0218f), new Vector3(0.028f, 0.028f, 0.028f));
+        rGrip = CreateHighlight(new Vector3(0.0028f * -1, -0.0302f, -0.0226f), new Vector3(0.026f, 0.026f, 0.026f));
+
+        rButtonABlock = CreateBlock(buttonOneColor, rButtonA);
+        rButtonBBlock = CreateBlock(buttonTwoColor, rButtonB);
+        rTouchpadBlock = CreateBlock(touchpadColor, rTouchpad);
+        rTriggerBlock = CreateBlock(triggerColor, rTrigger);
+        rGripBlock = CreateBlock(gripColor, rGrip);
     }
 
 
