@@ -55,7 +55,7 @@ public class BeeTutorialFlying : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void Disable()
+    public void OnDisable()
     {
         buttonAHighlight.SetActive(false);
         if (_inputManager != null) _inputManager.DetachInputHandler(StartHaptics, InputManager.InputState.ON_PRESS, InputManager.Button.A);
