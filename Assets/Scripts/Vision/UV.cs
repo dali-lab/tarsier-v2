@@ -1,118 +1,113 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using Anivision.Core;
 using UnityEngine;
 
 namespace Anivision.Vision
 {
-    [RequireComponent(typeof(MaterialController))]
+    /// <summary>
+    /// Script to apply UV false color effect to materials
+    /// </summary>
     public class UV : MaterialEffect
     {
         [Range(0, 1)] public float UVAmount;
         [Tooltip("The property name in the shader that refers to the main color property that should be changed")]
         public string shaderBaseColor = "_BaseColor";
         public string shaderBaseTexture = "_BaseMap";
+        
         public override VisionEffect Effect => VisionEffect.UV;
         
         private AnimalManager _animalManager;
-        private Dictionary<Material, MaterialInfo> _originalMaterialInfo;
-        
+        private Dictionary<string, MaterialInfo> _materialInfo;
+
         private void Awake()
         {
             //save original colors in hash table so that we can access them easily later.
-            _originalMaterialInfo = SaveOriginalColors(gameObject.transform, shaderBaseColor, shaderBaseTexture);
+            _materialInfo = SaveMaterialInfo(gameObject.transform, shaderBaseColor, shaderBaseTexture);
+            ConstructUVTextures(_materialInfo);
         }
         
-        // Start is called before the first frame update
-        // void Start()
-        // {
-        //     _animalManager = AnimalManager.Instance;
-        //
-        //     if (_animalManager == null)
-        //     {
-        //         throw new Exception("There must be an instance of the AnimalManager script in the scene");
-        //     }
-        //     else
-        //     {
-        //         _animalManager.VisionSwitch.AddListener(SwitchUV);
-        //     }
-        // }
+        //constructs the UV textures (if base material has a texture) and caches them for performance
+        private void ConstructUVTextures(Dictionary<string, MaterialInfo> materialInfo)
+        {
+            foreach (KeyValuePair<string, MaterialInfo> m in materialInfo)
+            {
+                Texture2D originalTexture = m.Value.texture;
+                if (originalTexture != null)
+                {
+                    Color[] colors = originalTexture.GetPixels();
+                    Color[] newColors = new Color[colors.Length];
+                        
+                    for (int i = 0; i < newColors.Length; i++)
+                    {
+                        newColors[i] = new Color(colors[i].g, colors[i].b, UVAmount);
 
-        public override void ApplyEffect(MaterialPropertyBlock propBlock, Material currentMaterial, List<Material> rendererMaterials,
+                    }
+
+                    Texture2D newT = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.RGB24, true);
+                    newT.wrapMode = TextureWrapMode.Clamp;
+                    newT.SetPixels(newColors);
+                    newT.Apply();
+                    m.Value.changedTexture = newT;
+                }
+            }
+        }
+        
+        /// <summary>
+        /// Goes through dictionary of materials to find material's UV texture and applies it to the shader property
+        /// If texture is non-existent, changes the shader color
+        /// </summary>
+        /// <param name="propBlock"></param>
+        /// <param name="currentMaterial"></param>
+        /// <param name="renderer"></param>
+        /// <param name="rendererMaterials"></param>
+        /// <param name="visionParameters"></param>
+        public override void ApplyEffect(MaterialPropertyBlock propBlock, Material currentMaterial, Renderer renderer, List<Material> rendererMaterials,
             VisionParameters visionParameters)
         {
-            // MaterialInfo matInfo;
-            // _originalMaterialInfo.TryGetValue(material, out matInfo);
-
-            Texture2D texture = (Texture2D) propBlock.GetTexture(shaderBaseTexture);
-            Color color = propBlock.GetColor(shaderBaseColor);
             
-            if (texture != null)
+            //if we have recursed to a child game object with its own UV script, we should use the child's UV settings instead
+            if (renderer.gameObject != gameObject)
             {
-                Color[] colors = texture.GetPixels();
-                Color[] newColors = new Color[colors.Length];
-                        
-                for (int i = 0; i < newColors.Length; i++)
+                UV childUVScript = renderer.gameObject.GetComponent<UV>();
+                if (childUVScript != null)
                 {
-                    newColors[i] = new Color(colors[i].g, colors[i].b, UVAmount);
-
+                    childUVScript.ApplyEffect(propBlock, currentMaterial, renderer, rendererMaterials, visionParameters);
+                    return;
                 }
+            }
+            
+            MaterialInfo matInfo;
+            _materialInfo.TryGetValue(GetMaterialName(currentMaterial), out matInfo);
+            Color color = currentMaterial.GetColor(shaderBaseColor);
 
-                Texture2D newT = new Texture2D(texture.width, texture.height, TextureFormat.RGB24, true);
-                newT.wrapMode = TextureWrapMode.Clamp;
-                newT.SetPixels(newColors);
-                newT.Apply();
-                // Color newColor = new Color(originalColor.g, originalColor.b,UVAmount);
-                // propBlock.SetColor(materialBaseColorName, newColor);
-                propBlock.SetTexture(shaderBaseTexture, newT);
-                propBlock.SetColor(shaderBaseColor, Color.white);
-            }
-            else
+            if (matInfo != null)
             {
-                Color newColor = new Color(color.g, color.b,UVAmount);
-                propBlock.SetColor(shaderBaseColor, newColor);
+                if (matInfo.changedTexture != null)
+                {
+                    propBlock.SetTexture(shaderBaseTexture, matInfo.changedTexture);
+                    
+                }
             }
             
-            // if (matInfo != null)
-            // {
-            //     if (matInfo.texture != null)
-            //     {
-            //         Color[] colors = matInfo.texture.GetPixels();
-            //         Color[] newColors = new Color[colors.Length];
-            //             
-            //         for (int i = 0; i < newColors.Length; i++)
-            //         {
-            //             newColors[i] = new Color(colors[i].g, colors[i].b, UVAmount);
-            //
-            //         }
-            //
-            //         Texture2D newT = new Texture2D(matInfo.texture.width, matInfo.texture.height, TextureFormat.RGB24, true);
-            //         newT.wrapMode = TextureWrapMode.Clamp;
-            //         newT.SetPixels(newColors);
-            //         newT.Apply();
-            //         // Color newColor = new Color(originalColor.g, originalColor.b,UVAmount);
-            //         // propBlock.SetColor(materialBaseColorName, newColor);
-            //         propBlock.SetTexture(matInfo.shaderTextureProperty, newT);
-            //         propBlock.SetColor(matInfo.shaderColorProperty, Color.white);
-            //     }
-            //     else
-            //     {
-            //         Color newColor = new Color(matInfo.color.g, matInfo.color.b,UVAmount);
-            //         propBlock.SetColor(matInfo.shaderColorProperty, newColor);
-            //     }
-            // }
-            
+            Color newColor = new Color(color.g, color.b,UVAmount);
+            propBlock.SetColor(shaderBaseColor, newColor);
+
         }
+        
+        /// <summary>
+        /// Changes materials of a renderer back to the original
+        /// </summary>
+        /// <param name="r"></param>
         public override void RevertToOriginal(Renderer r)
         {
-            for (int i = 0; i < r.materials.Length; i++)
+            for (int i = 0; i < r.sharedMaterials.Length; i++)
             {
                 MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
                 r.GetPropertyBlock(propBlock, i);
                 
                 MaterialInfo matInfo;
-                _originalMaterialInfo.TryGetValue(r.materials[i], out matInfo);
+                _materialInfo.TryGetValue(GetMaterialName(r.sharedMaterials[i]), out matInfo);
 
                 if (matInfo != null)
                 {

@@ -4,6 +4,9 @@ using Anivision.Core;
 
 namespace Anivision.Vision
 {
+    /// <summary>
+    /// Contains all of the vision information for an animal
+    /// </summary>
     public class VisionParameters
     {
         public Animal Animal { get; private set; }

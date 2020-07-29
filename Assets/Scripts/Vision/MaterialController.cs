@@ -5,9 +5,12 @@ using UnityEngine;
 
 namespace Anivision.Vision
 {
+    /// <summary>
+    /// Controller class to apply all of the relevant material effects that the object supports
+    /// </summary>
     public class MaterialController : MonoBehaviour
     {
-        private Dictionary<VisionEffect, MaterialEffect> effects;
+        private Dictionary<VisionEffect, MaterialEffect> effects; //get all of the effects attached to this game object
         private AnimalManager _animalManager;
 
         private void Awake()
@@ -42,6 +45,11 @@ namespace Anivision.Vision
             MaterialChangeRecursive(gameObject.transform, visionParameters);
         }
 
+        /// <summary>
+        /// Recurses through all of the child transforms and applies the relevant effects
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="visionParameters"></param>
         private void MaterialChangeRecursive(Transform t, VisionParameters visionParameters)
         {
             GameObject currGameObject = t.gameObject;
@@ -51,18 +59,21 @@ namespace Anivision.Vision
             if (mRenderer != null)
             {
                 List<Material> newMaterialsList = new List<Material>();
-                RevertRendererToOriginal(mRenderer);
-                for (int i = 0; i < mRenderer.materials.Length; i++)
+                RevertToOriginal(mRenderer); //revert materials to original before applying new changes
+                
+                //go through renderer materials
+                for (int i = 0; i < mRenderer.sharedMaterials.Length; i++)
                 {
-                    Material mat = mRenderer.materials[i];
                     Material currentSharedMaterial = mRenderer.sharedMaterials[i];
                     MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
                     mRenderer.GetPropertyBlock(propBlock, i);
+                    
+                    //go through list of effects for this animal and apply effect if this effect is on the object
                     foreach (VisionEffect effect in visionParameters.visionEffects)
                     {
                         if (effects.ContainsKey(effect))
                         {
-                            effects[effect].ApplyEffect(propBlock, currentSharedMaterial, newMaterialsList, visionParameters);
+                            effects[effect].ApplyEffect(propBlock, currentSharedMaterial, mRenderer, newMaterialsList, visionParameters);
                         }
                     }
                     mRenderer.SetPropertyBlock(propBlock, i);
@@ -79,13 +90,33 @@ namespace Anivision.Vision
                 MaterialChangeRecursive(child, visionParameters);
             }
         }
-
-        private void RevertRendererToOriginal(Renderer r)
+        
+        //revert current renderer to original
+        private void RevertToOriginal(Renderer r)
         {
-            foreach (KeyValuePair<VisionEffect, MaterialEffect> effect in effects)
+            if (r != null)
             {
-                effect.Value.RevertToOriginal(r);
+                foreach (KeyValuePair<VisionEffect, MaterialEffect> pair in effects)
+                {
+                    pair.Value.RevertToOriginal(r);
+                }
             }
+           
+        }
+        
+        //recurse through children to revert renderers to original
+        private void RevertToOriginalRecursive(Transform t)
+        {
+            GameObject currGameObject = t.gameObject;
+            Renderer mRenderer = currGameObject.GetComponent<Renderer>();
+
+            RevertToOriginal(mRenderer);
+
+            // recurse over children
+            foreach(Transform child in t) {
+                RevertToOriginalRecursive(child);
+            }
+            
         }
     }
 }

@@ -4,83 +4,56 @@ using System.Collections.Generic;
 using Anivision.Core;
 using Anivision.Vision;
 
-[RequireComponent(typeof(MaterialController))]
+/// <summary>
+/// Swaps materials depending on which type of animal
+/// </summary>
 public class MaterialSwapScript : MaterialEffect
 {
-    public Material[] nUVmats;
-    public Material[] UVmats;
+    //What materials to swap between
     public MaterialGroup[] MaterialGroups;
     public override VisionEffect Effect => VisionEffect.MaterialSwap;
 
-    private Dictionary<Material, Dictionary<Animal, Material>> materialsDictionary;
-    private Dictionary<Material, Material> reverseMaterialDictionary;
-
+    private Dictionary<string, Dictionary<Animal, Material>> materialsDictionary; //original material to materials to swap to
+    private Dictionary<string, Material> reverseMaterialDictionary; //material to original material for faster lookup
+    
+    //small class to have pairing between animal and material
+    [Serializable]
+    public class MaterialAnimal
+    {
+        public Animal animal;
+        public Material material;
+    }
+    
+    //small class to group together all the materials that should be swapped between
+    [Serializable]
+    public class MaterialGroup
+    {
+        public Material originalMaterial;
+        public MaterialAnimal[] MaterialsToSwap;
+    }
+    
     private void Awake()
     {
-        materialsDictionary = new Dictionary<Material, Dictionary<Animal, Material>>();
-        reverseMaterialDictionary = new Dictionary<Material, Material>();
+        materialsDictionary = new Dictionary<string, Dictionary<Animal, Material>>();
+        reverseMaterialDictionary = new Dictionary<string, Material>();
         ConstructMaterialDictionaries(MaterialGroups, materialsDictionary, reverseMaterialDictionary);
     }
 
-    void OnEnable()
-    {
-        MaterialEventManager.OnMaterialSwap += SwapMaterial;
-    }
-
-    void OnDisable()
-    {
-        MaterialEventManager.OnMaterialSwap -= SwapMaterial;
-    }
-
-    int GetIndexOfMaterial(Material mat)
-    {
-        for(int i = 0; i < nUVmats.Length; i++) {
-            if((nUVmats[i].name + " (Instance)").Equals(mat.name)) {
-                return i;
-            }
-            if((UVmats[i].name + " (Instance)").Equals(mat.name)) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
-    void SwapMaterial(bool uvMode)
-    {
-        SwapMaterialRecursive(gameObject.transform, uvMode);
-    }
-
-    void SwapMaterialRecursive(Transform t, bool uvMode)
-    {
-        GameObject currGameObject = t.gameObject;
-        // if current gameobject has a renderer
-        if(currGameObject.GetComponent<Renderer>() != null){
-            // switch to the correct texture, if valid and switchable
-            int index = GetIndexOfMaterial(currGameObject.GetComponent<Renderer>().material);
-            if (index > -1)
-            {
-                if (uvMode)
-                {
-                    currGameObject.GetComponent<Renderer>().material = UVmats[index];
-                }
-                else
-                {
-                    currGameObject.GetComponent<Renderer>().material = nUVmats[index];
-                }
-            }
-        }
-        // recurse over children
-        foreach( Transform child in t) {
-            SwapMaterialRecursive(child, uvMode);
-        }
-    }
-
-    public override void ApplyEffect(MaterialPropertyBlock propBlock, Material currentMaterial, List<Material> rendererNewMaterials,
+    /// <summary>
+    /// Function looks through the dictionary of materials to see, based on the current material and animal, which
+    /// material should be swapped in
+    /// </summary>
+    /// <param name="propBlock"></param>
+    /// <param name="currentMaterial"></param>
+    /// <param name="renderer"></param>
+    /// <param name="rendererNewMaterials"></param>
+    /// <param name="visionParameters"></param>
+    public override void ApplyEffect(MaterialPropertyBlock propBlock, Material currentMaterial, Renderer renderer, List<Material> rendererNewMaterials,
         VisionParameters visionParameters)
     {
         Material swapMaterial = currentMaterial;
         Material originalMaterial = currentMaterial;
-        if (!materialsDictionary.ContainsKey(originalMaterial))
+        if (!materialsDictionary.ContainsKey(GetMaterialName(originalMaterial)))
         {
             originalMaterial = GetOriginalMaterial(originalMaterial);
         }
@@ -94,7 +67,7 @@ public class MaterialSwapScript : MaterialEffect
 
     }
 
-    private void ConstructMaterialDictionaries(MaterialGroup[] materialGroupsList, Dictionary<Material, Dictionary<Animal, Material>> matDictionary, Dictionary<Material, Material> reverseMatDictionary)
+    private void ConstructMaterialDictionaries(MaterialGroup[] materialGroupsList, Dictionary<string, Dictionary<Animal, Material>> matDictionary, Dictionary<string, Material> reverseMatDictionary)
     {
         if (materialGroupsList != null && materialGroupsList.Length > 0)
         {
@@ -102,85 +75,81 @@ public class MaterialSwapScript : MaterialEffect
             reverseMatDictionary.Clear();
             foreach (MaterialGroup m in materialGroupsList)
             {
-                if (!matDictionary.ContainsKey(m.originalMaterial))
+                if (!matDictionary.ContainsKey(GetMaterialName(m.originalMaterial)))
                 {
                     Dictionary<Animal, Material> valueDict = new Dictionary<Animal, Material>();
                     foreach (MaterialAnimal materialAnimal in m.MaterialsToSwap)
                     {
-                        // Debug.Log(m.originalMaterial.name);
-                        // Debug.Log(materialAnimal.animal);
-                        // Debug.Log(materialAnimal.material.name);
+
                         if (!valueDict.ContainsKey(materialAnimal.animal))
                         {
                             valueDict.Add(materialAnimal.animal, materialAnimal.material);
                         }
 
-                        if (!reverseMatDictionary.ContainsKey(materialAnimal.material))
+                        if (!reverseMatDictionary.ContainsKey(GetMaterialName(materialAnimal.material)))
                         {
-                            reverseMatDictionary.Add(materialAnimal.material, m.originalMaterial);
+                            reverseMatDictionary.Add(GetMaterialName(materialAnimal.material), m.originalMaterial);
                         }
                     }
 
-                    matDictionary.Add(m.originalMaterial, valueDict);
+                    matDictionary.Add(GetMaterialName(m.originalMaterial), valueDict);
                 }
             }
         }
     }
-
+    
+    /// <summary>
+    /// Given a material, looks up what the original material is
+    /// </summary>
+    /// <param name="material"></param>
+    /// <returns></returns>
     public Material GetOriginalMaterial(Material material)
     {
         Material originalMaterial;
         
-        if (reverseMaterialDictionary.TryGetValue(material, out originalMaterial) == false)
+        if (reverseMaterialDictionary.TryGetValue(GetMaterialName(material), out originalMaterial) == false)
         {
-            if (materialsDictionary.ContainsKey(material))
+            if (materialsDictionary.ContainsKey(GetMaterialName(material)))
             {
-                Debug.Log(material.name);
                 return material;
             }
         }
-        // Debug.Log(originalMaterial == null);
         return originalMaterial;
     }
-
+    
+    /// <summary>
+    /// Given a material and an animal, looks up what material should be swapped in
+    /// </summary>
+    /// <param name="originalMaterial"></param>
+    /// <param name="animal"></param>
+    /// <returns></returns>
     public Material GetMaterialToSwapTo(Material originalMaterial, Animal animal)
     {
         Dictionary<Animal, Material> materialsSwap;
         Material returnMaterial;
-        if (!materialsDictionary.ContainsKey(originalMaterial))
+        if (!materialsDictionary.ContainsKey(GetMaterialName(originalMaterial)))
         {
             return null;
         }
 
-        materialsDictionary.TryGetValue(originalMaterial, out materialsSwap);
+        materialsDictionary.TryGetValue(GetMaterialName(originalMaterial), out materialsSwap);
         materialsSwap.TryGetValue(animal, out returnMaterial);
         return returnMaterial;
     }
-
+    
+    /// <summary>
+    /// Reverts all materials of a renderer to their original materials
+    /// </summary>
+    /// <param name="r"></param>
     public override void RevertToOriginal(Renderer r)
     {
         Material[] currentMaterials = r.sharedMaterials;
         Material[] originalMaterials = new Material[currentMaterials.Length];
         for (int i = 0; i < currentMaterials.Length; i++)
         {
-            Debug.Log(currentMaterials[i].name);
             originalMaterials[i] = GetOriginalMaterial(currentMaterials[i]);
         }
 
         r.materials = originalMaterials;
-    }
-
-    [Serializable]
-    public class MaterialAnimal
-    {
-        public Animal animal;
-        public Material material;
-    }
-
-    [Serializable]
-    public class MaterialGroup
-    {
-        public Material originalMaterial;
-        public MaterialAnimal[] MaterialsToSwap;
     }
 }
