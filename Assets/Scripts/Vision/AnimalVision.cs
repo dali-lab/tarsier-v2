@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEditorInternal;
 #endif
 using UnityEngine;
 using Anivision.Core;
@@ -15,28 +16,8 @@ namespace Anivision.Vision
     /// </summary>
     public class AnimalVision : MonoBehaviour
     {
-        private class VisionOrder
-        {
-            public MaterialVisionEffect visionEffect;
-            public int order = 0;
-
-            public VisionOrder(MaterialVisionEffect effect, int visionOrder)
-            {
-                visionEffect = effect;
-                order = visionOrder;
-            }
-            
-            public VisionOrder(MaterialVisionEffect effect)
-            {
-                visionEffect = effect;
-            }
-
-        }
-        
-        public Animal animal;
-        public bool hasUvVision;
-        public Colorblindness colorblindness;
-        public bool swapMaterials;
+        public Colorblindness colorblindness = Colorblindness.None;
+        public List<VisionEffect> effects;
         
         //following variables used to keep track of custom colorblind filter values
         private float rRed = 1f;
@@ -51,48 +32,15 @@ namespace Anivision.Vision
         private float bGreen;
         private float bBlue = 1f;
 
-        private VisionOrder uvVisonOrder = new VisionOrder(MaterialVisionEffect.UV);
-        private VisionOrder colorblindnessOrder = new VisionOrder(MaterialVisionEffect.Colorblind);
-        private VisionOrder swapMaterialsOrder = new VisionOrder(MaterialVisionEffect.MaterialSwap);
-        private List<MaterialVisionEffect> _materialEffectOrders;
-
-        private void Awake()
-        {
-            //determine order to apply material effects
-            List<VisionOrder> visionOrders = new List<VisionOrder>();
-            _materialEffectOrders = new List<MaterialVisionEffect>();
-            if (hasUvVision)
-            {
-                visionOrders.Add(uvVisonOrder);
-            }
-
-            if (colorblindness != Colorblindness.None)
-            {
-                visionOrders.Add(colorblindnessOrder);
-            }
-
-            if (swapMaterials)
-            {
-                visionOrders.Add(swapMaterialsOrder);
-            }
-            
-            visionOrders.Sort((a, b) => a.order - b.order);
-
-            foreach (VisionOrder m in visionOrders)
-            {
-                _materialEffectOrders.Add(m.visionEffect);
-            }
-        }
-
         public VisionParameters ConstructVisionParametersObject(Animal animal)
         {
             if (colorblindness == Colorblindness.Custom)
             {
-                return new VisionParameters(animal, hasUvVision, colorblindness, ConstructColorblindMatrix(), swapMaterials);
+                return new VisionParameters(animal, effects, colorblindness, ConstructColorblindMatrix());
             }
             else
             {
-                return new VisionParameters(animal, hasUvVision, colorblindness, null, swapMaterials);
+                return new VisionParameters(animal, effects, colorblindness,null);
             } 
         }
         
@@ -112,52 +60,53 @@ namespace Anivision.Vision
     [CustomEditor(typeof(AnimalVision))]
     public class VisionEditor : Editor
     {
+        private AnimalVision visionScript;
+        private ReorderableList effectsList;
+
+        private void OnEnable()
+        {
+            visionScript = target as AnimalVision;
+            effectsList = new ReorderableList(serializedObject, serializedObject.FindProperty("effects"), true, true, true, true);
+            effectsList.drawElementCallback = DrawListItems;
+            effectsList.drawHeaderCallback = DrawHeader;
+        }
+        
+        // Draws the elements on the list
+        void DrawListItems(Rect rect, int index, bool isActive, bool isFocused)
+        {
+            visionScript.effects[index] = (VisionEffect) EditorGUI.EnumPopup(rect, visionScript.effects[index]);
+        }
+
+        //Draws the header
+        void DrawHeader(Rect rect)
+        {
+            EditorGUI.LabelField(rect, new GUIContent("Vision Effects", "Vision effects–applied in the order of this list"));
+        }
+
         public override void OnInspectorGUI()
         {
-            AnimalVision visionScript = target as AnimalVision;
-            
-            EditorGUILayout.Space(3);
-            EditorGUILayout.LabelField(new GUIContent("Material Effects:", "These effects are applied to the materials of the objects in the world. If you choose multiple, you must choose the order you want them applied"), EditorStyles.boldLabel);
-            EditorGUILayout.Space(5);
 
-            EditorGUILayout.BeginHorizontal();
-            visionScript.swapMaterials = GUILayout.Toggle(visionScript.swapMaterials, new GUIContent("Swap Materials", "Swap the materials on environment objects that support material swap. If this is selected, objects that also support colorblindness and UV will not have colorblindness or UV applied"), new GUILayoutOption[]{GUILayout.Width(150)});
-            if (visionScript.swapMaterials)
-            {
-                GUILayout.FlexibleSpace();
-                EditorGUILayout.IntField(visionScript.swapMaterialsOrder.order, new GUILayoutOption[]{GUILayout.MaxWidth(150)});
-            }
-            EditorGUILayout.EndHorizontal();
             EditorGUILayout.Space(3);
-
-            EditorGUILayout.BeginHorizontal();
-            visionScript.hasUvVision = GUILayout.Toggle(visionScript.hasUvVision, new GUIContent("UV Vision", "Apply UV false color on objects that support it"), new GUILayoutOption[]{GUILayout.Width(150)});
-            if (visionScript.hasUvVision)
+            serializedObject.Update(); // Update the array property's representation in the inspector
+            effectsList.DoLayoutList(); // Have the ReorderableList do its work
+            // We need to call this so that changes on the Inspector are saved by Unity.
+            serializedObject.ApplyModifiedProperties();
+           
+            if (visionScript.effects.Contains(VisionEffect.Colorblindness))
             {
-                GUILayout.FlexibleSpace();
-                EditorGUILayout.IntField(visionScript.uvVisonOrder.order, new GUILayoutOption[]{GUILayout.MaxWidth(150)});
+                EditorGUILayout.LabelField("Colorblindness:", EditorStyles.boldLabel);
+                visionScript.colorblindness = (Colorblindness) EditorGUILayout.EnumPopup("Type of Colorblindness", visionScript.colorblindness, new GUILayoutOption[]{GUILayout.MinWidth(150)});
+                EditorGUILayout.Space(3);
             }
-            EditorGUILayout.EndHorizontal();
-            EditorGUILayout.Space(3);
-            
-            EditorGUILayout.BeginHorizontal();
-            visionScript.colorblindness = (Colorblindness) EditorGUILayout.EnumPopup("Type of Colorblindness", visionScript.colorblindness, new GUILayoutOption[]{GUILayout.MinWidth(150)});
-            if (visionScript.colorblindness != Colorblindness.None)
-            {
-                GUILayout.FlexibleSpace();
-                EditorGUILayout.IntField(visionScript.colorblindnessOrder.order, new GUILayoutOption[]{GUILayout.MaxWidth(150)});
-            }
-            EditorGUILayout.EndHorizontal();
-            EditorGUILayout.Space(3);
             
             if (visionScript.colorblindness == Colorblindness.Custom)
             {
-                SetColorblindEditor(visionScript);
+                SetColorblindEditor();
             }
 
         }
 
-        private void SetColorblindEditor(AnimalVision visionScript)
+        private void SetColorblindEditor()
         {
             EditorGUILayout.LabelField(new GUIContent("Red Channel:", "How the red output channel should be mixed"), EditorStyles.boldLabel);
             visionScript.rRed = EditorGUILayout.Slider("Red", visionScript.rRed, 0.0f, 1.0f);

@@ -28,11 +28,11 @@ namespace Anivision.Core
     }
     
     /// <summary>
-    /// Enum for vision effects that are applied to renderer's materials
+    /// Enum for vision effects
     /// </summary>
-    public enum MaterialVisionEffect
+    public enum VisionEffect
     {
-        Colorblind,
+        Colorblindness,
         UV,
         MaterialSwap
     }

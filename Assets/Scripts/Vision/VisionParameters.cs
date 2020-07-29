@@ -7,9 +7,8 @@ namespace Anivision.Vision
     public class VisionParameters
     {
         public Animal Animal { get; private set; }
-        public bool HasUvVision { get; private set; }
+        public List<VisionEffect> visionEffects { get; private set; }
         public Colorblindness Colorblindness { get; private set; }
-        public bool SwapMaterials { get; private set; }
         public Matrix4x4 ColorblindMatrix { get; private set; }
 
         public readonly Dictionary<Colorblindness, Matrix4x4> ColorblindMatrixReference = new Dictionary<Colorblindness, Matrix4x4>
@@ -65,12 +64,11 @@ namespace Anivision.Vision
             {Colorblindness.None, Matrix4x4.identity}
         };
 
-        public VisionParameters(Animal animal, bool hasUvVision, Colorblindness colorblindness, Matrix4x4? customColorblindMatrix, bool swapMaterials)
+        public VisionParameters(Animal animal, List<VisionEffect> effects, Colorblindness colorblindness, Matrix4x4? customColorblindMatrix)
         {
             Animal = animal;
-            HasUvVision = hasUvVision;
             Colorblindness = colorblindness;
-            SwapMaterials = swapMaterials;
+            visionEffects = effects;
 
             if (colorblindness == Colorblindness.Custom)
             {

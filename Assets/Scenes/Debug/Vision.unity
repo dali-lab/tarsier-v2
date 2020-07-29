@@ -269,7 +269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b42b83fd47a764131b7115aa604347de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materialBaseColorName: _BaseColor
 --- !u!65 &133604575
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -359,6 +358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nUVmats: []
   UVmats: []
+  MaterialGroups: []
 --- !u!1 &134363184
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,10 +563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836ceaed76bae4288ac2f573f91d1127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal: 0
-  hasUvVision: 1
-  colorblindness: 9
-  swapMaterials: 1
+  colorblindness: 5
+  effects: 0100000002000000
 --- !u!4 &727664879
 Transform:
   m_ObjectHideFlags: 0
@@ -580,53 +578,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1803018612
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1803018614}
-  - component: {fileID: 1803018613}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1803018613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803018612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 836ceaed76bae4288ac2f573f91d1127, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animal: 0
-  hasUvVision: 0
-  colorblindness: 9
-  swapMaterials: 0
---- !u!4 &1803018614
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803018612}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.894372, y: -2.7962282, z: -7.692492}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1901030311
 GameObject:
@@ -693,10 +644,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 836ceaed76bae4288ac2f573f91d1127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animal: 0
-  hasUvVision: 0
   colorblindness: 0
-  swapMaterials: 1
+  effects: 
 --- !u!4 &1901030315
 Transform:
   m_ObjectHideFlags: 0
@@ -724,6 +673,7 @@ GameObject:
   - component: {fileID: 1915472593}
   - component: {fileID: 1915472592}
   - component: {fileID: 1915472591}
+  - component: {fileID: 1915472596}
   m_Layer: 0
   m_Name: UV Cube
   m_TagString: Untagged
@@ -743,10 +693,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UVAmount: 1
-  materialBaseColorName: _BaseColor
-  materialBaseTextureName: _BaseMap
-  UVTexture: {fileID: 2800000, guid: fff70cc323e7244f0a6fed5ecb11a9a1, type: 3}
+  UVAmount: 0.447
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
 --- !u!65 &1915472592
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -821,6 +770,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915472596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915472590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2069173587
 GameObject:
   m_ObjectHideFlags: 0
