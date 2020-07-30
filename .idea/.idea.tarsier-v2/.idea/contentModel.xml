@@ -787,7 +787,6 @@
           <e p="leftControls.cs" t="Include" />
           <e p="material_swapping" t="Include">
             <e p="MaterialEventManager.cs" t="Include" />
-            <e p="MaterialSwapScript.cs" t="Include" />
           </e>
           <e p="Pixelation.cs" t="Include" />
           <e p="PlayerInteraction" t="Include">
@@ -817,6 +816,7 @@
             <e p="AnimalVision.cs" t="Include" />
             <e p="MaterialController.cs" t="Include" />
             <e p="MaterialEffect.cs" t="Include" />
+            <e p="MaterialSwap.cs" t="Include" />
             <e p="UV.cs" t="Include" />
             <e p="VisionParameters.cs" t="Include" />
           </e>
