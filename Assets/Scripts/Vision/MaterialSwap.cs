@@ -8,6 +8,7 @@ namespace Anivision.Vision
     /// <summary>
     /// Swaps materials depending on which type of animal
     /// </summary>
+    [RequireComponent(typeof(MaterialController))]
     public class MaterialSwap : MaterialEffect
     {
         //What materials to swap between
@@ -151,7 +152,13 @@ namespace Anivision.Vision
             MaterialPropertyBlock propertyBlock = new MaterialPropertyBlock();
             for (int i = 0; i < currentMaterials.Length; i++)
             {
-                currentMaterials[i] = GetOriginalMaterial(currentMaterials[i]);
+                Material originalMaterial = GetOriginalMaterial(currentMaterials[i]);
+
+                if (originalMaterial != null)
+                {
+                    currentMaterials[i] = GetOriginalMaterial(currentMaterials[i]);
+                }
+                
                 r.SetPropertyBlock(propertyBlock, i);
             }
 

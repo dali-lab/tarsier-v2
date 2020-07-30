@@ -785,9 +785,6 @@
           <e p="headsetCollide.cs" t="Include" />
           <e p="HighlightControls.cs" t="Include" />
           <e p="leftControls.cs" t="Include" />
-          <e p="material_swapping" t="Include">
-            <e p="MaterialEventManager.cs" t="Include" />
-          </e>
           <e p="Pixelation.cs" t="Include" />
           <e p="PlayerInteraction" t="Include">
             <e p="AnimalMovement.cs" t="Include" />

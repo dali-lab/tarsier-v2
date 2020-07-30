@@ -6,7 +6,11 @@ using UnityEngine;
 namespace Anivision.Vision
 {
     /// <summary>
-    /// Controller class to apply all of the relevant material effects that the object supports
+    /// Controller class to apply all of the relevant material effects that the object supports.
+    /// This script recurses through the children of the game object it is placed on.
+    /// Therefore, this should be placed at the top-most level of a game object that you want to start having material changes to.
+    /// For example, if you have a gameObject and you want the material changes to affect the child (and its children) but not the
+    /// top-most level, you would place this script in the gameObject's child.
     /// </summary>
     public class MaterialController : MonoBehaviour
     {

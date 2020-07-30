@@ -27,6 +27,23 @@ namespace Anivision.Vision
             ConstructUVTextures(_materialInfo);
         }
         
+        //adds required MaterialController component if not found in parent
+        private void OnValidate()
+        {
+            Transform currentTransform = transform;
+            if (currentTransform.GetComponent<MaterialController>() != null) return;
+
+            while (currentTransform.parent != null)
+            {
+                if (currentTransform.parent.GetComponent<MaterialController>() != null) return;
+
+                currentTransform = currentTransform.parent;
+            }
+
+            gameObject.AddComponent<MaterialController>();
+
+        }
+
         //constructs the UV textures (if base material has a texture) and caches them for performance
         private void ConstructUVTextures(Dictionary<string, MaterialInfo> materialInfo)
         {
