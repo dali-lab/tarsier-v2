@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 0
 --- !u!196 &4
@@ -136,9 +137,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &3179328
 PrefabInstance:
@@ -435,6 +436,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &3957703 stripped
 Transform:
@@ -448,39 +450,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3957702}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3957705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3957704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &3957706
 AudioSource:
   m_ObjectHideFlags: 0
@@ -813,9 +782,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &13377658
 PrefabInstance:
@@ -987,6 +956,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &13377659 stripped
 Transform:
@@ -1000,39 +970,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 13377658}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &13377661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13377660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &13377662
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1355,9 +1292,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &25746184
 PrefabInstance:
@@ -1859,6 +1796,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &27930230 stripped
 Transform:
@@ -1872,39 +1810,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 27930229}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &27930232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27930231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &27930233
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2127,9 +2032,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &40231564
 GameObject:
@@ -2164,6 +2069,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7135,9 +7041,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &48411264
 PrefabInstance:
@@ -7265,9 +7171,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &56499872
 PrefabInstance:
@@ -7529,6 +7435,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &59504824 stripped
 Transform:
@@ -7542,39 +7449,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 59504823}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &59504826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59504825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &59504827
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7968,6 +7842,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &63072637 stripped
 Transform:
@@ -7981,39 +7856,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 63072636}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &63072639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63072638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &63072640
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8505,6 +8347,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &65738566 stripped
 Transform:
@@ -8518,39 +8361,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 65738565}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &65738568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65738567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &65738569
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8758,9 +8568,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &70628535
 PrefabInstance:
@@ -8958,9 +8768,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &80995422
 PrefabInstance:
@@ -9227,6 +9037,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &87625705 stripped
 Transform:
@@ -9240,39 +9051,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 87625704}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &87625707
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87625706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &87625708
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9944,6 +9722,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &106050895 stripped
 Transform:
@@ -10053,39 +9832,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &106050898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106050896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 1
-  durationOnNearTouch: 0.1
-  intervalOnNearTouch: 0.1
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 0.2
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!1 &112169889 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4134799177573427758, guid: 043c2c72de40a72489713a8867652579,
@@ -10102,9 +9848,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &113882530 stripped
 GameObject:
@@ -10122,9 +9868,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &121931858
 PrefabInstance:
@@ -10347,9 +10093,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &133609485
 PrefabInstance:
@@ -10477,9 +10223,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &136760923
 PrefabInstance:
@@ -11246,6 +10992,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &158956807 stripped
 Transform:
@@ -11259,39 +11006,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 158956806}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &158956809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158956808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &158956810
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11558,6 +11272,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &160225281 stripped
 Transform:
@@ -11571,39 +11286,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 160225280}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &160225283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 160225282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &160225284
 AudioSource:
   m_ObjectHideFlags: 0
@@ -11826,9 +11508,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &162627548
 PrefabInstance:
@@ -11956,9 +11638,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &167357507
 PrefabInstance:
@@ -12097,7 +11779,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &167357508 stripped
 Transform:
@@ -12428,9 +12111,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &180436053
 PrefabInstance:
@@ -12602,6 +12285,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &180436054 stripped
 Transform:
@@ -12615,39 +12299,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 180436053}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &180436056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180436055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &180436057
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13003,9 +12654,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &190159798
 PrefabInstance:
@@ -13448,9 +13099,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &208288433 stripped
 GameObject:
@@ -13468,9 +13119,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &209185134
 PrefabInstance:
@@ -13798,9 +13449,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &216972434
 PrefabInstance:
@@ -13913,9 +13564,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &221398219
 PrefabInstance:
@@ -14128,9 +13779,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &229589106
 PrefabInstance:
@@ -14273,9 +13924,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &232632188
 PrefabInstance:
@@ -14419,6 +14070,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -14968,6 +14620,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19858,6 +19511,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &256929852 stripped
 Transform:
@@ -19871,39 +19525,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 256929851}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &256929854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 256929853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &256929855
 AudioSource:
   m_ObjectHideFlags: 0
@@ -20016,9 +19637,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &276230960
 PrefabInstance:
@@ -20156,9 +19777,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &282499835
 PrefabInstance:
@@ -20612,7 +20233,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &298422328 stripped
 Transform:
@@ -20738,9 +20360,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &300832365
 PrefabInstance:
@@ -20912,6 +20534,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &300832366 stripped
 Transform:
@@ -20925,39 +20548,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 300832365}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &300832368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300832367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &300832369
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21070,9 +20660,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &308470593
 PrefabInstance:
@@ -21449,6 +21039,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &312624628 stripped
 Transform:
@@ -21462,39 +21053,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 312624627}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &312624630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 312624629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &312624631
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21761,6 +21319,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &313730868 stripped
 Transform:
@@ -21774,39 +21333,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 313730867}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &313730870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313730869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &313730871
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22208,6 +21734,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &319961780 stripped
 Transform:
@@ -22221,39 +21748,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 319961779}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &319961782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319961781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &319961783
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22456,9 +21950,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &327082521 stripped
 GameObject:
@@ -22476,9 +21970,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &329053218
 PrefabInstance:
@@ -22706,9 +22200,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &335401299
 PrefabInstance:
@@ -23125,6 +22619,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &352704101 stripped
 Transform:
@@ -23138,39 +22633,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 352704100}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &352704103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352704102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &352704104
 AudioSource:
   m_ObjectHideFlags: 0
@@ -23378,9 +22840,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &358300956
 PrefabInstance:
@@ -24003,9 +23465,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &409564193
 PrefabInstance:
@@ -24272,6 +23734,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &411470237 stripped
 Transform:
@@ -24285,39 +23748,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 411470236}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &411470239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411470238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &411470240
 AudioSource:
   m_ObjectHideFlags: 0
@@ -24525,9 +23955,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1 &429828374 stripped
 GameObject:
@@ -24999,6 +24429,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &440200305 stripped
 Transform:
@@ -25012,39 +24443,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 440200304}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &440200307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 440200306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &440200308
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25383,9 +24781,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &457261349
 PrefabInstance:
@@ -25513,9 +24911,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &460546734
 PrefabInstance:
@@ -25863,9 +25261,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1 &475324313 stripped
 GameObject:
@@ -26439,7 +25837,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &496112417 stripped
 Transform:
@@ -26824,6 +26223,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &500005144 stripped
 Transform:
@@ -26837,39 +26237,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 500005143}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &500005146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500005145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &500005147
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27136,6 +26503,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &500498740 stripped
 Transform:
@@ -27149,39 +26517,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 500498739}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &500498742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500498741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &500498743
 AudioSource:
   m_ObjectHideFlags: 0
@@ -27678,97 +27013,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 523473053}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &523890358
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 523890360}
-  - component: {fileID: 523890359}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!108 &523890359
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523890358}
-  m_Enabled: 1
-  serializedVersion: 9
-  m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0.02
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 1
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 0.2
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 4
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 0
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
-  m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &523890360
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 523890358}
-  m_LocalRotation: {x: 0.89933413, y: -0.071866505, z: -0.10442243, w: 0.41848454}
-  m_LocalPosition: {x: 0, y: 153.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 132.46399, y: 21.548996, z: 18.718994}
 --- !u!1001 &525585939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28240,9 +27484,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &549243855
 PrefabInstance:
@@ -28514,6 +27758,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &555114175 stripped
 Transform:
@@ -28527,39 +27772,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 555114174}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &555114177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555114176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &555114178
 AudioSource:
   m_ObjectHideFlags: 0
@@ -28882,9 +28094,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &559599948
 PrefabInstance:
@@ -29281,6 +28493,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &565824692 stripped
 Transform:
@@ -29294,39 +28507,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 565824691}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &565824694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 565824693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &565824695
 AudioSource:
   m_ObjectHideFlags: 0
@@ -29798,9 +28978,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &586840872
 PrefabInstance:
@@ -30038,9 +29218,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &597510585
 PrefabInstance:
@@ -30859,6 +30039,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &616485853 stripped
 Transform:
@@ -30872,39 +30053,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 616485852}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &616485855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616485854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &616485856
 AudioSource:
   m_ObjectHideFlags: 0
@@ -31353,7 +30501,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &621880497 stripped
 Transform:
@@ -31479,9 +30628,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &622934256
 PrefabInstance:
@@ -31589,9 +30738,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &625329209
 PrefabInstance:
@@ -32414,9 +31563,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &640867541
 PrefabInstance:
@@ -32544,9 +31693,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &644011733
 PrefabInstance:
@@ -32950,6 +32099,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -37936,6 +37086,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &683841863 stripped
 Transform:
@@ -37949,39 +37100,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 683841862}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &683841865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 683841864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &683841866
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38584,9 +37702,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &738826803
 PrefabInstance:
@@ -38714,9 +37832,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!64 &738826807
 MeshCollider:
@@ -38728,9 +37846,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &739608433
 PrefabInstance:
@@ -38983,9 +38101,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &744037798
 PrefabInstance:
@@ -39113,9 +38231,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &748825379
 PrefabInstance:
@@ -39287,7 +38405,7 @@ PrefabInstance:
     - target: {fileID: 29443265203482152, guid: 1206b8a1298281449bb8dab406d4d340,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 29443265203482152, guid: 1206b8a1298281449bb8dab406d4d340,
         type: 3}
@@ -39348,9 +38466,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &752650102
 PrefabInstance:
@@ -39849,7 +38967,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &760880258 stripped
 Transform:
@@ -40306,6 +39425,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -45059,6 +44179,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -49935,6 +49056,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &778680291 stripped
 Transform:
@@ -49948,39 +49070,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 778680290}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &778680293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778680292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &778680294
 AudioSource:
   m_ObjectHideFlags: 0
@@ -50700,9 +49789,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &804596844
 PrefabInstance:
@@ -50830,9 +49919,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &816629683
 PrefabInstance:
@@ -50975,9 +50064,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &822105566
 PrefabInstance:
@@ -51629,6 +50718,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &842746694 stripped
 Transform:
@@ -51642,39 +50732,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 842746693}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &842746696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842746695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &842746697
 AudioSource:
   m_ObjectHideFlags: 0
@@ -52217,9 +51274,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &860236082
 PrefabInstance:
@@ -52347,9 +51404,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &863569159
 PrefabInstance:
@@ -52521,6 +51578,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &863569160 stripped
 Transform:
@@ -52534,39 +51592,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 863569159}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &863569162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863569161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &863569163
 AudioSource:
   m_ObjectHideFlags: 0
@@ -52824,9 +51849,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &893040031
 PrefabInstance:
@@ -53093,6 +52118,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &899161603 stripped
 Transform:
@@ -53106,39 +52132,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 899161602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &899161605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 899161604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &899161606
 AudioSource:
   m_ObjectHideFlags: 0
@@ -53661,9 +52654,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &920502850
 PrefabInstance:
@@ -53812,6 +52805,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -54353,6 +53347,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &941310649 stripped
 Transform:
@@ -54366,39 +53361,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 941310648}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &941310651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941310650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &941310652
 AudioSource:
   m_ObjectHideFlags: 0
@@ -54652,9 +53614,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!64 &960247515
 MeshCollider:
@@ -54666,9 +53628,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &960439954
 PrefabInstance:
@@ -55680,6 +54642,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &988752642 stripped
 Transform:
@@ -55693,39 +54656,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 988752641}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &988752644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988752643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &988752645
 AudioSource:
   m_ObjectHideFlags: 0
@@ -56243,9 +55173,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1001515919
 PrefabInstance:
@@ -56668,9 +55598,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1011296912
 PrefabInstance:
@@ -57003,9 +55933,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &1021818981 stripped
 GameObject:
@@ -57023,9 +55953,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1 &1022475142 stripped
 GameObject:
@@ -57043,9 +55973,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1023704819
 PrefabInstance:
@@ -57217,6 +56147,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1023704820 stripped
 Transform:
@@ -57230,39 +56161,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1023704819}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1023704822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1023704821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1023704823
 AudioSource:
   m_ObjectHideFlags: 0
@@ -57475,9 +56373,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &1036177333
 PrefabInstance:
@@ -57749,6 +56647,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1045080078 stripped
 Transform:
@@ -57762,39 +56661,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1045080077}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1045080080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1045080079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1045080081
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58112,9 +56978,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1056435726
 PrefabInstance:
@@ -58552,9 +57418,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &1088114457 stripped
 GameObject:
@@ -58572,9 +57438,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1091213073
 PrefabInstance:
@@ -58746,6 +57612,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1091213074 stripped
 Transform:
@@ -58759,39 +57626,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1091213073}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1091213076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1091213075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1091213077
 AudioSource:
   m_ObjectHideFlags: 0
@@ -58922,7 +57756,7 @@ Transform:
   - {fileID: 1187526468}
   - {fileID: 1963044021}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1100869265
 PrefabInstance:
@@ -59339,6 +58173,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1106068889 stripped
 Transform:
@@ -59352,39 +58187,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1106068888}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1106068891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106068890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1106068892
 AudioSource:
   m_ObjectHideFlags: 0
@@ -59817,9 +58619,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1114824137
 PrefabInstance:
@@ -60042,9 +58844,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1126079781
 PrefabInstance:
@@ -60511,54 +59313,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1130168659}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1131149175
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1131149177}
-  - component: {fileID: 1131149176}
-  m_Layer: 0
-  m_Name: gameController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1131149176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131149175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22cff33bbad94570bae86573ab317ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scenes:
-  - sceneAsset: {fileID: 102900000, guid: 95962cf2ac8ff46438de4e6d696e0385, type: 3}
-    scenePath: Assets/Scenes/Tarsier/ForestVRTK.unity
-  scenesFolder: Tarsier
-  wipeScenesList: 0
---- !u!4 &1131149177
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131149175}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1131633052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60939,6 +59693,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1135134111 stripped
 Transform:
@@ -60952,39 +59707,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1135134110}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1135134113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135134112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1135134114
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61212,9 +59934,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1144188971
 PrefabInstance:
@@ -61813,7 +60535,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!1 &1158189526
 GameObject:
@@ -62054,6 +60777,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1161768502 stripped
 Transform:
@@ -62163,39 +60887,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1161768505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1161768503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!1001 &1165635680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62708,6 +61399,90 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1203916394}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1209944651
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.58677197
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7688905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.64895
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713092, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713098, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: m_Name
+      value: SceneFader
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258232699570713099, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: eye
+      value: 
+      objectReference: {fileID: 1467266959}
+    - target: {fileID: 6258232699570713099, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: rightModel
+      value: 
+      objectReference: {fileID: 1467266961}
+    - target: {fileID: 6258232699570713099, guid: 66ca030cbc7dfb848a12f594d6f57187,
+        type: 3}
+      propertyPath: leftModel
+      value: 
+      objectReference: {fileID: 1467266960}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66ca030cbc7dfb848a12f594d6f57187, type: 3}
 --- !u!1 &1214810638
 GameObject:
   m_ObjectHideFlags: 0
@@ -63266,7 +62041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1237822166
 Light:
   m_ObjectHideFlags: 0
@@ -63275,8 +62050,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237822165}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 3.5
   m_Range: 10
@@ -63467,9 +62243,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1246329017
 PrefabInstance:
@@ -63516,7 +62292,7 @@ PrefabInstance:
     - target: {fileID: 29443265203482152, guid: 1206b8a1298281449bb8dab406d4d340,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 29443265203482152, guid: 1206b8a1298281449bb8dab406d4d340,
         type: 3}
@@ -63577,10 +62353,79 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
+--- !u!1001 &1246483107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2571843568113741236, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_Name
+      value: InputManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2571843568113741238, guid: 13771eee7b2a5499b966190c0cfe24fe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 13771eee7b2a5499b966190c0cfe24fe, type: 3}
 --- !u!1001 &1249876321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63751,6 +62596,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1249876322 stripped
 Transform:
@@ -63764,39 +62610,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1249876321}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1249876324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249876323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1249876325
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63909,9 +62722,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &1256804399 stripped
 GameObject:
@@ -63929,9 +62742,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1269989338
 PrefabInstance:
@@ -64228,6 +63041,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1281364954 stripped
 Transform:
@@ -64241,39 +63055,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1281364953}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1281364956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1281364955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1281364957
 AudioSource:
   m_ObjectHideFlags: 0
@@ -64386,9 +63167,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1285503505
 PrefabInstance:
@@ -65101,9 +63882,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1313802684
 PrefabInstance:
@@ -65249,7 +64030,7 @@ Transform:
   - {fileID: 1474218131}
   - {fileID: 778153264}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1334217146
 GameObject:
@@ -65613,6 +64394,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1345543804 stripped
 Transform:
@@ -65626,39 +64408,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1345543803}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1345543806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345543805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1345543807
 AudioSource:
   m_ObjectHideFlags: 0
@@ -66435,9 +65184,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1 &1368993405 stripped
 GameObject:
@@ -66455,9 +65204,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1 &1371191736 stripped
 GameObject:
@@ -66705,9 +65454,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1377727295
 PrefabInstance:
@@ -67089,6 +65838,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1382168394 stripped
 Transform:
@@ -67102,39 +65852,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1382168393}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1382168396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382168395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1382168397
 AudioSource:
   m_ObjectHideFlags: 0
@@ -67807,9 +66524,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1406970786
 PrefabInstance:
@@ -68242,9 +66959,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1420300007
 PrefabInstance:
@@ -68452,9 +67169,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1 &1427469881 stripped
 GameObject:
@@ -68792,9 +67509,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1433753679
 PrefabInstance:
@@ -68966,6 +67683,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1433753680 stripped
 Transform:
@@ -68979,39 +67697,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1433753679}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1433753682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433753681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1433753683
 AudioSource:
   m_ObjectHideFlags: 0
@@ -69363,6 +68048,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1442584603 stripped
 Transform:
@@ -69376,39 +68062,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1442584602}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1442584605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1442584604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1442584606
 AudioSource:
   m_ObjectHideFlags: 0
@@ -69871,9 +68524,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &1458208009
 PrefabInstance:
@@ -70001,9 +68654,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &1463635925
 GameObject:
@@ -70120,6 +68773,274 @@ Transform:
   m_Father: {fileID: 1914367273}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1467266949
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8064348734043043397, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_Name
+      value: OVRCameraRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -31.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 27.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -54.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8064348734043335269, guid: 2ec5f6542cd10424182a276294492f58,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2ec5f6542cd10424182a276294492f58, type: 3}
+--- !u!1 &1467266950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8064348734043032713, guid: 2ec5f6542cd10424182a276294492f58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467266949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1467266951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8064348734043036189, guid: 2ec5f6542cd10424182a276294492f58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467266949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1467266952 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8064348734043335267, guid: 2ec5f6542cd10424182a276294492f58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467266949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1467266953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8064348734043043395, guid: 2ec5f6542cd10424182a276294492f58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467266949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1467266954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467266950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4241742b07d0fb64f98963c57d6ef9cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 85f27e7cf20f61241b5d34957189679c, type: 2}
+  - {fileID: 2100000, guid: 8ae5e2afaf7f15944a3c17e33a459e73, type: 2}
+  - {fileID: 2100000, guid: 276483ef4d36360429a09f7e1f584bc7, type: 2}
+  - {fileID: 2100000, guid: 81bc22e12db425b4791322a8b35f6bd3, type: 2}
+  - {fileID: 2100000, guid: 65543d594be8dcc4b9d85eb4498c101e, type: 2}
+  - {fileID: 2100000, guid: 4faf030ee7e8c93488fb9b776294fbda, type: 2}
+  humanKatydidAudio: {fileID: 8300000, guid: 6e6ffd2c80d5e6f489139e34f365f376, type: 3}
+  tarsierKatydidAudio: {fileID: 8300000, guid: f3d53b14532c4b148b976c5e0128bd81, type: 3}
+  directionalLight: {fileID: 2020027750}
+--- !u!114 &1467266955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467266951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a11d0bd85b34549ad9a0cd8823d2e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitPanel: {fileID: 6438859751022332309}
+--- !u!65 &1467266956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467266953}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6490159, y: 0.26390237, z: 0.23404694}
+  m_Center: {x: -0.0014232993, y: -0.006083399, z: -0.008975446}
+--- !u!82 &1467266957
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467266953}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4f24cca8655b078459139d3fa0ebb8ba, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 0
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1467266958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467266953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd292e41d12bf6846855c8e43566cd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bugSound: {fileID: 1467266957}
+--- !u!20 &1467266959 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8064348734044972473, guid: 2ec5f6542cd10424182a276294492f58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467266949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1467266960 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5747366126058957132, guid: 2ec5f6542cd10424182a276294492f58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467266949}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1467266961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1912177867393840494, guid: 2ec5f6542cd10424182a276294492f58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467266949}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1474218130
 GameObject:
   m_ObjectHideFlags: 0
@@ -70167,6 +69088,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -75328,6 +74250,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1489024814 stripped
 Transform:
@@ -75341,39 +74264,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1489024813}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1489024816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489024815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1489024817
 AudioSource:
   m_ObjectHideFlags: 0
@@ -75586,9 +74476,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1509886416
 PrefabInstance:
@@ -75760,6 +74650,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1509886417 stripped
 Transform:
@@ -75773,39 +74664,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1509886416}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1509886419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509886418}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1509886420
 AudioSource:
   m_ObjectHideFlags: 0
@@ -76682,6 +75540,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1532206323 stripped
 Transform:
@@ -76695,39 +75554,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1532206322}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1532206325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1532206324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1532206326
 AudioSource:
   m_ObjectHideFlags: 0
@@ -76950,9 +75776,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1544209320
 PrefabInstance:
@@ -77290,9 +76116,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1549373375
 PrefabInstance:
@@ -77530,9 +76356,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1565232911
 PrefabInstance:
@@ -77995,9 +76821,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1578700563
 PrefabInstance:
@@ -78140,9 +76966,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &1582864552
 PrefabInstance:
@@ -78404,6 +77230,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1593582708 stripped
 Transform:
@@ -78417,39 +77244,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1593582707}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1593582710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593582709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1593582711
 AudioSource:
   m_ObjectHideFlags: 0
@@ -79582,9 +78376,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1639142240
 PrefabInstance:
@@ -79692,9 +78486,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &1642003337
 PrefabInstance:
@@ -79917,9 +78711,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1656166365
 PrefabInstance:
@@ -80226,6 +79020,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1657647763 stripped
 Transform:
@@ -80239,39 +79034,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1657647762}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1657647765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1657647764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1657647766
 AudioSource:
   m_ObjectHideFlags: 0
@@ -80514,9 +79276,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1677043805
 PrefabInstance:
@@ -80655,7 +79417,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1677043806 stripped
 Transform:
@@ -80961,9 +79724,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &1696428373
 PrefabInstance:
@@ -81232,7 +79995,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 85f27e7cf20f61241b5d34957189679c, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1698545943 stripped
 Transform:
@@ -81618,9 +80382,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1703533425
 PrefabInstance:
@@ -82032,9 +80796,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1001 &1733262406
 PrefabInstance:
@@ -82162,9 +80926,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1733568504
 PrefabInstance:
@@ -82678,6 +81442,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1744721012 stripped
 Transform:
@@ -82691,39 +81456,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1744721011}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1744721014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1744721013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1744721015
 AudioSource:
   m_ObjectHideFlags: 0
@@ -82946,9 +81678,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &1752617853 stripped
 GameObject:
@@ -82966,9 +81698,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1755700056
 PrefabInstance:
@@ -83238,9 +81970,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
 --- !u!1 &1759013921
 GameObject:
@@ -83271,9 +82003,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1759013923
 MeshRenderer:
@@ -83289,6 +82021,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -83572,7 +82305,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1780764592 stripped
 Transform:
@@ -84014,7 +82748,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1791879823 stripped
 Transform:
@@ -84394,6 +83129,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1804809208 stripped
 Transform:
@@ -84407,39 +83143,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1804809207}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1804809210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1804809209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1804809211
 AudioSource:
   m_ObjectHideFlags: 0
@@ -84926,6 +83629,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1816243083 stripped
 Transform:
@@ -84939,39 +83643,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1816243082}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1816243085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816243084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1816243086
 AudioSource:
   m_ObjectHideFlags: 0
@@ -85445,7 +84116,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1824171550 stripped
 Transform:
@@ -85802,7 +84474,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1841650054 stripped
 Transform:
@@ -86450,9 +85123,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1882037348
 PrefabInstance:
@@ -86730,9 +85403,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1893068000
 PrefabInstance:
@@ -86870,9 +85543,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1896327848
 PrefabInstance:
@@ -87110,9 +85783,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1898543918
 PrefabInstance:
@@ -87366,7 +86039,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1900854762 stripped
 Transform:
@@ -87613,7 +86287,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1903688265 stripped
 Transform:
@@ -87770,6 +86445,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -92904,6 +91580,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1922973221 stripped
 Transform:
@@ -92917,39 +91594,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1922973220}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1922973223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922973222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1922973224
 AudioSource:
   m_ObjectHideFlags: 0
@@ -93216,6 +91860,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1932663728 stripped
 Transform:
@@ -93229,39 +91874,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1932663727}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1932663730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932663729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1932663731
 AudioSource:
   m_ObjectHideFlags: 0
@@ -93723,6 +92335,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1941969328 stripped
 Transform:
@@ -93832,39 +92445,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1941969331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941969329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 1
-  durationOnNearTouch: 0.1
-  intervalOnNearTouch: 0.1
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 0.2
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!1001 &1942122497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94767,6 +93347,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1963462604 stripped
 Transform:
@@ -94780,39 +93361,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1963462603}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1963462606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1963462605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1963462607
 AudioSource:
   m_ObjectHideFlags: 0
@@ -94925,9 +93473,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1 &1966381538 stripped
 GameObject:
@@ -94945,9 +93493,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1969288580
 PrefabInstance:
@@ -95119,6 +93667,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1969288581 stripped
 Transform:
@@ -95132,39 +93681,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1969288580}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1969288583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1969288582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &1969288584
 AudioSource:
   m_ObjectHideFlags: 0
@@ -95421,6 +93937,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &1970584784 stripped
 Transform:
@@ -95530,39 +94047,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1970584787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1970584785}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 1
-  durationOnNearTouch: 0.1
-  intervalOnNearTouch: 0.1
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 0.2
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!1 &1978703130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4134799177573427758, guid: 043c2c72de40a72489713a8867652579,
@@ -95579,9 +94063,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!64 &1978703133
 MeshCollider:
@@ -95593,9 +94077,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &1981464317
 PrefabInstance:
@@ -95838,9 +94322,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &1996218789
 PrefabInstance:
@@ -96143,9 +94627,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: 8546cbb2df77fab45ad8aded0f134a79, type: 3}
 --- !u!1001 &2008326983
 PrefabInstance:
@@ -96397,6 +94881,98 @@ CapsuleCollider:
   m_Height: 1.9658817
   m_Direction: 1
   m_Center: {x: 2.9600809, y: 1.6829408, z: -0.02038704}
+--- !u!1 &2020027749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020027751}
+  - component: {fileID: 2020027750}
+  m_Layer: 0
+  m_Name: Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &2020027750
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020027749}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 1
+  m_Shape: 0
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Intensity: 0.2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 1
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 0.2
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 0
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+--- !u!4 &2020027751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020027749}
+  m_LocalRotation: {x: 0.89933413, y: -0.071866505, z: -0.10442243, w: 0.41848454}
+  m_LocalPosition: {x: 0, y: 153.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 132.46399, y: 21.548996, z: 18.718994}
 --- !u!1001 &2025106199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96788,9 +95364,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &2036073636
 PrefabInstance:
@@ -96915,6 +95491,7 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -102985,6 +101562,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &2102223476 stripped
 Transform:
@@ -102998,39 +101576,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2102223475}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2102223478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102223477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &2102223479
 AudioSource:
   m_ObjectHideFlags: 0
@@ -103143,9 +101688,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: -1682125421048621038, guid: e45fed0a40e2232428a8ebffc0a72aac, type: 3}
 --- !u!1001 &2117844859
 PrefabInstance:
@@ -103672,6 +102217,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1429764989616222708, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
     - {fileID: 1429764989616222711, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!4 &2141110223 stripped
 Transform:
@@ -103685,39 +102231,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2141110222}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2141110225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141110224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc2315305343a584e8758755b54117c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clipOnNearTouch: {fileID: 0}
-  strengthOnNearTouch: 0
-  durationOnNearTouch: 0
-  intervalOnNearTouch: 0.05
-  cancelOnNearUntouch: 1
-  clipOnTouch: {fileID: 0}
-  strengthOnTouch: 0
-  durationOnTouch: 0
-  intervalOnTouch: 0.05
-  cancelOnUntouch: 1
-  clipOnGrab: {fileID: 8300000, guid: 33a0d552717ab4c2e87a77c856d9aaf3, type: 3}
-  strengthOnGrab: 1
-  durationOnGrab: 5
-  intervalOnGrab: 0.05
-  cancelOnUngrab: 1
-  clipOnUse: {fileID: 0}
-  strengthOnUse: 0
-  durationOnUse: 0
-  intervalOnUse: 0.05
-  cancelOnUnuse: 1
-  objectToAffect: {fileID: 0}
 --- !u!82 &2141110226
 AudioSource:
   m_ObjectHideFlags: 0
@@ -104201,7 +102714,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1429764989616222713, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b609c22ead50774a9757aaef9fb30a7, type: 3}
 --- !u!1001 &2385580110852667442
 PrefabInstance:
@@ -104843,6 +103357,190 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e29a9b11e6d6ffc44ada3b0efa6d456d, type: 3}
+--- !u!1001 &6153889628297238685
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1467266952}
+    m_Modifications:
+    - target: {fileID: 881701497218339080, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_Name
+      value: exitPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 881701497218339080, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136375248234152963, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3136375248234152963, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464938630915604543, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6921a454aa104cf47a67f59c64acaa17,
+        type: 3}
+    - target: {fileID: 3464938630915604543, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Switch Vision: A Button
+
+        Teleport: Right Trigger
+
+        Grab:
+        Left & Right Grip
+
+
+        Press X to dismiss panel'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406464976319047306, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460703900599740439, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830932611554878402, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219342830244110021, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 52.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 36.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -24.553001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8092884891203408160, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8157701952924638086, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 228790dd9f1fde74182cbdf5ca0fdaea, type: 3}
+--- !u!1 &6438859751022332309 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 881701497218339080, guid: 228790dd9f1fde74182cbdf5ca0fdaea,
+    type: 3}
+  m_PrefabInstance: {fileID: 6153889628297238685}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6742889318927780509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1245728622480880347, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
