@@ -48,11 +48,13 @@ public class MaterialSwapScript : MaterialEffect
     /// <param name="renderer"></param>
     /// <param name="rendererNewMaterials"></param>
     /// <param name="visionParameters"></param>
-    public override void ApplyEffect(MaterialPropertyBlock propBlock, Material currentMaterial, Renderer renderer, List<Material> rendererNewMaterials,
+    public override void ApplyEffect(MaterialPropertyBlock propBlock, int currentMaterialIndex, Renderer currentRenderer,
         VisionParameters visionParameters)
     {
-        Material swapMaterial = currentMaterial;
-        Material originalMaterial = currentMaterial;
+        propBlock.Clear();
+        currentRenderer.SetPropertyBlock(propBlock, currentMaterialIndex);
+        Material swapMaterial = currentRenderer.sharedMaterials[currentMaterialIndex];
+        Material originalMaterial = swapMaterial;
         if (!materialsDictionary.ContainsKey(GetMaterialName(originalMaterial)))
         {
             originalMaterial = GetOriginalMaterial(originalMaterial);
@@ -62,9 +64,10 @@ public class MaterialSwapScript : MaterialEffect
         {
             swapMaterial = GetMaterialToSwapTo(originalMaterial, visionParameters.Animal);
         }
-        
-        rendererNewMaterials.Add(swapMaterial);
 
+        Material[] newMaterials = currentRenderer.materials;
+        newMaterials[currentMaterialIndex] = swapMaterial;
+        currentRenderer.materials = newMaterials;
     }
 
     private void ConstructMaterialDictionaries(MaterialGroup[] materialGroupsList, Dictionary<string, Dictionary<Animal, Material>> matDictionary, Dictionary<string, Material> reverseMatDictionary)
@@ -143,13 +146,15 @@ public class MaterialSwapScript : MaterialEffect
     /// <param name="r"></param>
     public override void RevertToOriginal(Renderer r)
     {
-        Material[] currentMaterials = r.sharedMaterials;
-        Material[] originalMaterials = new Material[currentMaterials.Length];
+        Material[] currentMaterials = r.materials;
+        MaterialPropertyBlock propertyBlock = new MaterialPropertyBlock();
         for (int i = 0; i < currentMaterials.Length; i++)
         {
-            originalMaterials[i] = GetOriginalMaterial(currentMaterials[i]);
+            currentMaterials[i] = GetOriginalMaterial(currentMaterials[i]);
+            r.SetPropertyBlock(propertyBlock, i);
         }
 
-        r.materials = originalMaterials;
+        r.materials = currentMaterials;
+        
     }
 }

@@ -13,8 +13,14 @@ namespace Anivision.Vision
     {
         public abstract VisionEffect Effect { get; }
         public abstract void RevertToOriginal(Renderer r);
-        public abstract void ApplyEffect(MaterialPropertyBlock propBlock, Material currentMaterial, Renderer renderer,
-            List<Material> rendererMaterials, VisionParameters visionParameters);
+        /// <summary>
+        /// function for each class that inherits MaterialEffect to implement. Applies the specific effect to the material
+        /// </summary>
+        /// <param name="propBlock">passed in material property block</param>
+        /// <param name="materialIndex">index of current material</param>
+        /// <param name="renderer">current renderer</param>
+        /// <param name="visionParameters">VisionParameters object holding the specific effects and vision information</param>
+        public abstract void ApplyEffect(MaterialPropertyBlock propBlock, int materialIndex, Renderer renderer, VisionParameters visionParameters);
         
         // class to save all of the relevant material information
         public class MaterialInfo
@@ -53,13 +59,7 @@ namespace Anivision.Vision
                 {
                     if (!_originalMaterials.ContainsKey(GetMaterialName(m)))
                     {
-                        MaterialInfo matInfo = new MaterialInfo();
-                        matInfo.color = m.GetColor(shaderColorProperty);
-                        matInfo.texture = (Texture2D) m.GetTexture(shaderTextureProperty);
-                        matInfo.shaderColorProperty = shaderColorProperty;
-                        matInfo.shaderTextureProperty = shaderTextureProperty;
-                        matInfo.renderer = mRenderer;
-                        _originalMaterials.Add(GetMaterialName(m), matInfo);
+                        _originalMaterials.Add(GetMaterialName(m), CreateMaterialInfo(m, shaderColorProperty, shaderTextureProperty, mRenderer));
                     }
                 }
             }
@@ -67,6 +67,19 @@ namespace Anivision.Vision
             foreach( Transform child in t) {
                 SaveMaterialInfoRecursive(child, _originalMaterials, shaderColorProperty, shaderTextureProperty);
             }
+        }
+
+        public static MaterialInfo CreateMaterialInfo(Material m, string shaderColorProperty, string shaderTextureProperty, Renderer r)
+        {
+            Color originalColor = m.GetColor(shaderColorProperty);
+            MaterialInfo matInfo = new MaterialInfo();
+            matInfo.color = new Color(originalColor.r, originalColor.g, originalColor.b);
+            matInfo.texture = (Texture2D) m.GetTexture(shaderTextureProperty);
+            matInfo.shaderColorProperty = shaderColorProperty;
+            matInfo.shaderTextureProperty = shaderTextureProperty;
+            matInfo.renderer = r;
+
+            return matInfo;
         }
 
         public static string GetMaterialName(Material m)

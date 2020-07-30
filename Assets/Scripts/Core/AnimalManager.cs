@@ -47,15 +47,23 @@ namespace Anivision.Core
         private void Start()
         {
             
-            _inputManager = InputManager.Instance;
-            
-            if (_inputManager == null)
-            {
-                throw new Exception("There must be an instance of the InputManager script in the scene");
-            }
-            
-            _inputManager.AttachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, AnimalSwitchButton);
+            // _inputManager = InputManager.Instance;
+            //
+            // if (_inputManager == null)
+            // {
+            //     throw new Exception("There must be an instance of the InputManager script in the scene");
+            // }
+            //
+            // _inputManager.AttachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, AnimalSwitchButton);
             SwitchAnimal(); //switch animal to first animal in the list
+        }
+
+        private void Update()
+        {
+            if (Input.anyKeyDown)
+            {
+                SwitchAnimal();
+            }
         }
 
         //switch the animal that we are currently on to the next one in the list

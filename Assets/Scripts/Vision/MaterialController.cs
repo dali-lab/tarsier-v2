@@ -13,6 +13,8 @@ namespace Anivision.Vision
         private Dictionary<VisionEffect, MaterialEffect> effects; //get all of the effects attached to this game object
         private AnimalManager _animalManager;
 
+        private List<VisionEffect> lastAppliedEffects;
+
         private void Awake()
         {
             effects = new Dictionary<VisionEffect, MaterialEffect>();
@@ -42,7 +44,9 @@ namespace Anivision.Vision
 
         private void MaterialChange(VisionParameters visionParameters)
         {
+            // RevertToOriginalRecursive(transform);
             MaterialChangeRecursive(gameObject.transform, visionParameters);
+            lastAppliedEffects = visionParameters.visionEffects;
         }
 
         /// <summary>
@@ -58,32 +62,23 @@ namespace Anivision.Vision
             // if current game object has a renderer
             if (mRenderer != null)
             {
-                List<Material> newMaterialsList = new List<Material>();
                 RevertToOriginal(mRenderer); //revert materials to original before applying new changes
-                
                 //go through renderer materials
                 for (int i = 0; i < mRenderer.sharedMaterials.Length; i++)
                 {
-                    Material currentSharedMaterial = mRenderer.sharedMaterials[i];
                     MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
                     mRenderer.GetPropertyBlock(propBlock, i);
-                    
                     //go through list of effects for this animal and apply effect if this effect is on the object
                     foreach (VisionEffect effect in visionParameters.visionEffects)
                     {
                         if (effects.ContainsKey(effect))
                         {
-                            effects[effect].ApplyEffect(propBlock, currentSharedMaterial, mRenderer, newMaterialsList, visionParameters);
+                            effects[effect].ApplyEffect(propBlock, i, mRenderer, visionParameters);
                         }
                     }
                     mRenderer.SetPropertyBlock(propBlock, i);
                 }
 
-                if (newMaterialsList.Count > 0)
-                {
-                    mRenderer.materials = newMaterialsList.ToArray();
-                }
-               
             }
             // recurse over children
             foreach(Transform child in t) {
@@ -96,9 +91,21 @@ namespace Anivision.Vision
         {
             if (r != null)
             {
-                foreach (KeyValuePair<VisionEffect, MaterialEffect> pair in effects)
+                
+                if (lastAppliedEffects != null && lastAppliedEffects.Count > 0)
                 {
-                    pair.Value.RevertToOriginal(r);
+                    
+                    int i = lastAppliedEffects.Count - 1;
+                    
+                    while (i >= 0)
+                    {
+                        VisionEffect effect = lastAppliedEffects[i];
+                        if (effects.ContainsKey(effect))
+                        {
+                            effects[effect].RevertToOriginal(r);
+                        }
+                        i--;
+                    }
                 }
             }
            

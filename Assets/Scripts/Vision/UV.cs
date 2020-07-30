@@ -35,22 +35,33 @@ namespace Anivision.Vision
                 Texture2D originalTexture = m.Value.texture;
                 if (originalTexture != null)
                 {
-                    Color[] colors = originalTexture.GetPixels();
-                    Color[] newColors = new Color[colors.Length];
-                        
-                    for (int i = 0; i < newColors.Length; i++)
-                    {
-                        newColors[i] = new Color(colors[i].g, colors[i].b, UVAmount);
-
-                    }
-
-                    Texture2D newT = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.RGB24, true);
-                    newT.wrapMode = TextureWrapMode.Clamp;
-                    newT.SetPixels(newColors);
-                    newT.Apply();
-                    m.Value.changedTexture = newT;
+                    m.Value.changedTexture = CreateUVTexture(originalTexture, UVAmount);
                 }
             }
+        }
+
+        private Texture2D CreateUVTexture(Texture2D originalTexture, float uv)
+        {
+            if (originalTexture != null)
+            {
+                Color[] colors = originalTexture.GetPixels();
+                Color[] newColors = new Color[colors.Length];
+
+                for (int i = 0; i < newColors.Length; i++)
+                {
+                    newColors[i] = new Color(colors[i].g, colors[i].b, uv);
+
+                }
+
+                Texture2D newT = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.RGB24,
+                    true);
+                newT.wrapMode = TextureWrapMode.Clamp;
+                newT.SetPixels(newColors);
+                newT.Apply();
+                return newT;
+            }
+
+            return null;
         }
         
         /// <summary>
@@ -58,38 +69,47 @@ namespace Anivision.Vision
         /// If texture is non-existent, changes the shader color
         /// </summary>
         /// <param name="propBlock"></param>
-        /// <param name="currentMaterial"></param>
-        /// <param name="renderer"></param>
-        /// <param name="rendererMaterials"></param>
+        /// <param name="materialIndex"></param>
+        /// <param name="currentRenderer"></param>
         /// <param name="visionParameters"></param>
-        public override void ApplyEffect(MaterialPropertyBlock propBlock, Material currentMaterial, Renderer renderer, List<Material> rendererMaterials,
+        public override void ApplyEffect(MaterialPropertyBlock propBlock, int materialIndex, Renderer currentRenderer, 
             VisionParameters visionParameters)
         {
             
             //if we have recursed to a child game object with its own UV script, we should use the child's UV settings instead
-            if (renderer.gameObject != gameObject)
+            if (currentRenderer.gameObject != gameObject)
             {
-                UV childUVScript = renderer.gameObject.GetComponent<UV>();
+                UV childUVScript = currentRenderer.gameObject.GetComponent<UV>();
                 if (childUVScript != null)
                 {
-                    childUVScript.ApplyEffect(propBlock, currentMaterial, renderer, rendererMaterials, visionParameters);
+                    childUVScript.ApplyEffect(propBlock, materialIndex, currentRenderer, visionParameters);
                     return;
                 }
             }
-            
+
+            Material currentMaterial = currentRenderer.sharedMaterials[materialIndex];
             MaterialInfo matInfo;
             _materialInfo.TryGetValue(GetMaterialName(currentMaterial), out matInfo);
             Color color = currentMaterial.GetColor(shaderBaseColor);
 
-            if (matInfo != null)
+            if (matInfo == null)
             {
-                if (matInfo.changedTexture != null)
+
+                MaterialInfo newMatInfo =
+                    CreateMaterialInfo(currentMaterial, shaderBaseColor, shaderBaseTexture, currentRenderer);
+                if (newMatInfo.texture != null)
                 {
-                    propBlock.SetTexture(shaderBaseTexture, matInfo.changedTexture);
-                    
+                    newMatInfo.changedTexture = CreateUVTexture(newMatInfo.texture, UVAmount);
                 }
+                _materialInfo.Add(GetMaterialName(currentMaterial), newMatInfo);
+                matInfo = newMatInfo;
             }
-            
+
+            if (matInfo.changedTexture != null)
+            {
+                propBlock.SetTexture(shaderBaseTexture, matInfo.changedTexture);
+            }
+
             Color newColor = new Color(color.g, color.b,UVAmount);
             propBlock.SetColor(shaderBaseColor, newColor);
 
@@ -101,24 +121,12 @@ namespace Anivision.Vision
         /// <param name="r"></param>
         public override void RevertToOriginal(Renderer r)
         {
+            MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
             for (int i = 0; i < r.sharedMaterials.Length; i++)
             {
-                MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
                 r.GetPropertyBlock(propBlock, i);
-                
-                MaterialInfo matInfo;
-                _materialInfo.TryGetValue(GetMaterialName(r.sharedMaterials[i]), out matInfo);
-
-                if (matInfo != null)
-                {
-                    if (matInfo.texture != null)
-                    {
-                        propBlock.SetTexture(matInfo.shaderTextureProperty, matInfo.texture);
-                    }
-
-                    propBlock.SetColor(matInfo.shaderColorProperty, matInfo.color);
-                    r.SetPropertyBlock(propBlock, i);
-                }
+                propBlock.Clear();
+                r.SetPropertyBlock(propBlock, i);
             }
 
         }
