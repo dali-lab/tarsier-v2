@@ -2,45 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58017c88-64d9-4a9a-aa0d-207feec3fab7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Core/OVRCameraRig.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BluebellInterior_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BluebellInterior_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BluebellLeaf_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BluebellLeaf_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BluebellPetal_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BluebellPetal_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerCenter_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerCenter_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerLeaf_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerLeaf_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerPetal_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerPetal_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerSpike_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerSpike_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerSpot_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerSpot_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Daff2_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Daff2_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Daff3_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Daff3_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Daff4_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Daff4_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav2_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav2_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav3_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav3_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav4_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav4_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Poppy1_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Poppy1_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyBlack_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyBlack_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyGreen_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyGreen_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyRed_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyRed_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerInterior_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerInterior_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerPetal_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerPetal_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerStem_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerStem_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/IslandTopMat_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/IslandTopMat_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/beehiveMat_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/beehiveMat_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/grassMat_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/grassMat_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/treeBarkMat_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/treeBarkMat_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/treeTopMat_UV.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/treeTopMat_UV.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bee/BeeScene 1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bee/BeeScene 1.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Core/OVRCameraRig.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bee/BeeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bee/BeeScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tarsier/ForestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tarsier/ForestScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tarsier/ForestVRTK.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tarsier/ForestVRTK.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tarsier/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tarsier/LobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeLeftControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeLeftControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeRightControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeRightControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GogglesSceneSwitchObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GogglesSceneSwitchObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/material_swapping/MaterialEventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/material_swapping/MaterialEventManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/rightControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/rightControls.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

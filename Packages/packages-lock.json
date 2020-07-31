@@ -37,16 +37,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-    "com.unity.quicksearch": {
-      "version": "2.0.2",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-=======
->>>>>>> 8313447fa695035b0d4a414e21a5d89d9d8cfaa6
     "com.unity.render-pipelines.core": {
       "version": "7.3.1",
       "depth": 2,
@@ -85,8 +75,7 @@
       },
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-=======
+
     "com.unity.subsystemregistration": {
       "version": "1.0.6",
       "depth": 1,
@@ -94,7 +83,6 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
->>>>>>> 8313447fa695035b0d4a414e21a5d89d9d8cfaa6
     "com.unity.test-framework": {
       "version": "1.1.14",
       "depth": 0,
@@ -106,18 +94,7 @@
       },
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-    "com.unity.textmeshpro": {
-      "version": "2.0.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-=======
->>>>>>> 8313447fa695035b0d4a414e21a5d89d9d8cfaa6
+
     "com.unity.timeline": {
       "version": "1.2.6",
       "depth": 0,
@@ -135,29 +112,12 @@
     },
     "com.unity.xr.legacyinputhelpers": {
       "version": "2.1.4",
-<<<<<<< HEAD
-      "depth": 0,
-=======
       "depth": 1,
->>>>>>> 8313447fa695035b0d4a414e21a5d89d9d8cfaa6
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
-<<<<<<< HEAD
-    "com.unity.xr.oculus.android": {
-      "version": "2.38.6",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.xr.openvr.standalone": {
-      "version": "2.0.5",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {},
-=======
+
     "com.unity.xr.management": {
       "version": "3.2.12",
       "depth": 0,
@@ -176,7 +136,6 @@
         "com.unity.xr.management": "3.0.6",
         "com.unity.ugui": "1.0.0"
       },
->>>>>>> 8313447fa695035b0d4a414e21a5d89d9d8cfaa6
       "url": "https://packages.unity.com"
     },
     "com.unity.modules.ai": {
