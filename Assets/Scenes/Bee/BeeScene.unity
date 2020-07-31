@@ -635,25 +635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1001 &8192734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -837,16 +818,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &20707807 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9150733360245268641, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -1454,16 +1425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &81947968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,10 +1670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1 &82998317 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6676977741789357191, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -1961,12 +1918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &88668761 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6089647561184008596, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -2218,12 +2169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &95421324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 766013519679945531, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -2451,12 +2396,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7855532
+      value: -0.7155533
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.3860948
+      value: 3.0020947
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
@@ -2810,16 +2755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &101325031 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3586108549212730746, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -3133,12 +3068,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &115723188 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8185612340174355421, guid: 17486abb8c2a91840be463688bf4e46b,
@@ -3650,12 +3579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &142606487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2716919121458503456, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -5953,10 +5876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &189397508
 GameObject:
   m_ObjectHideFlags: 0
@@ -9187,16 +9106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &257620254 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4111328727899758503, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -9275,10 +9184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &264525621 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3989119133477621014, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -10207,10 +10112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &292921664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 599107440229449613, guid: 1ff8fb38ce0b64b449c777be60cdd0bd,
@@ -12791,10 +12692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1001 &364602936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12805,12 +12702,12 @@ PrefabInstance:
     - target: {fileID: 1245728622480880347, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.875595
+      value: -6.85
       objectReference: {fileID: 0}
     - target: {fileID: 1245728622480880347, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2006605
+      value: -1.21
       objectReference: {fileID: 0}
     - target: {fileID: 1245728622480880347, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -13145,6 +13042,90 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6276435340421718234, guid: dd73051f6c83ddd46842c189e1a0b2d8, type: 3}
+--- !u!1001 &379038714
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -57.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 373.31464
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 184.1491
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 373.31464
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 21782b7a9ae1c824993bcd541b20da01,
+        type: 3}
+      propertyPath: m_Name
+      value: islandSeparateWithRiver
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21782b7a9ae1c824993bcd541b20da01, type: 3}
 --- !u!1 &379242803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9034219998953144575, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -14241,16 +14222,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &435216369 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1221599885367936174, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -14806,8 +14777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498d22a5296e4bb43a1293fa88955998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlsButton: {fileID: 0}
-  controlsPanel: {fileID: 0}
 --- !u!114 &465632317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14820,14 +14789,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969c9efa821bfb44caaac2077cd658b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightHand: 0
-  FadeSpeed: 4
-  HighlightObject: {fileID: 570630813}
-  buttonOneColor: {r: 1, g: 0, b: 0, a: 1}
-  buttonTwoColor: {r: 1, g: 0, b: 0, a: 1}
-  touchpadColor: {r: 1, g: 0, b: 0, a: 1}
-  triggerColor: {r: 1, g: 0, b: 0, a: 1}
-  gripColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &467207009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1252434424687917408, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -14966,10 +14927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &478078942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1847109583478640803, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -15068,12 +15025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &485479649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9005720372987889220, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -15462,10 +15413,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &503328425 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5452909447540477957, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -15969,12 +15916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &526115221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5579580381042331476, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -16208,12 +16149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &536043328 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1252434424687917408, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -17012,12 +16947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1001 &558010293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17161,12 +17090,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &559015376 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1860413701682451739, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -17347,17 +17270,17 @@ PrefabInstance:
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8995603
+      value: -3.219
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.71474504
+      value: -1.029
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.739194
+      value: 4.76
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
@@ -18855,18 +18778,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ca030cbc7dfb848a12f594d6f57187, type: 3}
---- !u!114 &653401927 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6258232699570713099, guid: 66ca030cbc7dfb848a12f594d6f57187,
-    type: 3}
-  m_PrefabInstance: {fileID: 653401926}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 818b4cbae59e2354d9235efb15475d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &654326214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19113,10 +19024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &675932479 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 403899475396699059, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -19772,10 +19679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1 &697786554 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
@@ -19794,10 +19697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &699402219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1847109583478640803, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -27830,12 +27729,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2104743469768839477, guid: dd73051f6c83ddd46842c189e1a0b2d8, type: 3}
---- !u!1 &731100843 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2113433623}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &735315433 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4550136632855409260, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -27974,10 +27867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &740962846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2888948245941083940, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -28191,12 +28080,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &750448414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6676977741789357191, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -29808,10 +29691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &757763633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8155212362173673948, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -30073,12 +29952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &769919416 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4148494470828329651, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -30307,10 +30180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &782244385 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5035815936580629499, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -30464,12 +30333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &786250394 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1098834684651315686, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -31743,12 +31606,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.80999994
+      value: -0.74
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.384
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
@@ -32102,16 +31965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &862540055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2869601845310158253, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -32348,10 +32201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &882857898 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6951570180316887671, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -32390,10 +32239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &883196335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1847109583478640803, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -33263,12 +33108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &914853826 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3254891322284406520, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -34119,17 +33958,17 @@ PrefabInstance:
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.6324508
+      value: -2.441
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7542825
+      value: -0.695
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.186374
+      value: 3.009
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
@@ -35071,10 +34910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1 &963196992 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4307110701090669061, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -35343,10 +35178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &972773887 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6433140380773394256, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -35593,10 +35424,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &995136008 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3385136287330222800, guid: 1ff8fb38ce0b64b449c777be60cdd0bd,
@@ -35850,12 +35677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1001219755 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4111328727899758503, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -36417,12 +36238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1027786900 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4148494470828329651, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -38302,10 +38117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1 &1078077563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1380610170396759630, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -39162,12 +38973,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1111132052 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3919735445567059837, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -39451,10 +39256,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: c726bbca27b4b484a91851b5f1b37f37, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 7d836c8f6da8aeb41867f42f5e2a446e, type: 2}
 --- !u!114 &1117085543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39467,10 +39268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1118239193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2177414205300508326, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -39839,10 +39636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &1132312312 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4493285327345375448, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -40213,7 +40006,7 @@ PrefabInstance:
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.2858205
+      value: -4.284
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
@@ -41651,16 +41444,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &1172944911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2777935092483017733, guid: a20c72707b33c7a498673664a78e37e1,
@@ -41737,10 +41520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &1176874843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7904917250050341901, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -41890,10 +41669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &1183139528 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2415601197853522506, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -42355,12 +42130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1197844813 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3268334636419952695, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -42519,10 +42288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1 &1201430533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8434338231200750054, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -42705,12 +42470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1221330668 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8812077017158683076, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -43390,12 +43149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1255521654 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5579580381042331476, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -43868,12 +43621,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1276132575 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3989119133477621014, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -44560,12 +44307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1297649307 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 189015465694467230, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -44985,12 +44726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1001 &1319754178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45041,7 +44776,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.6661873
+      value: -4.376
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
@@ -45051,7 +44786,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.109955
+      value: 3.333
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
@@ -47214,17 +46949,17 @@ PrefabInstance:
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.828184
+      value: -2.507
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8467191
+      value: -0.718
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.1063921
+      value: 2.745
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
@@ -48766,10 +48501,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &1417346173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1252434424687917408, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -48968,10 +48699,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &1431922157 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7436413511082893919, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -49122,17 +48849,17 @@ PrefabInstance:
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23044448
+      value: -3.687
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.6103255
+      value: -1.045
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.1984367
+      value: 4.502
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
@@ -49240,10 +48967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &1448612155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6113935704920419857, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -49774,7 +49497,7 @@ PrefabInstance:
     - target: {fileID: 1245728622480880347, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.009357
+      value: 5.921
       objectReference: {fileID: 0}
     - target: {fileID: 1245728622480880347, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -50225,12 +49948,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.77844465
+      value: -0.7084447
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.252202
+      value: 2.868202
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6d0b44f345e0ad64383286f16022b483,
         type: 3}
@@ -50584,16 +50307,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &1499384343
 GameObject:
   m_ObjectHideFlags: 0
@@ -51124,10 +50837,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &1532064824 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3919735445567059837, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -51291,12 +51000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1537567347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6881350154271800876, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -52011,16 +51714,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1001 &1575631893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52164,12 +51857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1575990846 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 403899475396699059, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -52978,25 +52665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1001 &1640752742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54572,16 +54240,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &1695432951 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9150733360245268641, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -54880,10 +54538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 33f62c4ed8da0ed48a82e6b91b3d6614, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 40b3dc6349d794d418f348cdd5547f37, type: 2}
 --- !u!1 &1728713794 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7454986684638441094, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -55280,10 +54934,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1001 &1735903207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56042,10 +55692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1758283975 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4644716358900167276, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -58152,10 +57798,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &1785446470 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1860413701682451739, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -59280,10 +58922,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1 &1832257449 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8149538300041728024, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -59462,10 +59100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1 &1841938547 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5452909447540477957, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -59541,12 +59175,12 @@ PrefabInstance:
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59106374
+      value: -0.545
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.5987856
+      value: 3.151
       objectReference: {fileID: 0}
     - target: {fileID: 5231477663944649372, guid: d7440bfd157202e4eaf52012115d97dd,
         type: 3}
@@ -60266,10 +59900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &1888698429 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5452909447540477957, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -60598,16 +60228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1 &1899324839 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6902265315736797429, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -62446,16 +62066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
 --- !u!1001 &1925305712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62574,10 +62184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
 --- !u!1 &1928140301 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6037432360252522940, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -63571,12 +63177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &1942742950 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3254891322284406520, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -63713,25 +63313,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!1 &1953393369 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1005891084645890522, guid: f9da1d8b3fdad324fabbe3809928f731,
@@ -65174,12 +64755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &2031613772 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2415601197853522506, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -65964,12 +65539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &2064873885 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9105914147428159993, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -66048,14 +65617,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4bcccc224d25b242ae770ea9067cf1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalSkybox: {fileID: 2100000, guid: b6121f1ede3dbe848a9c9de2ef369c28, type: 2}
-  beeSkybox: {fileID: 2100000, guid: 8515d82a787833e44b533fa08a762b0a, type: 2}
-  cameraRig: {fileID: 731100843}
-  centerEye: {fileID: 1952993114}
-  windParticles: {fileID: 707347363}
-  sceneFader: {fileID: 653401927}
-  windSound: {fileID: 81947970}
-  speed: 0.06
 --- !u!114 &2069600566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66068,14 +65629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969c9efa821bfb44caaac2077cd658b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RightHand: 1
-  FadeSpeed: 4
-  HighlightObject: {fileID: 1314440528}
-  buttonOneColor: {r: 1, g: 0, b: 0, a: 1}
-  buttonTwoColor: {r: 1, g: 0, b: 0, a: 1}
-  touchpadColor: {r: 1, g: 0, b: 0, a: 1}
-  triggerColor: {r: 1, g: 0, b: 0, a: 1}
-  gripColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!120 &2069600568
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -66358,10 +65911,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &2087837969 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6089647561184008596, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -66400,10 +65949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &2091073664 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3084275942342632773, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -69822,10 +69367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 42604e846d0fc3b42a0e78578bfe7a73, type: 2}
 --- !u!1 &2110633919 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8434338231200750054, guid: d7440bfd157202e4eaf52012115d97dd,
@@ -70510,12 +70051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
-  - {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 0fa99a56ce006dc4488140a5314ba66f, type: 2}
-  - {fileID: 2100000, guid: c12663edbff9b5746bf92dd43ca2d8de, type: 2}
 --- !u!1 &2142256753
 GameObject:
   m_ObjectHideFlags: 0

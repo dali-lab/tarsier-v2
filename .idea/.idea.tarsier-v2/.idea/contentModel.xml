@@ -166,16 +166,23 @@
           <e p="Platform" t="Include">
             <e p="Editor" t="Include">
               <e p="GUIHelper.cs" t="Include" />
+              <e p="Oculus.Platform.Editor.asmdef" t="Include" />
               <e p="OculusPlatformSettingsEditor.cs" t="Include" />
               <e p="OculusPluginUpdaterStub.cs" t="Include" />
               <e p="OculusStandalonePlatformResponse.cs" t="Include" />
             </e>
+            <e p="Oculus.Platform.asmdef" t="Include" />
             <e p="Samples" t="Include">
               <e p="EntitlementCheck" t="Include">
                 <e p="EntitlementCheck.cs" t="Include" />
               </e>
               <e p="NetChat" t="Include">
                 <e p="DataEntry.cs" t="Include" />
+              </e>
+              <e p="RichPresenceSample" t="Include">
+                <e p="Scripts" t="Include">
+                  <e p="RichPresenceSample.cs" t="Include" />
+                </e>
               </e>
               <e p="SimplePlatformSample" t="Include">
                 <e p="DataEntry.cs" t="Include" />
@@ -301,6 +308,7 @@
                 <e p="NetSyncSession.cs" t="Include" />
                 <e p="NetSyncSessionsChangedNotification.cs" t="Include" />
                 <e p="NetSyncSetSessionPropertyResult.cs" t="Include" />
+                <e p="NetSyncVoipAttenuationValue.cs" t="Include" />
                 <e p="NetworkingPeer.cs" t="Include" />
                 <e p="OrgScopedID.cs" t="Include" />
                 <e p="Party.cs" t="Include" />
@@ -427,6 +435,7 @@
                   <e p="HandPhysics.cs" t="Include" />
                   <e p="Hands.cs" t="Include" />
                   <e p="HandSkeleton.cs" t="Include" />
+                  <e p="HandsManager.cs" t="Include" />
                   <e p="Interactable.cs" t="Include" />
                   <e p="InteractableRegistry.cs" t="Include" />
                   <e p="InteractableToolsCreator.cs" t="Include" />
@@ -488,6 +497,7 @@
               <e p="Video" t="Include">
                 <e p="Editor" t="Include">
                   <e p="AndroidVideoEditorUtil.cs" t="Include" />
+                  <e p="MediaPlayerImageEditor.cs" t="Include" />
                 </e>
                 <e p="Plugins" t="Include">
                   <e p="Android" t="Include">
@@ -502,7 +512,10 @@
                   <e p="Multiview Stereo.shader" t="Include" />
                 </e>
                 <e p="Scripts" t="Include">
+                  <e p="ButtonDownListener.cs" t="Include" />
+                  <e p="MediaPlayerImage.cs" t="Include" />
                   <e p="MoviePlayerSample.cs" t="Include" />
+                  <e p="MoviePlayerSampleControls.cs" t="Include" />
                   <e p="OVROverlayMeshGenerator.cs" t="Include" />
                   <e p="VectorUtil.cs" t="Include" />
                 </e>
@@ -530,6 +543,7 @@
                 <e p="Scripts" t="Include">
                   <e p="ControllerBoxController.cs" t="Include" />
                   <e p="CowController.cs" t="Include" />
+                  <e p="HandsActiveChecker.cs" t="Include" />
                   <e p="PanelHMDFollower.cs" t="Include" />
                   <e p="SelectionCylinder.cs" t="Include" />
                   <e p="TrackSegment.cs" t="Include" />
@@ -565,6 +579,19 @@
               <e p="OVROverlay" t="Include">
                 <e p="Scripts" t="Include">
                   <e p="OVROverlaySample.cs" t="Include" />
+                </e>
+              </e>
+              <e p="OVROverlayCanvas" t="Include">
+                <e p="Editor" t="Include">
+                  <e p="OVROverlayCanvasEditor.cs" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="OVROverlayCanvas.cs" t="Include" />
+                </e>
+                <e p="Shaders" t="Include">
+                  <e p="UI Default Correct.shader" t="Include" />
+                  <e p="UI Prerendered Opaque.shader" t="Include" />
+                  <e p="UI Prerendered.shader" t="Include" />
                 </e>
               </e>
               <e p="StartScene" t="Include">
@@ -635,6 +662,7 @@
               <e p="OVRPluginUpdaterStub.cs" t="Include" />
               <e p="OVRProjectConfig.cs" t="Include" />
               <e p="OVRScreenshotWizard.cs" t="Include" />
+              <e p="OVRShaderBuildProcessor.cs" t="Include" />
               <e p="OVRSystemProfilerPanel.cs" t="Include" />
               <e p="PathHelper.cs" t="Include" />
             </e>
@@ -668,10 +696,13 @@
               </e>
               <e p="Editor" t="Include">
                 <e p="Oculus.VR.Scripts.Editor.asmdef" t="Include" />
+                <e p="OVRCustomSkeletonEditor.cs" t="Include" />
+                <e p="OVREditorUtil.cs" t="Include" />
                 <e p="OVRManagerEditor.cs" t="Include" />
                 <e p="OVROverlayDestRectEditor.shader" t="Include" />
                 <e p="OVROverlayEditor.cs" t="Include" />
                 <e p="OVROverlaySrcRectEditor.shader" t="Include" />
+                <e p="OVRProjectConfigEditor.cs" t="Include" />
               </e>
               <e p="OVRBoundary.cs" t="Include" />
               <e p="OVRCameraRig.cs" t="Include" />
@@ -701,6 +732,7 @@
                 <e p="OVRControllerHelper.cs" t="Include" />
                 <e p="OVRCubemapCapture.cs" t="Include" />
                 <e p="OVRCursor.cs" t="Include" />
+                <e p="OVRCustomSkeleton.cs" t="Include" />
                 <e p="OVRDebugInfo.cs" t="Include" />
                 <e p="OVRGazePointer.cs" t="Include" />
                 <e p="OVRGearVrControllerTest.cs" t="Include" />
@@ -730,11 +762,13 @@
                 <e p="OVRSkeleton.cs" t="Include" />
                 <e p="OVRSkeletonRenderer.cs" t="Include" />
                 <e p="OVRSystemPerfMetrics.cs" t="Include" />
+                <e p="OVRVignette.cs" t="Include" />
                 <e p="OVRWaitCursor.cs" t="Include" />
               </e>
             </e>
             <e p="Shaders" t="Include">
               <e p="OVRColorRampAlpha.shader" t="Include" />
+              <e p="OVRVignette.shader" t="Include" />
               <e p="Unlit Crosshair.shader" t="Include" />
             </e>
             <e p="ThirdParty" t="Include">
@@ -832,6 +866,8 @@
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
+      <e p="Oculus.Platform.csproj" t="IncludeRecursive" />
+      <e p="Oculus.Platform.Editor.csproj" t="IncludeRecursive" />
       <e p="Oculus.VR.csproj" t="IncludeRecursive" />
       <e p="Oculus.VR.Editor.csproj" t="IncludeRecursive" />
       <e p="Oculus.VR.Scripts.Editor.csproj" t="IncludeRecursive" />
