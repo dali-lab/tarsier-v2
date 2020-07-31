@@ -27,7 +27,7 @@ You will need Unity Hub installed, as well as Android Development Studio. Follow
 
 The Oculus plugin is already in the repository, and therefore do not need to be specially installed.
 
-For tips and information on how to start contributing, check out our [wiki](https://github.com/dali-lab/tarsier-v2/wiki).
+**For tips and information on how to start contributing, check out our [wiki](https://github.com/dali-lab/tarsier-v2/wiki).**
 
 ### Building and Running
 
