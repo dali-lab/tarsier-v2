@@ -17,7 +17,7 @@ The Anivision Project aims to let a user experience the world through the eyes o
 
 ### Prerequisistes
 
-You will need Unity Hub installed, as well as Android Development Studio. Follow [these instructions](https://circuitstream.com/blog/oculus-quest-unity-setup/) as necessary to configure the Quest (if not already configured), Android Dev Studio, and Unity Hub. 
+You will need Unity Hub installed, as well as Android Development Studio. Follow [these instructions](https://circuitstream.com/blog/oculus-quest-unity-setup/) as necessary to configure the Quest (if not already configured), Android Dev Studio, and Unity Hub. However, the article is a bit outdated so only follow the instructions up to "Install and run Unity". For configuring the build, player, and XR settings, refer to [this](https://developer.oculus.com/documentation/unity/unity-conf-settings/) instead.
 
 ### Development Setup instructions
 
