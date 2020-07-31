@@ -2,79 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58017c88-64d9-4a9a-aa0d-207feec3fab7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Anivision URP Renderer.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Debug/TestMaterial.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Debug/TestMaterial2.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/Debug/TestMaterial2.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/RendererBlit.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/RendererBlit/Colorblind.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/RendererBlit/Colorblind.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/RendererBlit/Fade.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/RendererBlit/Fade.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/RendererBlit/UV.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Materials/RendererBlit/UV.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Core/AnimalManager.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/Core/AnimalManager.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Debug/Vision.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Debug/Vision.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/AnimalController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/AnimalEnums.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/AnimalEnums.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/AnimalManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/AnimalManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/HeadsetFade.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/HeadsetFade.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInteraction/AnimalMovement.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInteraction/AnimalMovement.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInteraction/MovementParameters.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerInteraction/MovementParameters.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RendererFeatures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RendererFeatures/Blit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RendererFeatures/Blit.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RendererFeatures/BlitPass.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/RendererFeatures/BlitPass.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/AnimalVision.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/AnimalVision.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/MaterialController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/MaterialController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/MaterialEffect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/MaterialEffect.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/MaterialSwap.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/UV.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/UV.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/VisionParameters.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/VisionParameters.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/RendererBlit.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/RendererBlit/Colorblind.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/RendererBlit/Colorblind.shader.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/RendererBlit/Fade.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/RendererBlit/Fade.shader.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/RendererBlit/UV.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/RendererBlit/UV.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.tarsier-v2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tarsier-v2/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.tarsier-v2/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.tarsier-v2/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Anivision URP Renderer.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anivision URP Renderer.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForwardRenderer.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ForwardRenderer.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anivision URP.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LightweightRenderPipelineAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Anivision URP.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LightweightRenderPipelineAsset.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Debug/TestMaterial.mat.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Tarsier.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Tarsier.jpg.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeLeftControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeLeftControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeRightControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeRightControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeTutorialFlying.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bee/BeeTutorialFlying.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GogglesSceneSwitchObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GogglesSceneSwitchObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/material_swapping.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Debug.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/material_swapping/MaterialEventManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/material_swapping/MaterialEventManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/AnimalController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/material_swapping/MaterialSwapScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/material_swapping/MaterialSwapScript.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Vision/MaterialSwap.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/rightControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/rightControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
