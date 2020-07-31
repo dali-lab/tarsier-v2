@@ -775,6 +775,7 @@
             <e p="AnimalController.cs" t="Include" />
             <e p="AnimalEnums.cs" t="Include" />
             <e p="AnimalManager.cs" t="Include" />
+            <e p="HeadsetFade.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
           </e>
           <e p="Debug" t="Include">
@@ -792,6 +793,10 @@
             <e p="Grabber.cs" t="Include" />
             <e p="MovementParameters.cs" t="Include" />
             <e p="Teleport.cs" t="Include" />
+          </e>
+          <e p="RendererFeatures" t="Include">
+            <e p="Blit.cs" t="Include" />
+            <e p="BlitPass.cs" t="Include" />
           </e>
           <e p="returnToLobby.cs" t="Include" />
           <e p="rightControls.cs" t="Include" />
@@ -816,6 +821,13 @@
             <e p="MaterialSwap.cs" t="Include" />
             <e p="UV.cs" t="Include" />
             <e p="VisionParameters.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="RendererBlit" t="Include">
+            <e p="Colorblind.shader" t="Include" />
+            <e p="Fade.shader" t="Include" />
+            <e p="UV.shader" t="Include" />
           </e>
         </e>
       </e>

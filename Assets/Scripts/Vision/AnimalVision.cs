@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditorInternal;
@@ -16,7 +14,7 @@ namespace Anivision.Vision
     /// </summary>
     public class AnimalVision : MonoBehaviour
     {
-        public Colorblindness colorblindness = Colorblindness.None;
+        public ColorblindType colorblindType = ColorblindType.None;
         public List<VisionEffect> effects;
         
         //following variables used to keep track of custom colorblind filter values
@@ -34,13 +32,13 @@ namespace Anivision.Vision
 
         public VisionParameters ConstructVisionParametersObject(Animal animal)
         {
-            if (colorblindness == Colorblindness.Custom)
+            if (colorblindType == ColorblindType.Custom)
             {
-                return new VisionParameters(animal, effects, colorblindness, ConstructColorblindMatrix());
+                return new VisionParameters(animal, effects, colorblindType, ConstructColorblindMatrix());
             }
             else
             {
-                return new VisionParameters(animal, effects, colorblindness,null);
+                return new VisionParameters(animal, effects, colorblindType,null);
             } 
         }
         
@@ -95,11 +93,11 @@ namespace Anivision.Vision
             if (visionScript.effects.Contains(VisionEffect.Colorblindness))
             {
                 EditorGUILayout.LabelField("Colorblindness:", EditorStyles.boldLabel);
-                visionScript.colorblindness = (Colorblindness) EditorGUILayout.EnumPopup("Type of Colorblindness", visionScript.colorblindness, new GUILayoutOption[]{GUILayout.MinWidth(150)});
+                visionScript.colorblindType = (ColorblindType) EditorGUILayout.EnumPopup("Type of Colorblindness", visionScript.colorblindType, new GUILayoutOption[]{GUILayout.MinWidth(150)});
                 EditorGUILayout.Space(3);
             }
             
-            if (visionScript.colorblindness == Colorblindness.Custom)
+            if (visionScript.colorblindType == ColorblindType.Custom)
             {
                 SetColorblindEditor();
             }

@@ -3,7 +3,7 @@ namespace Anivision.Core
     /// <summary>
     /// Enum for types of colorblindness
     /// </summary>
-    public enum Colorblindness
+    public enum ColorblindType
     {
         None,
         Protanopia,

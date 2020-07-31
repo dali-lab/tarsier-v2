@@ -17,7 +17,7 @@ namespace Anivision.PlayerInteraction
     /// </summary>
     public class AnimalMovement : MonoBehaviour
     {
-        public bool canFly;
+        public bool canFly = false;
         public bool canTeleport = true;
         public LayerMask validRaycastLayers;
         public LayerMask validTeleportLayers;

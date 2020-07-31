@@ -33,52 +33,48 @@ namespace Anivision.Core
         
         [Tooltip("List of animals supported by the scene")]
         public AnimalController[] AnimalControllers; //list of animals that the scene supports
-        [Tooltip("The button that the animal switch should be linked to")]
-        public InputManager.Button AnimalSwitchButton;
         public class VisionSwitchEvent : UnityEvent<VisionParameters>{}
         public class MovementSwitchEvent : UnityEvent<MovementParameters>{}
         public VisionSwitchEvent VisionSwitch = new VisionSwitchEvent(); //called when animal is switched 
         public MovementSwitchEvent MovementSwitch = new MovementSwitchEvent(); //called when animal is switched 
         
-        private int _index = 0; //used to keep track of current animal in list
         private InputManager _inputManager;
+        private Dictionary<Animal, AnimalController> _animalControllerDict;
 
         // Start is called before the first frame update
         private void Start()
         {
+            _animalControllerDict = new Dictionary<Animal, AnimalController>();
             
-            _inputManager = InputManager.Instance;
-            
-            if (_inputManager == null)
+            //build dictionary for easy access later
+            foreach (AnimalController controller in AnimalControllers)
             {
-                throw new Exception("There must be an instance of the InputManager script in the scene");
-            }
-            
-            _inputManager.AttachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, AnimalSwitchButton);
-            SwitchAnimal(); //switch animal to first animal in the list
-        }
-
-        //switch the animal that we are currently on to the next one in the list
-        private void SwitchAnimal()
-        {
-            if (AnimalControllers.Length > 0)
-            {
-                VisionSwitch.Invoke(AnimalControllers[_index].VisionParameters);
-                MovementSwitch.Invoke(AnimalControllers[_index].MovementParameters);
-                if (_index == AnimalControllers.Length - 1)
+                if (!_animalControllerDict.ContainsKey(controller.animal))
                 {
-                    _index = 0;
+                    _animalControllerDict.Add(controller.animal, controller);
                 }
                 else
                 {
-                    _index++;
+                    UnityEngine.Debug.LogError("Animal type already declared. Skipping add to dictionary.");
                 }
             }
+            
+            if (AnimalControllers != null && AnimalControllers.Length > 0)
+            {
+                SwitchAnimal(AnimalControllers[0].animal); //switch animal to first animal in the list
+            }
+            
         }
 
-        private void OnDestroy()
+        //switch the animal to the desired one and invoke events
+        public void SwitchAnimal(Animal animal)
         {
-            _inputManager.DetachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, AnimalSwitchButton);
+            AnimalController animalController;
+            if (_animalControllerDict.TryGetValue(animal, out animalController))
+            {
+                VisionSwitch.Invoke(animalController.VisionParameters);
+                MovementSwitch.Invoke(animalController.MovementParameters);
+            }
         }
     }
     
