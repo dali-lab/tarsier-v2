@@ -15,7 +15,7 @@ public class rightControls : MonoBehaviour
 
     private bool tarsierVision = false;
 
-    void Start()
+    void OnEnable()
     {
         //Get singleton instance of input manager
         _inputManager = InputManager.Instance;

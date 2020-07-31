@@ -10,28 +10,33 @@ The Anivision Project aims to let a user experience the world through the eyes o
 # Architecture
 
 ## Tech Stack 🥞
-- Unity3D
+- Unity3D (2019.4.1f1)
 - Maya
 
 ## Setup steps
 
 ### Prerequisistes
 
-You will need Unity Hub installed, as well as Android Development Studio. Follow [these instructions](https://circuitstream.com/blog/oculus-quest-unity-setup/) as necessary to configure the Quest (if not already configured), Android Dev Studio, and Unity Hub.
+You will need Unity Hub installed, as well as Android Development Studio. Follow [these instructions](https://circuitstream.com/blog/oculus-quest-unity-setup/) as necessary to configure the Quest (if not already configured), Android Dev Studio, and Unity Hub. 
 
 ### Development Setup instructions
 
-Fork or clone the project using git to a local space.
+1. Fork or clone the project using git to a local space.
+2. Open the project in Unity Hub and, if prompted, install the correct version of Unity (2019.4.1f1) to use for development.
+3. In `File/Build Settings`, change development platform to Android. Follow [these instructions](https://developer.oculus.com/documentation/unity/unity-conf-settings/) to configure your build settings.
 
-Open the project in Unity Hub and, if prompted, install the correct version of Unity to use for development.
+The Oculus plugin is already in the repository, and therefore do not need to be specially installed.
 
-In `File/Build Settings`, change development platform to Android. 
+For tips and information on how to start contributing, check out our [wiki](https://github.com/dali-lab/tarsier-v2/wiki).
+
+### Building and Running
 
 To build, connect the Oculus Quest to the computer via USB.
 
 If ADB (Android Development Bridge, included in Android Studio) has been properly installed, you will be able to select the device in `File/Build Settings`. From there, you may Build and Run.
 
-The VRTK asset and the Oculus Quest assets are already in the repository, and therefore do not need to be specially installed.
+If you choose just the Build option, this will create an apk file that will be saved onto your computer. Using the command line, navigate to the location where the file has been saved and type `adb install -r [yourFilename].apk`. This will load the project onto your Quest, which can be found under Unknown Sources part of your library.
+
 
 ### Gameplay
 

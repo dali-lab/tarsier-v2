@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -65,7 +66,23 @@ namespace Anivision.Core
             LEFT
         }
 
-        public static InputManager Instance { get; private set; }
+        private static InputManager _inputManager;
+        public static InputManager Instance
+        {
+            get
+            {
+                if (!_inputManager)
+                {
+                    _inputManager = FindObjectOfType (typeof (InputManager)) as InputManager;
+                    if (!_inputManager)
+                    {
+                        UnityEngine.Debug.LogError("There needs to be one active InputManger script on a GameObject in your scene.");
+                    }
+                }
+                
+                return _inputManager;
+            }
+        }
 
         /* Note: this script uses virtual mappings. Generally, the mappings follow as below:
          * 
@@ -86,67 +103,67 @@ namespace Anivision.Core
         public UnityAction<bool> onHasController = null; //Called when controllers' connection state changes
 
         //------------------------Right Controller Events--------------------------------------------------------//
-        private UnityAction OnButtonAPress = null; //Button A Pressed
-        private UnityAction OnButtonARelease = null; //Button A Released
-        private UnityAction OnButtonATouchStart = null; //Button A touch has been detected
-        private UnityAction OnButtonATouchEnd = null; //Button A touch has ended
+        private event Action OnButtonAPress = null; //Button A Pressed
+        private event Action OnButtonARelease = null; //Button A Released
+        private event Action OnButtonATouchStart = null; //Button A touch has been detected
+        private event Action OnButtonATouchEnd = null; //Button A touch has ended
 
-        private UnityAction OnButtonBPress = null; //Button B Pressed
-        private UnityAction OnButtonBRelease = null; //Button B Released
-        private UnityAction OnButtonBTouchStart = null; //Button B touch has been detected
-        private UnityAction OnButtonBTouchEnd = null; //Button B touch has ended
+        private event Action OnButtonBPress = null; //Button B Pressed
+        private event Action OnButtonBRelease = null; //Button B Released
+        private event Action OnButtonBTouchStart = null; //Button B touch has been detected
+        private event Action OnButtonBTouchEnd = null; //Button B touch has ended
 
-        private UnityAction OnRightJoystickPress = null; //Right Joystick Pressed
-        private UnityAction OnRightJoystickRelease = null; //Right Joystick Released
-        private UnityAction OnRightJoystickTouchStart = null; //Right joystick touch has been detected
-        private UnityAction OnRightJoystickTouchEnd = null; //Right joystick touch has ended
+        private event Action OnRightJoystickPress = null; //Right Joystick Pressed
+        private event Action OnRightJoystickRelease = null; //Right Joystick Released
+        private event Action OnRightJoystickTouchStart = null; //Right joystick touch has been detected
+        private event Action OnRightJoystickTouchEnd = null; //Right joystick touch has ended
 
-        private UnityAction<Direction> OnRightJoystickMovement = null; //Right Joystick moved more than halfway in a direction
-        private UnityAction<Vector2> OnRightJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
+        private event Action<Direction> OnRightJoystickMovement = null; //Right Joystick moved more than halfway in a direction
+        private event Action<Vector2> OnRightJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
 
-        private UnityAction OnRightGripPress = null; //Right Grip Button Pressed
-        private UnityAction OnRightGripRelease = null; //Right Grip Button Released
-        private UnityAction OnRightGripTouchStart = null; //Right grip touch state has changed
-        private UnityAction OnRightGripTouchEnd = null; //Right grip touch state has changed
-        private UnityAction<float> OnRightGripMonitor = null; //Monitor force on right grip button
+        private event Action OnRightGripPress = null; //Right Grip Button Pressed
+        private event Action OnRightGripRelease = null; //Right Grip Button Released
+        private event Action OnRightGripTouchStart = null; //Right grip touch state has changed
+        private event Action OnRightGripTouchEnd = null; //Right grip touch state has changed
+        private event Action<float> OnRightGripMonitor = null; //Monitor force on right grip button
 
-        private UnityAction OnRightTriggerPress = null; //Right Trigger Button Pressed
-        private UnityAction OnRightTriggerRelease = null; //Right Trigger Button Released
-        private UnityAction OnRightTriggerTouchStart = null; //Right trigger touch has been detected
-        private UnityAction OnRightTriggerTouchEnd = null; //Right trigger touch has ended
-        private UnityAction<float> OnRightTriggerMonitor = null; //Monitor force on right trigger button
+        private event Action OnRightTriggerPress = null; //Right Trigger Button Pressed
+        private event Action OnRightTriggerRelease = null; //Right Trigger Button Released
+        private event Action OnRightTriggerTouchStart = null; //Right trigger touch has been detected
+        private event Action OnRightTriggerTouchEnd = null; //Right trigger touch has ended
+        private event Action<float> OnRightTriggerMonitor = null; //Monitor force on right trigger button
 
 
         //------------------------Left Controller Events--------------------------------------------------------//
-        private UnityAction OnButtonXPress = null; //Button X Pressed
-        private UnityAction OnButtonXRelease = null; //Button X Released
-        private UnityAction OnButtonXTouchStart = null; //Button X touch has been detected
-        private UnityAction OnButtonXTouchEnd = null; //Button X touch has ended
+        private event Action OnButtonXPress = null; //Button X Pressed
+        private event Action OnButtonXRelease = null; //Button X Released
+        private event Action OnButtonXTouchStart = null; //Button X touch has been detected
+        private event Action OnButtonXTouchEnd = null; //Button X touch has ended
 
-        private UnityAction OnButtonYPress = null; //Button Y Pressed
-        private UnityAction OnButtonYRelease = null; //Button Y Released
-        private UnityAction OnButtonYTouchStart = null; //Button Y touch has been detected
-        private UnityAction OnButtonYTouchEnd = null; //Button Y touch has ended
+        private event Action OnButtonYPress = null; //Button Y Pressed
+        private event Action OnButtonYRelease = null; //Button Y Released
+        private event Action OnButtonYTouchStart = null; //Button Y touch has been detected
+        private event Action OnButtonYTouchEnd = null; //Button Y touch has ended
 
-        private UnityAction OnLeftJoystickPress = null; //Left Joystick Pressed
-        private UnityAction OnLeftJoystickRelease = null; //Left Joystick Released
-        private UnityAction OnLeftJoystickTouchStart = null; //Left joystick touch has been detected
-        private UnityAction OnLeftJoystickTouchEnd = null; //Left joystick touch has ended
+        private event Action OnLeftJoystickPress = null; //Left Joystick Pressed
+        private event Action OnLeftJoystickRelease = null; //Left Joystick Released
+        private event Action OnLeftJoystickTouchStart = null; //Left joystick touch has been detected
+        private event Action OnLeftJoystickTouchEnd = null; //Left joystick touch has ended
 
-        private UnityAction<Direction> OnLeftJoystickMovement = null; //Left Joystick moved more than halfway in a direction       
-        private UnityAction<Vector2> OnLeftJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
+        private event Action<Direction> OnLeftJoystickMovement = null; //Left Joystick moved more than halfway in a direction       
+        private event Action<Vector2> OnLeftJoystickMonitor = null; //See how far the joystick has been moved; (Vector2 X/Y range of -1.0f to 1.0f)
 
-        private UnityAction OnLeftGripPress = null; //Left grip button Pressed
-        private UnityAction OnLeftGripRelease = null; //Left grip button Released
-        private UnityAction OnLeftGripTouchStart = null; //Left grip touch state has changed
-        private UnityAction OnLeftGripTouchEnd = null; //Left grip touch state has changed
-        private UnityAction<float> OnLeftGripMonitor = null; //Monitor force on left grip button
+        private event Action OnLeftGripPress = null; //Left grip button Pressed
+        private event Action OnLeftGripRelease = null; //Left grip button Released
+        private event Action OnLeftGripTouchStart = null; //Left grip touch state has changed
+        private event Action OnLeftGripTouchEnd = null; //Left grip touch state has changed
+        private event Action<float> OnLeftGripMonitor = null; //Monitor force on left grip button
 
-        private UnityAction OnLeftTriggerPress = null; //Left Trigger Button Pressed
-        private UnityAction OnLeftTriggerRelease = null; //Left Trigger Button Released
-        private UnityAction OnLeftTriggerTouchStart = null; //Left trigger touch has been detected
-        private UnityAction OnLeftTriggerTouchEnd = null; //Left trigger touch has ended
-        private UnityAction<float> OnLeftTriggerMonitor = null; //Monitor force on left trigger button
+        private event Action OnLeftTriggerPress = null; //Left Trigger Button Pressed
+        private event Action OnLeftTriggerRelease = null; //Left Trigger Button Released
+        private event Action OnLeftTriggerTouchStart = null; //Left trigger touch has been detected
+        private event Action OnLeftTriggerTouchEnd = null; //Left trigger touch has ended
+        private event Action<float> OnLeftTriggerMonitor = null; //Monitor force on left trigger button
 
         //------------------------Touch Booleans--------------------------------------------------------//
         public bool ButtonATouched { get; private set; } //whether button A is currently touched or not
@@ -213,20 +230,7 @@ namespace Anivision.Core
         private bool _inputActive = true;
         private float _gripTouchRegisterMinForce = 0.0000000001f; // Grip buttons are not touch capacitive, therefore the grip touch callbacks will be called
                                                                   // if the user presses the grip buttons with a force >= _gripTouchRegisterMinForce
- 
-        private void Awake()
-        {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
 
-            } else
-            {
-                Instance = this;
-                OVRManager.HMDMounted += PlayerFound;
-                OVRManager.HMDUnmounted += PlayerLost;
-            }
-        }
 
         void Update()
         {
@@ -261,7 +265,7 @@ namespace Anivision.Core
         /// <param name="callback"></param>
         /// <param name="state"></param>
         /// <param name="button"></param>
-        public void AttachInputHandler(UnityAction callback, InputState state, Button button)
+        public void AttachInputHandler(Action callback, InputState state, Button button)
         {
             switch(state)
             {
@@ -289,7 +293,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="button"></param>
-        public void AttachInputHandler(UnityAction<float> callback, Trigger trigger)
+        public void AttachInputHandler(Action<float> callback, Trigger trigger)
         {
             AttachTriggerMonitorCallback(callback, trigger);
         }
@@ -299,7 +303,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="button"></param>
-        public void AttachInputHandler(UnityAction<float> callback, Grip grip)
+        public void AttachInputHandler(Action<float> callback, Grip grip)
         {
             AttachGripMonitorCallback(callback, grip);
         }
@@ -309,7 +313,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="joystick"></param>
-        public void AttachInputHandler(UnityAction<Vector2> callback, Joystick joystick)
+        public void AttachInputHandler(Action<Vector2> callback, Joystick joystick)
         {
             AttachJoystickMonitorCallback(callback, joystick);
         }
@@ -319,7 +323,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="joystick"></param>
-        public void AttachInputHandler(UnityAction<Direction> callback, Joystick joystick)
+        public void AttachInputHandler(Action<Direction> callback, Joystick joystick)
         {
             AttachJoystickMovementCallback(callback, joystick);
         }
@@ -331,7 +335,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="button"></param>
-        public void DetachInputHandler(UnityAction callback, InputState state, Button button)
+        public void DetachInputHandler(Action callback, InputState state, Button button)
         {
             switch (state)
             {
@@ -359,7 +363,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="trigger"></param>
-        public void DetachInputHandler(UnityAction<float> callback, Trigger trigger)
+        public void DetachInputHandler(Action<float> callback, Trigger trigger)
         {
             DetachTriggerMonitorCallback(callback, trigger);
         }
@@ -369,7 +373,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="grip"></param>
-        public void DetachInputHandler(UnityAction<float> callback, Grip grip)
+        public void DetachInputHandler(Action<float> callback, Grip grip)
         {
             DetachGripMonitorCallback(callback, grip);
         }
@@ -379,7 +383,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="joystick"></param>
-        public void DetachInputHandler(UnityAction<Vector2> callback, Joystick joystick)
+        public void DetachInputHandler(Action<Vector2> callback, Joystick joystick)
         {
             DetachJoystickMonitorCallback(callback, joystick);
         }
@@ -389,7 +393,7 @@ namespace Anivision.Core
         /// </summary>
         /// <param name="callback"></param>
         /// <param name="joystick"></param>
-        public void DetachInputHandler(UnityAction<Direction> callback, Joystick joystick)
+        public void DetachInputHandler(Action<Direction> callback, Joystick joystick)
         {
             DetachJoystickMovementCallback(callback, joystick);
         }
@@ -477,7 +481,7 @@ namespace Anivision.Core
         //----INTERNAL FUNCTIONS TO CHECK THE STATE OF BUTTONS, TRIGGERS, GRIPS, AND JOYSTICKS OF CONTROLLERS AND CALL CORRESPONDING CALLBACKS----//
 
         //attach callback to specific button's on-press UnityAction
-        private void AttachPressCallback(UnityAction callback, Button button)
+        private void AttachPressCallback(Action callback, Button button)
         {
             switch (button)
             {
@@ -518,7 +522,7 @@ namespace Anivision.Core
         }
 
         //detach callback from specific button's on-press UnityAction
-        private void DetachPressCallback(UnityAction callback, Button button)
+        private void DetachPressCallback(Action callback, Button button)
         {
             switch (button)
             {
@@ -559,7 +563,7 @@ namespace Anivision.Core
         }
 
         //attach callback to specific button's on-release UnityAction
-        private void AttachReleaseCallback(UnityAction callback, Button button)
+        private void AttachReleaseCallback(Action callback, Button button)
         {
             switch (button)
             {
@@ -600,7 +604,7 @@ namespace Anivision.Core
         }
 
         //detach callback from specific button's on-release UnityAction
-        private void DetachReleaseCallback(UnityAction callback, Button button)
+        private void DetachReleaseCallback(Action callback, Button button)
         {
             switch (button)
             {
@@ -641,7 +645,7 @@ namespace Anivision.Core
         }
 
         //attach callback to specific button's on touch start UnityAction
-        private void AttachTouchStartCallback(UnityAction callback, Button button)
+        private void AttachTouchStartCallback(Action callback, Button button)
         {
             switch (button)
             {
@@ -682,7 +686,7 @@ namespace Anivision.Core
         }
 
         //detach callback from specific button's on touch start UnityAction
-        private void DetachTouchStartCallback(UnityAction callback, Button button)
+        private void DetachTouchStartCallback(Action callback, Button button)
         {
             switch (button)
             {
@@ -724,7 +728,7 @@ namespace Anivision.Core
 
 
         //attach callback to specific button's on touch end UnityAction
-        private void AttachTouchEndCallback(UnityAction callback, Button button)
+        private void AttachTouchEndCallback(Action callback, Button button)
         {
             switch (button)
             {
@@ -765,7 +769,7 @@ namespace Anivision.Core
         }
 
         //detach callback to specific button's on touch end UnityAction
-        private void DetachTouchEndCallback(UnityAction callback, Button button)
+        private void DetachTouchEndCallback(Action callback, Button button)
         {
             switch (button)
             {
@@ -806,7 +810,7 @@ namespace Anivision.Core
         }
 
         //attach callback to trigger button's on monitor UnityAction
-        private void AttachTriggerMonitorCallback(UnityAction<float> callback, Trigger trigger)
+        private void AttachTriggerMonitorCallback(Action<float> callback, Trigger trigger)
         {
             switch (trigger)
             {
@@ -823,7 +827,7 @@ namespace Anivision.Core
         }
 
         //detach callback from trigger button's on monitor UnityAction
-        private void DetachTriggerMonitorCallback(UnityAction<float> callback, Trigger trigger)
+        private void DetachTriggerMonitorCallback(Action<float> callback, Trigger trigger)
         {
             switch (trigger)
             {
@@ -840,7 +844,7 @@ namespace Anivision.Core
         }
 
         //attach callback to grip button's on monitor UnityAction
-        private void AttachGripMonitorCallback(UnityAction<float> callback, Grip grip)
+        private void AttachGripMonitorCallback(Action<float> callback, Grip grip)
         {
             switch (grip)
             {
@@ -857,7 +861,7 @@ namespace Anivision.Core
         }
 
         //detach callback from grip button's on monitor UnityAction
-        private void DetachGripMonitorCallback(UnityAction<float> callback, Grip grip)
+        private void DetachGripMonitorCallback(Action<float> callback, Grip grip)
         {
             switch (grip)
             {
@@ -874,7 +878,7 @@ namespace Anivision.Core
         }
 
         //attach callback to joystick's on monitor UnityAction
-        private void AttachJoystickMonitorCallback(UnityAction<Vector2> callback, Joystick joystick)
+        private void AttachJoystickMonitorCallback(Action<Vector2> callback, Joystick joystick)
         {
             switch (joystick)
             {
@@ -891,7 +895,7 @@ namespace Anivision.Core
         }
 
         //detach callback from joystick's on monitor UnityAction
-        private void DetachJoystickMonitorCallback(UnityAction<Vector2> callback, Joystick joystick)
+        private void DetachJoystickMonitorCallback(Action<Vector2> callback, Joystick joystick)
         {
             switch (joystick)
             {
@@ -908,7 +912,7 @@ namespace Anivision.Core
         }
 
         //attach callback to joystick's on movement UnityAction
-        private void AttachJoystickMovementCallback(UnityAction<Direction> callback, Joystick joystick)
+        private void AttachJoystickMovementCallback(Action<Direction> callback, Joystick joystick)
         {
             switch (joystick)
             {
@@ -925,7 +929,7 @@ namespace Anivision.Core
         }
 
         //detach callback from joystick's on movement UnityAction
-        private void DetachJoystickMovementCallback(UnityAction<Direction> callback, Joystick joystick)
+        private void DetachJoystickMovementCallback(Action<Direction> callback, Joystick joystick)
         {
             switch (joystick)
             {
