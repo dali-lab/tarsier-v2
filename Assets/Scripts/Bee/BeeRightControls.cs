@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Anivision.Core;
+using Anivision.PlayerInteraction;
 
 public class BeeRightControls : MonoBehaviour
 {
@@ -20,37 +21,29 @@ public class BeeRightControls : MonoBehaviour
     private bool isFlying = false;
     private bool isNormalSkybox = true;
 
-    void OnEnable()
+
+    private void OnEnable()
     {
         _inputManager = InputManager.Instance;
 
-        if (_inputManager == null)
+        if (_inputManager != null)
+        {
+            _inputManager.AttachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+            _inputManager.AttachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+        }
+        else
         {
             throw new System.Exception("Must have an input manager script in the scene");
         }
 
         windParticles.SetActive(false);
-
-        // TODO: Replace VRTK teleport with our own systm
-        //RController.GetComponent<VRTK_Pointer>().enabled = true;
-        //RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = true;
-
-        if (_inputManager != null)
-        {
-            _inputManager.AttachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.A);
-            _inputManager.AttachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.B);
-        }
-            
-      
+        gameObject.GetComponent<Teleport>().enabled = true;
     }
 
     private void StartMovementTransition()                        // fly: trigger transition, toggle teleport
     {
         StartCoroutine(movementTransition());
-
-        // TODO: Replace VRTK teleport with our own systm
-        //RController.GetComponent<VRTK_Pointer>().enabled = !RController.GetComponent<VRTK_Pointer>().enabled;
-        //RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = !RController.GetComponent<VRTK_StraightPointerRenderer>().enabled;
+        gameObject.GetComponent<Teleport>().enabled = !gameObject.GetComponent<Teleport>().enabled;
     }
 
     private void StartSkyboxSwap()                        // vision: skybox swap
@@ -88,10 +81,11 @@ public class BeeRightControls : MonoBehaviour
 
     private IEnumerator movementTransition()                        // fade to black and unfade for transition
     {
+        isFlying = !isFlying;
         sceneFader.StartFade();
         yield return new WaitForSeconds(1);
         windParticles.SetActive(!windParticles.activeSelf);
-        isFlying = !isFlying;
+
 
         if (isFlying == false)                                       // fade out sound
         {
@@ -116,9 +110,8 @@ public class BeeRightControls : MonoBehaviour
     {
         if (_inputManager != null)
         {
-            _inputManager.DetachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.A);
-            _inputManager.DetachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+            _inputManager.DetachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+            _inputManager.DetachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.A);
         }
-        
     }
 }

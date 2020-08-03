@@ -11,17 +11,17 @@ public class headsetCollide : MonoBehaviour
     {
         bugSound = GetComponent<AudioSource>();
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "edible")                      // checks for objects tagged as katydid, if yes then delete katydid
+        if (other.gameObject.tag == "edible")                      // checks for objects tagged as katydid, if yes then delete katydid
         {
             bugSound.Play();                                            // play eat sound
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
-        if (collision.gameObject.tag == "goggles")
+        if (other.gameObject.tag == "goggles")
         {
 
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
         }
     }
 }
