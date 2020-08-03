@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Anivision.Core;
 
 public class GogglesSceneSwitchObject : MonoBehaviour
 {
@@ -11,15 +12,15 @@ public class GogglesSceneSwitchObject : MonoBehaviour
     public GameObject centerEyeAnchor;
     [Tooltip("How close the headset must be to the goggles before a scene switch is initiated")]
     public float threshold = .5f;
-    [Tooltip("The scene fader object in the scene. Used to fade to blck before switching scenes. This component is necessary")]
-    public SceneFader sceneFader;
+    [Tooltip("The scene fader object in the scene. Used to fade to black before switching scenes. This component is necessary")]
+    public HeadsetFade sceneFader;
 
     void Update()
     {
         // Get the distance between the headset and the goggles
         float dist = Vector3.Distance(gameObject.transform.position, centerEyeAnchor.transform.position);
         // If the distance is within the threshold, and a fade has not yet been initialized, initialize a fade
-        if (dist <= threshold && !sceneFader.IsFading())
+        if (dist <= threshold && !sceneFader.IsFadeActive())
         {
             sceneFader.StartFade();
         }
@@ -28,12 +29,12 @@ public class GogglesSceneSwitchObject : MonoBehaviour
     void OnEnable()
     {
         // Add a callback so that when the fade finishes, the scene switches
-        SceneFader.OnFadeComplete += SwitchScene;
+        sceneFader.OnFadeEnd += SwitchScene;
     }
 
     void OnDisable()
     {
-        SceneFader.OnFadeComplete -= SwitchScene;
+        sceneFader.OnFadeEnd -= SwitchScene;
     }
 
     // Function that switches to the scene with the name given by "sceneName"
