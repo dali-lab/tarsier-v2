@@ -49,9 +49,9 @@ public class BeeRightControls : MonoBehaviour
     {
         StartCoroutine(movementTransition());
 
-        if (Teleport.Instance != null)
+        if (TeleportController.Instance != null)
         {
-            Teleport.Instance.gameObject.SetActive(!Teleport.Instance.gameObject.activeSelf);
+            TeleportController.Instance.gameObject.SetActive(!TeleportController.Instance.gameObject.activeSelf);
         }
     }
 

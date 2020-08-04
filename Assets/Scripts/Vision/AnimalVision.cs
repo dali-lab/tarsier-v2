@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEditorInternal;
 #endif
 using UnityEngine;
@@ -100,6 +101,12 @@ namespace Anivision.Vision
             if (visionScript.colorblindType == ColorblindType.Custom)
             {
                 SetColorblindEditor();
+            }
+            
+            if (GUI.changed)
+            {
+                EditorUtility.SetDirty(visionScript);
+                EditorSceneManager.MarkSceneDirty(visionScript.gameObject.scene);
             }
 
         }

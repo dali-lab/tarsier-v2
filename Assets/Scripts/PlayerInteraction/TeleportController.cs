@@ -6,23 +6,23 @@ using Anivision.Core;
 
 namespace Anivision.PlayerInteraction
 {
-    public class Teleport : MonoBehaviour
+    public class TeleportController : MonoBehaviour
     {
-        private static Teleport _teleport;
+        private static TeleportController _teleportController;
         //singleton instance
-        public static Teleport Instance { get
+        public static TeleportController Instance { get
         {
-            if (!_teleport)
+            if (!_teleportController)
             {
-                _teleport = FindObjectOfType (typeof (Teleport)) as Teleport;
+                _teleportController = FindObjectOfType (typeof (TeleportController)) as TeleportController;
 
-                if (!_teleport)
+                if (!_teleportController)
                 {
                     UnityEngine.Debug.LogError("Trying to access Teleport script when there is none in the scene.");
                 }
             }
 
-            return _teleport;
+            return _teleportController;
         } } 
         
         [Tooltip("The Camera Rig that will be teleporting.")]

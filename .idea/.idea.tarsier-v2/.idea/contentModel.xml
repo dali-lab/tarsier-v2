@@ -823,11 +823,11 @@
           <e p="Pixelation.cs" t="Include" />
           <e p="PlayerInteraction" t="Include">
             <e p="AnimalMovement.cs" t="Include" />
-            <e p="Fly.cs" t="Include" />
+            <e p="FlightController.cs" t="Include" />
             <e p="Grabbable.cs" t="Include" />
             <e p="Grabber.cs" t="Include" />
             <e p="MovementParameters.cs" t="Include" />
-            <e p="Teleport.cs" t="Include" />
+            <e p="TeleportController.cs" t="Include" />
           </e>
           <e p="RendererFeatures" t="Include">
             <e p="Blit.cs" t="Include" />

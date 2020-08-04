@@ -6,33 +6,44 @@ using UnityEngine;
 
 namespace Anivision.PlayerInteraction
 {
-    public class Fly : MonoBehaviour
+    public class FlightController : MonoBehaviour
     {
         public GameObject cameraRig;                                    // to move the player when flying and teleport player back to hive when they run out of health
         public GameObject centerEye;                                    // for flying via headtilt
         public AudioSource windSound;
+        public GameObject windParticles;
         public float speed = .06f;
         
         private InputManager _inputManager;
         private AnimalManager _animalManager;
-        private Teleport _teleport;
+        private TeleportController _teleportController;
         private bool isFlying = false;
-    
+
+        private void Awake()
+        {
+            windParticles.transform.parent = centerEye.transform;
+            windParticles.transform.localPosition = new Vector3(0f, 0f, 0.5f);
+            windParticles.transform.localScale = new Vector3(0.05f, 0.05f, 0.01f);
+            windParticles.SetActive(false);
+            windSound.transform.parent = centerEye.transform;
+            windSound.volume = 0;
+        }
+
         // Start is called before the first frame update
         private void Start()
         {
             _animalManager = AnimalManager.Instance;
-            
+            _teleportController = TeleportController.Instance;
+
             if (_animalManager != null)
             {
-                _animalManager.MovementSwitch.AddListener((MovementParameters parameters) => {gameObject.SetActive(parameters.CanFly);});
+                _animalManager.MovementSwitch.AddListener((parameters) => {gameObject.SetActive(parameters.CanFly);});
             }
             if (_inputManager == null)
             {
                 throw new System.Exception("Must have an input manager script in the scene");
             }
             
-            _teleport = Teleport.Instance;
         }
 
         void OnEnable()
@@ -44,22 +55,37 @@ namespace Anivision.PlayerInteraction
             }
             if (_inputManager != null)
             {
-                _inputManager.AttachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+                _inputManager.AttachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
         }
 
         private void StartMovementTransition()                        // fly: trigger transition, toggle teleport
         {
             StartCoroutine(movementTransition());
-            if (Teleport.Instance != null)
+        }
+
+        private void Update()
+        {
+            Fly();
+        }
+
+        private void Fly()                                              // fly via head tilt (tracks headset)
+        {
+            if (isFlying)
             {
-                Teleport.Instance.gameObject.SetActive(!Teleport.Instance.gameObject.activeSelf);
+                Vector3 flyDir = centerEye.transform.forward;
+                cameraRig.transform.position += flyDir.normalized * speed;
             }
         }
     
         private IEnumerator movementTransition()                        // fade to black and unfade for transition
         {
             isFlying = !isFlying;
+            windParticles.SetActive(isFlying);
+            if (_teleportController != null)
+            {
+                _teleportController.gameObject.SetActive(!isFlying);
+            }
 
             if (isFlying == false)                                       // fade out sound
             {
@@ -84,7 +110,7 @@ namespace Anivision.PlayerInteraction
         {
             if (_inputManager != null)
             {
-                _inputManager.DetachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+                _inputManager.DetachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
         
         }

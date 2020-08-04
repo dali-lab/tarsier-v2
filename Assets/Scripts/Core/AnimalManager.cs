@@ -41,10 +41,12 @@ namespace Anivision.Core
         private InputManager _inputManager;
         private Dictionary<Animal, AnimalController> _animalControllerDict;
 
+        private int index;
         // Start is called before the first frame update
         private void Start()
         {
             _animalControllerDict = new Dictionary<Animal, AnimalController>();
+            _inputManager = InputManager.Instance;
             
             //build dictionary for easy access later
             foreach (AnimalController controller in AnimalControllers)
@@ -59,10 +61,30 @@ namespace Anivision.Core
                 }
             }
             
-            if (AnimalControllers != null && AnimalControllers.Length > 0)
+            // if (AnimalControllers != null && AnimalControllers.Length > 0)
+            // {
+            //     SwitchAnimal(AnimalControllers[0].animal); //switch animal to first animal in the list
+            // }
+            
+            SwitchAnimal(); //switch animal to first animal in the list
+            _inputManager.AttachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+        }
+
+        private void SwitchAnimal()
+        {
+            VisionSwitch.Invoke(AnimalControllers[index].VisionParameters);
+            MovementSwitch.Invoke(AnimalControllers[index].MovementParameters);
+            
+            if (index == AnimalControllers.Length - 1)
             {
-                SwitchAnimal(AnimalControllers[0].animal); //switch animal to first animal in the list
+                index = 0;
             }
+            else
+            {
+                index++;
+            }
+            
+            
             
         }
 
