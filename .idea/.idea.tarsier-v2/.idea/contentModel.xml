@@ -823,6 +823,7 @@
           <e p="Pixelation.cs" t="Include" />
           <e p="PlayerInteraction" t="Include">
             <e p="AnimalMovement.cs" t="Include" />
+            <e p="Fly.cs" t="Include" />
             <e p="Grabbable.cs" t="Include" />
             <e p="Grabber.cs" t="Include" />
             <e p="MovementParameters.cs" t="Include" />

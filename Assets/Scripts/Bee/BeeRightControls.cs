@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Anivision.Core;
+using Anivision.PlayerInteraction;
 
 public class BeeRightControls : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class BeeRightControls : MonoBehaviour
     public float speed = .06f;
 
     private InputManager _inputManager;
+    private GameObject teleportGameObject;
     private bool isFlying = false;
     private bool isNormalSkybox = true;
 
@@ -48,9 +50,10 @@ public class BeeRightControls : MonoBehaviour
     {
         StartCoroutine(movementTransition());
 
-        // TODO: Replace VRTK teleport with our own systm
-        //RController.GetComponent<VRTK_Pointer>().enabled = !RController.GetComponent<VRTK_Pointer>().enabled;
-        //RController.GetComponent<VRTK_StraightPointerRenderer>().enabled = !RController.GetComponent<VRTK_StraightPointerRenderer>().enabled;
+        if (Teleport.Instance != null)
+        {
+            
+        }
     }
 
     private void StartSkyboxSwap()                        // vision: skybox swap
