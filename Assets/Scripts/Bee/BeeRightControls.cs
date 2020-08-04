@@ -18,7 +18,6 @@ public class BeeRightControls : MonoBehaviour
     public float speed = .06f;
 
     private InputManager _inputManager;
-    private GameObject teleportGameObject;
     private bool isFlying = false;
     private bool isNormalSkybox = true;
 
@@ -52,7 +51,7 @@ public class BeeRightControls : MonoBehaviour
 
         if (Teleport.Instance != null)
         {
-            
+            Teleport.Instance.gameObject.SetActive(!Teleport.Instance.gameObject.activeSelf);
         }
     }
 
