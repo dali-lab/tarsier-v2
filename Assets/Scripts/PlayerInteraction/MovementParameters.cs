@@ -7,11 +7,11 @@ namespace Anivision.PlayerInteraction
     /// </summary>
     public class MovementParameters
     {
-        public bool CanFly { get; private set; }
-        public bool CanTeleport { get; private set; }
-        public LayerMask ValidRaycastLayers { get; private set; }
-        public LayerMask ValidTeleportLayers { get; private set; }
-        public float TeleportRange { get; private set; }
+        public bool CanFly { get; }
+        public bool CanTeleport { get; }
+        public LayerMask ValidRaycastLayers { get;}
+        public LayerMask ValidTeleportLayers { get; }
+        public float TeleportRange { get; }
 
         public MovementParameters(bool canFly, bool canTeleport, LayerMask validRaycastLayers,
             LayerMask validTeleportLayers, float teleportRange)
