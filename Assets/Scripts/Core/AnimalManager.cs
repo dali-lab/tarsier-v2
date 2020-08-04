@@ -38,7 +38,6 @@ namespace Anivision.Core
         public VisionSwitchEvent VisionSwitch = new VisionSwitchEvent(); //called when animal is switched 
         public MovementSwitchEvent MovementSwitch = new MovementSwitchEvent(); //called when animal is switched 
         
-        private InputManager _inputManager;
         private Dictionary<Animal, AnimalController> _animalControllerDict;
 
         private int index;
@@ -46,7 +45,6 @@ namespace Anivision.Core
         private void Start()
         {
             _animalControllerDict = new Dictionary<Animal, AnimalController>();
-            _inputManager = InputManager.Instance;
             
             //build dictionary for easy access later
             foreach (AnimalController controller in AnimalControllers)
@@ -61,32 +59,12 @@ namespace Anivision.Core
                 }
             }
             
-            // if (AnimalControllers != null && AnimalControllers.Length > 0)
-            // {
-            //     SwitchAnimal(AnimalControllers[0].animal); //switch animal to first animal in the list
-            // }
-            
-            SwitchAnimal(); //switch animal to first animal in the list
-            _inputManager.AttachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+            if (AnimalControllers != null && AnimalControllers.Length > 0)
+            {
+                SwitchAnimal(AnimalControllers[0].animal); //switch animal to first animal in the list
+            }
         }
 
-        private void SwitchAnimal()
-        {
-            VisionSwitch.Invoke(AnimalControllers[index].VisionParameters);
-            MovementSwitch.Invoke(AnimalControllers[index].MovementParameters);
-            
-            if (index == AnimalControllers.Length - 1)
-            {
-                index = 0;
-            }
-            else
-            {
-                index++;
-            }
-            
-            
-            
-        }
 
         //switch the animal to the desired one and invoke events
         public void SwitchAnimal(Animal animal)

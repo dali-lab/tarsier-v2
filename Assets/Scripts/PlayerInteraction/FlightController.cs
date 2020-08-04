@@ -18,6 +18,7 @@ namespace Anivision.PlayerInteraction
         private AnimalManager _animalManager;
         private TeleportController _teleportController;
         private bool isFlying = false;
+        private bool canTeleport = false;
 
         private void Awake()
         {
@@ -37,7 +38,7 @@ namespace Anivision.PlayerInteraction
 
             if (_animalManager != null)
             {
-                _animalManager.MovementSwitch.AddListener((parameters) => {gameObject.SetActive(parameters.CanFly);});
+                _animalManager.MovementSwitch.AddListener(EnableFlight);
             }
             if (_inputManager == null)
             {
@@ -82,7 +83,7 @@ namespace Anivision.PlayerInteraction
         {
             isFlying = !isFlying;
             windParticles.SetActive(isFlying);
-            if (_teleportController != null)
+            if (canTeleport && _teleportController != null)
             {
                 _teleportController.gameObject.SetActive(!isFlying);
             }
@@ -104,6 +105,12 @@ namespace Anivision.PlayerInteraction
                     yield return null;
                 }
             }
+        }
+
+        private void EnableFlight(MovementParameters parameters)
+        {
+            canTeleport = parameters.CanTeleport;
+            gameObject.SetActive(parameters.CanFly);
         }
         
         private void OnDisable()
