@@ -854,6 +854,7 @@
             <e p="MaterialController.cs" t="Include" />
             <e p="MaterialEffect.cs" t="Include" />
             <e p="MaterialSwap.cs" t="Include" />
+            <e p="SkyboxSwap.cs" t="Include" />
             <e p="UV.cs" t="Include" />
             <e p="VisionParameters.cs" t="Include" />
           </e>
