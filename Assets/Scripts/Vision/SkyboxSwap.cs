@@ -4,48 +4,44 @@ using UnityEngine;
 
 namespace Anivision.Vision
 {
-    public class SkyboxSwap : MonoBehaviour
+    //swaps skybox for the skybox associated with an animal
+    public class SkyboxSwap : SkyboxEffect
     {
-        public MaterialSwap.MaterialGroup skyboxes = new MaterialSwap.MaterialGroup(); //materials for skybox for various animals
-
+        public List<MaterialSwap.MaterialAnimal> skyboxes = new List<MaterialSwap.MaterialAnimal>(); //materials for skybox for various animals
+        public override VisionEffect Effect => VisionEffect.SkyboxSwap;
+        
         private AnimalManager _animalManager;
         private Dictionary<Animal, Material> skyboxDictionary;
+        private Material _originalMaterial;
 
         private void Awake()
         {
-            foreach (MaterialSwap.MaterialAnimal m in skyboxes.MaterialsToSwap)
+            //create new dictionary of animal to skybox material
+            skyboxDictionary = new Dictionary<Animal, Material>();
+            foreach (MaterialSwap.MaterialAnimal m in skyboxes)
             {
                 if (!skyboxDictionary.ContainsKey(m.animal))
                 {
                     skyboxDictionary.Add(m.animal, m.material);
                 }
             }
+            
+            //save original material
+            _originalMaterial = RenderSettings.skybox;
         }
-
-        private void Start()
+        
+        //apply skybox swap
+        public override void ApplyEffect(VisionParameters parameters)
         {
-            _animalManager = AnimalManager.Instance;
-
-            if (_animalManager != null)
+            UnityEngine.Debug.Log("swapping");
+            Material materialToSwapTo;
+            if (skyboxDictionary.TryGetValue(parameters.Animal, out materialToSwapTo))
             {
-                _animalManager.VisionSwitch.AddListener(SwapSkybox);
-            }
-        }
-
-        private void SwapSkybox(VisionParameters parameters)                                       
-        {
-
-            if (parameters.visionEffects.Contains(VisionEffect.MaterialSwap))
-            {
-                Material materialToSwapTo;
-                if (skyboxDictionary.TryGetValue(parameters.Animal, out materialToSwapTo))
-                {
-                    RenderSettings.skybox = materialToSwapTo;
-                    return;
-                }
+                RenderSettings.skybox = materialToSwapTo;
+                return;
             }
 
-            RenderSettings.skybox = skyboxes.originalMaterial;
+            RenderSettings.skybox = _originalMaterial;
         }
     }
 }
