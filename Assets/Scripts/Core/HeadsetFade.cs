@@ -71,8 +71,8 @@ namespace Anivision.Core
             }
             // Once the fade has completed, set it to the max (to eliminate small errors), and call the event for a fade end
             fadePercent = max;
-            OnFadeEnd?.Invoke();
             active = false; // Note that the fader is no longer active
+            OnFadeEnd?.Invoke();
         }
 
         // Starts a unfade.
@@ -96,8 +96,8 @@ namespace Anivision.Core
             }
             // Once the unfade has completed, set it to the min (to eliminate small errors), and call the event for a unfade end
             fadePercent = min;
-            OnUnfadeEnd?.Invoke();
             active = false; // Note that the fader is no longer active
+            OnUnfadeEnd?.Invoke();
         }
     }
 }

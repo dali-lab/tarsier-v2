@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Anivision.Core;
 using Anivision.PlayerInteraction;
@@ -64,8 +65,8 @@ namespace Anivision.Bee
             // If there is a valid input manager, attach callbacks to the necessary button presses
             if (_inputManager != null)
             {
-                _inputManager.AttachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.A);
-                _inputManager.AttachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+                _inputManager.AttachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+                _inputManager.AttachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
             // Make the movement transition function get called when a headset fade ends
             headsetFade.OnFadeEnd += movementTransition;
@@ -76,8 +77,8 @@ namespace Anivision.Bee
             // Remove callbacks that were added in OnEnable
             if (_inputManager != null)
             {
-                _inputManager.DetachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.A);
-                _inputManager.DetachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+                _inputManager.DetachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+                _inputManager.DetachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
             headsetFade.OnFadeEnd -= movementTransition;
         }
@@ -99,7 +100,6 @@ namespace Anivision.Bee
         {
             Fly();
         }
-
 
         // If flying is enabled, move the user based on head tilt (which tracks the headset)
         private void Fly()

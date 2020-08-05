@@ -143,11 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b651ef343196046b7bb7248379d7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: ForestScene
+  sceneName: LobbyScene
   headsetFade: {fileID: 0}
   fadeSpeed: 2
-  headsetTransform: {fileID: 0}
-  requiredDistance: 1
+  compareTransform: {fileID: 0}
+  distanceThreshold: 0.2
 --- !u!114 &365558629470752585
 MonoBehaviour:
   m_ObjectHideFlags: 0
