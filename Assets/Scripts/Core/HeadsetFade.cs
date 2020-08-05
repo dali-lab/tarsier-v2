@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Anivision.Core
@@ -10,16 +9,17 @@ namespace Anivision.Core
         public Material fadeBlitMaterial;
 
         public delegate void FadeAction();
-        public static event FadeAction OnFadeStart;     // Called when a fade starts
-        public static event FadeAction OnFadeEnd;       // Called when a fade ends
-        public static event FadeAction OnUnfadeStart;   // Called when an unfade starts
-        public static event FadeAction OnUnfadeEnd;     // Called when an unfade ends
+        public event FadeAction OnFadeStart;     // Called when a fade starts
+        public event FadeAction OnFadeEnd;       // Called when a fade ends
+        public event FadeAction OnUnfadeStart;   // Called when an unfade starts
+        public event FadeAction OnUnfadeEnd;     // Called when an unfade ends
 
-        private float fadePercent = 0;  // The percent the headset is currently faded (ranges from 0 to 1)
+        [HideInInspector]
+        public float fadePercent { get; set; } = 0;  // The percent the headset is currently faded (ranges from 0 to 1)
         private bool active = false;    // Whether the headset is currently fading or unfading
 
 
-        void Start()
+        void OnEnable()
         {
             // Start completely unfaded
             fadePercent = 0;
@@ -35,8 +35,12 @@ namespace Anivision.Core
 
         void Update()
         {
-            // Set the fade material's fade percent to the current fade percent governed by fades and unfades
-            fadeBlitMaterial.SetFloat("_FadePercent", fadePercent);
+            // Set the fade material's fade percent to the current fade percent governed by fades and unfades\
+            if (active)
+            {
+                fadeBlitMaterial.SetFloat("_FadePercent", fadePercent);
+
+            }
         }
 
         // Returns whether the headset is fading or unfading
@@ -67,8 +71,8 @@ namespace Anivision.Core
             }
             // Once the fade has completed, set it to the max (to eliminate small errors), and call the event for a fade end
             fadePercent = max;
-            OnFadeEnd?.Invoke();
             active = false; // Note that the fader is no longer active
+            OnFadeEnd?.Invoke();
         }
 
         // Starts a unfade.
@@ -92,8 +96,8 @@ namespace Anivision.Core
             }
             // Once the unfade has completed, set it to the min (to eliminate small errors), and call the event for a unfade end
             fadePercent = min;
-            OnUnfadeEnd?.Invoke();
             active = false; // Note that the fader is no longer active
+            OnUnfadeEnd?.Invoke();
         }
     }
 }
