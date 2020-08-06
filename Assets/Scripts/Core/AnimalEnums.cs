@@ -34,7 +34,6 @@ namespace Anivision.Core
     {
         Colorblindness,
         UV,
-        MaterialSwap,
-        SkyboxSwap
+        MaterialSwap
     }
 }

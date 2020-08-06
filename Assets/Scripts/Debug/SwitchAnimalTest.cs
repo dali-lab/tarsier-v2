@@ -13,7 +13,7 @@ public class SwitchAnimalTest : MonoBehaviour
     [CanBeNull] private AnimalManager _animalManager;
     private int currentIndex = 0;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         _inputManager = InputManager.Instance;
         _animalManager = AnimalManager.Instance;
@@ -22,6 +22,23 @@ public class SwitchAnimalTest : MonoBehaviour
         {
             _inputManager.AttachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, InputManager.Button.A);
         }
+        
+    }
+
+    // private void Update()
+    // {
+    //     if (Input.anyKeyDown)
+    //     {
+    //         SwitchAnimal();
+    //     }
+    // }
+
+    private void OnDisable()
+    {
+        if (_inputManager != null)
+        {
+            _inputManager.DetachInputHandler(SwitchAnimal, InputManager.InputState.ON_PRESS, InputManager.Button.A);
+        } 
     }
 
     void SwitchAnimal()

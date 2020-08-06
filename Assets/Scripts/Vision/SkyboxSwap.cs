@@ -8,7 +8,7 @@ namespace Anivision.Vision
     public class SkyboxSwap : SkyboxEffect
     {
         public List<MaterialSwap.MaterialAnimal> skyboxes = new List<MaterialSwap.MaterialAnimal>(); //materials for skybox for various animals
-        public override VisionEffect Effect => VisionEffect.SkyboxSwap;
+        public override VisionEffect Effect => VisionEffect.MaterialSwap;
         
         private AnimalManager _animalManager;
         private Dictionary<Animal, Material> skyboxDictionary;
@@ -33,7 +33,6 @@ namespace Anivision.Vision
         //apply skybox swap
         public override void ApplyEffect(VisionParameters parameters)
         {
-            UnityEngine.Debug.Log("swapping");
             Material materialToSwapTo;
             if (skyboxDictionary.TryGetValue(parameters.Animal, out materialToSwapTo))
             {

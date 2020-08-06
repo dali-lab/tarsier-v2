@@ -70,6 +70,9 @@ namespace Anivision.PlayerInteraction
                 _inputManager.AttachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
             
+            // Make the movement transition function get called when a headset fade ends
+            headsetFade.OnFadeEnd += movementTransition;
+            
         }
 
         private void OnDisable()
@@ -79,13 +82,13 @@ namespace Anivision.PlayerInteraction
             {
                 _inputManager.DetachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
+            
+            headsetFade.OnFadeEnd -= movementTransition;
         }
         
         // Initiates a headset fade
         private void StartFade()
         {
-            // Make the movement transition function get called when a headset fade ends
-            headsetFade.OnFadeEnd += movementTransition;
             headsetFade.StartFade(headsetFadeSpeed);
         }
         
@@ -122,7 +125,6 @@ namespace Anivision.PlayerInteraction
             // Toggle wind particles
             windParticles.SetActive(isFlying);
             
-            headsetFade.OnFadeEnd -= movementTransition;
         }
 
         // Either fades the wind sound in or out, depending on whether the user is flying
@@ -149,16 +151,24 @@ namespace Anivision.PlayerInteraction
         private void EnableFlight(MovementParameters parameters)
         {
             canTeleport = parameters.CanTeleport;
-            ResetFlight(parameters);
+
+            if (parameters.CanFly)
+            {
+                gameObject.SetActive(true);
+            }
+            else
+            {
+                StartCoroutine(ResetFlight(parameters));
+            }
+            
         }
 
-        private void ResetFlight(MovementParameters parameters)
+        private IEnumerator ResetFlight(MovementParameters parameters)
         {
             if (isFlying && !parameters.CanFly)
             {
-                isFlying = false;
-                windParticles.SetActive(isFlying);
-                windSound.volume = 0;
+                StartFade();
+                yield return new WaitUntil(() => windSound.volume <= 0);
             }
             
             gameObject.SetActive(parameters.CanFly);

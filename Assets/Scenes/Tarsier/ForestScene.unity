@@ -67612,6 +67612,11 @@ PrefabInstance:
       propertyPath: AnimalControllers.Array.data[1]
       value: 
       objectReference: {fileID: 104647374}
+    - target: {fileID: 8140854098592642206, guid: bc0c4c631cb384bd4803cd0625974946,
+        type: 3}
+      propertyPath: defaultAnimal
+      value: 
+      objectReference: {fileID: 1971968823}
     - target: {fileID: 8140854098592642207, guid: bc0c4c631cb384bd4803cd0625974946,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -54,7 +54,7 @@ namespace Anivision.PlayerInteraction
         private InputManager inputManager;
         //Animal manager to check for animal switches;
         private AnimalManager animalManager;
-
+        
         void Start()
         {
             // Get an instance of an input manager

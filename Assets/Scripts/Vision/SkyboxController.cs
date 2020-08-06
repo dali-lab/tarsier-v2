@@ -41,12 +41,9 @@ namespace Anivision.Vision
         {
             RevertToOriginal();
             
-            foreach (VisionEffect effect in parameters.visionEffects)
+            foreach (KeyValuePair<VisionEffect, SkyboxEffect> effect in effectsDictionary)
             {
-                if (effectsDictionary.ContainsKey(effect))
-                {
-                    effectsDictionary[effect].ApplyEffect(parameters);
-                }
+                effect.Value.ApplyEffect(parameters);
             }
         }
 
