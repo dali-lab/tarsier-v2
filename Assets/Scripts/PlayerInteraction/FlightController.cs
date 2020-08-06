@@ -8,20 +8,33 @@ namespace Anivision.PlayerInteraction
 {
     public class FlightController : MonoBehaviour
     {
+        [Tooltip("The Camera Rig used to move the player when flying.")]
         public GameObject cameraRig;                                    // to move the player when flying and teleport player back to hive when they run out of health
+        [Tooltip("The Center Eye object used to determine the headset's rotation when flying.")]
         public GameObject centerEye;                                    // for flying via headtilt
-        public AudioSource windSound;
-        public GameObject windParticles;
-        public float speed = .06f;
+        [Tooltip("How fast the user flies.")]
+        public float flySpeed = .06f;
+        
+        [Tooltip("A headset fader script to use to fade the headset when transitioning between flying and teleporting. Should be a unique instance used only in this script.")]
+        public HeadsetFade headsetFade;
+        [Tooltip("How quickly to fade the headset.")]
+        public float headsetFadeSpeed = 1;
+        [Tooltip("How quickly to fade the wind audio in and out.")]
+        public float audioFadeSpeed = 1;
         
         private InputManager _inputManager;
         private AnimalManager _animalManager;
         private TeleportController _teleportController;
+        private AudioSource windSound;
+        private GameObject windParticles;
         private bool isFlying = false;
         private bool canTeleport = false;
 
         private void Awake()
         {
+            //Get attached wind audio source and particles and save them
+            windParticles = GetComponentInChildren<ParticleSystem>().gameObject;
+            windSound = GetComponentInChildren<AudioSource>();
             windParticles.transform.parent = centerEye.transform;
             windParticles.transform.localPosition = new Vector3(0f, 0f, 0.5f);
             windParticles.transform.localScale = new Vector3(0.05f, 0.05f, 0.01f);
@@ -30,78 +43,104 @@ namespace Anivision.PlayerInteraction
             windSound.volume = 0;
         }
 
-        // Start is called before the first frame update
         private void Start()
         {
             _animalManager = AnimalManager.Instance;
+            // Set the input manager to an instance of teleport controller, if available
             _teleportController = TeleportController.Instance;
-
             if (_animalManager != null)
             {
                 _animalManager.MovementSwitch.AddListener(EnableFlight);
             }
-            if (_inputManager == null)
-            {
-                throw new System.Exception("Must have an input manager script in the scene");
-            }
-            
         }
 
         void OnEnable()
         {
-
+            // Set the input manager to an instance of an Input Manager
+            _inputManager = InputManager.Instance;
+            // Ensure an input manager has been set before continuing
             if (_inputManager == null)
             {
-                _inputManager = InputManager.Instance;
+                throw new System.Exception("Must have an input manager script in the scene");
             }
+
+            // If there is a valid input manager, attach callbacks to the necessary button presses
             if (_inputManager != null)
             {
-                _inputManager.AttachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+                _inputManager.AttachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+            }
+            
+        }
+
+        private void OnDisable()
+        {
+            // Remove callbacks that were added in OnEnable
+            if (_inputManager != null)
+            {
+                _inputManager.DetachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
         }
-
-        private void StartMovementTransition()                        // fly: trigger transition, toggle teleport
+        
+        // Initiates a headset fade
+        private void StartFade()
         {
-            StartCoroutine(movementTransition());
+            // Make the movement transition function get called when a headset fade ends
+            headsetFade.OnFadeEnd += movementTransition;
+            headsetFade.StartFade(headsetFadeSpeed);
         }
-
+        
         private void Update()
         {
             Fly();
         }
 
-        private void Fly()                                              // fly via head tilt (tracks headset)
+        // If flying is enabled, move the user based on head tilt (which tracks the headset)
+        private void Fly()
         {
-            if (isFlying)
+            if (isFlying == true)
             {
                 Vector3 flyDir = centerEye.transform.forward;
-                cameraRig.transform.position += flyDir.normalized * speed;
+                cameraRig.transform.position += flyDir.normalized * flySpeed;
             }
         }
-    
-        private IEnumerator movementTransition()                        // fade to black and unfade for transition
+        
+        // Transitions from flying to teleporting, or teleporting to flying.
+        // Called when a fade transition ends
+        private void movementTransition()
         {
+            // Unfade the headset
+            headsetFade.StartUnfade(headsetFadeSpeed);
+            // Toggle flying
             isFlying = !isFlying;
-            windParticles.SetActive(isFlying);
+            // Toggle the ability to teleport
             if (canTeleport && _teleportController != null)
             {
                 _teleportController.gameObject.SetActive(!isFlying);
             }
+            // Fade in or out the wind sound
+            StartCoroutine(FadeSound());
+            // Toggle wind particles
+            windParticles.SetActive(isFlying);
+            
+            headsetFade.OnFadeEnd -= movementTransition;
+        }
 
-            if (isFlying == false)                                       // fade out sound
+        // Either fades the wind sound in or out, depending on whether the user is flying
+        private IEnumerator FadeSound()
+        {
+            if (isFlying == false) // Fade the sound out
             {
-                float startVolume = windSound.volume;
                 while (windSound.volume > 0)
                 {
-                    windSound.volume -= startVolume * Time.deltaTime / 1;
+                    windSound.volume -= Time.deltaTime * audioFadeSpeed;
                     yield return null;
                 }
             }
-            else                                                        // fade in sound
+            else // Fade the sound in
             {
                 while (windSound.volume < 1)
                 {
-                    windSound.volume += 1 * Time.deltaTime / 1;
+                    windSound.volume += Time.deltaTime * audioFadeSpeed;
                     yield return null;
                 }
             }
@@ -110,15 +149,19 @@ namespace Anivision.PlayerInteraction
         private void EnableFlight(MovementParameters parameters)
         {
             canTeleport = parameters.CanTeleport;
-            gameObject.SetActive(parameters.CanFly);
+            ResetFlight(parameters);
         }
-        
-        private void OnDisable()
+
+        private void ResetFlight(MovementParameters parameters)
         {
-            if (_inputManager != null)
+            if (isFlying && !parameters.CanFly)
             {
-                _inputManager.DetachInputHandler(StartMovementTransition, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+                isFlying = false;
+                windParticles.SetActive(isFlying);
+                windSound.volume = 0;
             }
+            
+            gameObject.SetActive(parameters.CanFly);
         
         }
 

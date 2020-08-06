@@ -24,14 +24,6 @@ public class SwitchAnimalTest : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.anyKeyDown)
-        {
-            SwitchAnimal();
-        }
-    }
-
     void SwitchAnimal()
     {
         if (animalsToSwitch != null)

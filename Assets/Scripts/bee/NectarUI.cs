@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Anivision.Core;
 
 public class NectarUI : MonoBehaviour
 {
     public GameObject player;
     public GameObject startSpawn;           // location at the hive
     public GameObject nectarUISlider;       // the progress bar
-    public SceneFader sceneFader;
+    public HeadsetFade headsetFade;
+    public float fadeSpeed;
 
     private float progress;
     private Vector3 maxScale;
@@ -22,10 +24,20 @@ public class NectarUI : MonoBehaviour
         maxScale = nectarUISlider.transform.localScale;                             // sets nectar bar to 0 on start, auto updated in updateHealth IEnumerator
         Vector3 zeroProgress = new Vector3(maxScale.x, 0.0f, maxScale.z);
         nectarUISlider.transform.localScale = zeroProgress;
-        StartCoroutine(updateHealth());
+        StartCoroutine(UpdateHealth());
     }
 
-    private IEnumerator updateHealth()                                              // health decreases over time
+    void OnEnable()
+    {
+        headsetFade.OnFadeEnd += OnFadeEnd;
+    }
+
+    void OnDisable()
+    {
+        headsetFade.OnFadeEnd -= OnFadeEnd;
+    }
+
+    private IEnumerator UpdateHealth()                                              // health decreases over time
     {
         while ((progress > 0f))
         {
@@ -33,10 +45,10 @@ public class NectarUI : MonoBehaviour
             progress -= 0.005f;                                                     // 100 seconds total
             nectarUISlider.transform.localScale = new Vector3(maxScale.x, maxScale.y * progress, maxScale.z);
         }
-        StartCoroutine(BackToHive());                
+        BackToHive();             
     }
 
-    public float addHealth(float health)                    // function to increase health when picking up nectar globs
+    public float AddHealth(float health)                    // function to increase health when picking up nectar globs
     {
         progress += health;
         if (progress > 1.0f)
@@ -46,12 +58,17 @@ public class NectarUI : MonoBehaviour
         return progress;
     }
 
-    private IEnumerator BackToHive()                        // fade to black and unfade for transition
+    // fade to black and unfade for transition
+    private void BackToHive()                        
     {
-        sceneFader.StartFade();
-        yield return new WaitForSeconds(1);
+        headsetFade.StartFade(fadeSpeed);
+    }
+
+    private void OnFadeEnd()
+    {
+        headsetFade.StartUnfade(fadeSpeed);
         progress = 1.0f;
         player.transform.position = startLocation;
-        StartCoroutine(updateHealth());
+        StartCoroutine(UpdateHealth());
     }
 }

@@ -58,11 +58,6 @@ namespace Anivision.Core
                     UnityEngine.Debug.LogError("Animal type already declared. Skipping add to dictionary.");
                 }
             }
-            
-            if (AnimalControllers != null && AnimalControllers.Length > 0)
-            {
-                SwitchAnimal(AnimalControllers[0].animal); //switch animal to first animal in the list
-            }
         }
 
 
