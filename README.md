@@ -3,9 +3,10 @@
 
 
 # Anivision
-The Anivision Project aims to let a user experience the world through the eyes of various animals. The experience focuses on different vision adaptions and the everyday experience of being another animal.
+The Anivision Project aims to let a user experience the world through the eyes of various animals. The experience focuses on different visual adaptions and understanding other perspectives.
 
-![Screenshot of Bee Vision scene](https://i.imgur.com/nKeaC5o.png)
+![Screenshot of Tarsier comparison](https://i.imgur.com/dxL4c1f.png)
+![Screenshot of Bee comparison](https://i.imgur.com/PRk2x3i.png)
 
 # Architecture
 
@@ -15,7 +16,7 @@ The Anivision Project aims to let a user experience the world through the eyes o
 
 ## Setup steps
 
-### Prerequisistes
+### Prerequisites
 
 You will need Unity Hub installed, as well as Android Development Studio. Follow [these instructions](https://circuitstream.com/blog/oculus-quest-unity-setup/) as necessary to configure the Quest (if not already configured), Android Dev Studio, and Unity Hub. However, the article is a bit outdated so only follow the instructions up to "Install and run Unity". For configuring the build, player, and XR settings, refer to [this](https://developer.oculus.com/documentation/unity/unity-conf-settings/) instead.
 
@@ -40,7 +41,7 @@ If you choose just the Build option, this will create an apk file that will be s
 
 ### Gameplay
 
-The user will start in the Home Lobby scene, where there will be an optional tutorial. To transition to another scene the user will pull a pair of goggles to their face.
+The user will start with a mini tutorial in the Lobby scene to learn how to use the controllers. From the main lobby island, the user will pull a pair of goggles to their face to transition to an animal environment.
 
 ## Authors
 * Cathy Wu 2021, developer
@@ -49,6 +50,7 @@ The user will start in the Home Lobby scene, where there will be an optional tut
 * Dorothy Qu 2019, designer
 * Kristie Chow 2020, PM
 * Jasmine Mai 2020, Mentor
+* Gregory Macharia 2022, designer
 
 ## Acknowledgments 🤝
 We would like to thank our advisor, Sam Gochman, for this time and expertise. We also would like to thank DALI Staff and Professor Mahoney for their advice and continued support.

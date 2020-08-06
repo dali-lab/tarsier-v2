@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 #if UNITY_EDITOR
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEditorInternal;
 #endif
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace Anivision.Vision
     public class AnimalVision : MonoBehaviour
     {
         public ColorblindType colorblindType = ColorblindType.None;
-        public List<VisionEffect> effects;
+        public List<VisionEffect> effects = new List<VisionEffect>();
         
         //following variables used to keep track of custom colorblind filter values
         private float rRed = 1f;
@@ -100,6 +101,12 @@ namespace Anivision.Vision
             if (visionScript.colorblindType == ColorblindType.Custom)
             {
                 SetColorblindEditor();
+            }
+            
+            if (GUI.changed)
+            {
+                EditorUtility.SetDirty(visionScript);
+                EditorSceneManager.MarkSceneDirty(visionScript.gameObject.scene);
             }
 
         }

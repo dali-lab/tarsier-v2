@@ -48,7 +48,6 @@ namespace Anivision.Vision
 
         private void MaterialChange(VisionParameters visionParameters)
         {
-            // RevertToOriginalRecursive(transform);
             MaterialChangeRecursive(gameObject.transform, visionParameters);
             lastAppliedEffects = visionParameters.visionEffects;
         }

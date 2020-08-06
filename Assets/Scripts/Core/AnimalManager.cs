@@ -33,14 +33,18 @@ namespace Anivision.Core
         
         [Tooltip("List of animals supported by the scene")]
         public AnimalController[] AnimalControllers; //list of animals that the scene supports
+
+        public AnimalController defaultAnimal;
         public class VisionSwitchEvent : UnityEvent<VisionParameters>{}
         public class MovementSwitchEvent : UnityEvent<MovementParameters>{}
         public VisionSwitchEvent VisionSwitch = new VisionSwitchEvent(); //called when animal is switched 
         public MovementSwitchEvent MovementSwitch = new MovementSwitchEvent(); //called when animal is switched 
         
-        private InputManager _inputManager;
         private Dictionary<Animal, AnimalController> _animalControllerDict;
 
+        private int index;
+
+        private bool setDefault = false;
         // Start is called before the first frame update
         private void Start()
         {
@@ -58,13 +62,17 @@ namespace Anivision.Core
                     UnityEngine.Debug.LogError("Animal type already declared. Skipping add to dictionary.");
                 }
             }
-            
-            if (AnimalControllers != null && AnimalControllers.Length > 0)
-            {
-                SwitchAnimal(AnimalControllers[0].animal); //switch animal to first animal in the list
-            }
-            
         }
+
+        private void Update()
+        {
+            if (!setDefault && defaultAnimal != null)
+            {
+                SwitchAnimal(defaultAnimal.animal);
+                setDefault = true;
+            }
+        }
+
 
         //switch the animal to the desired one and invoke events
         public void SwitchAnimal(Animal animal)

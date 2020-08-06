@@ -6,6 +6,7 @@ using Anivision.Vision;
 #if UNITY_EDITOR
 using UnityEditor;
 using UnityEditorInternal;
+using UnityEditor.SceneManagement;
 #endif
 using UnityEngine;
 
@@ -63,6 +64,12 @@ namespace Anivision.PlayerInteraction
                 movementScript.validRaycastLayers = FieldToLayerMask(raycastLayersSelected);
                 movementScript.validTeleportLayers = FieldToLayerMask(teleportLayersSelected);
            
+            }
+            
+            if (GUI.changed)
+            {
+                EditorUtility.SetDirty(movementScript);
+                EditorSceneManager.MarkSceneDirty(movementScript.gameObject.scene);
             }
 
         }

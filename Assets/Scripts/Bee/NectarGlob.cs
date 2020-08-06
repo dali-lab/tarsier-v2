@@ -29,7 +29,7 @@ public class NectarGlob : MonoBehaviour
         if(controller != null) {
             controller.globConsumed();
             Destroy(gameObject);
-            nectarBar.GetComponent<NectarUI>().addHealth(0.1f);
+            nectarBar.GetComponent<NectarUI>().AddHealth(0.1f);
         }
     }
 }
