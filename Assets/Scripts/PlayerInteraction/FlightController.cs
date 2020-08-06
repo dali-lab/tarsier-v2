@@ -1,55 +1,57 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Anivision.Core;
-using Anivision.PlayerInteraction;
+using UnityEngine;
 
-namespace Anivision.Bee
+namespace Anivision.PlayerInteraction
 {
-    public class BeeRightControls : MonoBehaviour
+    public class FlightController : MonoBehaviour
     {
-        [Tooltip("The default human skybox.")]
-        public Material normalSkybox;
-        [Tooltip("The skybox to use in bee vision.")]
-        public Material beeSkybox;
-
         [Tooltip("The Camera Rig used to move the player when flying.")]
-        public GameObject cameraRig;
+        public GameObject cameraRig;                                    // to move the player when flying and teleport player back to hive when they run out of health
         [Tooltip("The Center Eye object used to determine the headset's rotation when flying.")]
-        public GameObject centerEye;
-        [Tooltip("The wind particle system.")]
-        public GameObject windParticles;
-
-        [Tooltip("The Teleport script handling user teleportation.")]
-        public TeleportController teleport;
-
+        public GameObject centerEye;                                    // for flying via headtilt
+        [Tooltip("How fast the user flies.")]
+        public float flySpeed = .06f;
+        
         [Tooltip("A headset fader script to use to fade the headset when transitioning between flying and teleporting. Should be a unique instance used only in this script.")]
         public HeadsetFade headsetFade;
         [Tooltip("How quickly to fade the headset.")]
         public float headsetFadeSpeed = 1;
-        [Tooltip("The audio for the wind noises while flying.")]
-        public AudioSource windSound;
         [Tooltip("How quickly to fade the wind audio in and out.")]
         public float audioFadeSpeed = 1;
+        
+        private InputManager _inputManager;
+        private AnimalManager _animalManager;
+        private TeleportController _teleportController;
+        private AudioSource windSound;
+        private GameObject windParticles;
+        private bool isFlying = false;
+        private bool canTeleport = false;
 
-        [Tooltip("How fast the user flies.")]
-        public float flySpeed = .06f;
-
-        private InputManager _inputManager; // The input manager managing button presses
-        private bool isFlying = false;      // Whether the user is currently flying
-        private bool isNormalSkybox = true; // Whether the skybox is currently the normal human skybox
+        private void Awake()
+        {
+            //Get attached wind audio source and particles and save them
+            windParticles = GetComponentInChildren<ParticleSystem>().gameObject;
+            windSound = GetComponentInChildren<AudioSource>();
+            windParticles.transform.parent = centerEye.transform;
+            windParticles.transform.localPosition = new Vector3(0f, 0f, 0.5f);
+            windParticles.transform.localScale = new Vector3(0.05f, 0.05f, 0.01f);
+            windParticles.SetActive(false);
+            windSound.transform.parent = centerEye.transform;
+            windSound.volume = 0;
+        }
 
         private void Start()
         {
-            // Start with teleport mode enabled
-            teleport.enabled = true;
-            isFlying = false;
-            windParticles.SetActive(false);
-            windSound.volume = 0;
-
-            // Start with default skybox
-            isNormalSkybox = true;
-            SkyboxSwap();
+            _animalManager = AnimalManager.Instance;
+            // Set the input manager to an instance of teleport controller, if available
+            _teleportController = TeleportController.Instance;
+            if (_animalManager != null)
+            {
+                _animalManager.MovementSwitch.AddListener(EnableFlight);
+            }
         }
 
         void OnEnable()
@@ -65,11 +67,12 @@ namespace Anivision.Bee
             // If there is a valid input manager, attach callbacks to the necessary button presses
             if (_inputManager != null)
             {
-                _inputManager.AttachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.A);
                 _inputManager.AttachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
+            
             // Make the movement transition function get called when a headset fade ends
             headsetFade.OnFadeEnd += movementTransition;
+            
         }
 
         private void OnDisable()
@@ -77,25 +80,18 @@ namespace Anivision.Bee
             // Remove callbacks that were added in OnEnable
             if (_inputManager != null)
             {
-                _inputManager.DetachInputHandler(StartSkyboxSwap, InputManager.InputState.ON_PRESS, InputManager.Button.A);
                 _inputManager.DetachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
+            
             headsetFade.OnFadeEnd -= movementTransition;
         }
-
+        
         // Initiates a headset fade
         private void StartFade()
         {
             headsetFade.StartFade(headsetFadeSpeed);
         }
-
-        // Swaps the skybox
-        private void StartSkyboxSwap()
-        {
-            isNormalSkybox = !isNormalSkybox;
-            SkyboxSwap();
-        }
-
+        
         private void Update()
         {
             Fly();
@@ -110,34 +106,25 @@ namespace Anivision.Bee
                 cameraRig.transform.position += flyDir.normalized * flySpeed;
             }
         }
-
-        // Toggles between the human and bee vision skybox
-        private void SkyboxSwap()
-        {
-            if (isNormalSkybox)
-            {
-                RenderSettings.skybox = normalSkybox;
-            }
-            else
-            {
-                RenderSettings.skybox = beeSkybox;
-            }
-        }
-
+        
         // Transitions from flying to teleporting, or teleporting to flying.
         // Called when a fade transition ends
         private void movementTransition()
         {
             // Unfade the headset
             headsetFade.StartUnfade(headsetFadeSpeed);
-            // Toggle the ability to teleport
-            teleport.enabled = !teleport.enabled;
             // Toggle flying
             isFlying = !isFlying;
+            // Toggle the ability to teleport
+            if (canTeleport && _teleportController != null)
+            {
+                _teleportController.gameObject.SetActive(!isFlying);
+            }
             // Fade in or out the wind sound
             StartCoroutine(FadeSound());
             // Toggle wind particles
-            windParticles.SetActive(!windParticles.activeSelf);
+            windParticles.SetActive(isFlying);
+            
         }
 
         // Either fades the wind sound in or out, depending on whether the user is flying
@@ -160,5 +147,26 @@ namespace Anivision.Bee
                 }
             }
         }
+
+        private void EnableFlight(MovementParameters parameters)
+        {
+            canTeleport = parameters.CanTeleport;
+            ResetFlight(parameters);
+            
+        }
+
+        private void ResetFlight(MovementParameters parameters)
+        {
+            if (isFlying && !parameters.CanFly)
+            {
+                isFlying = parameters.CanFly;
+                windParticles.SetActive(false);
+                windSound.volume = 0;
+            }
+            
+            gameObject.SetActive(parameters.CanFly);
+        
+        }
+
     }
 }

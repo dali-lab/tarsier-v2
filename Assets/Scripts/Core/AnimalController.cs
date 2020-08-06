@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Anivision.PlayerInteraction;
 using Anivision.Vision;
@@ -23,6 +24,7 @@ namespace Anivision.Core
             VisionParameters = GetComponent<AnimalVision>().ConstructVisionParametersObject(animal);
             MovementParameters = GetComponent<AnimalMovement>().ConstructMovementParametersObject();
         }
+
     }
 }
 

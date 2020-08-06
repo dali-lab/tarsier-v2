@@ -792,19 +792,12 @@
           <e p="Bee" t="Include">
             <e p="BeeLeftControls.cs" t="Include" />
             <e p="BeeRightControls.cs" t="Include" />
-            <e p="BeeTutorialEnergy.cs" t="Include" />
-            <e p="BeeTutorialFlying.cs" t="Include" />
-            <e p="BeeTutorialGo.cs" t="Include" />
-            <e p="BeeTutorialLanding.cs" t="Include" />
-            <e p="BeeTutorialNectar.cs" t="Include" />
-            <e p="BeeTutorialVision.cs" t="Include" />
             <e p="NectarGlob.cs" t="Include" />
             <e p="NectarShaderIntensityController.cs" t="Include" />
             <e p="NectarUI.cs" t="Include" />
           </e>
           <e p="bugSpawn.cs" t="Include" />
           <e p="bugWander.cs" t="Include" />
-          <e p="changeScene.cs" t="Include" />
           <e p="Core" t="Include">
             <e p="AnimalController.cs" t="Include" />
             <e p="AnimalEnums.cs" t="Include" />
@@ -814,19 +807,20 @@
           </e>
           <e p="Debug" t="Include">
             <e p="SampleInput.cs" t="Include" />
+            <e p="SwitchAnimalTest.cs" t="Include" />
           </e>
           <e p="GenerateFlowers.cs" t="Include" />
-          <e p="GogglesSceneSwitchObject.cs" t="Include" />
           <e p="headsetCollide.cs" t="Include" />
           <e p="HighlightControls.cs" t="Include" />
           <e p="leftControls.cs" t="Include" />
           <e p="Pixelation.cs" t="Include" />
           <e p="PlayerInteraction" t="Include">
             <e p="AnimalMovement.cs" t="Include" />
+            <e p="FlightController.cs" t="Include" />
             <e p="Grabbable.cs" t="Include" />
             <e p="Grabber.cs" t="Include" />
             <e p="MovementParameters.cs" t="Include" />
-            <e p="Teleport.cs" t="Include" />
+            <e p="TeleportController.cs" t="Include" />
           </e>
           <e p="RendererFeatures" t="Include">
             <e p="Blit.cs" t="Include" />
@@ -835,8 +829,11 @@
           <e p="returnToLobby.cs" t="Include" />
           <e p="rightControls.cs" t="Include" />
           <e p="Rotate.cs" t="Include" />
-          <e p="SceneFader.cs" t="Include" />
-          <e p="sceneLoader.cs" t="Include" />
+          <e p="SceneManagement" t="Include">
+            <e p="DistanceTrigger.cs" t="Include" />
+            <e p="FadeIn.cs" t="Include" />
+            <e p="SceneSwitch.cs" t="Include" />
+          </e>
           <e p="SceneReference.cs" t="Include" />
           <e p="startButton.cs" t="Include" />
           <e p="tutorial" t="Include">
@@ -853,15 +850,21 @@
             <e p="MaterialController.cs" t="Include" />
             <e p="MaterialEffect.cs" t="Include" />
             <e p="MaterialSwap.cs" t="Include" />
+            <e p="SkyboxController.cs" t="Include" />
+            <e p="SkyboxEffect.cs" t="Include" />
+            <e p="SkyboxSwap.cs" t="Include" />
             <e p="UV.cs" t="Include" />
             <e p="VisionParameters.cs" t="Include" />
           </e>
         </e>
         <e p="Shaders" t="Include">
-          <e p="RendererBlit" t="Include">
-            <e p="Colorblind.shader" t="Include" />
-            <e p="Fade.shader" t="Include" />
-            <e p="UV.shader" t="Include" />
+          <e p="Vision" t="Include">
+            <e p="Blit" t="Include">
+              <e p="Colorblind.shader" t="Include" />
+              <e p="Fade.shader" t="Include" />
+              <e p="Test.shader" t="Include" />
+              <e p="UV.shader" t="Include" />
+            </e>
           </e>
         </e>
       </e>

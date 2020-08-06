@@ -1,10 +1,30 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using Anivision.Core;
 
 namespace Anivision.PlayerInteraction
 {
-    public class Teleport : MonoBehaviour
+    public class TeleportController : MonoBehaviour
     {
+        private static TeleportController _teleportController;
+        //singleton instance
+        public static TeleportController Instance { get
+        {
+            if (!_teleportController)
+            {
+                _teleportController = FindObjectOfType (typeof (TeleportController)) as TeleportController;
+
+                if (!_teleportController)
+                {
+                    UnityEngine.Debug.LogError("Trying to access Teleport script when there is none in the scene.");
+                }
+            }
+
+            return _teleportController;
+        } } 
+        
         [Tooltip("The Camera Rig that will be teleporting.")]
         public OVRCameraRig cameraRig;
         [Tooltip("The transform from which the teleport raycast will eminate from. Probably the Left or Right Hand Anchor.")]
@@ -32,11 +52,26 @@ namespace Anivision.PlayerInteraction
         private Vector3 destination;
         // Input manager to check for button press
         private InputManager inputManager;
-
+        //Animal manager to check for animal switches;
+        private AnimalManager animalManager;
+        
         void Start()
         {
-            // Get an instance of an input maanger
+            // Get an instance of an input manager
             inputManager = InputManager.Instance;
+
+            if (inputManager == null)
+            {
+                throw new Exception("There must be an InputManager script in the scene.");
+            }
+            
+            // Get instance of animal manager
+            animalManager = AnimalManager.Instance;
+
+            if (animalManager != null)
+            {
+                animalManager.MovementSwitch.AddListener(SetParams);
+            }
             // Set default values
             valid = false;
             destination = Vector3.zero;
@@ -115,6 +150,18 @@ namespace Anivision.PlayerInteraction
                     lineRenderer.startColor = invalidColor;
                     lineRenderer.endColor = invalidColor;
                 }
+            }
+        }
+
+        private void SetParams(MovementParameters parameters)
+        {
+            gameObject.SetActive(parameters.CanTeleport);
+
+            if (parameters.CanTeleport)
+            {
+                validRaycastLayers = parameters.ValidRaycastLayers;
+                validTeleportLayers = parameters.ValidTeleportLayers;
+                teleportRange = parameters.TeleportRange;
             }
         }
     }
