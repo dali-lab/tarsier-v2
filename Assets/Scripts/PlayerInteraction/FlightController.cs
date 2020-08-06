@@ -151,24 +151,17 @@ namespace Anivision.PlayerInteraction
         private void EnableFlight(MovementParameters parameters)
         {
             canTeleport = parameters.CanTeleport;
-
-            if (parameters.CanFly)
-            {
-                gameObject.SetActive(true);
-            }
-            else
-            {
-                StartCoroutine(ResetFlight(parameters));
-            }
+            ResetFlight(parameters);
             
         }
 
-        private IEnumerator ResetFlight(MovementParameters parameters)
+        private void ResetFlight(MovementParameters parameters)
         {
             if (isFlying && !parameters.CanFly)
             {
-                StartFade();
-                yield return new WaitUntil(() => windSound.volume <= 0);
+                isFlying = parameters.CanFly;
+                windParticles.SetActive(false);
+                windSound.volume = 0;
             }
             
             gameObject.SetActive(parameters.CanFly);
