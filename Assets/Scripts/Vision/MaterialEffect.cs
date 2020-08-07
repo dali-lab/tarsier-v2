@@ -21,19 +21,7 @@ namespace Anivision.Vision
         /// <param name="renderer">current renderer</param>
         /// <param name="visionParameters">VisionParameters object holding the specific effects and vision information</param>
         public abstract void ApplyEffect(MaterialPropertyBlock propBlock, int materialIndex, Renderer renderer, VisionParameters visionParameters);
-        
-        // class to save all of the relevant material information
-        public class MaterialInfo
-        {
-            public Texture2D texture;
-            public Texture2D changedTexture;
-            public Color color;
-            public string shaderTextureProperty;
-            public string shaderColorProperty;
-            public Renderer renderer;
-        }
-        
-        
+
         /// <summary>
         /// Function to save material information into a dictionary
         /// </summary>
