@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Anivision.Environment
 {
+    /// <summary>
+    /// Class that controls a light's settings when animal is switched
+    /// </summary>
     public class LightController : MonoBehaviour
     {
         public Light light;
@@ -42,6 +45,7 @@ namespace Anivision.Environment
         private void SetLight(Animal animal)
         {
             LightParameters parameters;
+            //try to see if light parameters are set for this animal
             if (lightParametersDict.TryGetValue(animal, out parameters))
             {
                 light.intensity = parameters.intensity;
@@ -49,6 +53,7 @@ namespace Anivision.Environment
             }
             else
             {
+                //light parameters not set, so revert to original
                 light.intensity = originalParameters.intensity;
                 light.color = originalParameters.color;
             }

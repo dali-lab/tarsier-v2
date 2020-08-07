@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Anivision.Environment
 {
+    /// <summary>
+    /// Small class holding modifiable light parameters
+    /// </summary>
     [Serializable]
     public class LightParameters
     {

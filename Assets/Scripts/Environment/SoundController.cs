@@ -4,11 +4,16 @@ using UnityEngine;
 
 namespace Anivision.Environment
 {
+    /// <summary>
+    /// This script manages sound switching when animals switch
+    /// Add it to any game object with an audio source
+    /// Can add multiple to a game object if you have multiple audio sources there that you want to control
+    /// </summary>
     public class SoundController : MonoBehaviour
     {
         public AudioSource AudioSource;
         public SoundParameters[] SoundParametersList;
-        public bool playOnSwitch = true;
+        public bool playOnSwitch = true; //whether to play the sound clip immediately when animal is switched
         private SoundParameters originalParameters;
         private Dictionary<Animal, SoundParameters> soundParametersDict;
         
@@ -48,6 +53,7 @@ namespace Anivision.Environment
                 AudioSource.Stop();
             }
             
+            //see if there are sound parameters for this animal
             if (soundParametersDict.TryGetValue(animal, out parameters))
             {
                 AudioSource.mute = parameters.mute;
@@ -56,6 +62,7 @@ namespace Anivision.Environment
             }
             else
             {
+                //no sound parameters set, so revert to original
                 AudioSource.mute = originalParameters.mute;
                 AudioSource.volume = originalParameters.volume;
                 AudioSource.clip = originalParameters.audioClip;
