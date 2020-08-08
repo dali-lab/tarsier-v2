@@ -49,7 +49,7 @@ namespace Anivision.Vision
         private void MaterialChange(VisionParameters visionParameters)
         {
             MaterialChangeRecursive(gameObject.transform, visionParameters);
-            lastAppliedEffects = visionParameters.visionEffects;
+            lastAppliedEffects = visionParameters.VisionEffects;
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Anivision.Vision
                     MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
                     mRenderer.GetPropertyBlock(propBlock, i);
                     //go through list of effects for this animal and apply effect if this effect is on the object
-                    foreach (VisionEffect effect in visionParameters.visionEffects)
+                    foreach (VisionEffect effect in visionParameters.VisionEffects)
                     {
                         if (effects.ContainsKey(effect))
                         {

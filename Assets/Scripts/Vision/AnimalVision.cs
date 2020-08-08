@@ -15,21 +15,21 @@ namespace Anivision.Vision
     /// </summary>
     public class AnimalVision : MonoBehaviour
     {
-        public ColorblindType colorblindType = ColorblindType.None;
+        public ColorblindType colorblindType = ColorblindType.Protanopia;
         public List<VisionEffect> effects = new List<VisionEffect>();
-        
+
         //following variables used to keep track of custom colorblind filter values
-        private float rRed = 1f;
-        private float rGreen;
-        private float rBlue;
-        
-        private float gRed;
-        private float gGreen = 1f;
-        private float gBlue;
-        
-        private float bRed;
-        private float bGreen;
-        private float bBlue = 1f;
+        [SerializeField] private float rRed = 1f;
+        [SerializeField] private float rGreen;
+        [SerializeField] private float rBlue;
+
+        [SerializeField] private float gRed;
+        [SerializeField] private float gGreen = 1f;
+        [SerializeField] private float gBlue;
+
+        [SerializeField] private float bRed;
+        [SerializeField] private float bGreen;
+        [SerializeField] private float bBlue = 1f;
 
         public VisionParameters ConstructVisionParametersObject(Animal animal)
         {
