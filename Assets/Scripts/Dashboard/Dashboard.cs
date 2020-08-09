@@ -1,15 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
-public abstract class TutorialStep : MonoBehaviour
+
+public abstract class Dashboard : MonoBehaviour
 {
-    public TextMeshPro TMP;
-    public UnityEvent OnDone = new UnityEvent();
-    
-
+    public enum DashboardType { Tutorial, Home, Animal };
+    public DashboardType dashboardType { get; set; }
     public abstract void Setup();
     public abstract void Cleanup();
 
@@ -22,5 +19,4 @@ public abstract class TutorialStep : MonoBehaviour
     {
         Cleanup();
     }
-
 }

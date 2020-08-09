@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LobbyPress : TutorialStep
+public class AnimalDashboard : Dashboard
 {
-    [TextArea(3, 10)] public string dashboardText;
+    public DashboardType dashboardType;
 
     public override void Setup()
     {
@@ -14,10 +14,5 @@ public class LobbyPress : TutorialStep
     public override void Cleanup()
     {
         throw new System.NotImplementedException();
-    }
-
-    public void CheckForDone()
-    {
-
     }
 }
