@@ -8,7 +8,7 @@ public class Button : MonoBehaviour
 {
     public Color defaultColor;
     public Color hoverColor;
-    public UnityEvent onClick;
+    [HideInInspector] public UnityEvent onClick;
 
     private InputManager _inputManager;
     private HapticsController _hapticsController;
@@ -24,17 +24,23 @@ public class Button : MonoBehaviour
     {
         if (other.tag == "selector")
         {
-            _hapticsController.Haptics(1, 0.5f, 0.25f, OVRInput.Controller.LTouch);
-            //OVRInput.SetControllerVibration(0.1f, 0.5f, OVRInput.Controller.RTouch);
+            _hapticsController.Haptics(1, 0.25f, 0.1f, OVRInput.Controller.RTouch);
             ChangeColor(hoverColor);
-
-            if (_inputManager.IsButtonPressed(InputManager.Button.RIGHT_TRIGGER))
-            {
-                _hapticsController.Haptics(1, 0.5f, 0.25f, OVRInput.Controller.LTouch);
-                //OVRInput.SetControllerVibration(0.1f, 0.5f, OVRInput.Controller.RTouch);
-                onClick.Invoke();
-            }
         }
+    }
+    public void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "selector" && _inputManager.IsButtonPressed(InputManager.Button.RIGHT_TRIGGER))
+        {
+            _hapticsController.Haptics(1, 0.25f, 0.1f, OVRInput.Controller.RTouch);
+            StartCoroutine(ButtonCooldown(1));
+        }
+    }
+
+    IEnumerator ButtonCooldown(float seconds)
+    {
+        yield return new WaitForSecondsRealtime(seconds);
+        onClick.Invoke();
     }
     public void OnTriggerExit(Collider other)
     {

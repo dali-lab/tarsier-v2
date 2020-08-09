@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using Anivision.Core;
 
-public class LobbyControllers : TutorialStep
+public class LobbyControllerPress : TutorialStep
 {
     public GameObject tutorialControllers;
     public GameObject LHighlightRings;
@@ -26,8 +26,8 @@ public class LobbyControllers : TutorialStep
         {
             TMP.text = dashboardText;
             tutorialControllers.SetActive(true);
-            LHighlightRings.SetActive(true);
-            RHighlightRings.SetActive(true);
+            foreach (Transform child in LHighlightRings.transform) child.gameObject.SetActive(true);
+            foreach (Transform child in RHighlightRings.transform) child.gameObject.SetActive(true);
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
         }
     }
@@ -62,7 +62,7 @@ public class LobbyControllers : TutorialStep
     {
         TMP.text = "";
         tutorialControllers.SetActive(false);
-        RHighlightRings.SetActive(false);
-        LHighlightRings.SetActive(false);
+        foreach (Transform child in LHighlightRings.transform) child.gameObject.SetActive(false);
+        foreach (Transform child in RHighlightRings.transform) child.gameObject.SetActive(false);
     }
 }

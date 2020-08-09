@@ -17,15 +17,14 @@ public class LobbyGrab : TutorialStep
         TMP.text = dashboardText;
         cube.SetActive(true);
         RGripHighlight.SetActive(true);
-        _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
+        _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.RTouch);
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.name == "Cube")
         {
-            _hapticsController.Haptics(1, 0.5f, 0.25f, OVRInput.Controller.LTouch);
-            //OVRInput.SetControllerVibration(0.1f, 0.5f, OVRInput.Controller.RTouch);
+            _hapticsController.Haptics(1, 0.5f, 0.25f, OVRInput.Controller.RTouch);
             OnDone.Invoke();
         }
     }

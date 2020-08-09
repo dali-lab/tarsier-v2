@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class LobbyPress : TutorialStep
 {
+    public GameObject welcomePanel;
     public GameObject continueButton;
 
     private HapticsController _hapticsController;
@@ -16,10 +17,10 @@ public class LobbyPress : TutorialStep
         _hapticsController = HapticsController.Instance;
 
         TMP.text = dashboardText;
+        welcomePanel.SetActive(true);
         continueButton.SetActive(true);
         continueButton.GetComponent<Button>().onClick.AddListener(Continue);
         _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
-        //OVRInput.SetControllerVibration(1, 0.5f, OVRInput.Controller.LTouch);
     }
 
     private void Continue()
@@ -30,6 +31,7 @@ public class LobbyPress : TutorialStep
     public override void Cleanup(TextMeshPro TMP)
     {
         TMP.text = "";
+        welcomePanel.SetActive(false);
         continueButton.GetComponent<Button>().onClick.RemoveListener(Continue);
         continueButton.SetActive(false);
     }
