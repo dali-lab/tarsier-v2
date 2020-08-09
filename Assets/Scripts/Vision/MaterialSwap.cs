@@ -17,23 +17,7 @@ namespace Anivision.Vision
 
         private Dictionary<string, Dictionary<Animal, Material>> materialsDictionary; //original material to materials to swap to
         private Dictionary<string, Material> reverseMaterialDictionary; //material to original material for faster lookup
-    
-        //small class to have pairing between animal and material
-        [Serializable]
-        public class MaterialAnimal
-        {
-            public Animal animal;
-            public Material material;
-        }
-    
-        //small class to group together all the materials that should be swapped between
-        [Serializable]
-        public class MaterialGroup
-        {
-            public Material originalMaterial;
-            public MaterialAnimal[] MaterialsToSwap;
-        }
-    
+
         private void Awake()
         {
             materialsDictionary = new Dictionary<string, Dictionary<Animal, Material>>();
