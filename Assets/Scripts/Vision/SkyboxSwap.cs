@@ -7,7 +7,7 @@ namespace Anivision.Vision
     //swaps skybox for the skybox associated with an animal
     public class SkyboxSwap : SkyboxEffect
     {
-        public List<MaterialSwap.MaterialAnimal> skyboxes = new List<MaterialSwap.MaterialAnimal>(); //materials for skybox for various animals
+        public List<MaterialAnimal> skyboxes = new List<MaterialAnimal>(); //materials for skybox for various animals
         public override VisionEffect Effect => VisionEffect.MaterialSwap;
         
         private AnimalManager _animalManager;
@@ -18,7 +18,7 @@ namespace Anivision.Vision
         {
             //create new dictionary of animal to skybox material
             skyboxDictionary = new Dictionary<Animal, Material>();
-            foreach (MaterialSwap.MaterialAnimal m in skyboxes)
+            foreach (MaterialAnimal m in skyboxes)
             {
                 if (!skyboxDictionary.ContainsKey(m.animal))
                 {
