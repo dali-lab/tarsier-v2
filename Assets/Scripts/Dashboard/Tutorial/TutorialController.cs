@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Anivision.PlayerInteraction;
+using Anivision.SceneManagement;
 
 public class TutorialController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class TutorialController : MonoBehaviour
     public GameObject defaultLobbyDashboard;                 // default dashboard for the lobby
 
     public GameObject skipButton;
+    public GameObject replayButton;
     public GameObject cameraRig;
     public GameObject mainIslandSpawnPoint;
 
@@ -29,8 +31,9 @@ public class TutorialController : MonoBehaviour
         }
         defaultLobbyDashboard.SetActive(false);
 
+        replayButton.SetActive(false);
         skipButton.SetActive(true);
-        skipButton.GetComponent<Button>().onClick.AddListener(Skip);
+        skipButton.GetComponent<Button>().onClick.AddListener(End);
 
         tutorialSteps[_currStep].gameObject.SetActive(true);
         tutorialSteps[_currStep].Setup(TMP);
@@ -49,13 +52,11 @@ public class TutorialController : MonoBehaviour
         }
         else
         {
-            defaultLobbyDashboard.SetActive(true);
-            skipButton.SetActive(false);
-            gameObject.SetActive(false);
+            End();
         }
     }
 
-    private void Skip()
+    private void End()
     {
         foreach (TutorialStep tutorialStep in tutorialSteps)
         {
@@ -63,9 +64,18 @@ public class TutorialController : MonoBehaviour
             if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
         }
         skipButton.SetActive(false);
+        skipButton.GetComponent<Button>().onClick.RemoveListener(End);
+
+        replayButton.SetActive(true);
+        replayButton.GetComponent<Button>().onClick.AddListener(ReplayTutorial);
         defaultLobbyDashboard.SetActive(true);
-        gameObject.SetActive(false);
+
         _teleportController.enabled = true;
         cameraRig.transform.position = mainIslandSpawnPoint.transform.position;
+    }
+
+    private void ReplayTutorial()
+    {
+        gameObject.GetComponent<SceneSwitch>().StartTransition();
     }
 }

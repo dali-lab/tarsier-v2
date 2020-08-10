@@ -8085,6 +8085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 673306438}
   - component: {fileID: 673306437}
+  - component: {fileID: 673306439}
   m_Layer: 0
   m_Name: Tutorial Controller
   m_TagString: Untagged
@@ -8112,6 +8113,7 @@ MonoBehaviour:
   - {fileID: 1305829147}
   defaultLobbyDashboard: {fileID: 1939700896}
   skipButton: {fileID: 2034264355}
+  replayButton: {fileID: 5208778}
   cameraRig: {fileID: 1489824605}
   mainIslandSpawnPoint: {fileID: 962460369}
 --- !u!4 &673306438
@@ -8128,6 +8130,21 @@ Transform:
   m_Father: {fileID: 978135387}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &673306439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673306436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818b4cbae59e2354d9235efb15475d96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: LobbyScene
+  headsetFade: {fileID: 1134168460}
+  fadeSpeed: 2
 --- !u!1 &679827168
 GameObject:
   m_ObjectHideFlags: 0
@@ -8459,7 +8476,7 @@ PrefabInstance:
     - target: {fileID: 3724874818093074947, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
@@ -14993,7 +15010,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1939700897}
   - component: {fileID: 1939700898}
-  - component: {fileID: 1939700899}
   m_Layer: 0
   m_Name: Lobby Default Dashboard
   m_TagString: Untagged
@@ -15030,23 +15046,7 @@ MonoBehaviour:
   dashboardText: Walk into any portal to explore the habitat of an animal with extreme
     visual traits.
   TMP: {fileID: 577576140}
-  replayTutorialButton: {fileID: 5208778}
   tutorialController: {fileID: 673306436}
---- !u!114 &1939700899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939700896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 818b4cbae59e2354d9235efb15475d96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: LobbyScene
-  headsetFade: {fileID: 1134168460}
-  fadeSpeed: 2
 --- !u!1 &1942649322
 GameObject:
   m_ObjectHideFlags: 0
