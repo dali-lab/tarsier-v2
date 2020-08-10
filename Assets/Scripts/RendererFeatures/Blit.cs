@@ -13,7 +13,6 @@ namespace UnityEngine.Experiemntal.Rendering.Universal
             public int blitMaterialPassIndex = -1;
             public Target destination = Target.Color;
             public string textureId = "_BlitPassTexture";
-            public bool onlyMainCamera = false; // added
         }
         
         public enum Target
@@ -37,20 +36,17 @@ namespace UnityEngine.Experiemntal.Rendering.Universal
 
         public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
         {
-            if (!settings.onlyMainCamera || renderingData.cameraData.camera.tag.Equals("MainCamera")) // added
+            var src = renderer.cameraColorTarget;
+            var dest = (settings.destination == Target.Color) ? RenderTargetHandle.CameraTarget : m_RenderTextureHandle;
+
+            if (settings.blitMaterial == null)
             {
-                var src = renderer.cameraColorTarget;
-                var dest = (settings.destination == Target.Color) ? RenderTargetHandle.CameraTarget : m_RenderTextureHandle;
-
-                if (settings.blitMaterial == null)
-                {
-                    Debug.LogWarningFormat("Missing Blit Material. {0} blit pass will not execute. Check for missing reference in the assigned renderer.", GetType().Name);
-                    return;
-                }
-
-                blitPass.Setup(src, dest);
-                renderer.EnqueuePass(blitPass);
+                Debug.LogWarningFormat("Missing Blit Material. {0} blit pass will not execute. Check for missing reference in the assigned renderer.", GetType().Name);
+                return;
             }
+
+            blitPass.Setup(src, dest);
+            renderer.EnqueuePass(blitPass);
         }
     }
 }
