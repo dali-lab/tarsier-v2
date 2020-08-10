@@ -7,7 +7,7 @@ using UnityEngine;
 public class LobbyPress : TutorialStep
 {
     public GameObject welcomePanel;
-    public GameObject continueButton;
+    public GameObject startButton;    
 
     private HapticsController _hapticsController;
 
@@ -18,8 +18,9 @@ public class LobbyPress : TutorialStep
 
         TMP.text = dashboardText;
         welcomePanel.SetActive(true);
-        continueButton.SetActive(true);
-        continueButton.GetComponent<Button>().onClick.AddListener(Continue);
+        startButton.SetActive(true);
+        startButton.GetComponent<Button>().onClick.AddListener(Continue);
+        
         _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
     }
 
@@ -32,7 +33,7 @@ public class LobbyPress : TutorialStep
     {
         TMP.text = "";
         welcomePanel.SetActive(false);
-        continueButton.GetComponent<Button>().onClick.RemoveListener(Continue);
-        continueButton.SetActive(false);
+        startButton.GetComponent<Button>().onClick.RemoveListener(Continue);
+        startButton.SetActive(false);
     }
 }

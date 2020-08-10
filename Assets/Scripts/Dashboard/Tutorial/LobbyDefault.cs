@@ -11,9 +11,14 @@ public class LobbyDefault : MonoBehaviour
     public GameObject replayTutorialButton;
     public GameObject tutorialController;
 
+    private HapticsController _hapticsController;
+
 
     private void OnEnable()
     {
+        _hapticsController = HapticsController.Instance;
+        _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
+
         TMP.text = dashboardText;
         replayTutorialButton.SetActive(true);
         replayTutorialButton.GetComponent<Button>().onClick.AddListener(ReplayTutorial);

@@ -1,8 +1,8 @@
-﻿using Anivision.PlayerInteraction;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Anivision.PlayerInteraction;
 
 public class LobbyTeleport : TutorialStep
 {
@@ -18,7 +18,7 @@ public class LobbyTeleport : TutorialStep
         RTriggerHighlight.SetActive(true);
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.tag == "MainCamera")
         {
