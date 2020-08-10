@@ -40399,6 +40399,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1991873037029494952, guid: dd73051f6c83ddd46842c189e1a0b2d8, type: 3}
+--- !u!1 &1117085544 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: d114698e49655e448a3b44d1f0b27fd6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1117085539}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1117085545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117085544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7130b2aaf1b744b3ade897da66cf346, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animalsToSwitch: 
 --- !u!1 &1118239193 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2177414205300508326, guid: f9da1d8b3fdad324fabbe3809928f731,
