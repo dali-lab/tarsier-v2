@@ -10,6 +10,7 @@ TagManager:
   - UI
   - nectar
   - flower
+  - selector
   layers:
   - Default
   - TransparentFX

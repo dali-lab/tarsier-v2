@@ -23,7 +23,7 @@ namespace Anivision.Core
 
                 if (!_animalManager)
                 {
-                    UnityEngine.Debug.LogError("There needs to be one active InputManager script on a GameObject in your scene.");
+                    UnityEngine.Debug.LogError("There needs to be one active AnimalManager script on a GameObject in your scene.");
                 }
             }
 
