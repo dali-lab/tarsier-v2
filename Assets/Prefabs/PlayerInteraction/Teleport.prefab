@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8600095611361611621
+--- !u!1 &7753264370679823244
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8600095611361611622}
-  - component: {fileID: 8600095611361611623}
-  - component: {fileID: 8600095611361611620}
+  - component: {fileID: 7753264370679823241}
+  - component: {fileID: 7753264370679823242}
+  - component: {fileID: 7753264370679823243}
   m_Layer: 0
-  m_Name: Teleporter
+  m_Name: Teleport
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8600095611361611622
+--- !u!4 &7753264370679823241
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8600095611361611621}
+  m_GameObject: {fileID: 7753264370679823244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -34.362156, y: 26.614311, z: -87.20639}
+  m_LocalPosition: {x: 0.13, y: 0.68, z: -0.014000002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8600095611361611623
+--- !u!114 &7753264370679823242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8600095611361611621}
+  m_GameObject: {fileID: 7753264370679823244}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f7e1d59ec1cfc14d9572c8b6a2d0999, type: 3}
@@ -48,22 +48,22 @@ MonoBehaviour:
   rayOrigin: {fileID: 0}
   validRaycastLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   validTeleportLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   teleportButton: 4
   teleportRange: 500
-  lineRenderer: {fileID: 8600095611361611620}
+  lineRenderer: {fileID: 7753264370679823243}
   validColor: {r: 0, g: 1, b: 0, a: 1}
   invalidColor: {r: 1, g: 0, b: 0, a: 1}
---- !u!120 &8600095611361611620
+--- !u!120 &7753264370679823243
 LineRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8600095611361611621}
+  m_GameObject: {fileID: 7753264370679823244}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -75,7 +75,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a379cec2ba497874788d17eb312c61be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,13 +101,13 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.02
+    widthMultiplier: 0.1
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.01643753
+        value: 0.012346268
         inSlope: 0
         outSlope: 0
         tangentMode: 0
