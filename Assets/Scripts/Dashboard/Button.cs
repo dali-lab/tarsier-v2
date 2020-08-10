@@ -28,7 +28,6 @@ public class Button : MonoBehaviour
         if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
 
         _teleportController = TeleportController.Instance;
-        if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
         _TMP = gameObject.transform.Find("TMP").gameObject.GetComponent<TextMeshPro>();
         ChangeText(buttonText);
@@ -38,7 +37,7 @@ public class Button : MonoBehaviour
     {
         if (other.tag == "selector")
         {
-            _teleportController.enabled = false;
+            if (_teleportController != null) _teleportController.enabled = false;
             _hapticsController.Haptics(1, 0.25f, 0.1f, OVRInput.Controller.RTouch);
             ChangeColor(hoverColor);
         }
@@ -53,7 +52,7 @@ public class Button : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        _teleportController.enabled = true;
+        if (_teleportController != null) _teleportController.enabled = true;
         ChangeColor(defaultColor);
     }
 
