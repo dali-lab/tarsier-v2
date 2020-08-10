@@ -22,7 +22,7 @@ public class LobbyGrab : TutorialStep
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Cube")
+        if (other.gameObject == cube)
         {
             _hapticsController.Haptics(1, 0.5f, 0.25f, OVRInput.Controller.RTouch);
             OnDone.Invoke();

@@ -19,7 +19,7 @@ public class TutorialController : MonoBehaviour
 
     private void OnEnable()
     {
-        _teleportController = FindObjectOfType(typeof(TeleportController)) as TeleportController;
+        _teleportController = TeleportController.Instance;
         _currStep = 0;
         foreach (TutorialStep tutorialStep in tutorialSteps)
         {

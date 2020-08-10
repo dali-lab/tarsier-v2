@@ -19,7 +19,7 @@ public class DashboardController : MonoBehaviour
             }
             else
             {
-                UnityEngine.Debug.LogError("Animal type already declared. Skipping add to dictionary.");
+                UnityEngine.Debug.LogError("Dashboard type already declared. Skipping add to dictionary.");
             }
         }
     }

@@ -10,7 +10,14 @@ public class HapticsController : MonoBehaviour
     {
         get
         {
-            if (!_hapticsController) _hapticsController = FindObjectOfType(typeof(HapticsController)) as HapticsController;
+            if (!_hapticsController)
+            {
+                _hapticsController = FindObjectOfType(typeof(HapticsController)) as HapticsController;
+                if (!_hapticsController)
+                {
+                    UnityEngine.Debug.LogError("There needs to be one active HapticsController script on a GameObject in your scene.");
+                }
+            }
             return _hapticsController;
         }
     }
