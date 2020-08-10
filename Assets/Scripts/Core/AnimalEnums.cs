@@ -5,7 +5,6 @@ namespace Anivision.Core
     /// </summary>
     public enum ColorblindType
     {
-        None,
         Protanopia,
         Protanomaly,
         Deuteranopia,

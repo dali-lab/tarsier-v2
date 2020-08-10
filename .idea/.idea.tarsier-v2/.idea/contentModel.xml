@@ -809,6 +809,12 @@
             <e p="SampleInput.cs" t="Include" />
             <e p="SwitchAnimalTest.cs" t="Include" />
           </e>
+          <e p="Environment" t="Include">
+            <e p="LightController.cs" t="Include" />
+            <e p="LightParameters.cs" t="Include" />
+            <e p="SoundController.cs" t="Include" />
+            <e p="SoundParameters.cs" t="Include" />
+          </e>
           <e p="GenerateFlowers.cs" t="Include" />
           <e p="headsetCollide.cs" t="Include" />
           <e p="HighlightControls.cs" t="Include" />
@@ -847,8 +853,11 @@
           </e>
           <e p="Vision" t="Include">
             <e p="AnimalVision.cs" t="Include" />
+            <e p="MaterialAnimal.cs" t="Include" />
             <e p="MaterialController.cs" t="Include" />
             <e p="MaterialEffect.cs" t="Include" />
+            <e p="MaterialGroup.cs" t="Include" />
+            <e p="MaterialInfo.cs" t="Include" />
             <e p="MaterialSwap.cs" t="Include" />
             <e p="SkyboxController.cs" t="Include" />
             <e p="SkyboxEffect.cs" t="Include" />
