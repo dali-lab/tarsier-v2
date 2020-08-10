@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58017c88-64d9-4a9a-aa0d-207feec3fab7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Oculus/VR/Plugins/1.44.0/Win64/OVRPlugin.dll.disabled.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/VR/Plugins/1.44.0/Win64/OVRPlugin.dll.disabled.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/FlatColorMaterials/nectarUIMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/FlatColorMaterials/nectarUIMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerCenter.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerCenter.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerLeaf.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerLeaf.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerPetal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerPetal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerSpike.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerSpike.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerSpot.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/BushFlowerSpot.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Daff4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Daff4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/Lav4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyGreen.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyGreen.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyRed.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PoppyRed.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerInterior.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerInterior.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerPetal.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerPetal.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerStem.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Flowers/PurpleFlowerStem.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/IslandTopMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/IslandTopMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/treeBarkMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/treeBarkMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/treeTopMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Bee/Scene/treeTopMat.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Vision/Blit/Fade.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Vision/Blit/Fade.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Bee/lambert2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Bee/lambert2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/islandSeparateWithRiver.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/islandSeparateWithRiver.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bee/BeeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bee/BeeScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bee/BeeSceneAlternate.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bee/BeeSceneAlternate.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
