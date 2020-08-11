@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -8478,11 +8478,141 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3724874818093074947, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: m_TagString
+      value: button
+      objectReference: {fileID: 0}
     - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
       propertyPath: buttonText
       value: Replay tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.b
+      value: 0.43150687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.r
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.b
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.r
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.g
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.b
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: selectorObject
+      value: 
+      objectReference: {fileID: 943343631}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: rightController
+      value: 
+      objectReference: {fileID: 1501727546}
     - target: {fileID: 7181594947268165688, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8521,7 +8651,7 @@ PrefabInstance:
     - target: {fileID: 7181594947268165688, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7181594947268165688, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
@@ -9722,11 +9852,141 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start Tutorial Button
       objectReference: {fileID: 0}
+    - target: {fileID: 3724874818093074947, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: m_TagString
+      value: button
+      objectReference: {fileID: 0}
     - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
       propertyPath: buttonText
       value: Start tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.b
+      value: 0.43150687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.r
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.b
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.r
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.g
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.b
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: rightController
+      value: 
+      objectReference: {fileID: 1501727546}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: selectorObject
+      value: 
+      objectReference: {fileID: 943343631}
     - target: {fileID: 7181594947268165688, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9987,7 +10247,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3c323962e301e804eb1e3a729c024d48, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12121,6 +12381,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2635902394197994816, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635902394197994816, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 2635902394197994816, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 3724874818093074947, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
       propertyPath: m_Name
@@ -12131,6 +12406,126 @@ PrefabInstance:
       propertyPath: buttonText
       value: More info
       objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.g
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.b
+      value: 0.24705882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.b
+      value: 0.43150687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.r
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.b
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.r
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.g
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.b
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: rightController
+      value: 
+      objectReference: {fileID: 1501727546}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: selectorObject
+      value: 
+      objectReference: {fileID: 943343631}
     - target: {fileID: 7181594947268165688, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12921,6 +13316,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1501727543}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1501727547 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1912177867393840494, guid: 2ec5f6542cd10424182a276294492f58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1501727543}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1501727548 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8064348734043335267, guid: 2ec5f6542cd10424182a276294492f58,
@@ -13211,6 +13612,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1501727543}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1501727567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501727546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7c6b6752459574ba8023987c078499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightControllerModel: {fileID: 1501727547}
+  selectorObject: {fileID: 943343631}
+  defaultControllerColor: {r: 1, g: 1, b: 1, a: 1}
+  hoverControllerColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
+  defaultSelectorColor: {r: 0.38679248, g: 0.38679248, b: 0.38679248, a: 1}
+  hoverSelectorColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1505608793
 GameObject:
   m_ObjectHideFlags: 0
@@ -15342,7 +15761,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: f92033386919273488ebc11abbf14b87, type: 2}
+      objectReference: {fileID: 2100000, guid: c78f64be5fc628e4e8a2700ef5eceb14, type: 2}
     - target: {fileID: 1884592888372472534, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
       propertyPath: m_Mesh
@@ -15352,6 +15771,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Skip Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724874818093074947, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724874818093074947, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: m_TagString
+      value: button
       objectReference: {fileID: 0}
     - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}
@@ -15387,6 +15816,136 @@ PrefabInstance:
         type: 3}
       propertyPath: hoverColor.b
       value: 0.12328768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.b
+      value: 0.07058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.b
+      value: 0.12328768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultControllerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.r
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.b
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverControllerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.r
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.g
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.b
+      value: 0.59607846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultSelectorColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverSelectorColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: rightController
+      value: 
+      objectReference: {fileID: 1501727546}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: selectorObject
+      value: 
+      objectReference: {fileID: 943343631}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: defaultButtonColor.r
+      value: 0.57254905
+      objectReference: {fileID: 0}
+    - target: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
+        type: 3}
+      propertyPath: hoverButtonColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7181594947268165688, guid: 5583f55466eb46547aa4d0d53167cb3e,
         type: 3}

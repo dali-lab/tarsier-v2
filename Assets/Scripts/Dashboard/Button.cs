@@ -9,10 +9,16 @@ using TMPro;
 public class Button : MonoBehaviour
 {
     [TextArea(3, 10)] public string buttonText;
+    public GameObject rightController;
+    
+
     public float buttonCooldownSeconds = 0.5f;
-    public Color defaultColor;
-    public Color hoverColor;
+
+    public Color defaultButtonColor;
+    public Color hoverButtonColor;
+
     [HideInInspector] public UnityEvent onClick;
+    [HideInInspector] public UnityEvent onButtonEnter;
 
     private InputManager _inputManager;
     private HapticsController _hapticsController;
@@ -30,7 +36,10 @@ public class Button : MonoBehaviour
         _teleportController = TeleportController.Instance;
 
         _TMP = gameObject.transform.Find("TMP").gameObject.GetComponent<TextMeshPro>();
+
         ChangeText(buttonText);
+        ChangeButtonColor(defaultButtonColor);
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,7 +48,9 @@ public class Button : MonoBehaviour
         {
             if (_teleportController != null) _teleportController.enabled = false;
             _hapticsController.Haptics(1, 0.25f, 0.1f, OVRInput.Controller.RTouch);
-            ChangeColor(hoverColor);
+            ChangeButtonColor(hoverButtonColor);
+            rightController.GetComponent<ColorController>().ToHoverControllerColor();
+            rightController.GetComponent<ColorController>().ToHoverSelectorColor();
         }
     }
     private void OnTriggerStay(Collider other)
@@ -53,7 +64,9 @@ public class Button : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (_teleportController != null) _teleportController.enabled = true;
-        ChangeColor(defaultColor);
+        ChangeButtonColor(defaultButtonColor);
+        rightController.GetComponent<ColorController>().ToDefaultControllerColor();
+        rightController.GetComponent<ColorController>().ToDefaultSelectorColor();
     }
 
     IEnumerator ButtonCooldown(float seconds)
@@ -62,12 +75,13 @@ public class Button : MonoBehaviour
         onClick.Invoke();
     }
 
+
     public void ChangeText (string s)
     {
         _TMP.text = s;
     }
 
-    public void ChangeColor (Color c)
+    public void ChangeButtonColor (Color c)
     {
         gameObject.GetComponent<Renderer>().material.color = c;
     }
