@@ -805,6 +805,23 @@
             <e p="HeadsetFade.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
           </e>
+          <e p="Dashboard" t="Include">
+            <e p="AnimalDashboard.cs" t="Include" />
+            <e p="Button.cs" t="Include" />
+            <e p="Dashboard.cs" t="Include" />
+            <e p="DashboardController.cs" t="Include" />
+            <e p="ToDashboardHome.cs" t="Include" />
+            <e p="tutorial" t="Include">
+              <e p="LobbyControllerPress.cs" t="Include" />
+              <e p="LobbyDefault.cs" t="Include" />
+              <e p="LobbyGrab.cs" t="Include" />
+              <e p="LobbyPress.cs" t="Include" />
+              <e p="LobbyTeleport.cs" t="Include" />
+              <e p="TutorialController.cs" t="Include" />
+              <e p="TutorialStep.cs" t="Include" />
+            </e>
+            <e p="TutorialDashboard.cs" t="Include" />
+          </e>
           <e p="Debug" t="Include">
             <e p="SampleInput.cs" t="Include" />
             <e p="SwitchAnimalTest.cs" t="Include" />
@@ -816,6 +833,7 @@
             <e p="SoundParameters.cs" t="Include" />
           </e>
           <e p="GenerateFlowers.cs" t="Include" />
+          <e p="HapticsController.cs" t="Include" />
           <e p="headsetCollide.cs" t="Include" />
           <e p="HighlightControls.cs" t="Include" />
           <e p="leftControls.cs" t="Include" />
@@ -842,7 +860,7 @@
           </e>
           <e p="SceneReference.cs" t="Include" />
           <e p="startButton.cs" t="Include" />
-          <e p="tutorial" t="Include">
+          <e p="tutorialOld" t="Include">
             <e p="ButtonPressTutorial.cs" t="Include" />
             <e p="CatchFallingObjects.cs" t="Include" />
             <e p="GrabTutorial.cs" t="Include" />
@@ -853,12 +871,16 @@
           </e>
           <e p="Vision" t="Include">
             <e p="AnimalVision.cs" t="Include" />
+            <e p="BlitEffect.cs" t="Include" />
+            <e p="ColorblindEffect.cs" t="Include" />
             <e p="MaterialAnimal.cs" t="Include" />
             <e p="MaterialController.cs" t="Include" />
             <e p="MaterialEffect.cs" t="Include" />
             <e p="MaterialGroup.cs" t="Include" />
             <e p="MaterialInfo.cs" t="Include" />
             <e p="MaterialSwap.cs" t="Include" />
+            <e p="RendererController.cs" t="Include" />
+            <e p="RendererEffect.cs" t="Include" />
             <e p="SkyboxController.cs" t="Include" />
             <e p="SkyboxEffect.cs" t="Include" />
             <e p="SkyboxSwap.cs" t="Include" />
@@ -874,6 +896,34 @@
               <e p="Test.shader" t="Include" />
               <e p="UV.shader" t="Include" />
             </e>
+          </e>
+        </e>
+        <e p="TextMesh Pro" t="Include">
+          <e p="Fonts" t="Include">
+            <e p="LiberationSans - OFL.txt" t="Include" />
+          </e>
+          <e p="Resources" t="Include">
+            <e p="LineBreaking Following Characters.txt" t="Include" />
+            <e p="LineBreaking Leading Characters.txt" t="Include" />
+            <e p="Shaders" t="Include">
+              <e p="TMP_Bitmap-Custom-Atlas.shader" t="Include" />
+              <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+              <e p="TMP_Bitmap.shader" t="Include" />
+              <e p="TMP_SDF Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+              <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+              <e p="TMP_SDF-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+              <e p="TMP_SDF-Surface.shader" t="Include" />
+              <e p="TMP_SDF.shader" t="Include" />
+              <e p="TMP_Sprite.shader" t="Include" />
+              <e p="TMPro.cginc" t="Include" />
+              <e p="TMPro_Properties.cginc" t="Include" />
+              <e p="TMPro_Surface.cginc" t="Include" />
+            </e>
+          </e>
+          <e p="Sprites" t="Include">
+            <e p="EmojiOne Attribution.txt" t="Include" />
           </e>
         </e>
       </e>

@@ -54,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -89,6 +90,7 @@ GameObject:
   - component: {fileID: 5271722822303686302}
   - component: {fileID: 2699848343107089603}
   - component: {fileID: 4620374004215575735}
+  - component: {fileID: 8556128893298936437}
   m_Layer: 0
   m_Name: CombinedMeshes_daffodil
   m_TagString: Untagged
@@ -128,14 +130,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nUVmats:
-  - {fileID: 2100000, guid: 51eda9e20ce344c49ab78e8e5f06b44a, type: 2}
-  - {fileID: 2100000, guid: ac8e615007bc6be408b3891739639eac, type: 2}
-  - {fileID: 2100000, guid: 1921a90a43257ba4a85194c5d664d1ab, type: 2}
-  UVmats:
-  - {fileID: 2100000, guid: 88c1ea52e6720194882b8674bf091944, type: 2}
-  - {fileID: 2100000, guid: 0600da3e72b3b7f4da362fefcbd314bd, type: 2}
-  - {fileID: 2100000, guid: c019037deb4241144b7f8fccec64f68c, type: 2}
+  MaterialGroups:
+  - originalMaterial: {fileID: 2100000, guid: 51eda9e20ce344c49ab78e8e5f06b44a, type: 2}
+    MaterialsToSwap:
+    - animal: 0
+      material: {fileID: 2100000, guid: 51eda9e20ce344c49ab78e8e5f06b44a, type: 2}
+    - animal: 1
+      material: {fileID: 2100000, guid: 88c1ea52e6720194882b8674bf091944, type: 2}
+  - originalMaterial: {fileID: 2100000, guid: ac8e615007bc6be408b3891739639eac, type: 2}
+    MaterialsToSwap:
+    - animal: 0
+      material: {fileID: 2100000, guid: ac8e615007bc6be408b3891739639eac, type: 2}
+    - animal: 1
+      material: {fileID: 2100000, guid: 0600da3e72b3b7f4da362fefcbd314bd, type: 2}
+  - originalMaterial: {fileID: 2100000, guid: 1921a90a43257ba4a85194c5d664d1ab, type: 2}
+    MaterialsToSwap:
+    - animal: 0
+      material: {fileID: 2100000, guid: 1921a90a43257ba4a85194c5d664d1ab, type: 2}
+    - animal: 1
+      material: {fileID: 2100000, guid: c019037deb4241144b7f8fccec64f68c, type: 2}
 --- !u!114 &4620374004215575735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +159,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e2fe7f8600343f40a31ddb9ba1d4425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8556128893298936437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042389429786137631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4347662051120839643
@@ -202,6 +227,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -280,6 +306,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -311,6 +338,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5271722822303686302}
     m_Modifications:
+    - target: {fileID: 1388782880107385629, guid: 26fcb923d428c8c4fbf3dab564fea745,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 4620374004215575735}
     - target: {fileID: 2651673530997163960, guid: 26fcb923d428c8c4fbf3dab564fea745,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -386,7 +418,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: nectarGlob
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2651673530997163967, guid: 26fcb923d428c8c4fbf3dab564fea745, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26fcb923d428c8c4fbf3dab564fea745, type: 3}
 --- !u!4 &2382797593360369427 stripped
 Transform:
@@ -401,6 +434,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5271722822303686302}
     m_Modifications:
+    - target: {fileID: 1388782880107385629, guid: 26fcb923d428c8c4fbf3dab564fea745,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 4620374004215575735}
     - target: {fileID: 2651673530997163960, guid: 26fcb923d428c8c4fbf3dab564fea745,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,7 +514,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: nectarGlob (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2651673530997163967, guid: 26fcb923d428c8c4fbf3dab564fea745, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26fcb923d428c8c4fbf3dab564fea745, type: 3}
 --- !u!4 &4383964182397062922 stripped
 Transform:
@@ -491,6 +530,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5271722822303686302}
     m_Modifications:
+    - target: {fileID: 1388782880107385629, guid: 26fcb923d428c8c4fbf3dab564fea745,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 4620374004215575735}
     - target: {fileID: 2651673530997163960, guid: 26fcb923d428c8c4fbf3dab564fea745,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -566,7 +610,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: nectarGlob (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2651673530997163967, guid: 26fcb923d428c8c4fbf3dab564fea745, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26fcb923d428c8c4fbf3dab564fea745, type: 3}
 --- !u!4 &1949214840645224643 stripped
 Transform:
