@@ -33,6 +33,7 @@ namespace Anivision.Core
     {
         Colorblindness,
         UV,
-        MaterialSwap
+        MaterialSwap,
+        NectarIntensity
     }
 }

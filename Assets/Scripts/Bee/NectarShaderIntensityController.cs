@@ -1,15 +1,18 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using Anivision.Core;
+using Anivision.Vision;
 
-public class NectarShaderIntensityController : MonoBehaviour 
+public class NectarShaderIntensityController : MaterialEffect
 {
+    public override VisionEffect Effect => VisionEffect.NectarIntensity;
     private int globcount = 0;
 
     private Renderer[] _renderers;
     private MaterialPropertyBlock _propBlock;
 
-    void Start()
+    void Awake()
     {
         _propBlock = new MaterialPropertyBlock();
         _renderers = GetComponentsInChildren<Renderer>();
@@ -26,6 +29,18 @@ public class NectarShaderIntensityController : MonoBehaviour
     {
         globcount--;
         updateMaterial();
+    }
+
+    public override void ApplyEffect(MaterialPropertyBlock propBlock, int materialIndex, Renderer renderer,
+        VisionParameters visionParameters)
+    {
+        propBlock.SetInt("_Intensity", globcount * 2 + 1);
+    }
+
+    public override void RevertToOriginal(Renderer r)
+    {
+        _propBlock.Clear();
+        r.SetPropertyBlock(_propBlock);
     }
 
     private void updateMaterial()
