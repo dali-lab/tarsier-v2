@@ -9,12 +9,12 @@ public class TutorialController : MonoBehaviour
 {
     public TextMeshPro TMP;
     public TutorialStep[] tutorialSteps;
-    public GameObject defaultLobbyDashboard;                 // default dashboard for the lobby
+    public GameObject defaultDashboard;                 // default dashboard for the scene
 
     public GameObject skipButton;
     public GameObject replayButton;
     public GameObject cameraRig;
-    public GameObject mainIslandSpawnPoint;
+    public GameObject spawnPoint;
 
     private TeleportController _teleportController;
     private int _currStep;
@@ -29,7 +29,7 @@ public class TutorialController : MonoBehaviour
             if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
             tutorialStep.OnDone.AddListener(Next);
         }
-        defaultLobbyDashboard.SetActive(false);
+        defaultDashboard.SetActive(false);
 
         replayButton.SetActive(false);
         skipButton.SetActive(true);
@@ -68,10 +68,10 @@ public class TutorialController : MonoBehaviour
 
         replayButton.SetActive(true);
         replayButton.GetComponent<Button>().onClick.AddListener(ReplayTutorial);
-        defaultLobbyDashboard.SetActive(true);
+        defaultDashboard.SetActive(true);
 
         _teleportController.enabled = true;
-        cameraRig.transform.position = mainIslandSpawnPoint.transform.position;
+        cameraRig.transform.position = spawnPoint.transform.position;
     }
 
     private void ReplayTutorial()
