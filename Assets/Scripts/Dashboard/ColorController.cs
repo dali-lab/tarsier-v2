@@ -12,8 +12,18 @@ public class ColorController : MonoBehaviour
     public Color defaultSelectorColor;
     public Color hoverSelectorColor;
 
+    private MaterialPropertyBlock _controllerPropBlock;
+    private MaterialPropertyBlock _selectorPropBlock;
+    private Renderer _controllerRenderer;
+    private Renderer _selectorRenderer;
+
     private void OnEnable()
     {
+        _controllerPropBlock = new MaterialPropertyBlock();
+        _selectorPropBlock = new MaterialPropertyBlock();
+        _controllerRenderer = rightControllerModel.GetComponent<Renderer>();
+        _selectorRenderer = selectorObject.GetComponent<Renderer>();
+
         ToDefaultControllerColor();
         ToDefaultSelectorColor();
     }
@@ -21,19 +31,27 @@ public class ColorController : MonoBehaviour
 
     public void ToDefaultControllerColor()
     {
-        rightControllerModel.GetComponent<Renderer>().material.SetColor("_BaseColor", defaultControllerColor);
+        _controllerRenderer.GetPropertyBlock(_controllerPropBlock);
+        _controllerPropBlock.SetColor("_BaseColor", defaultControllerColor);
+        _controllerRenderer.SetPropertyBlock(_controllerPropBlock);
     }
     public void ToHoverControllerColor()
     {
-        rightControllerModel.GetComponent<Renderer>().material.SetColor("_BaseColor", hoverControllerColor);
+        _controllerRenderer.GetPropertyBlock(_controllerPropBlock);
+        _controllerPropBlock.SetColor("_BaseColor", hoverControllerColor);
+        _controllerRenderer.SetPropertyBlock(_controllerPropBlock);
     }
 
     public void ToDefaultSelectorColor()
     {
-        selectorObject.GetComponent<Renderer>().material.color = defaultSelectorColor;
+        _selectorRenderer.GetPropertyBlock(_selectorPropBlock);
+        _controllerPropBlock.SetColor("_BaseColor", defaultSelectorColor);
+        _selectorRenderer.SetPropertyBlock(_selectorPropBlock);
     }
     public void ToHoverSelectorColor()
     {
-        selectorObject.GetComponent<Renderer>().material.color = hoverSelectorColor;
+        _selectorRenderer.GetPropertyBlock(_selectorPropBlock);
+        _controllerPropBlock.SetColor("_BaseColor", hoverSelectorColor);
+        _selectorRenderer.SetPropertyBlock(_selectorPropBlock);
     }
 }

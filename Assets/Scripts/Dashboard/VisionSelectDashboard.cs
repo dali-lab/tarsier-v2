@@ -1,0 +1,43 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class VisionSelectDashboard : Dashboard
+{
+    public new DashboardType dashboardType;
+    public Button backToHome;
+    public Button beeButton;
+
+    private DashboardController _dashboardController;
+
+
+    public override void Setup()
+    {
+        _dashboardController = DashboardController.Instance;
+
+        beeButton.enabled = true;
+        beeButton.onClick.AddListener(VisionSwitch);
+
+        backToHome.enabled = true;
+        backToHome.onClick.AddListener(ToHomeDashboard);
+    }
+
+    private void VisionSwitch()
+    {
+        //TODO: switch to other animal vision
+    }
+
+    private void ToHomeDashboard()
+    {
+        _dashboardController.UpdateDashboard(DashboardType.Home);
+    }
+
+    public override void Cleanup()
+    {
+        beeButton.onClick.RemoveListener(VisionSwitch);
+        beeButton.enabled = false;
+        
+        backToHome.onClick.RemoveListener(ToHomeDashboard);
+        backToHome.enabled = false;
+    }
+}

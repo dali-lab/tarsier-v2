@@ -5,7 +5,7 @@ using UnityEngine;
 using Anivision.PlayerInteraction;
 using Anivision.SceneManagement;
 
-public class TutorialController : MonoBehaviour
+public class TempLobbyTutorialController : MonoBehaviour
 {
     public TextMeshPro TMP;
     public TutorialStep[] tutorialSteps;
@@ -44,7 +44,7 @@ public class TutorialController : MonoBehaviour
         tutorialSteps[_currStep].Cleanup(TMP);
         if (tutorialSteps[_currStep].AllowActiveFalse == true) tutorialSteps[_currStep].gameObject.SetActive(false);
         _currStep += 1;
-        
+
         if (_currStep < tutorialSteps.Length)
         {
             tutorialSteps[_currStep].gameObject.SetActive(true);

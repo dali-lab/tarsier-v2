@@ -24,6 +24,8 @@ public class Button : MonoBehaviour
     private HapticsController _hapticsController;
     private TeleportController _teleportController;
     private TextMeshPro _TMP;
+    private MaterialPropertyBlock _propBlock;
+    private Renderer _renderer;
 
     private void OnEnable()
     {
@@ -36,7 +38,9 @@ public class Button : MonoBehaviour
         _teleportController = TeleportController.Instance;
 
         _TMP = gameObject.transform.Find("TMP").gameObject.GetComponent<TextMeshPro>();
-
+        _propBlock = new MaterialPropertyBlock();
+        _renderer = gameObject.GetComponent<Renderer>();
+        
         ChangeText(buttonText);
         ChangeButtonColor(defaultButtonColor);
         
@@ -83,6 +87,8 @@ public class Button : MonoBehaviour
 
     public void ChangeButtonColor (Color c)
     {
-        gameObject.GetComponent<Renderer>().material.color = c;
+        _renderer.GetPropertyBlock(_propBlock);
+        _propBlock.SetColor("_BaseColor", c);
+        _renderer.SetPropertyBlock(_propBlock);
     }
 }

@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class headsetCollide : MonoBehaviour
 {
     public AudioSource bugSound;
+    [HideInInspector] public UnityEvent onCollide;
 
     private void Start()
     {
@@ -17,11 +18,12 @@ public class headsetCollide : MonoBehaviour
         {
             bugSound.Play();                                            // play eat sound
             Destroy(other.gameObject);
+            onCollide.Invoke();
         }
         if (other.gameObject.tag == "goggles")
         {
-
             Destroy(other.gameObject);
         }
+        
     }
 }
