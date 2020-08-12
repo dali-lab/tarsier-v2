@@ -1,26 +1,37 @@
 using UnityEngine;
-using System.Collections;
-using System;
+using Anivision.PlayerInteraction;
 
 public class NectarGlob : MonoBehaviour 
 {
-    public GameObject nectarBar;                                                                        // nectar health bar on left hand
     public NectarShaderIntensityController controller;
 
+    private Grabber[] Grabbers;
+    private Grabber RGrabber;
+    private Grabber LGrabber;
     void Start()
     {
-        if(controller != null) {
+        if (controller != null) {
             controller.incrementGlob();
         }
+
+        Grabbers = FindObjectsOfType<Grabber>();
+        if (Grabbers.Length > 0)
+        {
+            RGrabber = Grabbers[0];
+
+            if (Grabbers.Length > 1)
+            {
+                LGrabber = Grabbers[1];
+            }
+        }
+        
     }
 
     void Update()
     {
-        if (nectarBar != null){
-            if (Vector3.Distance(transform.position, nectarBar.transform.position) <= 0.05)
-            {
-                onUse();
-            }
+        if ((Grabbers.Length > 0 && RGrabber.GrabbedObject == gameObject) || (Grabbers.Length > 1 && LGrabber.GrabbedObject == gameObject))
+        {
+            onUse();
         }
     }
 
@@ -28,8 +39,9 @@ public class NectarGlob : MonoBehaviour
     {
         if(controller != null) {
             controller.globConsumed();
-            Destroy(gameObject);
-            nectarBar.GetComponent<NectarUI>().AddHealth(0.1f);
+            gameObject.GetComponent<Grabbable>().EndGrab();
+            gameObject.SetActive(false);
+           
         }
     }
 }
