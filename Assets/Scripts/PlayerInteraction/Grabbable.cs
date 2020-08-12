@@ -76,6 +76,8 @@ namespace Anivision.PlayerInteraction
         {
             // Save a reference to the object grabbing this object
             grabber = potentialGrabber;
+            // Save a reference to the grabbed object in the grabber script
+            grabber.GetComponent<Grabber>().GrabbedObject = gameObject;
 
             // Save the object's parent, then parent it to the grabber
             oldParent = gameObject.transform.parent;
@@ -92,6 +94,8 @@ namespace Anivision.PlayerInteraction
             // Reset this objects values to their state prior to being grabbed
             gameObject.transform.parent = oldParent;
             gameObject.GetComponent<Rigidbody>().isKinematic = oldKinematic;
+            // Mark that the grabber is no longer grabbing an item
+            grabber.GetComponent<Grabber>().GrabbedObject = null;
 
             // Get the average velocity of the grabbed object's movement
             Vector3 avgVelocity = Vector3.zero;

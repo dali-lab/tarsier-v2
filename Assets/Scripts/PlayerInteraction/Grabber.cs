@@ -9,7 +9,11 @@ namespace Anivision.PlayerInteraction
     {
         [Tooltip("Button to press to grab")]
         public InputManager.Button grabButton;
-        
+
+        // The object this grabber is grabbing (null if not grabbing anything)
+        [HideInInspector] public GameObject GrabbedObject { get; set; }
+
+
         // The input manager to use to check for button presses
         private InputManager inputManager;
 
