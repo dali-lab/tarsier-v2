@@ -796,7 +796,6 @@
             <e p="NectarShaderIntensityController.cs" t="Include" />
             <e p="NectarUI.cs" t="Include" />
           </e>
-          <e p="bugWander.cs" t="Include" />
           <e p="Core" t="Include">
             <e p="AnimalController.cs" t="Include" />
             <e p="AnimalEnums.cs" t="Include" />
@@ -827,6 +826,7 @@
           </e>
           <e p="Environment" t="Include">
             <e p="bugSpawn.cs" t="Include" />
+            <e p="bugWander.cs" t="Include" />
             <e p="GenerateFlowers.cs" t="Include" />
             <e p="LightController.cs" t="Include" />
             <e p="LightParameters.cs" t="Include" />
