@@ -4,36 +4,38 @@ using TMPro;
 using UnityEngine;
 using Anivision.Core;
 
-public class TutorialSaplings : TutorialStep
+namespace Anivision.Tutorial
 {
-    public GameObject triggerHighlightRing;
-
-    private InputManager _inputManager;
-
-
-    public override void Setup(TextMeshPro TMP)
+    public class TutorialSaplings : TutorialStep
     {
-        _inputManager = InputManager.Instance;
+        public GameObject triggerHighlightRing;
+        private InputManager _inputManager;
 
-        if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
-        else
+
+        public override void Setup(TextMeshPro TMP)
         {
-            TMP.text = dashboardText;
-            triggerHighlightRing.SetActive(true);
-        }
-    }
+            _inputManager = InputManager.Instance;
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "MainCamera")
+            if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
+            else
+            {
+                TMP.text = dashboardText;
+                triggerHighlightRing.SetActive(true);
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
         {
-            OnDone.Invoke();
+            if (other.tag == "MainCamera")
+            {
+                OnDone.Invoke();
+            }
         }
-    }
 
-    public override void Cleanup(TextMeshPro TMP)
-    {
-        TMP.text = "";
-        triggerHighlightRing.SetActive(false);
+        public override void Cleanup(TextMeshPro TMP)
+        {
+            TMP.text = "";
+            triggerHighlightRing.SetActive(false);
+        }
     }
 }

@@ -4,44 +4,66 @@ using TMPro;
 using UnityEngine;
 using Anivision.SceneManagement;
 
-public class AnimalHomeDashboard : Dashboard
+namespace Anivision.Dashboard
 {
-    public new DashboardType dashboardType;
-    [TextArea(3, 10)] public string dashboardText;
-    public TextMeshPro TMP;
-    public GameObject toLobbyButton;
-    public GameObject otherVisionsButton;
-
-    private DashboardController _dashboardController;
-
-
-    public override void Setup()
+    public class AnimalHomeDashboard : Dashboard
     {
-        _dashboardController = DashboardController.Instance;
+        public override DashboardType dashboardType => DashboardType.Home;
 
-        TMP.text = dashboardText;
+        [TextArea(3, 10)] public string dashboardText;
+        public TextMeshPro TMP;
 
-        toLobbyButton.SetActive(true);
-        toLobbyButton.GetComponent<Button>().onClick.AddListener(ToLobby);
+        public Button replayButton;
+        [Tooltip("The name of this current scene to reload.")]
+        public string replayScene = "ForestScene";
 
-        otherVisionsButton.SetActive(true);
-        otherVisionsButton.GetComponent<Button>().onClick.AddListener(ToVisionSelectDashboard);
-    }
+        public GameObject toLobbyButton;
+        [Tooltip("The name of the lobby scene to back to.")]
+        public string lobbyScene = "LobbyScene";
 
-    private void ToLobby()
-    {
-        gameObject.GetComponent<SceneSwitch>().StartTransition();
-    }
+        public GameObject otherVisionsButton;
 
-    private void ToVisionSelectDashboard()
-    {
-        _dashboardController.UpdateDashboard(DashboardType.VisionSelect);
-    }
+        private DashboardController _dashboardController;
 
-    public override void Cleanup()
-    {
-        TMP.text = "";
-        toLobbyButton.GetComponent<Button>().onClick.RemoveListener(ToLobby);
-        toLobbyButton.SetActive(false);
+
+        public override void Setup()
+        {
+            _dashboardController = DashboardController.Instance;
+
+            TMP.text = dashboardText;
+
+            replayButton.gameObject.SetActive(true);
+            replayButton.onClick.AddListener(ReplayTutorial);
+
+            toLobbyButton.SetActive(true);
+            toLobbyButton.GetComponent<Button>().onClick.AddListener(ToLobby);
+
+            otherVisionsButton.SetActive(true);
+            otherVisionsButton.GetComponent<Button>().onClick.AddListener(ToVisionSelectDashboard);
+        }
+
+        private void ReplayTutorial()
+        {
+            gameObject.GetComponent<SceneSwitch>().sceneName = replayScene;
+            gameObject.GetComponent<SceneSwitch>().StartTransition();
+        }
+
+        private void ToLobby()
+        {
+            gameObject.GetComponent<SceneSwitch>().sceneName = lobbyScene;
+            gameObject.GetComponent<SceneSwitch>().StartTransition();
+        }
+
+        private void ToVisionSelectDashboard()
+        {
+            _dashboardController.UpdateDashboard(DashboardType.VisionSelect);
+        }
+
+        public override void Cleanup()
+        {
+            TMP.text = "";
+            toLobbyButton.GetComponent<Button>().onClick.RemoveListener(ToLobby);
+            toLobbyButton.SetActive(false);
+        }
     }
 }

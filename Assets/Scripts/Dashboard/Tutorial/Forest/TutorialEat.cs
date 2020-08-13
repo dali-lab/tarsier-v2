@@ -3,36 +3,40 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Anivision.Core;
+using Anivision.PlayerInteraction;
 
-public class TutorialEat : TutorialStep
+namespace Anivision.Tutorial
 {
-    public GameObject gripHighlightRing;
-    public GameObject centerEye;
-
-    private InputManager _inputManager;
-
-
-    public override void Setup(TextMeshPro TMP)
+    public class TutorialEat : TutorialStep
     {
-        _inputManager = InputManager.Instance;
+        public GameObject gripHighlightRing;
+        public GameObject centerEye;
 
-        if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
-        else
+        private InputManager _inputManager;
+
+
+        public override void Setup(TextMeshPro TMP)
         {
-            TMP.text = dashboardText;
-            gripHighlightRing.SetActive(true);
-            centerEye.GetComponent<headsetCollide>().onCollide.AddListener(Eat);
+            _inputManager = InputManager.Instance;
+
+            if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
+            else
+            {
+                TMP.text = dashboardText;
+                gripHighlightRing.SetActive(true);
+                centerEye.GetComponent<HeadsetCollide>().onCollide.AddListener(Eat);
+            }
         }
-    }
 
-    private void Eat()
-    {
-        OnDone.Invoke();
-    }
+        private void Eat()
+        {
+            OnDone.Invoke();
+        }
 
-    public override void Cleanup(TextMeshPro TMP)
-    {
-        TMP.text = "";
-        gripHighlightRing.SetActive(false);
+        public override void Cleanup(TextMeshPro TMP)
+        {
+            TMP.text = "";
+            gripHighlightRing.SetActive(false);
+        }
     }
 }

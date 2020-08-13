@@ -2,60 +2,63 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DashboardController : MonoBehaviour
+namespace Anivision.Dashboard
 {
-    public Dashboard[] dashboards;
-    public Dashboard currentDashboard;
-
-    Dictionary<Dashboard.DashboardType, Dashboard> _dashboardDict = new Dictionary<Dashboard.DashboardType, Dashboard>();
-
-    private static DashboardController _dashboardController;
-    //singleton instance
-    public static DashboardController Instance
+    public class DashboardController : MonoBehaviour
     {
-        get
+        public Dashboard[] dashboards;
+        public Dashboard currentDashboard;
+
+        Dictionary<Dashboard.DashboardType, Dashboard> _dashboardDict = new Dictionary<Dashboard.DashboardType, Dashboard>();
+
+        private static DashboardController _dashboardController;
+        //singleton instance
+        public static DashboardController Instance
         {
-            if (!_dashboardController)
+            get
             {
-                _dashboardController = FindObjectOfType(typeof(DashboardController)) as DashboardController;
                 if (!_dashboardController)
                 {
-                    UnityEngine.Debug.LogError("There needs to be one active DashboardController script on a GameObject in your scene.");
+                    _dashboardController = FindObjectOfType(typeof(DashboardController)) as DashboardController;
+                    if (!_dashboardController)
+                    {
+                        UnityEngine.Debug.LogError("There needs to be one active DashboardController script on a GameObject in your scene.");
+                    }
+                }
+                return _dashboardController;
+            }
+        }
+
+        private void Start()
+        {
+            foreach (Dashboard dashboard in dashboards)
+            {
+                if (!_dashboardDict.ContainsKey(dashboard.dashboardType))
+                {
+                    _dashboardDict.Add(dashboard.dashboardType, dashboard);
+                }
+                else
+                {
+                    UnityEngine.Debug.LogError("Dashboard type already declared. Skipping add to dictionary.");
                 }
             }
-            return _dashboardController;
-        }
-    }
-
-    private void Start()
-    {
-        foreach (Dashboard dashboard in dashboards)
-        {
-            if (!_dashboardDict.ContainsKey(dashboard.dashboardType))
+            foreach (Dashboard dashboard in dashboards)
             {
-                _dashboardDict.Add(dashboard.dashboardType, dashboard);
+                dashboard.Cleanup();
+                dashboard.gameObject.SetActive(false);
+
             }
-            else
-            {
-                UnityEngine.Debug.LogError("Dashboard type already declared. Skipping add to dictionary.");
-            }
+            currentDashboard.gameObject.SetActive(true);
+            currentDashboard.Setup();
         }
-        foreach (Dashboard dashboard in dashboards)
+
+        public void UpdateDashboard(Dashboard.DashboardType newDashboard)
         {
-            dashboard.Cleanup();
-            dashboard.gameObject.SetActive(false);
-
+            currentDashboard.Cleanup();
+            currentDashboard.gameObject.SetActive(false);
+            currentDashboard = _dashboardDict[newDashboard];
+            currentDashboard.gameObject.SetActive(true);
+            currentDashboard.Setup();
         }
-        currentDashboard.gameObject.SetActive(true);
-        currentDashboard.Setup();
-    }
-
-    public void UpdateDashboard(Dashboard.DashboardType newDashboard)
-    {
-        currentDashboard.Cleanup();
-        currentDashboard.gameObject.SetActive(false);
-        currentDashboard = _dashboardDict[Dashboard.DashboardType.Home];//newDashboard];
-        currentDashboard.gameObject.SetActive(true);
-        currentDashboard.Setup();
     }
 }

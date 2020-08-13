@@ -2,42 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VisionSelectDashboard : Dashboard
+namespace Anivision.Dashboard
 {
-    public new DashboardType dashboardType;
-    public Button backToHome;
-    public Button beeButton;
-
-    private DashboardController _dashboardController;
-
-
-    public override void Setup()
+    public class VisionSelectDashboard : Dashboard
     {
-        _dashboardController = DashboardController.Instance;
+        public override DashboardType dashboardType => DashboardType.VisionSelect;
 
-        beeButton.enabled = true;
-        beeButton.onClick.AddListener(VisionSwitch);
+        public Button backToHome;
+        public Button beeButton;
 
-        backToHome.enabled = true;
-        backToHome.onClick.AddListener(ToHomeDashboard);
-    }
+        private DashboardController _dashboardController;
 
-    private void VisionSwitch()
-    {
-        //TODO: switch to other animal vision
-    }
 
-    private void ToHomeDashboard()
-    {
-        _dashboardController.UpdateDashboard(DashboardType.Home);
-    }
+        public override void Setup()
+        {
+            _dashboardController = DashboardController.Instance;
 
-    public override void Cleanup()
-    {
-        beeButton.onClick.RemoveListener(VisionSwitch);
-        beeButton.enabled = false;
-        
-        backToHome.onClick.RemoveListener(ToHomeDashboard);
-        backToHome.enabled = false;
+            beeButton.enabled = true;
+            beeButton.onClick.AddListener(VisionSwitch);
+
+            backToHome.enabled = true;
+            backToHome.onClick.AddListener(ToHomeDashboard);
+        }
+
+        private void VisionSwitch()
+        {
+            //TODO: switch to other animal vision
+        }
+
+        private void ToHomeDashboard()
+        {
+            _dashboardController.UpdateDashboard(DashboardType.Home);
+        }
+
+        public override void Cleanup()
+        {
+            beeButton.onClick.RemoveListener(VisionSwitch);
+            beeButton.enabled = false;
+
+            backToHome.onClick.RemoveListener(ToHomeDashboard);
+            backToHome.enabled = false;
+        }
     }
 }
