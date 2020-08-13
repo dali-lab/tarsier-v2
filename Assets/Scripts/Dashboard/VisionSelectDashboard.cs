@@ -9,7 +9,7 @@ namespace Anivision.Dashboard
         public override DashboardType dashboardType => DashboardType.VisionSelect;
 
         public Button backToHome;
-        public Button beeButton;
+        public Button [] otherAnimalButtons;
 
         private DashboardController _dashboardController;
 
@@ -18,8 +18,11 @@ namespace Anivision.Dashboard
         {
             _dashboardController = DashboardController.Instance;
 
-            beeButton.enabled = true;
-            beeButton.onClick.AddListener(VisionSwitch);
+            foreach (Button button in otherAnimalButtons)
+            {
+                button.enabled = true;
+                button.onClick.AddListener(VisionSwitch);
+            }
 
             backToHome.enabled = true;
             backToHome.onClick.AddListener(ToHomeDashboard);
@@ -37,8 +40,11 @@ namespace Anivision.Dashboard
 
         public override void Cleanup()
         {
-            beeButton.onClick.RemoveListener(VisionSwitch);
-            beeButton.enabled = false;
+            foreach (Button button in otherAnimalButtons)
+            {
+                button.enabled = false;
+                button.onClick.RemoveListener(VisionSwitch);
+            }
 
             backToHome.onClick.RemoveListener(ToHomeDashboard);
             backToHome.enabled = false;

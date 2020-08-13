@@ -6,22 +6,24 @@ using Anivision.SceneManagement;
 
 namespace Anivision.Dashboard
 {
-    public class AnimalHomeDashboard : Dashboard
+    public class HomeDashboard : Dashboard
     {
         public override DashboardType dashboardType => DashboardType.Home;
 
         [TextArea(3, 10)] public string dashboardText;
         public TextMeshPro TMP;
+        [Tooltip("Is this the lobby scene? If so, hide the 'back to lobby button' and 'other visions' button")]
+        public bool isLobby;
 
         public Button replayButton;
         [Tooltip("The name of this current scene to reload.")]
         public string replayScene = "ForestScene";
 
-        public GameObject toLobbyButton;
+        public Button toLobbyButton;
         [Tooltip("The name of the lobby scene to back to.")]
         public string lobbyScene = "LobbyScene";
 
-        public GameObject otherVisionsButton;
+        public Button otherVisionsButton;
 
         private DashboardController _dashboardController;
 
@@ -35,11 +37,14 @@ namespace Anivision.Dashboard
             replayButton.gameObject.SetActive(true);
             replayButton.onClick.AddListener(ReplayTutorial);
 
-            toLobbyButton.SetActive(true);
-            toLobbyButton.GetComponent<Button>().onClick.AddListener(ToLobby);
+            if (!isLobby)
+            {
+                toLobbyButton.gameObject.SetActive(true);
+                toLobbyButton.onClick.AddListener(ToLobby);
 
-            otherVisionsButton.SetActive(true);
-            otherVisionsButton.GetComponent<Button>().onClick.AddListener(ToVisionSelectDashboard);
+                otherVisionsButton.gameObject.SetActive(true);
+                otherVisionsButton.onClick.AddListener(ToVisionSelectDashboard);
+            }
         }
 
         private void ReplayTutorial()
@@ -62,8 +67,17 @@ namespace Anivision.Dashboard
         public override void Cleanup()
         {
             TMP.text = "";
-            toLobbyButton.GetComponent<Button>().onClick.RemoveListener(ToLobby);
-            toLobbyButton.SetActive(false);
+            replayButton.onClick.RemoveListener(ToLobby);
+            replayButton.gameObject.SetActive(false);
+
+            if (!isLobby)
+            {
+                toLobbyButton.onClick.RemoveListener(ToLobby);
+                toLobbyButton.gameObject.SetActive(false);
+
+                otherVisionsButton.onClick.RemoveListener(ToVisionSelectDashboard);
+                otherVisionsButton.gameObject.SetActive(false);
+            }
         }
     }
 }

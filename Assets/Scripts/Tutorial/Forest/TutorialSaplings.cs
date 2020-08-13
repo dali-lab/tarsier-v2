@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Anivision.Core;
+using Anivision.PlayerInteraction;
 
 namespace Anivision.Tutorial
 {
     public class TutorialSaplings : TutorialStep
     {
         public GameObject triggerHighlightRing;
+
         private InputManager _inputManager;
 
 
@@ -17,11 +19,9 @@ namespace Anivision.Tutorial
             _inputManager = InputManager.Instance;
 
             if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
-            else
-            {
-                TMP.text = dashboardText;
-                triggerHighlightRing.SetActive(true);
-            }
+
+            TMP.text = dashboardText;
+            triggerHighlightRing.SetActive(true);
         }
 
         private void OnTriggerExit(Collider other)

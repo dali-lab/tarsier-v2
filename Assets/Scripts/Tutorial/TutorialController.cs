@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using Anivision.PlayerInteraction;
-using Anivision.SceneManagement;
 
 namespace Anivision.Tutorial
 {
@@ -34,7 +33,6 @@ namespace Anivision.Tutorial
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
-
             _currStep = 0;
             foreach (TutorialStep tutorialStep in tutorialSteps)
             {

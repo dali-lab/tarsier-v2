@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Anivision.Core;
+using Anivision.PlayerInteraction;
 
 namespace Anivision.Tutorial
 {
     public class TutorialVision : TutorialStep
     {
         public GameObject aHighlightRing;
+
         private InputManager _inputManager;
 
 
         public override void Setup(TextMeshPro TMP)
         {
             _inputManager = InputManager.Instance;
-
             if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
-            else
-            {
-                TMP.text = dashboardText;
-                aHighlightRing.SetActive(true);
-            }
+
+            TMP.text = dashboardText;
+            aHighlightRing.SetActive(true);
+
         }
 
         private void Update()

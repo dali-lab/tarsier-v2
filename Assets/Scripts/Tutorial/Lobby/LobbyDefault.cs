@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Anivision.SceneManagement;
+using Anivision.PlayerInteraction;
 
 public class LobbyDefault : MonoBehaviour
 {

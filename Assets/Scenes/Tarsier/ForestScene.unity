@@ -38052,7 +38052,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670974665}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f64432fb057145bc9232c940eee69, type: 3}
   m_Name: 
@@ -38347,7 +38347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backToHome: {fileID: 1487339964}
-  beeButton: {fileID: 1622902341}
+  otherAnimalButtons:
+  - {fileID: 1622902341}
 --- !u!23 &690644060
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -87468,11 +87469,12 @@ MonoBehaviour:
     visual traits affect your interactions with the environment. Try to eat 10 katydids
     and notice which eyes help to achieve the goal.
   TMP: {fileID: 1480342765}
+  isLobby: 0
   replayButton: {fileID: 2007849391}
   replayScene: ForestScene
-  toLobbyButton: {fileID: 1779614934}
+  toLobbyButton: {fileID: 1779614935}
   lobbyScene: LobbyScene
-  otherVisionsButton: {fileID: 1923160164}
+  otherVisionsButton: {fileID: 1923160165}
 --- !u!114 &1641963288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101631,12 +101633,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1923160162}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1923160164 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3724874818093074947, guid: 5583f55466eb46547aa4d0d53167cb3e,
+--- !u!114 &1923160165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6277646540477680394, guid: 5583f55466eb46547aa4d0d53167cb3e,
     type: 3}
   m_PrefabInstance: {fileID: 1923160162}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f84dcd14b0cb84685216cf3892ab7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1932663727
 PrefabInstance:
   m_ObjectHideFlags: 0
