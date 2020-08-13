@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using Anivision.Core;
 
-public class FadeIn : MonoBehaviour
+namespace Anivision.SceneManagement
 {
-    [Tooltip("Headset Fade Script to use for fading in and out when switching scenes.")]
-    public HeadsetFade headsetFade;
-    [Tooltip("How fast to fade in when the current scene is switched to.")]
-    public float fadeSpeed = 2;
-
-    void Start()
+    public class FadeIn : MonoBehaviour
     {
-        // Start an unfade
-        headsetFade.fadePercent = 1;
-        headsetFade.StartUnfade(fadeSpeed);
+        [Tooltip("Headset Fade Script to use for fading in and out when switching scenes.")]
+        public HeadsetFade headsetFade;
+        [Tooltip("How fast to fade in when the current scene is switched to.")]
+        public float fadeSpeed = 2;
+
+        void Start()
+        {
+            // Start an unfade
+            headsetFade.fadePercent = 1;
+            headsetFade.StartUnfade(fadeSpeed);
+        }
     }
 }
+
