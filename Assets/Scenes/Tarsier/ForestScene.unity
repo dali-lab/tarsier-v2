@@ -102678,7 +102678,7 @@ MonoBehaviour:
     intensity: 0.05
     color: {r: 1, g: 0.95686275, b: 0.8392157, a: 0}
   - animal: 2
-    intensity: 0.25
+    intensity: 0.3
     color: {r: 0.9921569, g: 0.9568628, b: 0.85098046, a: 0}
 --- !u!1001 &2025106199
 PrefabInstance:
@@ -111610,7 +111610,7 @@ PrefabInstance:
     - target: {fileID: 1274090192111476163, guid: 372d2673cf9ca46b781beb9c053caa0a,
         type: 3}
       propertyPath: teleportRange
-      value: 50
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5617124208621217766, guid: 372d2673cf9ca46b781beb9c053caa0a,
         type: 3}
@@ -112074,7 +112074,7 @@ PrefabInstance:
     - target: {fileID: 8277549509031753308, guid: 271ad5dea31ab4d389e6da2ce7cfead6,
         type: 3}
       propertyPath: teleportRange
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8277549509031753309, guid: 271ad5dea31ab4d389e6da2ce7cfead6,
         type: 3}

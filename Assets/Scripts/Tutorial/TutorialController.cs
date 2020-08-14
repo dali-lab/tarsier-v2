@@ -21,8 +21,9 @@ namespace Anivision.Tutorial
 
         private TeleportController _teleportController;
         private HapticsController _hapticsController;
+
         private int _currStep;
-        private bool skipped = false;
+        private bool _skipped = false;
 
         [HideInInspector] public UnityEvent tutorialEnd;
 
@@ -31,8 +32,10 @@ namespace Anivision.Tutorial
         {
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
+
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
+
             _currStep = 0;
             foreach (TutorialStep tutorialStep in tutorialSteps)
             {
@@ -40,12 +43,11 @@ namespace Anivision.Tutorial
                 if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
                 tutorialStep.OnDone.AddListener(Next);
             }
-            skipButton.gameObject.SetActive(true);
-            skipButton.onClick.AddListener(Skip);
-
-
             tutorialSteps[_currStep].gameObject.SetActive(true);
             tutorialSteps[_currStep].Setup(TMP);
+
+            skipButton.gameObject.SetActive(true);
+            skipButton.onClick.AddListener(Skip);
 
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
         }
@@ -70,7 +72,7 @@ namespace Anivision.Tutorial
 
         private void Skip()
         {
-            skipped = true;
+            _skipped = true;
             End();
         }
 
@@ -87,7 +89,18 @@ namespace Anivision.Tutorial
             _teleportController.enabled = true;
             tutorialEnd.Invoke();
 
-            if (moveToSpawn && skipped) cameraRig.transform.position = spawnPoint.transform.position;
+            if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;
+        }
+
+        private void OnDisable()
+        {
+            foreach (TutorialStep tutorialStep in tutorialSteps)
+            {
+                tutorialStep.Cleanup(TMP);
+                tutorialStep.OnDone.RemoveListener(Next);
+            }
+            skipButton.gameObject.SetActive(false);
+            skipButton.onClick.RemoveListener(Skip);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Anivision.Dashboard
 
         [TextArea(3, 10)] public string dashboardText;
         public TextMeshPro TMP;
-        [Tooltip("Is this the lobby scene? If so, hide the 'back to lobby button' and 'other visions' button")]
+        [Tooltip("If this is the lobby scene, the 'back to lobby button' and 'other visions' button will be hiddel")]
         public bool isLobby;
 
         public Button replayButton;
@@ -20,7 +20,7 @@ namespace Anivision.Dashboard
         public string replayScene = "ForestScene";
 
         public Button toLobbyButton;
-        [Tooltip("The name of the lobby scene to back to.")]
+        [Tooltip("The name of the lobby scene to go back to.")]
         public string lobbyScene = "LobbyScene";
 
         public Button otherVisionsButton;
@@ -72,7 +72,7 @@ namespace Anivision.Dashboard
         public override void Cleanup()
         {
             TMP.text = "";
-            replayButton.onClick.RemoveListener(ToLobby);
+            replayButton.onClick.RemoveListener(ReplayTutorial);
             replayButton.gameObject.SetActive(false);
 
             if (!isLobby)

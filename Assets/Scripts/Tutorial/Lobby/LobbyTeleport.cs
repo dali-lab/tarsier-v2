@@ -8,14 +8,19 @@ namespace Anivision.Tutorial
 {
     public class LobbyTeleport : TutorialStep
     {
-        public TeleportController teleportController;
         public GameObject platforms;
         public GameObject RTriggerHighlight;
 
+        private TeleportController _teleportController;
+
+
         public override void Setup(TextMeshPro TMP)
         {
+            _teleportController = TeleportController.Instance;
+            if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
+
             TMP.text = dashboardText;
-            teleportController.enabled = true;
+            _teleportController.enabled = true;
             platforms.SetActive(true);
             RTriggerHighlight.SetActive(true);
         }

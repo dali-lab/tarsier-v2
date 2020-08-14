@@ -10,7 +10,6 @@ namespace Anivision.Tutorial
     public class TutorialSaplings : TutorialStep
     {
         public GameObject triggerHighlightRing;
-
         private InputManager _inputManager;
 
 

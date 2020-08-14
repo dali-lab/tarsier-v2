@@ -12,6 +12,7 @@ namespace Anivision.Dashboard
         Dictionary<Dashboard.DashboardType, Dashboard> _dashboardDict = new Dictionary<Dashboard.DashboardType, Dashboard>();
 
         private static DashboardController _dashboardController;
+
         //singleton instance
         public static DashboardController Instance
         {
