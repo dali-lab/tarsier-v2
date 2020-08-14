@@ -4,32 +4,35 @@ using TMPro;
 using UnityEngine;
 using Anivision.PlayerInteraction;
 
-public class LobbyTeleport : TutorialStep
+namespace Anivision.Tutorial
 {
-    public TeleportController teleportController;
-    public GameObject platforms;
-    public GameObject RTriggerHighlight;
-
-    public override void Setup(TextMeshPro TMP)
+    public class LobbyTeleport : TutorialStep
     {
-        TMP.text = dashboardText;
-        teleportController.enabled = true;
-        platforms.SetActive(true);
-        RTriggerHighlight.SetActive(true);
-    }
+        public TeleportController teleportController;
+        public GameObject platforms;
+        public GameObject RTriggerHighlight;
 
-    public void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "MainCamera")
+        public override void Setup(TextMeshPro TMP)
         {
-            OnDone.Invoke();
+            TMP.text = dashboardText;
+            teleportController.enabled = true;
+            platforms.SetActive(true);
+            RTriggerHighlight.SetActive(true);
         }
-    }
 
-    public override void Cleanup(TextMeshPro TMP)
-    {
-        TMP.text = "";
-        platforms.SetActive(false);
-        RTriggerHighlight.SetActive(false);
+        public void OnTriggerExit(Collider other)
+        {
+            if (other.tag == "MainCamera")
+            {
+                OnDone.Invoke();
+            }
+        }
+
+        public override void Cleanup(TextMeshPro TMP)
+        {
+            TMP.text = "";
+            platforms.SetActive(false);
+            RTriggerHighlight.SetActive(false);
+        }
     }
 }

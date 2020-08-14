@@ -5,36 +5,45 @@ using TMPro;
 using UnityEngine;
 using Anivision.PlayerInteraction;
 
-public class LobbyPress : TutorialStep
+namespace Anivision.Tutorial
 {
-    public GameObject welcomePanel;
-    public GameObject startButton;    
-
-    private HapticsController _hapticsController;
-
-
-    public override void Setup(TextMeshPro TMP)
+    public class LobbyPress : TutorialStep
     {
-        _hapticsController = HapticsController.Instance;
+        public GameObject welcomePanel;
+        public GameObject startButton;
 
-        TMP.text = dashboardText;
-        welcomePanel.SetActive(true);
-        startButton.SetActive(true);
-        startButton.GetComponent<Button>().onClick.AddListener(Continue);
-        
-        _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
-    }
+        private HapticsController _hapticsController;
+        private bool done;
 
-    private void Continue()
-    {
-        OnDone.Invoke();
-    }
 
-    public override void Cleanup(TextMeshPro TMP)
-    {
-        TMP.text = "";
-        welcomePanel.SetActive(false);
-        startButton.GetComponent<Button>().onClick.RemoveListener(Continue);
-        startButton.SetActive(false);
+        public override void Setup(TextMeshPro TMP)
+        {
+            _hapticsController = HapticsController.Instance;
+            done = false;
+
+            TMP.text = dashboardText;
+            welcomePanel.SetActive(true);
+            startButton.SetActive(true);
+            startButton.GetComponent<Button>().onClick.AddListener(Continue);
+
+            _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
+        }
+
+        private void Continue()
+        {
+            if (!done)
+            {
+                done = true;
+                OnDone.Invoke();
+            }
+        }
+
+        public override void Cleanup(TextMeshPro TMP)
+        {
+            TMP.text = "";
+            welcomePanel.SetActive(false);
+            startButton.GetComponent<Button>().onClick.RemoveListener(Continue);
+            startButton.SetActive(false);
+        }
     }
 }

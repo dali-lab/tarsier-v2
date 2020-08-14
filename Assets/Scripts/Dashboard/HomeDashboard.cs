@@ -37,7 +37,12 @@ namespace Anivision.Dashboard
             replayButton.gameObject.SetActive(true);
             replayButton.onClick.AddListener(ReplayTutorial);
 
-            if (!isLobby)
+            if (isLobby)
+            {
+                toLobbyButton.gameObject.SetActive(false);
+                otherVisionsButton.gameObject.SetActive(false);
+            }
+            else
             {
                 toLobbyButton.gameObject.SetActive(true);
                 toLobbyButton.onClick.AddListener(ToLobby);

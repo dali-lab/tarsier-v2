@@ -4,36 +4,39 @@ using TMPro;
 using UnityEngine;
 using Anivision.PlayerInteraction;
 
-public class LobbyGrab : TutorialStep
+namespace Anivision.Tutorial
 {
-    public GameObject cube;
-    public GameObject RGripHighlight;
-
-    private HapticsController _hapticsController;
-
-    public override void Setup(TextMeshPro TMP)
+    public class LobbyGrab : TutorialStep
     {
-        _hapticsController = HapticsController.Instance;
+        public GameObject cube;
+        public GameObject RGripHighlight;
 
-        TMP.text = dashboardText;
-        cube.SetActive(true);
-        RGripHighlight.SetActive(true);
-        _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.RTouch);
-    }
+        private HapticsController _hapticsController;
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == cube)
+        public override void Setup(TextMeshPro TMP)
         {
-            _hapticsController.Haptics(1, 0.5f, 0.25f, OVRInput.Controller.RTouch);
-            OnDone.Invoke();
-        }
-    }
+            _hapticsController = HapticsController.Instance;
 
-    public override void Cleanup(TextMeshPro TMP)
-    {
-        TMP.text = "";
-        cube.SetActive(false);
-        RGripHighlight.SetActive(false);
+            TMP.text = dashboardText;
+            cube.SetActive(true);
+            RGripHighlight.SetActive(true);
+            _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.RTouch);
+        }
+
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject == cube)
+            {
+                _hapticsController.Haptics(1, 0.5f, 0.25f, OVRInput.Controller.RTouch);
+                OnDone.Invoke();
+            }
+        }
+
+        public override void Cleanup(TextMeshPro TMP)
+        {
+            TMP.text = "";
+            cube.SetActive(false);
+            RGripHighlight.SetActive(false);
+        }
     }
 }
