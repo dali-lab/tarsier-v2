@@ -8,13 +8,10 @@ namespace Anivision.PlayerInteraction
 {
     public class HeadsetCollide : MonoBehaviour
     {
-        public AudioSource katydidEatSound;
-
         private Grabber[] _Grabbers;
         private Grabber _RGrabber;
         private Grabber _LGrabber;
 
-        private GameObject _grabbedObject;
         [HideInInspector] public UnityEvent onCollide = new UnityEvent();
 
         private void Start()
@@ -29,8 +26,6 @@ namespace Anivision.PlayerInteraction
                     _LGrabber = _Grabbers[1];
                 }
             }
-
-            katydidEatSound = GetComponent<AudioSource>();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -38,8 +33,6 @@ namespace Anivision.PlayerInteraction
             // if the object being grabbed is the object that is being collided with
             if ((_Grabbers.Length > 0 && _RGrabber.GrabbedObject == other.gameObject) || (_Grabbers.Length > 1 && _LGrabber.GrabbedObject == other.gameObject)) 
             {
-                _grabbedObject = other.gameObject;
-
                 if (other.gameObject.tag == "edible")
                 {
                     onCollide.Invoke();
