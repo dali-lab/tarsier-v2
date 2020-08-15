@@ -14,7 +14,8 @@ namespace Anivision.PlayerInteraction
         private Grabber _RGrabber;
         private Grabber _LGrabber;
 
-        [HideInInspector] public UnityEvent onCollide;
+        private GameObject _grabbedObject;
+        [HideInInspector] public UnityEvent onCollide = new UnityEvent();
 
         private void Start()
         {
@@ -28,20 +29,27 @@ namespace Anivision.PlayerInteraction
                     _LGrabber = _Grabbers[1];
                 }
             }
+
             katydidEatSound = GetComponent<AudioSource>();
         }
+
         private void OnTriggerEnter(Collider other)
         {
-            if ((_Grabbers.Length > 0 && _RGrabber.GrabbedObject == other.gameObject) || (_Grabbers.Length > 1 && _LGrabber.GrabbedObject == other.gameObject))
+            // if the object being grabbed is the object that is being collided with
+            if ((_Grabbers.Length > 0 && _RGrabber.GrabbedObject == other.gameObject) || (_Grabbers.Length > 1 && _LGrabber.GrabbedObject == other.gameObject)) 
             {
+                _grabbedObject = other.gameObject;
+
                 if (other.gameObject.tag == "edible")
                 {
-                    katydidEatSound.Play();
-                    other.gameObject.GetComponent<Grabbable>().EndGrab();
-                    Destroy(other.gameObject);
                     onCollide.Invoke();
                 }
             }
+        }
+
+        private void OnDisable()
+        {
+            onCollide.RemoveAllListeners();
         }
     }
 }

@@ -26,13 +26,15 @@ namespace Anivision.Tutorial
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
 
             TMP.text = dashboardText;
+
+            // turn on the relevant tutorial items
             welcomePanel.SetActive(true);
             RTriggerHighlight.SetActive(true);
-
             startButton.SetActive(true);
             startButton.GetComponent<Button>().onClick.AddListener(Continue);
 
-            _teleportController.enabled = false;
+            _teleportController.enabled = false;                                        // turn off teleport until teleport step of tutorial
+
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
         }
 

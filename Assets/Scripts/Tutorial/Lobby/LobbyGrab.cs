@@ -12,14 +12,19 @@ namespace Anivision.Tutorial
         public GameObject RGripHighlight;
 
         private HapticsController _hapticsController;
+        
 
         public override void Setup(TextMeshPro TMP)
         {
             _hapticsController = HapticsController.Instance;
+            if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
 
             TMP.text = dashboardText;
+
+            // turn on the relevant tutorial items
             cube.SetActive(true);
             RGripHighlight.SetActive(true);
+
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.RTouch);
         }
 

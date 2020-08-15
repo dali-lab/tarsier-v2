@@ -10,7 +10,7 @@ namespace Anivision.Tutorial
     public class TutorialEat : TutorialStep
     {
         public GameObject gripHighlightRing;
-        public GameObject centerEye;
+        public HeadsetCollide headsetCollide;
 
         private InputManager _inputManager;
 
@@ -18,25 +18,26 @@ namespace Anivision.Tutorial
         public override void Setup(TextMeshPro TMP)
         {
             _inputManager = InputManager.Instance;
-
             if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
-            else
-            {
-                TMP.text = dashboardText;
-                gripHighlightRing.SetActive(true);
-                centerEye.GetComponent<HeadsetCollide>().onCollide.AddListener(Eat);
-            }
+
+            TMP.text = dashboardText;
+            gripHighlightRing.SetActive(true);
+
+            headsetCollide.onCollide.AddListener(Done);
         }
 
-        private void Eat()
+        private void Done()
         {
             OnDone.Invoke();
+            gripHighlightRing.SetActive(false);
         }
 
         public override void Cleanup(TextMeshPro TMP)
         {
             TMP.text = "";
-            gripHighlightRing.SetActive(false);
+            //gripHighlightRing.SetActive(false);
+
+            headsetCollide.onCollide.RemoveListener(Done);
         }
     }
 }

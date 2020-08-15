@@ -45,6 +45,13 @@ namespace Anivision.PlayerInteraction
         public Color validColor = Color.green;
         [Tooltip("The color to give the line renderer when the teleport is invalid.")]
         public Color invalidColor = Color.red;
+        [Tooltip("The haptic frequency when the raycast enters a valid target.")]
+        public float hapticFrequency = 1;
+        [Tooltip("The haptic strength when the raycast enters a valid target.")]
+        public float hapticStrength = 0.25f;
+        [Tooltip("The haptic duration when the raycast enters a valid target.")]
+        public float hapticDuration = 0.1f;
+
 
         // Whether the current teleportation attempt is valid (The raycast hit a layer in the 'validLayers' Layer Mask)
         private bool valid;
@@ -52,9 +59,11 @@ namespace Anivision.PlayerInteraction
         private Vector3 destination;
         // Input manager to check for button press
         private InputManager inputManager;
-        //Animal manager to check for animal switches;
+        // Animal manager to check for animal switches;
         private AnimalManager animalManager;
-        
+        // Haptic on valid raycast enter
+        private HapticsController _hapticsController;
+
         void Start()
         {
             // Get an instance of an input manager
@@ -72,6 +81,15 @@ namespace Anivision.PlayerInteraction
             {
                 animalManager.MovementSwitch.AddListener(SetParams);
             }
+
+            // Get instance of haptic controller
+            _hapticsController = HapticsController.Instance;
+
+            if (_hapticsController == null)
+            {
+                throw new System.Exception("Must have a haptics controller in the scene");
+            }
+
             // Set default values
             valid = false;
             destination = Vector3.zero;
@@ -99,6 +117,7 @@ namespace Anivision.PlayerInteraction
                     // If the layer is valid, save the hit location
                     if (valid)
                     {
+                        _hapticsController.Haptics(hapticFrequency, hapticStrength, hapticDuration, OVRInput.Controller.RTouch);
                         destination = hit.point;
                     }
                     // Set the second point on the renderer to the raycast's hit point

@@ -16,7 +16,10 @@ namespace Anivision.Dashboard
         public override void Setup()
         {
             _dashboardController = DashboardController.Instance;
+            if (_dashboardController == null) throw new System.Exception("Must have an dashboard controller in the scene");
+
             _tutorialController = gameObject.GetComponent<TutorialController>();
+            if (_tutorialController == null) throw new System.Exception("Must have an tutorial controller on this object");
 
             _tutorialController.enabled = true;
             _tutorialController.tutorialEnd.AddListener(End);
@@ -24,7 +27,7 @@ namespace Anivision.Dashboard
 
         private void End()
         {
-            _dashboardController.UpdateDashboard(DashboardType.Home);
+            _dashboardController.UpdateDashboard(DashboardType.Home);           // swap out this current tutorial dashboard for the home dashboard
         }
 
         public override void Cleanup()

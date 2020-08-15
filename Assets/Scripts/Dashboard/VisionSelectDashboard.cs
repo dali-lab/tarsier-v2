@@ -8,8 +8,8 @@ namespace Anivision.Dashboard
     {
         public override DashboardType dashboardType => DashboardType.VisionSelect;
 
+        [Tooltip("Button to go back to the home dashboard.")]
         public Button backToHome;
-        public Button [] otherAnimalButtons;
 
         private DashboardController _dashboardController;
 
@@ -18,34 +18,17 @@ namespace Anivision.Dashboard
         {
             _dashboardController = DashboardController.Instance;
 
-            foreach (Button button in otherAnimalButtons)
-            {
-                button.enabled = true;
-                button.onClick.AddListener(VisionSwitch);
-            }
-
             backToHome.enabled = true;
             backToHome.onClick.AddListener(ToHomeDashboard);
         }
 
-        private void VisionSwitch()
-        {
-            //TODO: switch to other animal vision
-        }
-
-        private void ToHomeDashboard()
+        private void ToHomeDashboard()                                                      // swap out this current vision dashboard for the home dashboard
         {
             _dashboardController.UpdateDashboard(DashboardType.Home);
         }
 
         public override void Cleanup()
         {
-            foreach (Button button in otherAnimalButtons)
-            {
-                button.enabled = false;
-                button.onClick.RemoveListener(VisionSwitch);
-            }
-
             backToHome.onClick.RemoveListener(ToHomeDashboard);
             backToHome.enabled = false;
         }

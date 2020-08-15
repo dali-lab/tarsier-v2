@@ -12,7 +12,6 @@ namespace Anivision.Tutorial
         public TextMeshPro TMP;
         public TutorialStep[] tutorialSteps;
 
-
         public Button skipButton;
         public GameObject cameraRig;
         public GameObject spawnPoint;
@@ -36,16 +35,20 @@ namespace Anivision.Tutorial
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
 
-            _currStep = 0;
+            // clean up all tutorial objects and add OnDone listener
             foreach (TutorialStep tutorialStep in tutorialSteps)
             {
                 tutorialStep.Cleanup(TMP);
                 if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
                 tutorialStep.OnDone.AddListener(Next);
             }
+
+            // set up the first tutorial item
+            _currStep = 0;
             tutorialSteps[_currStep].gameObject.SetActive(true);
             tutorialSteps[_currStep].Setup(TMP);
 
+            // set up skip button
             skipButton.gameObject.SetActive(true);
             skipButton.onClick.AddListener(Skip);
 
@@ -54,10 +57,13 @@ namespace Anivision.Tutorial
 
         public void Next()
         {
-            tutorialSteps[_currStep].Cleanup(TMP);
-            if (tutorialSteps[_currStep].AllowActiveFalse == true) tutorialSteps[_currStep].gameObject.SetActive(false);
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
 
+            // clean up the current step
+            tutorialSteps[_currStep].Cleanup(TMP);
+            if (tutorialSteps[_currStep].AllowActiveFalse == true) tutorialSteps[_currStep].gameObject.SetActive(false);
+
+            // set up the next step
             _currStep += 1;
             if (_currStep < tutorialSteps.Length)
             {
@@ -87,9 +93,9 @@ namespace Anivision.Tutorial
             skipButton.onClick.RemoveListener(End);
 
             _teleportController.enabled = true;
-            tutorialEnd.Invoke();
+            if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;          // only move to spawn point if skipping, otherwise player will already be on main island
 
-            if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;
+            tutorialEnd.Invoke();
         }
 
         private void OnDisable()
@@ -101,6 +107,7 @@ namespace Anivision.Tutorial
             }
             skipButton.gameObject.SetActive(false);
             skipButton.onClick.RemoveListener(Skip);
+            tutorialEnd.RemoveAllListeners();
         }
     }
 }

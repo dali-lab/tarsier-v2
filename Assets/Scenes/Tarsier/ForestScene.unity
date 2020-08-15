@@ -7446,7 +7446,7 @@ MonoBehaviour:
       m_Calls: []
   AllowActiveFalse: 1
   gripHighlightRing: {fileID: 1914307453}
-  centerEye: {fileID: 20719185}
+  headsetCollide: {fileID: 20719188}
 --- !u!1001 &56499872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58051,6 +58051,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2837682660325928517, guid: 0bc9848b9de24214aae1ef49cc12cc39, type: 3}
+--- !u!1 &1027057830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7357122553085701220, guid: bccc13ff0a69d1147abca8d0da575256,
+    type: 3}
+  m_PrefabInstance: {fileID: 6172418664058839076}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1027057832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027057830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98ea162d053bf74f889ac98573e9367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1036177333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91639,7 +91657,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1834567474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dc2cfbe3a7402a4281019c3b482b3a1, type: 3}
+  m_Script: {fileID: 11500000, guid: f23ae628c22464640af6080222506be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dashboardText: Press A again to toggle between human and tarsier vision to compare
@@ -111717,6 +111735,11 @@ PrefabInstance:
       propertyPath: rightController
       value: 
       objectReference: {fileID: 1291219626}
+    - target: {fileID: 195475947589053805, guid: bccc13ff0a69d1147abca8d0da575256,
+        type: 3}
+      propertyPath: buttonText
+      value: Honeybee
+      objectReference: {fileID: 0}
     - target: {fileID: 195475947695435770, guid: bccc13ff0a69d1147abca8d0da575256,
         type: 3}
       propertyPath: rightController
@@ -111836,6 +111859,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357122553085701220, guid: bccc13ff0a69d1147abca8d0da575256,
+        type: 3}
+      propertyPath: m_Name
+      value: Honeybee Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc13ff0a69d1147abca8d0da575256, type: 3}

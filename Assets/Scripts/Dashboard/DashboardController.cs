@@ -10,7 +10,6 @@ namespace Anivision.Dashboard
         public Dashboard currentDashboard;
 
         Dictionary<Dashboard.DashboardType, Dashboard> _dashboardDict = new Dictionary<Dashboard.DashboardType, Dashboard>();
-
         private static DashboardController _dashboardController;
 
         //singleton instance
@@ -30,6 +29,7 @@ namespace Anivision.Dashboard
             }
         }
 
+
         private void Start()
         {
             foreach (Dashboard dashboard in dashboards)
@@ -42,18 +42,16 @@ namespace Anivision.Dashboard
                 {
                     UnityEngine.Debug.LogError("Dashboard type already declared. Skipping add to dictionary.");
                 }
-            }
-            foreach (Dashboard dashboard in dashboards)
-            {
+                // clean up all the added dashboards
                 dashboard.Cleanup();
                 dashboard.gameObject.SetActive(false);
-
             }
+            // set up the starting dashboard
             currentDashboard.gameObject.SetActive(true);
             currentDashboard.Setup();
         }
 
-        public void UpdateDashboard(Dashboard.DashboardType newDashboard)
+        public void UpdateDashboard(Dashboard.DashboardType newDashboard)                       // clean up and turn off old dashboard, set up and turn on new dashboard
         {
             currentDashboard.Cleanup();
             currentDashboard.gameObject.SetActive(false);

@@ -10,7 +10,6 @@ namespace Anivision.Tutorial
     public class TutorialVision : TutorialStep
     {
         public GameObject aHighlightRing;
-
         private InputManager _inputManager;
 
 
@@ -21,12 +20,11 @@ namespace Anivision.Tutorial
 
             TMP.text = dashboardText;
             aHighlightRing.SetActive(true);
-
         }
 
         private void Update()
         {
-            if (_inputManager.IsButtonPressed(InputManager.Button.A)) // and voiceover is done
+            if (_inputManager.IsButtonPressed(InputManager.Button.A)) //TODO: and voiceover is done
             {
                 OnDone.Invoke();
             }

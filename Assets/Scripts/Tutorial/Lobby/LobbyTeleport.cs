@@ -20,12 +20,15 @@ namespace Anivision.Tutorial
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
             TMP.text = dashboardText;
-            _teleportController.enabled = true;
+            
+            // turn on the relevant tutorial items
             platforms.SetActive(true);
             RTriggerHighlight.SetActive(true);
+
+            _teleportController.enabled = true;
         }
 
-        public void OnTriggerExit(Collider other)
+        public void OnTriggerExit(Collider other)           // triggers when player reaches the main island
         {
             if (other.tag == "MainCamera")
             {

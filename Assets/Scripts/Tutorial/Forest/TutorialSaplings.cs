@@ -16,14 +16,13 @@ namespace Anivision.Tutorial
         public override void Setup(TextMeshPro TMP)
         {
             _inputManager = InputManager.Instance;
-
             if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
 
             TMP.text = dashboardText;
             triggerHighlightRing.SetActive(true);
         }
 
-        private void OnTriggerExit(Collider other)
+        private void OnTriggerExit(Collider other)          // triggers when player leaves capsule collider
         {
             if (other.tag == "MainCamera")
             {

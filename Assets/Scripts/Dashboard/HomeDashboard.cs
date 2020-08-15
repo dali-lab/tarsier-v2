@@ -12,7 +12,7 @@ namespace Anivision.Dashboard
 
         [TextArea(3, 10)] public string dashboardText;
         public TextMeshPro TMP;
-        [Tooltip("If this is the lobby scene, the 'back to lobby button' and 'other visions' button will be hiddel")]
+        [Tooltip("If this is the lobby scene, the 'back to lobby button' and 'other visions' button will be hidden.")]
         public bool isLobby;
 
         public Button replayButton;
@@ -23,6 +23,7 @@ namespace Anivision.Dashboard
         [Tooltip("The name of the lobby scene to go back to.")]
         public string lobbyScene = "LobbyScene";
 
+        [Tooltip("The name of the button that pulls up the animal visions dashboard.")]
         public Button otherVisionsButton;
 
         private DashboardController _dashboardController;
@@ -37,7 +38,7 @@ namespace Anivision.Dashboard
             replayButton.gameObject.SetActive(true);
             replayButton.onClick.AddListener(ReplayTutorial);
 
-            if (isLobby)
+            if (isLobby)                                                                    // the home dashboard in the lobby hides the 'to lobby' and 'other vision' buttons
             {
                 toLobbyButton.gameObject.SetActive(false);
                 otherVisionsButton.gameObject.SetActive(false);
@@ -52,19 +53,19 @@ namespace Anivision.Dashboard
             }
         }
 
-        private void ReplayTutorial()
+        private void ReplayTutorial()                                                       // reloads the current scene to reset the tutorial
         {
             gameObject.GetComponent<SceneSwitch>().sceneName = replayScene;
             gameObject.GetComponent<SceneSwitch>().StartTransition();
         }
 
-        private void ToLobby()
+        private void ToLobby()                                                              // loads into the lobby scene
         {
             gameObject.GetComponent<SceneSwitch>().sceneName = lobbyScene;
             gameObject.GetComponent<SceneSwitch>().StartTransition();
         }
 
-        private void ToVisionSelectDashboard()
+        private void ToVisionSelectDashboard()                                              // swap out this current home dashboard for the animal visions dashboard
         {
             _dashboardController.UpdateDashboard(DashboardType.VisionSelect);
         }

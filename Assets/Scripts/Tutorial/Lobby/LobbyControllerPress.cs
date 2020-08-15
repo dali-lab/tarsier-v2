@@ -22,20 +22,22 @@ namespace Anivision.Tutorial
         public override void Setup(TextMeshPro TMP)
         {
             _inputManager = InputManager.Instance;
-            _hapticsController = HapticsController.Instance;
+            if (_inputManager == null) throw new System.Exception("Must have an input manager in the scene");
 
-            if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
-            else
-            {
-                TMP.text = dashboardText;
-                tutorialControllers.SetActive(true);
-                foreach (Transform child in LHighlightRings.transform) child.gameObject.SetActive(true);
-                foreach (Transform child in RHighlightRings.transform) child.gameObject.SetActive(true);
-                _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
-            }
+            _hapticsController = HapticsController.Instance;
+            if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
+
+            TMP.text = dashboardText;
+
+            // turn on the relevant tutorial items
+            tutorialControllers.SetActive(true);
+            foreach (Transform child in LHighlightRings.transform) child.gameObject.SetActive(true);
+            foreach (Transform child in RHighlightRings.transform) child.gameObject.SetActive(true);
+
+            _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
         }
 
-        private void Update()
+        private void Update()                                               // turn off the highlight when corresponding button is pressed
         {
             if (_highlightsOn == 0) OnDone.Invoke();
 

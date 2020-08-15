@@ -17,17 +17,21 @@ public class ColorController : MonoBehaviour
     private Renderer _controllerRenderer;
     private Renderer _selectorRenderer;
 
-    private void OnEnable()
+
+    private void Awake()
     {
         _controllerPropBlock = new MaterialPropertyBlock();
         _selectorPropBlock = new MaterialPropertyBlock();
         _controllerRenderer = rightControllerModel.GetComponent<Renderer>();
         _selectorRenderer = selectorObject.GetComponent<Renderer>();
+    }
 
+    private void OnEnable()
+    {
+        // set the controller and selector color to the default color
         ToDefaultControllerColor();
         ToDefaultSelectorColor();
     }
-
 
     public void ToDefaultControllerColor()
     {
