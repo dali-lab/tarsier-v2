@@ -6,38 +6,27 @@ using Anivision.PlayerInteraction;
 
 namespace Anivision.PlayerInteraction
 {
+    /// <summary>
+    /// Script attached to the center eye to detect collisions with other objects.
+    /// Invokes a UnityEvent with a parameter of the colliding gameobject's Collider.
+    /// </summary>
+    [System.Serializable]
+    public class OnCollideEvent : UnityEvent<Collider>
+    {
+    }
+
     public class HeadsetCollide : MonoBehaviour
     {
-        private Grabber[] _Grabbers;
-        private Grabber _RGrabber;
-        private Grabber _LGrabber;
-
-        [HideInInspector] public UnityEvent onCollide = new UnityEvent();
+        [HideInInspector] public OnCollideEvent onCollide;
 
         private void Start()
         {
-            _Grabbers = FindObjectsOfType<Grabber>();
-            if (_Grabbers.Length > 0)
-            {
-                _RGrabber = _Grabbers[0];
-
-                if (_Grabbers.Length > 1)
-                {
-                    _LGrabber = _Grabbers[1];
-                }
-            }
+            if (onCollide == null) onCollide = new OnCollideEvent();        // instantiate event
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            // if the object being grabbed is the object that is being collided with
-            if ((_Grabbers.Length > 0 && _RGrabber.GrabbedObject == other.gameObject) || (_Grabbers.Length > 1 && _LGrabber.GrabbedObject == other.gameObject)) 
-            {
-                if (other.gameObject.tag == "edible")
-                {
-                    onCollide.Invoke();
-                }
-            }
+            onCollide.Invoke(other);                                        // Invokes UnityEvent with the other gameobject's Collider as a parameter
         }
 
         private void OnDisable()

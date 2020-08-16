@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Anivision.Dashboard
 {
+    /// <summary>
+    /// The dashboard for vision select that listens for presses that goes back to the home dashboard.
+    /// </summary>
     public class VisionSelectDashboard : Dashboard
     {
         public override DashboardType dashboardType => DashboardType.VisionSelect;

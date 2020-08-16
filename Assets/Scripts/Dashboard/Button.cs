@@ -6,6 +6,11 @@ using Anivision.Core;
 using Anivision.PlayerInteraction;
 using TMPro;
 
+/// <summary>
+/// Controls all the physical pressable buttons in the scene.
+/// Haptics on button interaction.
+/// Changes the button color, the controller color, and selector sphere color on button hover
+/// </summary>
 public class Button : MonoBehaviour
 {
     [TextArea(3, 10)] public string buttonText;
@@ -17,6 +22,20 @@ public class Button : MonoBehaviour
     public Color defaultButtonColor;
     public Color hoverButtonColor;
 
+    [Tooltip("The haptic frequency when the selector sphere enters the button.")]
+    public float hoverHapticFrequency = 1;
+    [Tooltip("The haptic strength when the selector sphere enters the button.")]
+    public float hoverHapticAmplitude = 0.25f;
+    [Tooltip("The haptic duration when the selector sphere enters the button.")]
+    public float hoverHapticDuration = 0.1f;
+
+    [Tooltip("The haptic frequency when the button is pressed")]
+    public float selectionHapticFrequency = 1;
+    [Tooltip("The haptic strength when the button is pressed")]
+    public float selectionHapticAmplitude = 0.25f;
+    [Tooltip("The haptic duration when the button is pressed")]
+    public float selectonHapticDuration = 0.1f;
+
     [HideInInspector] public UnityEvent onClick;
     [HideInInspector] public UnityEvent onButtonEnter;
 
@@ -26,6 +45,7 @@ public class Button : MonoBehaviour
     private TextMeshPro _TMP;
     private MaterialPropertyBlock _propBlock;
     private Renderer _renderer;
+    private bool _turnOnTeleport = false;
 
 
     private void Awake()
@@ -49,15 +69,20 @@ public class Button : MonoBehaviour
         
         ChangeText(buttonText);
         ChangeButtonColor(defaultButtonColor);
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "selector")
         {
-            if (_teleportController != null) _teleportController.enabled = false;
-            _hapticsController.Haptics(1, 0.25f, 0.1f, OVRInput.Controller.RTouch);
+            if (_teleportController.enabled)                // to prevent accidental teleport when trying to select a button
+            {
+                _turnOnTeleport = true;                     // keeps track of whether the teleporterController is suppose to be on to set its state back when OnTriggerExit is called
+                _teleportController.enabled = false;        // turn off ability to teleport
+            }
+
+            // trigger button hover haptics
+            _hapticsController.Haptics(hoverHapticFrequency, hoverHapticAmplitude, hoverHapticDuration, OVRInput.Controller.RTouch);
 
             // update hover colors of the button, the right controller, and the selector sphere on the right controller
             ChangeButtonColor(hoverButtonColor);
@@ -69,7 +94,8 @@ public class Button : MonoBehaviour
     {
         if (other.tag == "selector" && _inputManager.IsButtonPressed(InputManager.Button.RIGHT_TRIGGER))
         {
-            _hapticsController.Haptics(1, 0.25f, 0.1f, OVRInput.Controller.RTouch);
+            // trigger button select haptics
+            _hapticsController.Haptics(selectionHapticFrequency, selectionHapticAmplitude, selectonHapticDuration, OVRInput.Controller.RTouch);
 
             // reset the controller and selector color to default if the button is pressed
             rightController.GetComponent<ColorController>().ToDefaultControllerColor();
@@ -80,7 +106,7 @@ public class Button : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        if (_teleportController != null) _teleportController.enabled = true;
+        if (_turnOnTeleport) _teleportController.enabled = true;            // turn on ability to teleport if player had teleport before interacting with button
 
         // update colors of the button, the right controller, and the selector sphere on the right controller back to the default
         ChangeButtonColor(defaultButtonColor);

@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This script is attached to the right hand anchor and controls the color of the controller and the selector sphere when the selector sphere hovers over buttons.
+/// </summary>
 public class ColorController : MonoBehaviour
 {
     public GameObject rightControllerModel;
@@ -39,6 +42,7 @@ public class ColorController : MonoBehaviour
         _controllerPropBlock.SetColor("_BaseColor", defaultControllerColor);
         _controllerRenderer.SetPropertyBlock(_controllerPropBlock);
     }
+
     public void ToHoverControllerColor()
     {
         _controllerRenderer.GetPropertyBlock(_controllerPropBlock);
@@ -52,6 +56,7 @@ public class ColorController : MonoBehaviour
         _controllerPropBlock.SetColor("_BaseColor", defaultSelectorColor);
         _selectorRenderer.SetPropertyBlock(_selectorPropBlock);
     }
+
     public void ToHoverSelectorColor()
     {
         _selectorRenderer.GetPropertyBlock(_selectorPropBlock);

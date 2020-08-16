@@ -7,6 +7,10 @@ using Anivision.PlayerInteraction;
 
 namespace Anivision.Tutorial
 {
+    /// <summary>
+    /// Teaches the player how to teleport between saplings.
+    /// Moves on to the next step of the tutorial when the player leaves the collider of this gameobject.
+    /// </summary>
     public class TutorialSaplings : TutorialStep
     {
         public GameObject triggerHighlightRing;

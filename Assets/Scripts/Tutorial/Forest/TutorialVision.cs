@@ -6,7 +6,11 @@ using Anivision.Core;
 using Anivision.PlayerInteraction;
 
 namespace Anivision.Tutorial
-{
+{    
+     /// <summary>
+     /// Teaches the player how to toggle visions.
+     /// Moves on to the next step of the tutorial when the player presses the A button.
+     /// </summary>
     public class TutorialVision : TutorialStep
     {
         public GameObject aHighlightRing;

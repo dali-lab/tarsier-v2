@@ -7,10 +7,14 @@ using Anivision.PlayerInteraction;
 
 namespace Anivision.Tutorial
 {
+    /// <summary>
+    /// Teaches the player how to press physical buttons in the world.
+    /// Invokes OnDone to move on the the next step once the player presses the start tutorial button on the dashboard by their left hand.
+    /// </summary>
     public class LobbyPress : TutorialStep
     {
         public GameObject welcomePanel;
-        public GameObject startButton;
+        public Button startButton;
         public GameObject RTriggerHighlight;
 
         private TeleportController _teleportController;
@@ -30,8 +34,9 @@ namespace Anivision.Tutorial
             // turn on the relevant tutorial items
             welcomePanel.SetActive(true);
             RTriggerHighlight.SetActive(true);
-            startButton.SetActive(true);
-            startButton.GetComponent<Button>().onClick.AddListener(Continue);
+            startButton.gameObject.SetActive(true);
+
+            startButton.onClick.AddListener(Continue);
 
             _teleportController.enabled = false;                                        // turn off teleport until teleport step of tutorial
 
@@ -50,7 +55,7 @@ namespace Anivision.Tutorial
             RTriggerHighlight.SetActive(false);
 
             startButton.GetComponent<Button>().onClick.RemoveListener(Continue);
-            startButton.SetActive(false);
+            startButton.gameObject.SetActive(false);
         }
     }
 }

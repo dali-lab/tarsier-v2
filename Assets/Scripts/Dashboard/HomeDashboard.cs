@@ -6,6 +6,9 @@ using Anivision.SceneManagement;
 
 namespace Anivision.Dashboard
 {
+    /// <summary>
+    /// The dashboard for the home panel that listens for presses that replays the tutorial, goes back to the lobby, and switches to the other animal visions dashboard
+    /// </summary>
     public class HomeDashboard : Dashboard
     {
         public override DashboardType dashboardType => DashboardType.Home;

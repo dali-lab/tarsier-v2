@@ -7,6 +7,11 @@ using Anivision.PlayerInteraction;
 
 namespace Anivision.Tutorial
 {
+    /// <summary>
+    /// Increments through all the tutorial steps.
+    /// Listens for the OnDone UnityEvent from each individual step to clean up the previous step and set up the next one.
+    /// When the tutorial is over (either completed or skipped), the TutorialEnd event is invoked.
+    /// </summary>
     public class TutorialController : MonoBehaviour
     {
         public TextMeshPro TMP;

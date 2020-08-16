@@ -6,6 +6,10 @@ using Anivision.PlayerInteraction;
 
 namespace Anivision.Tutorial
 {
+    /// <summary>
+    /// Teaches the player how to grab objects in the environment
+    /// Invokes OnDone to move on the the next step once the player grabs a cube and places it at the end point.
+    /// </summary>
     public class LobbyGrab : TutorialStep
     {
         public GameObject cube;

@@ -5,6 +5,10 @@ using Anivision.Tutorial;
 
 namespace Anivision.Dashboard
 {
+    /// <summary>
+    /// The dashboard for tutorials that finds the TutorialController in the scene to go through the tutorial steps
+    /// and listens for the tutorialEnd event to replace this tutorial dashboard with the home dashboard.
+    /// </summary>
     public class TutorialDashboard : Dashboard
     {
         public override DashboardType dashboardType => DashboardType.Tutorial;
@@ -18,7 +22,7 @@ namespace Anivision.Dashboard
             _dashboardController = DashboardController.Instance;
             if (_dashboardController == null) throw new System.Exception("Must have an dashboard controller in the scene");
 
-            _tutorialController = gameObject.GetComponent<TutorialController>();
+            _tutorialController = FindObjectOfType<TutorialController>();
             if (_tutorialController == null) throw new System.Exception("Must have an tutorial controller on this object");
 
             _tutorialController.enabled = true;

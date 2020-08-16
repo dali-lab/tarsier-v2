@@ -7,6 +7,10 @@ using Anivision.PlayerInteraction;
 
 namespace Anivision.Tutorial
 {
+    /// <summary>
+    /// Teaches the player how to press buttons on the controllers.
+    /// Invokes OnDone to move on the the next step once the player presses all the buttons.
+    /// </summary>
     public class LobbyControllerPress : TutorialStep
     {
         public GameObject tutorialControllers;

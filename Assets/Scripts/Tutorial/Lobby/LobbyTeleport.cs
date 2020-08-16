@@ -6,6 +6,10 @@ using Anivision.PlayerInteraction;
 
 namespace Anivision.Tutorial
 {
+    /// <summary>
+    /// Teaches the player how to teleport.
+    /// Invokes OnDone to move on the the next step once the player reaches the main animal island.
+    /// </summary>
     public class LobbyTeleport : TutorialStep
     {
         public GameObject platforms;

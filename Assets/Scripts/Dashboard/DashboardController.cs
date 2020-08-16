@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Anivision.Dashboard
 {
+    /// <summary>
+    /// Controls turning on/off and setting up/cleaning up the different dashboards (tutorial, home, and other visions)
+    /// </summary>
     public class DashboardController : MonoBehaviour
     {
         public Dashboard[] dashboards;
