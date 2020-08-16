@@ -7,7 +7,8 @@ using Anivision.Vision;
 public class NectarShaderIntensityController : MaterialEffect
 {
     public override VisionEffect Effect => VisionEffect.NectarIntensity;
-    private int globcount = 0;
+    private float maxGlobs = 1;
+    private float globcount = 0;
 
     private Renderer[] _renderers;
     private MaterialPropertyBlock _propBlock;
@@ -16,25 +17,35 @@ public class NectarShaderIntensityController : MaterialEffect
     {
         _propBlock = new MaterialPropertyBlock();
         _renderers = GetComponentsInChildren<Renderer>();
-        updateMaterial();
+        UpdateMaterial();
     }
 
-    public void incrementGlob()
+    public void IncrementGlob()
     {
         globcount++;
-        updateMaterial();
+        if (globcount > maxGlobs)
+        {
+            maxGlobs = globcount;
+        }
+
+        UpdateMaterial();
     }
 
-    public void globConsumed()
+    public void GlobConsumed()
     {
         globcount--;
-        updateMaterial();
+        UpdateMaterial();
+    }
+
+    private float GetIntensity()
+    {
+        return globcount / maxGlobs;
     }
 
     public override void ApplyEffect(MaterialPropertyBlock propBlock, int materialIndex, Renderer renderer,
         VisionParameters visionParameters)
     {
-        propBlock.SetInt("_Intensity", globcount * 2 + 1);
+        propBlock.SetFloat("_Intensity", GetIntensity());
     }
 
     public override void RevertToOriginal(Renderer r)
@@ -43,9 +54,9 @@ public class NectarShaderIntensityController : MaterialEffect
         r.SetPropertyBlock(_propBlock);
     }
 
-    private void updateMaterial()
+    private void UpdateMaterial()
     {
-        _propBlock.SetInt("_Intensity", globcount * 2 + 1);
+        _propBlock.SetFloat("_Intensity", GetIntensity());
         foreach(Renderer r in _renderers) {
             r.SetPropertyBlock(_propBlock);
         }

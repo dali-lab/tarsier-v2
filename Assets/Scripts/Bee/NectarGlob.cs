@@ -11,7 +11,7 @@ public class NectarGlob : MonoBehaviour
     void Start()
     {
         if (controller != null) {
-            controller.incrementGlob();
+            controller.IncrementGlob();
         }
 
         Grabbers = FindObjectsOfType<Grabber>();
@@ -38,7 +38,7 @@ public class NectarGlob : MonoBehaviour
     void onUse()
     {
         if(controller != null) {
-            controller.globConsumed();
+            controller.GlobConsumed();
             gameObject.GetComponent<Grabbable>().EndGrab();
             gameObject.SetActive(false);
            

@@ -10453,6 +10453,16 @@ PrefabInstance:
       propertyPath: rayOrigin
       value: 
       objectReference: {fileID: 953217839}
+    - target: {fileID: 7753264370679823242, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
+        type: 3}
+      propertyPath: validRaycastLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753264370679823242, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
+        type: 3}
+      propertyPath: validTeleportLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7753264370679823243, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
