@@ -25043,6 +25043,11 @@ PrefabInstance:
       propertyPath: validTeleportLayers.m_Bits
       value: 257
       objectReference: {fileID: 0}
+    - target: {fileID: 7753264370679823242, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
+        type: 3}
+      propertyPath: teleportRange
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7753264370679823243, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
         type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
