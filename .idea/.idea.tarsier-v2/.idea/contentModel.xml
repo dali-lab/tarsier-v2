@@ -790,14 +790,9 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Bee" t="Include">
-            <e p="BeeLeftControls.cs" t="Include" />
-            <e p="BeeRightControls.cs" t="Include" />
-            <e p="NectarGlob.cs" t="Include" />
-            <e p="NectarShaderIntensityController.cs" t="Include" />
+            <e p="NectarShaderIntensity.cs" t="Include" />
             <e p="NectarUI.cs" t="Include" />
           </e>
-          <e p="bugSpawn.cs" t="Include" />
-          <e p="bugWander.cs" t="Include" />
           <e p="Core" t="Include">
             <e p="AnimalController.cs" t="Include" />
             <e p="AnimalEnums.cs" t="Include" />
@@ -806,68 +801,68 @@
             <e p="InputManager.cs" t="Include" />
           </e>
           <e p="Dashboard" t="Include">
-            <e p="AnimalDashboard.cs" t="Include" />
             <e p="Button.cs" t="Include" />
+            <e p="ColorController.cs" t="Include" />
             <e p="Dashboard.cs" t="Include" />
             <e p="DashboardController.cs" t="Include" />
-            <e p="ToDashboardHome.cs" t="Include" />
-            <e p="tutorial" t="Include">
-              <e p="LobbyControllerPress.cs" t="Include" />
-              <e p="LobbyDefault.cs" t="Include" />
-              <e p="LobbyGrab.cs" t="Include" />
-              <e p="LobbyPress.cs" t="Include" />
-              <e p="LobbyTeleport.cs" t="Include" />
-              <e p="TutorialController.cs" t="Include" />
-              <e p="TutorialStep.cs" t="Include" />
-            </e>
+            <e p="HomeDashboard.cs" t="Include" />
             <e p="TutorialDashboard.cs" t="Include" />
+            <e p="VisionSelectDashboard.cs" t="Include" />
+            <e p="VisionSwitch.cs" t="Include" />
           </e>
           <e p="Debug" t="Include">
             <e p="SampleInput.cs" t="Include" />
             <e p="SwitchAnimalTest.cs" t="Include" />
           </e>
           <e p="Environment" t="Include">
+            <e p="bugSpawn.cs" t="Include" />
+            <e p="bugWander.cs" t="Include" />
+            <e p="GenerateFlowers.cs" t="Include" />
             <e p="LightController.cs" t="Include" />
             <e p="LightParameters.cs" t="Include" />
             <e p="SoundController.cs" t="Include" />
             <e p="SoundParameters.cs" t="Include" />
           </e>
-          <e p="GenerateFlowers.cs" t="Include" />
-          <e p="HapticsController.cs" t="Include" />
-          <e p="headsetCollide.cs" t="Include" />
-          <e p="HighlightControls.cs" t="Include" />
-          <e p="leftControls.cs" t="Include" />
-          <e p="Pixelation.cs" t="Include" />
           <e p="PlayerInteraction" t="Include">
             <e p="AnimalMovement.cs" t="Include" />
+            <e p="CatchFallingObjects.cs" t="Include" />
             <e p="FlightController.cs" t="Include" />
             <e p="Grabbable.cs" t="Include" />
             <e p="Grabber.cs" t="Include" />
+            <e p="HapticsController.cs" t="Include" />
+            <e p="headsetCollide.cs" t="Include" />
+            <e p="HighlightControls.cs" t="Include" />
             <e p="MovementParameters.cs" t="Include" />
+            <e p="NectarGlob.cs" t="Include" />
+            <e p="Rotate.cs" t="Include" />
             <e p="TeleportController.cs" t="Include" />
           </e>
           <e p="RendererFeatures" t="Include">
             <e p="Blit.cs" t="Include" />
             <e p="BlitPass.cs" t="Include" />
           </e>
-          <e p="returnToLobby.cs" t="Include" />
-          <e p="rightControls.cs" t="Include" />
-          <e p="Rotate.cs" t="Include" />
           <e p="SceneManagement" t="Include">
             <e p="DistanceTrigger.cs" t="Include" />
             <e p="FadeIn.cs" t="Include" />
             <e p="SceneSwitch.cs" t="Include" />
           </e>
-          <e p="SceneReference.cs" t="Include" />
-          <e p="startButton.cs" t="Include" />
-          <e p="tutorialOld" t="Include">
-            <e p="ButtonPressTutorial.cs" t="Include" />
-            <e p="CatchFallingObjects.cs" t="Include" />
-            <e p="GrabTutorial.cs" t="Include" />
-            <e p="SwitchVisionsTutorial.cs" t="Include" />
-            <e p="TeleportTutorial.cs" t="Include" />
-            <e p="TutorialBaseClass.cs" t="Include" />
-            <e p="TutorialGameController.cs" t="Include" />
+          <e p="Tarsier" t="Include">
+            <e p="KatydidEat.cs" t="Include" />
+          </e>
+          <e p="tutorial" t="Include">
+            <e p="Forest" t="Include">
+              <e p="TutorialEat.cs" t="Include" />
+              <e p="TutorialSaplings.cs" t="Include" />
+              <e p="TutorialVision.cs" t="Include" />
+            </e>
+            <e p="Lobby" t="Include">
+              <e p="LobbyControllerPress.cs" t="Include" />
+              <e p="LobbyGrab.cs" t="Include" />
+              <e p="LobbyPress.cs" t="Include" />
+              <e p="LobbyTeleport.cs" t="Include" />
+            </e>
+            <e p="TutorialController.cs" t="Include" />
+            <e p="TutorialStep.cs" t="Include" />
           </e>
           <e p="Vision" t="Include">
             <e p="AnimalVision.cs" t="Include" />
@@ -879,6 +874,7 @@
             <e p="MaterialGroup.cs" t="Include" />
             <e p="MaterialInfo.cs" t="Include" />
             <e p="MaterialSwap.cs" t="Include" />
+            <e p="Pixelation.cs" t="Include" />
             <e p="RendererController.cs" t="Include" />
             <e p="RendererEffect.cs" t="Include" />
             <e p="SkyboxController.cs" t="Include" />

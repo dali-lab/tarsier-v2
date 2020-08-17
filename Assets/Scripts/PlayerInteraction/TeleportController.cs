@@ -59,8 +59,6 @@ namespace Anivision.PlayerInteraction
         private Vector3 destination;
         // Input manager to check for button press
         private InputManager inputManager;
-        // Animal manager to check for animal switches;
-        private AnimalManager animalManager;
         // Haptic on valid raycast enter
         private HapticsController _hapticsController;
 
@@ -73,21 +71,13 @@ namespace Anivision.PlayerInteraction
             {
                 throw new Exception("There must be an InputManager script in the scene.");
             }
-            
-            // Get instance of animal manager
-            animalManager = AnimalManager.Instance;
-
-            if (animalManager != null)
-            {
-                animalManager.MovementSwitch.AddListener(SetParams);
-            }
 
             // Get instance of haptic controller
             _hapticsController = HapticsController.Instance;
 
             if (_hapticsController == null)
             {
-                throw new System.Exception("Must have a haptics controller in the scene");
+                UnityEngine.Debug.LogError("Consider adding a haptics controller in the scene");
             }
 
             // Set default values
@@ -117,7 +107,7 @@ namespace Anivision.PlayerInteraction
                     // If the layer is valid, save the hit location
                     if (valid)
                     {
-                        _hapticsController.Haptics(hapticFrequency, hapticStrength, hapticDuration, OVRInput.Controller.RTouch);
+                        if (_hapticsController) _hapticsController.Haptics(hapticFrequency, hapticStrength, hapticDuration, OVRInput.Controller.RTouch);
                         destination = hit.point;
                     }
                     // Set the second point on the renderer to the raycast's hit point
