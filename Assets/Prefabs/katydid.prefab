@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1429764989616222708}
   - component: {fileID: 1096525300912232714}
   - component: {fileID: 2963367643302508794}
+  - component: {fileID: 1266829867966787369}
   m_Layer: 0
   m_Name: katydid
   m_TagString: Untagged
@@ -249,3 +250,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1266829867966787369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6986884815195762360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3265c793badb7ff48bb70f1fb94d9c5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  katydidEatSound: {fileID: 8300000, guid: 4f24cca8655b078459139d3fa0ebb8ba, type: 3}

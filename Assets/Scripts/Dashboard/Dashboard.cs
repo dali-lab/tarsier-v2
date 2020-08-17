@@ -2,21 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public abstract class Dashboard : MonoBehaviour
+namespace Anivision.Dashboard
 {
-    public enum DashboardType { Tutorial, Home, Animal };
-    public DashboardType dashboardType { get; set; }
-    public abstract void Setup();
-    public abstract void Cleanup();
-
-    private void OnEnable()
+    public abstract class Dashboard : MonoBehaviour
     {
-        Setup();
-    }
-
-    private void OnDisable()
-    {
-        Cleanup();
+        public enum DashboardType { Tutorial, Home, VisionSelect };
+        public abstract DashboardType dashboardType { get; }
+        public abstract void Setup();
+        public abstract void Cleanup();
     }
 }
