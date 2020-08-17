@@ -10,19 +10,13 @@ namespace Anivision.PlayerInteraction
     /// Script attached to the center eye to detect collisions with other objects.
     /// Invokes a UnityEvent with a parameter of the colliding gameobject's Collider.
     /// </summary>
-    [System.Serializable]
-    public class OnCollideEvent : UnityEvent<Collider>
-    {
-    }
-
     public class HeadsetCollide : MonoBehaviour
     {
-        [HideInInspector] public OnCollideEvent onCollide;
-
-        private void Start()
+        public class OnCollideEvent : UnityEvent<Collider>
         {
-            if (onCollide == null) onCollide = new OnCollideEvent();        // instantiate event
         }
+
+        [HideInInspector] public OnCollideEvent onCollide = new OnCollideEvent();
 
         private void OnTriggerEnter(Collider other)
         {
