@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Anivision.PlayerInteraction
 {
+    /// <summary>
+    /// Wrapper around OVR's controller haptics that takes in an extra parameter of duration. 
+    /// Can be called in other scripts as long as this script is on a gameobject in the scene.
+    /// </summary>
     public class HapticsController : MonoBehaviour
     {
         private static HapticsController _hapticsController;
@@ -35,5 +39,4 @@ namespace Anivision.PlayerInteraction
             OVRInput.SetControllerVibration(0, 0, controller);
         }
     }
-
 }

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5617124208621217766}
   - component: {fileID: 8100182909307219141}
-  - component: {fileID: 1274090192111476163}
   - component: {fileID: 4450205699141110200}
   m_Layer: 0
   m_Name: Human
@@ -47,27 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorblindType: 0
   effects: 
---- !u!114 &1274090192111476163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522901284130403564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85c4fd561e76841eabbb88e5c9a1c756, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canFly: 0
-  canTeleport: 1
-  validRaycastLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  validTeleportLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  teleportRange: 500
+  rRed: 1
+  rGreen: 0
+  rBlue: 0
+  gRed: 0
+  gGreen: 1
+  gBlue: 0
+  bRed: 0
+  bGreen: 0
+  bBlue: 1
 --- !u!114 &4450205699141110200
 MonoBehaviour:
   m_ObjectHideFlags: 0
