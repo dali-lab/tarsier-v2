@@ -53,6 +53,11 @@ namespace Anivision.Vision
             ResetPipeline(); // Reset the pipeline
         }
 
+        private void OnDestroy()
+        {
+            ResetPipeline(); // Reset the pipeline
+        }
+
         // Called when VisionSwitch is invoked
         // Iterates through the list of vision effects, and if one is in the effect dictionary, add it's feature to the pipeline
         private void UpdatePipeline(VisionParameters parameters)
@@ -85,6 +90,7 @@ namespace Anivision.Vision
                 forwardRenderer.rendererFeatures.Remove(feature);
             }
             addedFeatures.Clear();
+            forwardRenderer.SetDirty();
         }
     }
 }
