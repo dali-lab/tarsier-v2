@@ -790,7 +790,6 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Bee" t="Include">
-            <e p="NectarShaderIntensity.cs" t="Include" />
             <e p="NectarUI.cs" t="Include" />
           </e>
           <e p="Core" t="Include">
@@ -874,6 +873,7 @@
             <e p="MaterialGroup.cs" t="Include" />
             <e p="MaterialInfo.cs" t="Include" />
             <e p="MaterialSwap.cs" t="Include" />
+            <e p="NectarShaderIntensity.cs" t="Include" />
             <e p="Pixelation.cs" t="Include" />
             <e p="RendererController.cs" t="Include" />
             <e p="RendererEffect.cs" t="Include" />
