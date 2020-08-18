@@ -789,9 +789,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Bee" t="Include">
-            <e p="NectarUI.cs" t="Include" />
-          </e>
           <e p="Core" t="Include">
             <e p="AnimalController.cs" t="Include" />
             <e p="AnimalEnums.cs" t="Include" />
@@ -805,6 +802,7 @@
             <e p="Dashboard.cs" t="Include" />
             <e p="DashboardController.cs" t="Include" />
             <e p="HomeDashboard.cs" t="Include" />
+            <e p="NectarUI.cs" t="Include" />
             <e p="TutorialDashboard.cs" t="Include" />
             <e p="VisionSelectDashboard.cs" t="Include" />
             <e p="VisionSwitch.cs" t="Include" />
@@ -831,6 +829,7 @@
             <e p="HapticsController.cs" t="Include" />
             <e p="headsetCollide.cs" t="Include" />
             <e p="HighlightControls.cs" t="Include" />
+            <e p="KatydidEat.cs" t="Include" />
             <e p="MovementParameters.cs" t="Include" />
             <e p="NectarGlob.cs" t="Include" />
             <e p="Rotate.cs" t="Include" />
@@ -844,9 +843,6 @@
             <e p="DistanceTrigger.cs" t="Include" />
             <e p="FadeIn.cs" t="Include" />
             <e p="SceneSwitch.cs" t="Include" />
-          </e>
-          <e p="Tarsier" t="Include">
-            <e p="KatydidEat.cs" t="Include" />
           </e>
           <e p="tutorial" t="Include">
             <e p="Forest" t="Include">

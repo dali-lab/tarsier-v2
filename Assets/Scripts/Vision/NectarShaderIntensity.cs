@@ -24,13 +24,13 @@ namespace Anivision.Vision
             updateMaterial();
         }
 
-        public void incrementGlob()
+        public void IncrementGlob()
         {
             globcount++;
             updateMaterial();
         }
 
-        public void globConsumed()
+        public void GlobConsumed()
         {
             globcount--;
             updateMaterial();
