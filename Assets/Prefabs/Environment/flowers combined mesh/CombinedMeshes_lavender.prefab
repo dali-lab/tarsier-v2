@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 7629561135576743801}
   - component: {fileID: 2127354741926999435}
   - component: {fileID: 6422841754490196821}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CombinedMeshes_Lav2_-6273850
   m_TagString: Untagged
   m_Icon: {fileID: 0}

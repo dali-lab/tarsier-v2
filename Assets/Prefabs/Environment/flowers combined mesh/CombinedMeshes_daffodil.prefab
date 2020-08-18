@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1849073709831027614}
   - component: {fileID: 1000040560765128781}
   - component: {fileID: 9200607919281705567}
-  m_Layer: 0
-  m_Name: Capsule (1)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,8 +105,8 @@ GameObject:
   - component: {fileID: 4470027055046220434}
   - component: {fileID: 4379184841168478748}
   - component: {fileID: 7474003984600284935}
-  m_Layer: 0
-  m_Name: Capsule (4)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,8 +277,8 @@ GameObject:
   - component: {fileID: 5164314641683456819}
   - component: {fileID: 7191143014211642852}
   - component: {fileID: 472279195898911028}
-  m_Layer: 0
-  m_Name: Cylinder
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,8 +470,8 @@ GameObject:
   - component: {fileID: 7707612902097642898}
   - component: {fileID: 7468300841507117902}
   - component: {fileID: 9180457483057303721}
-  m_Layer: 0
-  m_Name: Capsule (3)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,8 +642,8 @@ GameObject:
   - component: {fileID: 4961387019416136145}
   - component: {fileID: 1192932626069216906}
   - component: {fileID: 8757801737245372534}
-  m_Layer: 0
-  m_Name: Capsule (2)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -814,8 +814,8 @@ GameObject:
   - component: {fileID: 6404507905345830569}
   - component: {fileID: 1651189207539957723}
   - component: {fileID: 9051052101206992671}
-  m_Layer: 0
-  m_Name: Capsule
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

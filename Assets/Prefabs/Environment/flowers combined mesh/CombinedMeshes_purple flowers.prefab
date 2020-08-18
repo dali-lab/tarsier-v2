@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4227000896493612633}
   - component: {fileID: 2270070968653082279}
   - component: {fileID: 3868665649788572320}
-  m_Layer: 0
-  m_Name: Cylinder (5)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,8 +105,8 @@ GameObject:
   - component: {fileID: 2495816188667718467}
   - component: {fileID: 6866991813764412953}
   - component: {fileID: 4844383901127848234}
-  m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,8 +356,8 @@ GameObject:
   - component: {fileID: 8325481573545737263}
   - component: {fileID: 4736447296859479232}
   - component: {fileID: 7019388822503872887}
-  m_Layer: 0
-  m_Name: Cylinder (6)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,8 +449,8 @@ GameObject:
   - component: {fileID: 5320635206548478357}
   - component: {fileID: 1848475579088346492}
   - component: {fileID: 2859034811911683730}
-  m_Layer: 0
-  m_Name: Cylinder (3)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -542,8 +542,8 @@ GameObject:
   - component: {fileID: 275406542152387342}
   - component: {fileID: 3489951999915585812}
   - component: {fileID: 7414485446542342995}
-  m_Layer: 0
-  m_Name: Cylinder
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,8 +635,8 @@ GameObject:
   - component: {fileID: 3050301751197214904}
   - component: {fileID: 2705385490235775278}
   - component: {fileID: 679443489506733757}
-  m_Layer: 0
-  m_Name: Cylinder (4)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -728,8 +728,8 @@ GameObject:
   - component: {fileID: 834252029647192867}
   - component: {fileID: 2581370782598465783}
   - component: {fileID: 5152800505889432330}
-  m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

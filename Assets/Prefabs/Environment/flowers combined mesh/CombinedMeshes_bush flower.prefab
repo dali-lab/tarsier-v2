@@ -328,8 +328,8 @@ GameObject:
   - component: {fileID: 1320090591556393187}
   - component: {fileID: 4196555644878101017}
   - component: {fileID: 8100069225933057573}
-  m_Layer: 0
-  m_Name: Cube (4)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,8 +500,8 @@ GameObject:
   - component: {fileID: 2300326004263634262}
   - component: {fileID: 8177556729802825771}
   - component: {fileID: 1631013134532600506}
-  m_Layer: 0
-  m_Name: Cube (1)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,8 +707,8 @@ GameObject:
   - component: {fileID: 3925402345585160403}
   - component: {fileID: 6265098685974430105}
   - component: {fileID: 7233285090745089536}
-  m_Layer: 0
-  m_Name: Cube (3)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -800,8 +800,8 @@ GameObject:
   - component: {fileID: 9065072253714055912}
   - component: {fileID: 7091699642759617944}
   - component: {fileID: 9076556286733749646}
-  m_Layer: 0
-  m_Name: Cube (5)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -893,8 +893,8 @@ GameObject:
   - component: {fileID: 7629091191491838266}
   - component: {fileID: 1781430201634525950}
   - component: {fileID: 7930214635994031064}
-  m_Layer: 0
-  m_Name: Cube (2)
+  m_Layer: 8
+  m_Name: TeleportCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
