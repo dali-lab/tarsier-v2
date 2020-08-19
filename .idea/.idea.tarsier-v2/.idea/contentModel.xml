@@ -789,6 +789,10 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="Bee" t="Include">
+            <e p="NectarGlob.cs" t="Include" />
+            <e p="NectarShaderIntensityController.cs" t="Include" />
+          </e>
           <e p="Core" t="Include">
             <e p="AnimalController.cs" t="Include" />
             <e p="AnimalEnums.cs" t="Include" />

@@ -1,9 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using System;
-using System.Collections.Generic;
 using Anivision.Core;
-using Anivision.Vision;
 
 namespace Anivision.Vision
 {
@@ -14,6 +10,7 @@ namespace Anivision.Vision
     {
         public override VisionEffect Effect => VisionEffect.NectarIntensity;
         private int globcount = 0;
+        private float maxGlobs = 1;
 
         private MaterialPropertyBlock _propBlock;
 
@@ -26,6 +23,10 @@ namespace Anivision.Vision
         public void IncrementGlob()
         {
             globcount++;
+            if (globcount > maxGlobs)
+            {
+                maxGlobs = globcount;
+            }
             UpdateMaterial();
         }
 
@@ -38,11 +39,16 @@ namespace Anivision.Vision
             }
             
         }
+        
+        private float GetIntensity()
+        {
+            return globcount / maxGlobs;
+        }
 
         public override void ApplyEffect(MaterialPropertyBlock propBlock, int materialIndex, Renderer renderer,
             VisionParameters visionParameters)
         {
-            propBlock.SetInt("_Intensity", globcount * 2 + 1);
+            propBlock.SetFloat("_Intensity", GetIntensity());
         }
 
         public override void RevertToOriginal(Renderer r)
@@ -53,7 +59,7 @@ namespace Anivision.Vision
 
         private void UpdateMaterial()
         {
-            _propBlock.SetInt("_Intensity", globcount * 2 + 1);
+            _propBlock.SetFloat("_Intensity", GetIntensity());
             UpdateMaterialRecursive(transform, _propBlock);
         }
         
