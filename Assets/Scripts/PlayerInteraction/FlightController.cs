@@ -23,12 +23,10 @@ namespace Anivision.PlayerInteraction
         public float audioFadeSpeed = 1;
         
         private InputManager _inputManager;
-        private AnimalManager _animalManager;
         private TeleportController _teleportController;
         private AudioSource windSound;
         private GameObject windParticles;
         private bool isFlying = false;
-        private bool canTeleport = false;
 
         private void Awake()
         {
@@ -46,13 +44,8 @@ namespace Anivision.PlayerInteraction
 
         private void Start()
         {
-            _animalManager = AnimalManager.Instance;
-            // Set the input manager to an instance of teleport controller, if available
+            // Set the teleport controller to an instance of teleport controller, if available
             _teleportController = TeleportController.Instance;
-            if (_animalManager != null)
-            {
-                _animalManager.MovementSwitch.AddListener(EnableFlight);
-            }
         }
 
         void OnEnable()
@@ -117,7 +110,7 @@ namespace Anivision.PlayerInteraction
             // Toggle flying
             isFlying = !isFlying;
             // Toggle the ability to teleport
-            if (canTeleport && _teleportController != null)
+            if (_teleportController != null)
             {
                 _teleportController.gameObject.SetActive(!isFlying);
             }
@@ -151,7 +144,6 @@ namespace Anivision.PlayerInteraction
 
         private void EnableFlight(MovementParameters parameters)
         {
-            canTeleport = parameters.CanTeleport;
             ResetFlight(parameters);
             
         }

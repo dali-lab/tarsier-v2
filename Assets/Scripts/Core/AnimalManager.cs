@@ -37,10 +37,8 @@ namespace Anivision.Core
         [Tooltip("The native animal for the scene")]
         public AnimalController defaultAnimal;
         public class VisionSwitchEvent : UnityEvent<VisionParameters>{}
-        public class MovementSwitchEvent : UnityEvent<MovementParameters>{}
         public class AnimalSwitchEvent : UnityEvent<Animal>{}
         public VisionSwitchEvent VisionSwitch = new VisionSwitchEvent(); //called when animal is switched 
-        public MovementSwitchEvent MovementSwitch = new MovementSwitchEvent(); //called when animal is switched 
         public AnimalSwitchEvent AnimalSwitch = new AnimalSwitchEvent();
         [Tooltip("Button used to switch between human vision and the current animal of the scene")]
         public InputManager.Button visionSwapButton = InputManager.Button.A;
@@ -118,7 +116,6 @@ namespace Anivision.Core
             if (_animalControllerDict.TryGetValue(animal, out animalController))
             {
                 VisionSwitch.Invoke(animalController.VisionParameters);
-                MovementSwitch.Invoke(animalController.MovementParameters);
                 AnimalSwitch.Invoke(animal);
                 currentVision = animal;
                 
