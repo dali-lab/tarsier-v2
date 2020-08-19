@@ -1,8 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using System;
 using Anivision.Core;
-using Anivision.Vision;
 
 namespace Anivision.Vision
 {
@@ -13,33 +10,45 @@ namespace Anivision.Vision
     {
         public override VisionEffect Effect => VisionEffect.NectarIntensity;
         private int globcount = 0;
+        private float maxGlobs = 1;
 
-        private Renderer[] _renderers;
         private MaterialPropertyBlock _propBlock;
 
         void Awake()
         {
             _propBlock = new MaterialPropertyBlock();
-            _renderers = GetComponentsInChildren<Renderer>();
-            updateMaterial();
+            UpdateMaterial();
         }
 
-        public void incrementGlob()
+        public void IncrementGlob()
         {
             globcount++;
-            updateMaterial();
+            if (globcount > maxGlobs)
+            {
+                maxGlobs = globcount;
+            }
+            UpdateMaterial();
         }
 
-        public void globConsumed()
+        public void GlobConsumed()
         {
-            globcount--;
-            updateMaterial();
+            if (globcount > 0)
+            {
+                globcount--;
+                UpdateMaterial();
+            }
+            
+        }
+        
+        private float GetIntensity()
+        {
+            return globcount / maxGlobs;
         }
 
         public override void ApplyEffect(MaterialPropertyBlock propBlock, int materialIndex, Renderer renderer,
             VisionParameters visionParameters)
         {
-            propBlock.SetInt("_Intensity", globcount * 2 + 1);
+            propBlock.SetFloat("_Intensity", GetIntensity());
         }
 
         public override void RevertToOriginal(Renderer r)
@@ -48,13 +57,37 @@ namespace Anivision.Vision
             r.SetPropertyBlock(_propBlock);
         }
 
-        private void updateMaterial()
+        private void UpdateMaterial()
         {
-            _propBlock.SetInt("_Intensity", globcount * 2 + 1);
-            foreach(Renderer r in _renderers) {
-                r.SetPropertyBlock(_propBlock);
+            _propBlock.SetFloat("_Intensity", GetIntensity());
+            UpdateMaterialRecursive(transform, _propBlock);
+        }
+        
+        /// <summary>
+        /// Recurses through all of the child transforms and applies updated intensity
+        /// </summary>
+        /// <param name="t"></param>
+        /// <param name="propBlock"></param>
+        private void UpdateMaterialRecursive(Transform t, MaterialPropertyBlock propBlock)
+        {
+            GameObject currGameObject = t.gameObject;
+            Renderer mRenderer = currGameObject.GetComponent<Renderer>();
+            
+            // if current game object has a renderer
+            if (mRenderer != null)
+            {
+                //go through renderer materials
+                for (int i = 0; i < mRenderer.sharedMaterials.Length; i++)
+                {
+                    mRenderer.SetPropertyBlock(propBlock, i);
+                }
+
+            }
+            // recurse over children
+            foreach(Transform child in t) {
+                UpdateMaterialRecursive(child, propBlock);
             }
         }
 
-}
+    }
 }

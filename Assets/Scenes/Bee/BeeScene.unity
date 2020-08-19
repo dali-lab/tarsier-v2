@@ -131,22 +131,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -426,7 +431,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -521,10 +526,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 82992037}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &82992039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82992037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88389399 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2815574727548240072, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
@@ -540,10 +559,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 88389399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &88389401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88389399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &94297508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -564,12 +597,12 @@ PrefabInstance:
     - target: {fileID: 5842721177613295523, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 6582144930519615864, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6900964227173695749, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
@@ -674,10 +707,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 94297510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &94297512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94297510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &95730567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,7 +1107,7 @@ PrefabInstance:
     - target: {fileID: 4551047097753191313, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6661710168346608321, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
@@ -1135,7 +1182,7 @@ PrefabInstance:
     - target: {fileID: 7275805235592408692, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 7649504441434812626, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
@@ -1170,10 +1217,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 114771225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &114771227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114771225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &127352235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1185,6 +1246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -1274,7 +1340,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -1299,7 +1365,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -1404,10 +1470,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 140567362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &140567364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140567362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &140575221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1509,6 +1589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -1704,12 +1789,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -1763,7 +1848,7 @@ Transform:
   - {fileID: 1698136580}
   - {fileID: 912111105}
   m_Father: {fileID: 463819548}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &186006939 stripped
 GameObject:
@@ -1780,10 +1865,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 186006939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &186006941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186006939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &187342214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1794,22 +1893,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -1943,17 +2047,17 @@ PrefabInstance:
     - target: {fileID: 8140854098592642206, guid: bc0c4c631cb384bd4803cd0625974946,
         type: 3}
       propertyPath: defaultAnimal
-      value:
+      value: 
       objectReference: {fileID: 549892226}
     - target: {fileID: 8140854098592642206, guid: bc0c4c631cb384bd4803cd0625974946,
         type: 3}
       propertyPath: AnimalControllers.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 549892226}
     - target: {fileID: 8140854098592642206, guid: bc0c4c631cb384bd4803cd0625974946,
         type: 3}
       propertyPath: AnimalControllers.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 210919972}
     - target: {fileID: 8140854098592642207, guid: bc0c4c631cb384bd4803cd0625974946,
         type: 3}
@@ -2029,6 +2133,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -2208,22 +2317,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -2388,8 +2502,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41c01579ad87b41cba4b4b76784624c5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &215801570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2401,6 +2515,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (62)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -2672,6 +2791,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2765,10 +2889,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 261139909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &261139911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261139909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &267066760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2869,7 +3007,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -2944,12 +3082,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -2964,7 +3102,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -2985,6 +3123,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (67)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -3074,22 +3217,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -3254,12 +3402,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -3294,10 +3442,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 288908803}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &288908805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288908803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &320056659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3398,22 +3560,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -3504,6 +3671,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (79)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -3678,7 +3850,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -3773,10 +3945,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 364526464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &364526466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364526464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &364602936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3857,7 +4043,7 @@ PrefabInstance:
     - target: {fileID: 2562462262884026549, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 2815574727548240072, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -3872,7 +4058,7 @@ PrefabInstance:
     - target: {fileID: 3009050920895094382, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 4734982895211260899, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -3903,6 +4089,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (51)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -4082,22 +4273,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -4187,7 +4383,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -4262,12 +4458,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -4282,7 +4478,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -4462,7 +4658,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 463819548}
+    m_TransformParent: {fileID: 2085456117}
     m_Modifications:
     - target: {fileID: -9045176614652453514, guid: ee5e2ec799d020b4ca4322780d9984f2,
         type: 3}
@@ -4472,7 +4668,7 @@ PrefabInstance:
     - target: {fileID: -6177986836633925535, guid: ee5e2ec799d020b4ca4322780d9984f2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 33f62c4ed8da0ed48a82e6b91b3d6614, type: 2}
     - target: {fileID: -4216859302048453862, guid: ee5e2ec799d020b4ca4322780d9984f2,
         type: 3}
@@ -4537,12 +4733,12 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: ee5e2ec799d020b4ca4322780d9984f2,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.9814001
+      value: 1.9814003
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ee5e2ec799d020b4ca4322780d9984f2,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.9814001
+      value: 1.9814003
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: ee5e2ec799d020b4ca4322780d9984f2,
         type: 3}
@@ -4562,7 +4758,7 @@ PrefabInstance:
     - target: {fileID: 2747481567417281098, guid: ee5e2ec799d020b4ca4322780d9984f2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 3338220736322743955, guid: ee5e2ec799d020b4ca4322780d9984f2,
         type: 3}
@@ -4588,6 +4784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -4678,6 +4879,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -4824,10 +5030,10 @@ Transform:
   m_LocalPosition: {x: -4.9358425, y: 45.004242, z: -6.544548}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 437849537}
   - {fileID: 1051653953}
   - {fileID: 183665332}
-  - {fileID: 731100844}
+  - {fileID: 788499638}
+  - {fileID: 2085456117}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4878,10 +5084,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 476200857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &476200859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476200857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &477977115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4971,10 +5191,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 485235976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &485235978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 485235976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &496784345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4986,6 +5220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -5080,10 +5319,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 502322851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &502322853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502322851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &509045224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5156,6 +5409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (75)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -5245,22 +5503,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -5352,6 +5615,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5440,7 +5708,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -5465,7 +5733,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -5570,10 +5838,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 524236877}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &524236879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524236877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &534917835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5594,12 +5876,12 @@ PrefabInstance:
     - target: {fileID: 5842721177613295523, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 6582144930519615864, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6900964227173695749, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
@@ -5704,10 +5986,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 534917837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &534917839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534917837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &536857365
 GameObject:
   m_ObjectHideFlags: 0
@@ -5908,7 +6204,7 @@ PrefabInstance:
     - target: {fileID: 2562462262884026549, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 2815574727548240072, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -5923,7 +6219,7 @@ PrefabInstance:
     - target: {fileID: 3009050920895094382, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 4734982895211260899, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -5953,22 +6249,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -6145,6 +6446,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 474099284}
     m_Modifications:
+    - target: {fileID: 8348486993978256906, guid: c90fc34e9dacc4695ba493c6b91508f9,
+        type: 3}
+      propertyPath: effects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348486993978256906, guid: c90fc34e9dacc4695ba493c6b91508f9,
+        type: 3}
+      propertyPath: effects.Array.data[2]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8348486993978256907, guid: c90fc34e9dacc4695ba493c6b91508f9,
         type: 3}
       propertyPath: validRaycastLayers.m_Bits
@@ -6233,8 +6544,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41c01579ad87b41cba4b4b76784624c5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &557735419
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6255,12 +6566,12 @@ PrefabInstance:
     - target: {fileID: 5842721177613295523, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 6582144930519615864, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6900964227173695749, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
@@ -6365,10 +6676,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 557735421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &557735423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557735421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &558010293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6379,7 +6704,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -6404,7 +6729,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -6509,10 +6834,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 558010295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &558010297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558010295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &560999076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6598,12 +6937,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -6634,6 +6973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (54)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -6725,6 +7069,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6815,6 +7164,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6904,6 +7258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (73)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -7116,6 +7475,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7299,10 +7663,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 674649101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &674649103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674649101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &676737141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7314,6 +7692,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (53)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -7568,12 +7951,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -7830,7 +8213,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -7925,10 +8308,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 697243577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &697243579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697243577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &697786554 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
@@ -7944,10 +8341,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 697786554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &697786556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697786554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &705028907
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8123,22 +8534,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -8229,6 +8645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (81)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -8403,7 +8824,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 463819548}
+    m_TransformParent: {fileID: 788499638}
     m_Modifications:
     - target: {fileID: -8795046824511277731, guid: 21782b7a9ae1c824993bcd541b20da01,
         type: 3}
@@ -8448,7 +8869,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 21782b7a9ae1c824993bcd541b20da01,
         type: 3}
@@ -8508,7 +8929,7 @@ PrefabInstance:
     - target: {fileID: 3686834525208037958, guid: 21782b7a9ae1c824993bcd541b20da01,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: c726bbca27b4b484a91851b5f1b37f37, type: 2}
     - target: {fileID: 7932196757125311345, guid: 21782b7a9ae1c824993bcd541b20da01,
         type: 3}
@@ -8538,10 +8959,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 740937628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &740937630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740937628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &744433883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8552,22 +8987,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -8667,12 +9107,12 @@ PrefabInstance:
     - target: {fileID: 5842721177613295523, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 6582144930519615864, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6900964227173695749, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
@@ -8777,10 +9217,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 746634492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &746634494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746634492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &749987853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8791,7 +9245,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -8866,12 +9320,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -8886,7 +9340,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -8907,6 +9361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (72)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -8998,6 +9457,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9087,6 +9551,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -9181,10 +9650,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 756525394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &756525396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756525394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &764733516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9285,7 +9768,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -9310,7 +9793,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -9415,10 +9898,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 767571752}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &767571754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767571752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &780388847
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9430,6 +9927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (70)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -9524,10 +10026,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 781487783}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &781487785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781487783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &782065091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9638,12 +10154,12 @@ PrefabInstance:
     - target: {fileID: 5842721177613295523, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 6582144930519615864, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6900964227173695749, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
@@ -9748,10 +10264,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 783128943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &783128945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783128943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &785708037
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9842,6 +10372,66 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 785708037}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &788499637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 788499638}
+  - component: {fileID: 788499640}
+  - component: {fileID: 788499639}
+  m_Layer: 0
+  m_Name: island
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &788499638
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788499637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 731100844}
+  m_Father: {fileID: 463819548}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &788499639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788499637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &788499640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788499637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &790265652
 GameObject:
   m_ObjectHideFlags: 0
@@ -9963,8 +10553,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b59aca928c80804479bb57607d8107eb, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &794096285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10230,12 +10820,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -10340,12 +10930,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -10690,10 +11280,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 880116108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &880116110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880116108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &882955648 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
@@ -10709,10 +11313,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 882955648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &882955650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882955648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &883091951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10723,22 +11341,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -10828,7 +11451,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -10903,12 +11526,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -10923,7 +11546,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -11018,12 +11641,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -11131,7 +11754,7 @@ PrefabInstance:
     - target: {fileID: 4551047097753191313, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6661710168346608321, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
@@ -11206,7 +11829,7 @@ PrefabInstance:
     - target: {fileID: 7275805235592408692, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 7649504441434812626, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
@@ -11241,10 +11864,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 913821413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &913821415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913821413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &917053075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11400,7 +12037,7 @@ PrefabInstance:
     - target: {fileID: 2562462262884026549, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 2815574727548240072, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -11415,7 +12052,7 @@ PrefabInstance:
     - target: {fileID: 3009050920895094382, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 4734982895211260899, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -11537,6 +12174,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11627,6 +12269,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11716,6 +12363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (64)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -11952,8 +12604,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f64432fb057145bc9232c940eee69, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   grabButton: 6
 --- !u!114 &953217831
 MonoBehaviour:
@@ -11965,8 +12617,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 969c9efa821bfb44caaac2077cd658b3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   RightHand: 1
   FadeSpeed: 4
   HighlightObject: {fileID: 0}
@@ -11998,8 +12650,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 948f64432fb057145bc9232c940eee69, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   grabButton: 7
 --- !u!114 &953217834
 MonoBehaviour:
@@ -12011,8 +12663,8 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 969c9efa821bfb44caaac2077cd658b3, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   RightHand: 0
   FadeSpeed: 4
   HighlightObject: {fileID: 0}
@@ -12044,8 +12696,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -12075,8 +12727,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -12106,8 +12758,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_RenderShadows: 1
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
@@ -12143,14 +12795,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df9f338034892c44ebb62d97894772f1, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953217841 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 126d619cf4daa52469682f85c1378b4a,
     type: 3}
   m_PrefabInstance: {fileID: 953217822}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &953217842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953217828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd292e41d12bf6846855c8e43566cd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &953217843
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953217828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.69595593, y: 0.26390237, z: 0.15390587}
+  m_Center: {x: 0.022046715, y: -0.006083399, z: 0.13000584}
 --- !u!1001 &954467420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12162,6 +12839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (78)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -12261,7 +12943,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -12356,10 +13038,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 960640823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &960640825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960640823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &971144949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12445,12 +13141,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -12485,10 +13181,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 971152463}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &971152465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971152463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &983042043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12499,7 +13209,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -12574,12 +13284,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -12594,7 +13304,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -12619,10 +13329,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 993794889}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &993794891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993794889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1000934681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12643,7 +13367,7 @@ PrefabInstance:
     - target: {fileID: 4551047097753191313, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6661710168346608321, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
@@ -12718,7 +13442,7 @@ PrefabInstance:
     - target: {fileID: 7275805235592408692, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 7649504441434812626, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
@@ -12753,10 +13477,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000934683}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1000934685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000934683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1007908857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12767,22 +13505,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -12872,7 +13615,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -12947,12 +13690,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -12967,7 +13710,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -13062,12 +13805,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -13097,22 +13840,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -13212,12 +13960,12 @@ PrefabInstance:
     - target: {fileID: 5842721177613295523, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 6582144930519615864, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6900964227173695749, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
@@ -13322,10 +14070,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1026664212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1026664214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026664212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1043240104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13337,6 +14099,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -13540,7 +14307,7 @@ Transform:
   - {fileID: 838894055}
   - {fileID: 1222336766}
   m_Father: {fileID: 463819548}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1059589682
 PrefabInstance:
@@ -13652,7 +14419,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -13747,10 +14514,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1077178230}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1077178232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077178230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1081615671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13762,6 +14543,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -13853,6 +14639,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13941,17 +14732,17 @@ PrefabInstance:
     - target: {fileID: 2690266688220907554, guid: cdfb867344977da43ab52eb4ef900bac,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 25.81
       objectReference: {fileID: 0}
     - target: {fileID: 2690266688220907554, guid: cdfb867344977da43ab52eb4ef900bac,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -12.94
       objectReference: {fileID: 0}
     - target: {fileID: 2690266688220907554, guid: cdfb867344977da43ab52eb4ef900bac,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2690266688220907554, guid: cdfb867344977da43ab52eb4ef900bac,
         type: 3}
@@ -13993,6 +14784,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2690266688220907554, guid: cdfb867344977da43ab52eb4ef900bac,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690266688220907554, guid: cdfb867344977da43ab52eb4ef900bac,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2690266688220907554, guid: cdfb867344977da43ab52eb4ef900bac,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3501777407466571646, guid: cdfb867344977da43ab52eb4ef900bac,
         type: 3}
       propertyPath: m_Name
@@ -14026,12 +14832,12 @@ PrefabInstance:
     - target: {fileID: 5842721177613295523, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 6582144930519615864, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6900964227173695749, guid: 043c2c72de40a72489713a8867652579,
         type: 3}
@@ -14136,10 +14942,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1110047225}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1110047227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110047225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1113494371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14150,22 +14970,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -14350,10 +15175,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1128425517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1128425519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128425517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1130913403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14365,6 +15204,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (45)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -14456,6 +15300,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (66)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -14544,7 +15393,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -14619,12 +15468,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -14639,7 +15488,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -14754,10 +15603,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1175230077}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1175230079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175230077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1181460606 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
@@ -14773,10 +15636,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1181460606}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1181460608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181460606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1189406707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14787,22 +15664,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -14892,7 +15774,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -14917,7 +15799,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -15022,10 +15904,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1195402820}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1195402822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195402820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1195730567
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15037,6 +15933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (80)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -15126,7 +16027,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -15201,12 +16102,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -15221,7 +16122,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -15251,7 +16152,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -15346,10 +16247,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1201322425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1201322427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201322425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1215167238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15365,17 +16280,17 @@ PrefabInstance:
     - target: {fileID: 3729175499779935318, guid: 86b3bd3f792b24304916cad955a71cf7,
         type: 3}
       propertyPath: cameraRig
-      value:
+      value: 
       objectReference: {fileID: 953217841}
     - target: {fileID: 3729175499779935318, guid: 86b3bd3f792b24304916cad955a71cf7,
         type: 3}
       propertyPath: centerEye
-      value:
+      value: 
       objectReference: {fileID: 953217828}
     - target: {fileID: 3729175499779935318, guid: 86b3bd3f792b24304916cad955a71cf7,
         type: 3}
       propertyPath: headsetFade
-      value:
+      value: 
       objectReference: {fileID: 794080615}
     - target: {fileID: 3729175499779935319, guid: 86b3bd3f792b24304916cad955a71cf7,
         type: 3}
@@ -15451,6 +16366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (60)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -15541,6 +16461,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -15635,10 +16560,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219954660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1219954662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219954660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1222336765
 GameObject:
   m_ObjectHideFlags: 0
@@ -15705,22 +16644,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -15975,12 +16919,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -16250,7 +17194,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -16275,7 +17219,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -16380,10 +17324,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1254955796}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1254955798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254955796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1275747667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2815574727548240072, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
@@ -16399,10 +17357,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1275747667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1275747669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275747667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1278511290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16780,12 +17752,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -16820,10 +17792,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1296451191}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1296451193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296451191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1312132053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16929,10 +17915,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1317859940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1317859942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317859940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1318995721
 GameObject:
   m_ObjectHideFlags: 0
@@ -17102,13 +18102,18 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
+    - target: {fileID: 2536837369636534826, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 51eda9e20ce344c49ab78e8e5f06b44a, type: 2}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
@@ -17117,7 +18122,7 @@ PrefabInstance:
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -17189,6 +18194,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 27.022354
       objectReference: {fileID: 0}
+    - target: {fileID: 8556128893298936437, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05262063c4e6e714097c16daaaae7dd1, type: 3}
 --- !u!4 &1345747949 stripped
@@ -17207,7 +18217,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -17282,12 +18292,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -17297,7 +18307,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -17392,12 +18402,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -17427,7 +18437,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -17502,12 +18512,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -17522,7 +18532,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -17612,7 +18622,7 @@ PrefabInstance:
     - target: {fileID: 2562462262884026549, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 2815574727548240072, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -17627,7 +18637,7 @@ PrefabInstance:
     - target: {fileID: 3009050920895094382, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 4734982895211260899, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -17657,22 +18667,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -17837,12 +18852,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -17872,22 +18887,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -18052,12 +19072,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -18092,10 +19112,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1413961427}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1413961429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413961427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1418731389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18107,6 +19141,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (38)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -18201,10 +19240,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1429821716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1429821718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429821716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1433905126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18310,10 +19363,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1446209133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1446209135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446209133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1476398068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18394,7 +19461,7 @@ PrefabInstance:
     - target: {fileID: 2562462262884026549, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 2815574727548240072, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -18409,7 +19476,7 @@ PrefabInstance:
     - target: {fileID: 3009050920895094382, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 4734982895211260899, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -18799,22 +19866,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -19106,12 +20178,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -19146,10 +20218,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1531819010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1531819012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531819010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1535897408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19160,7 +20246,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -19185,7 +20271,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -19290,10 +20376,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1535897410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1535897412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535897410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1541166520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19394,22 +20494,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -19499,22 +20604,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -19696,6 +20806,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19784,7 +20899,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -19809,7 +20924,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -19914,10 +21029,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1575631895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1575631897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575631895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1579928434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19928,22 +21057,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -20035,6 +21169,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20125,6 +21264,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20213,22 +21357,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -20617,7 +21766,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -20692,12 +21841,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -20712,7 +21861,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -20813,8 +21962,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b346b3fdd46c4198a457ab6f7745e7c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   skyboxes:
   - animal: 0
     material: {fileID: 2100000, guid: b6121f1ede3dbe848a9c9de2ef369c28, type: 2}
@@ -20905,12 +22054,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -21002,6 +22151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (55)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -21166,12 +22320,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -21271,7 +22425,7 @@ PrefabInstance:
     - target: {fileID: 2562462262884026549, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 2815574727548240072, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -21286,7 +22440,7 @@ PrefabInstance:
     - target: {fileID: 3009050920895094382, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 4734982895211260899, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -21391,7 +22545,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -21466,12 +22620,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -21486,7 +22640,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -21581,12 +22735,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -21617,6 +22771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -21771,25 +22930,6 @@ Transform:
   m_Father: {fileID: 183665332}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1724872110 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -9045176614652453514, guid: ee5e2ec799d020b4ca4322780d9984f2,
-    type: 3}
-  m_PrefabInstance: {fileID: 437849536}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1724872112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1724872110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
 --- !u!1001 &1729259835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21900,7 +23040,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -21995,10 +23135,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1735744370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1735744372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735744370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1748732077
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22009,7 +23163,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -22084,12 +23238,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -22104,7 +23258,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -22199,12 +23353,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -22224,25 +23378,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1751039854}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1757965503 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 210771048207464218, guid: ee5e2ec799d020b4ca4322780d9984f2,
-    type: 3}
-  m_PrefabInstance: {fileID: 437849536}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1757965505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757965503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
 --- !u!1001 &1761725182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22254,6 +23389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -22435,6 +23575,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22598,12 +23743,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -22638,10 +23783,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1782634906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1782634908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782634906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1796104180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22727,12 +23886,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -22854,6 +24013,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22942,22 +24106,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -23057,7 +24226,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -23152,10 +24321,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1831889565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1831889567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831889565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1841117018
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23176,7 +24359,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -23271,10 +24454,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1841117020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1841117022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841117020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1854216166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23286,6 +24483,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -23412,10 +24614,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1887987616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1887987618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887987616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1893126052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23501,12 +24717,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -23536,22 +24752,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -23716,12 +24937,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -23752,6 +24973,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (76)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -23941,7 +25167,7 @@ PrefabInstance:
     - target: {fileID: 1804065741900356262, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3994371742212086889, guid: 690e0738cf7af8243907d1b17afb8219,
         type: 3}
@@ -24036,10 +25262,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1925305714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1925305716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925305714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1935140683
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24135,7 +25375,7 @@ PrefabInstance:
     - target: {fileID: 4551047097753191313, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 6661710168346608321, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
@@ -24210,7 +25450,7 @@ PrefabInstance:
     - target: {fileID: 7275805235592408692, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 7649504441434812626, guid: bf159bcb7d9ca3f438322473e1681bd7,
         type: 3}
@@ -24245,10 +25485,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1941062158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &1941062160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941062158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1951368081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24260,6 +25514,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (77)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -24484,6 +25743,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24647,12 +25911,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -24683,6 +25947,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (74)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -24774,6 +26043,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24863,6 +26137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -24957,10 +26236,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2030106158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &2030106160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030106158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2036875692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25026,22 +26319,22 @@ PrefabInstance:
     - target: {fileID: 7753264370679823242, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
         type: 3}
       propertyPath: cameraRig
-      value:
+      value: 
       objectReference: {fileID: 953217840}
     - target: {fileID: 7753264370679823242, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
         type: 3}
       propertyPath: rayOrigin
-      value:
+      value: 
       objectReference: {fileID: 953217839}
     - target: {fileID: 7753264370679823242, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
         type: 3}
       propertyPath: validRaycastLayers.m_Bits
-      value: 1
+      value: 257
       objectReference: {fileID: 0}
     - target: {fileID: 7753264370679823242, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
         type: 3}
       propertyPath: validTeleportLayers.m_Bits
-      value: 257
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7753264370679823242, guid: 1d85374fb1a064e38ac7e9a6c404a51b,
         type: 3}
@@ -25108,6 +26401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -25197,7 +26495,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -25222,7 +26520,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -25327,10 +26625,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2064341142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &2064341144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064341142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2082190687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
@@ -25346,10 +26658,84 @@ MonoBehaviour:
   m_GameObject: {fileID: 2082190687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &2082190689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082190687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2085456116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2085456117}
+  - component: {fileID: 2085456119}
+  - component: {fileID: 2085456118}
+  m_Layer: 0
+  m_Name: hive
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2085456117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085456116}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 437849537}
+  m_Father: {fileID: 463819548}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2085456118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085456116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &2085456119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085456116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2087263220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25360,22 +26746,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -25470,10 +26861,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2087864290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &2087864292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087864290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2088586595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25484,22 +26889,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
@@ -25589,7 +26999,7 @@ PrefabInstance:
     - target: {fileID: 1773734190099386113, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 2910197637013629243, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -25664,12 +27074,12 @@ PrefabInstance:
     - target: {fileID: 4931568956890161118, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5696323969376641570, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 6392811352444057374, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
@@ -25684,7 +27094,7 @@ PrefabInstance:
     - target: {fileID: 8904495845160890966, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64b69c9f65bc56d47b7cf0bfccd55e6e, type: 3}
@@ -25944,12 +27354,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -26049,7 +27459,7 @@ PrefabInstance:
     - target: {fileID: 2562462262884026549, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 2815574727548240072, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -26064,7 +27474,7 @@ PrefabInstance:
     - target: {fileID: 3009050920895094382, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 4734982895211260899, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
         type: 3}
@@ -26169,12 +27579,12 @@ PrefabInstance:
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 1de88cd69246700498715c851951a22c, type: 2}
     - target: {fileID: -1504981713932161579, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 2195901c1d5d71846b690b478442cd88, type: 2}
     - target: {fileID: -927199367670048503, guid: 41be9e6ab401a774b8d94196c0c8ff7f,
         type: 3}
@@ -26209,10 +27619,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2110597049}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &2110597051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110597049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2140018627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26223,7 +27647,7 @@ PrefabInstance:
     - target: {fileID: 2079808566595175502, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: e21901d96c6f8404ea268e425e2beeed, type: 2}
     - target: {fileID: 3518537975816505713, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -26248,7 +27672,7 @@ PrefabInstance:
     - target: {fileID: 5119675466725665195, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
-      value:
+      value: 
       objectReference: {fileID: 2100000, guid: 94430d1a60be2a34999c513f39725b70, type: 2}
     - target: {fileID: 5322155405065860877, guid: 48b975f5a685af24da004efff6dc414d,
         type: 3}
@@ -26353,10 +27777,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 2140018629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  MaterialGroups: []
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
+--- !u!114 &2140018631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140018629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e72e8434866d495bb200b94a27b19801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2145420558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26367,22 +27805,27 @@ PrefabInstance:
     - target: {fileID: 819560159486778287, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 1628108871517279158, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: m_Name
       value: CombinedMeshes_daffodil (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 3042389429786137631, guid: 05262063c4e6e714097c16daaaae7dd1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3207778156257844326, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
       propertyPath: Grabber
-      value:
+      value: 
       objectReference: {fileID: 953217830}
     - target: {fileID: 5271722822303686302, guid: 05262063c4e6e714097c16daaaae7dd1,
         type: 3}
