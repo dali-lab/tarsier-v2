@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Anivision.PlayerInteraction;
 using Anivision.Vision;
@@ -36,30 +37,19 @@ namespace Anivision.PlayerInteraction
         
         }
 
-        void Update()
-        {
-            // if ((Grabbers.Length > 0 && RGrabber.GrabbedObject == gameObject) || (Grabbers.Length > 1 && LGrabber.GrabbedObject == gameObject))
-            // {
-            //     ChangeIntensity();
-            // }
-        }
-
-        void ChangeIntensity()
-        {
-            if (controller) {
-                controller.GlobConsumed();
-            }
-        }
-
         void DestroyGlob(Collider other)
         {
             // if the object being grabbed is this gameobject
             if ((Grabbers.Length > 0 && RGrabber.GrabbedObject == gameObject) || (Grabbers.Length > 1 && LGrabber.GrabbedObject == gameObject))
             {
-                // destroy the gameobject only after the sound finishes playing
-                gameObject.GetComponent<Collider>().enabled = false;
-                gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+                if (controller) {
+                    controller.GlobConsumed();
+                }
+                    
                 Destroy(gameObject);
+                
+                
             }
         }
     }

@@ -45,30 +45,27 @@ public class KatydidEat : MonoBehaviour
     private void Eat(Collider other)
     {
         // if the object being grabbed is this gameobject
-        if ((_Grabbers.Length > 0 && _RGrabber.GrabbedObject == gameObject) || (_Grabbers.Length > 1 && _LGrabber.GrabbedObject == gameObject))
+        if ((_Grabbers.Length > 0 && _RGrabber.GrabbedObject == gameObject) ||
+            (_Grabbers.Length > 1 && _LGrabber.GrabbedObject == gameObject))
         {
-            if (other.gameObject.tag == "edible")                   // if the object the headset is colliding with is tagged as edible
+            if (other.gameObject.tag == "edible") // if the object the headset is colliding with is tagged as edible
             {
-                if (_audioSource.isPlaying)                         // stop the current katydid noise
+                if (_audioSource.isPlaying) // stop the current katydid noise
                 {
                     _audioSource.Stop();
                 }
-                _audioSource.clip = katydidEatSound;                // swap it out for the cronch sound
-                _audioSource.volume = 0.3f;                         // set volume to quieter
-                _audioSource.loop = false;                          // play cronch only once
-                _audioSource.Play();                                // play the cronch
+
+                _audioSource.clip = katydidEatSound; // swap it out for the cronch sound
+                _audioSource.volume = 0.3f; // set volume to quieter
+                _audioSource.loop = false; // play cronch only once
+                _audioSource.Play(); // play the cronch
 
                 // destroy the gameobject only after the sound finishes playing
                 gameObject.GetComponent<Collider>().enabled = false;
                 gameObject.GetComponent<MeshRenderer>().enabled = false;
-                StartCoroutine(WaitForAudio(katydidEatSound.length));
+                Destroy(gameObject, katydidEatSound.length);
             }
         }
     }
 
-    IEnumerator WaitForAudio(float time)
-    {
-        yield return new WaitForSecondsRealtime(time);              // wait until clip finishes playing
-        Destroy(gameObject);                                        // destroy the bug
-    }
 }
