@@ -18,15 +18,22 @@ namespace Anivision.Tutorial
         public HeadsetCollide headsetCollide;
 
         private InputManager _inputManager;
+        private AudioSource _audioSource;
+        private bool _stepDone = false;
+
         private Grabber[] _Grabbers;
         private Grabber _RGrabber;
         private Grabber _LGrabber;
+
 
 
         public override void Setup(TextMeshPro TMP)
         {
             _inputManager = InputManager.Instance;
             if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
+
+            _audioSource = gameObject.GetComponent<AudioSource>();
+            if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
             _Grabbers = FindObjectsOfType<Grabber>();
             if (_Grabbers.Length > 0)
@@ -43,6 +50,8 @@ namespace Anivision.Tutorial
             gripHighlightRing.SetActive(true);
 
             headsetCollide.onCollide.AddListener(Done);
+
+            _audioSource.Play();
         }
 
         private void Done(Collider other)
@@ -52,8 +61,16 @@ namespace Anivision.Tutorial
             {
                 if (other.gameObject.tag == "edible")           // if the object the headset is colliding with is tagged as edible
                 {
-                    OnDone.Invoke();
+                    _stepDone = true;
                 }
+            }
+        }
+
+        private void Update()
+        {
+            if (_stepDone && !_audioSource.isPlaying)           // if player has eaten a katydid and voiceover is done, move on
+            {
+                OnDone.Invoke();
             }
         }
 

@@ -25,6 +25,7 @@ namespace Anivision.Tutorial
 
         private TeleportController _teleportController;
         private HapticsController _hapticsController;
+        private AudioSource _audioSource;
 
         private int _currStep;
         private bool _skipped = false;
@@ -39,6 +40,9 @@ namespace Anivision.Tutorial
 
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
+
+            _audioSource = gameObject.GetComponent<AudioSource>();
+            if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
             // clean up all tutorial objects and add OnDone listener
             foreach (TutorialStep tutorialStep in tutorialSteps)
@@ -99,6 +103,8 @@ namespace Anivision.Tutorial
 
             _teleportController.enabled = true;
             if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;          // only move to spawn point if skipping, otherwise player will already be on main island
+
+            _audioSource.Play();
 
             tutorialEnd.Invoke();
         }
