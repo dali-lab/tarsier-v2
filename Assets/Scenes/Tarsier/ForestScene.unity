@@ -7359,7 +7359,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 103317b47b4bf1640a6eee83446d0d83, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31266,7 +31266,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c34979a9aabc61b42b58bb52fb9b56cd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -37958,7 +37958,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: dcccc91a90937294db1425193b8b1acf, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -64407,7 +64407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1237822166
 Light:
   m_ObjectHideFlags: 0
@@ -65837,7 +65837,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 92a777335b2c07945bba948e7b4d0d57, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -65934,8 +65934,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashboardText: "Welcome to the Borneo rainforest located in Southeast Asia, the
-    native habitat of a tarsier. Press the start button on your dashboard to shrink
-    to a tarsier\u2019s size."
+    native habitat of a tarsier. Press the start button to shrink to a tarsier\u2019s
+    size."
   OnDone:
     m_PersistentCalls:
       m_Calls: []
@@ -86192,7 +86192,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fedef7aac297e474ba239df29533b33d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -92410,7 +92410,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3fc50ca5a76be1f4eb5a98728eb51b96, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0

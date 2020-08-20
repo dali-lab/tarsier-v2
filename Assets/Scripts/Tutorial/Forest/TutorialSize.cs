@@ -16,6 +16,7 @@ namespace Anivision.Tutorial
         public Button startButton;
         public GameObject RTriggerHighlight;
 
+        private TeleportController _teleportController;
         private HapticsController _hapticsController;
         private AudioSource _audioSource;
         private bool _stepDone = false;
@@ -23,6 +24,9 @@ namespace Anivision.Tutorial
 
         public override void Setup(TextMeshPro TMP)
         {
+            _teleportController = TeleportController.Instance;
+            if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
+
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
 
@@ -37,6 +41,7 @@ namespace Anivision.Tutorial
 
             startButton.onClick.AddListener(Continue);
 
+            _teleportController.enabled = false;                // turn off ability to teleport
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
             _audioSource.Play();
         }
@@ -48,7 +53,7 @@ namespace Anivision.Tutorial
 
         private void Update()
         {
-            if (_stepDone && !_audioSource.isPlaying)       // if player had exited trigger and voiceover is done, move on
+            if (_stepDone && !_audioSource.isPlaying)           // if player had exited trigger and voiceover is done, move on
             {
                 OnDone.Invoke();
             }
