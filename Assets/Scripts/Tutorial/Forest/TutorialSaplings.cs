@@ -14,7 +14,11 @@ namespace Anivision.Tutorial
     public class TutorialSaplings : TutorialStep
     {
         public GameObject triggerHighlightRing;
+
         private InputManager _inputManager;
+        private TeleportController _teleportController;
+        private AudioSource _audioSource;
+        private bool _stepDone = false;
 
 
         public override void Setup(TextMeshPro TMP)
@@ -22,13 +26,30 @@ namespace Anivision.Tutorial
             _inputManager = InputManager.Instance;
             if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
 
+            _teleportController = TeleportController.Instance;
+            if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
+
+            _audioSource = gameObject.GetComponent<AudioSource>();
+            if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
+
             TMP.text = dashboardText;
             triggerHighlightRing.SetActive(true);
+
+            _teleportController.enabled = true;             // turn on ability to teleport
+            _audioSource.Play();
         }
 
         private void OnTriggerExit(Collider other)          // triggers when player leaves capsule collider
         {
             if (other.tag == "MainCamera")
+            {
+                _stepDone = true;
+            }
+        }
+
+        private void Update()
+        {
+            if (_stepDone && !_audioSource.isPlaying)       // if player had exited trigger and voiceover is done, move on
             {
                 OnDone.Invoke();
             }

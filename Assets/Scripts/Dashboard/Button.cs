@@ -97,10 +97,6 @@ public class Button : MonoBehaviour
             // trigger button select haptics
             _hapticsController.Haptics(selectionHapticFrequency, selectionHapticAmplitude, selectonHapticDuration, OVRInput.Controller.RTouch);
 
-            // reset the controller and selector color to default if the button is pressed
-            rightController.GetComponent<ColorController>().ToDefaultControllerColor();
-            rightController.GetComponent<ColorController>().ToDefaultSelectorColor();
-
             StartCoroutine(ButtonCooldown(buttonCooldownSeconds));
         }
     }
@@ -118,6 +114,12 @@ public class Button : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(seconds);
         onClick.Invoke();
+
+        if (_turnOnTeleport) _teleportController.enabled = true;            // turn on ability to teleport if player had teleport before interacting with button
+
+        // reset the controller and selector color to default if the button is pressed
+        rightController.GetComponent<ColorController>().ToDefaultControllerColor();
+        rightController.GetComponent<ColorController>().ToDefaultSelectorColor();
     }
 
 
