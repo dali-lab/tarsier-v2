@@ -112772,6 +112772,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6172418662674405935, guid: bccc13ff0a69d1147abca8d0da575256,
+        type: 3}
+      propertyPath: TMP
+      value: 
+      objectReference: {fileID: 120812157}
+    - target: {fileID: 6172418662674405935, guid: bccc13ff0a69d1147abca8d0da575256,
+        type: 3}
+      propertyPath: skipButton
+      value: 
+      objectReference: {fileID: 1988687762}
+    - target: {fileID: 6172418662674405935, guid: bccc13ff0a69d1147abca8d0da575256,
+        type: 3}
+      propertyPath: startButton
+      value: 
+      objectReference: {fileID: 841725820}
     - target: {fileID: 6172418662847995083, guid: bccc13ff0a69d1147abca8d0da575256,
         type: 3}
       propertyPath: m_Mesh
@@ -112844,6 +112859,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bccc13ff0a69d1147abca8d0da575256, type: 3}
+--- !u!114 &6172418664058839077 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6172418662674405935, guid: bccc13ff0a69d1147abca8d0da575256,
+    type: 3}
+  m_PrefabInstance: {fileID: 6172418664058839076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2864994b184054ab70e8e5c269c800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6742889318927780509 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1245728622480880347, guid: e29a9b11e6d6ffc44ada3b0efa6d456d,
@@ -113308,6 +113335,11 @@ PrefabInstance:
       propertyPath: tutorialSteps.Array.data[4]
       value: 
       objectReference: {fileID: 52697238}
+    - target: {fileID: 9212683106723321924, guid: 054501c8c630dde428d3fb0563f113e8,
+        type: 3}
+      propertyPath: TutorialDashboard
+      value: 
+      objectReference: {fileID: 6172418664058839077}
     - target: {fileID: 9212683106723321925, guid: 054501c8c630dde428d3fb0563f113e8,
         type: 3}
       propertyPath: m_LocalPosition.x

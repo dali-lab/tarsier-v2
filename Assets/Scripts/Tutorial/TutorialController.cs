@@ -1,9 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Anivision.Core;
+using Anivision.Dashboard;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using Anivision.PlayerInteraction;
+using UnityEngine.SceneManagement;
 
 namespace Anivision.Tutorial
 {
@@ -14,14 +15,14 @@ namespace Anivision.Tutorial
     /// </summary>
     public class TutorialController : MonoBehaviour
     {
-        public TextMeshPro TMP;
         public TutorialStep[] tutorialSteps;
-
-        public Button skipButton;
+        public TutorialDashboard TutorialDashboard;
         public GameObject cameraRig;
         public GameObject spawnPoint;
         [Tooltip("Whether to move the player to the spawn point when skipping tutorial")]
         public bool moveToSpawn;
+
+        public bool playTutorialEveryTime = true;
 
         private TeleportController _teleportController;
         private HapticsController _hapticsController;
@@ -29,9 +30,6 @@ namespace Anivision.Tutorial
 
         private int _currStep;
         private bool _skipped = false;
-
-        [HideInInspector] public UnityEvent tutorialEnd;
-
 
         private void OnEnable()
         {
@@ -44,22 +42,30 @@ namespace Anivision.Tutorial
             _audioSource = gameObject.GetComponent<AudioSource>();
             if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
-            // clean up all tutorial objects and add OnDone listener
-            foreach (TutorialStep tutorialStep in tutorialSteps)
+            if (playTutorialEveryTime || !Save.Instance.PreviouslyVisited(SceneManager.GetActiveScene()))
             {
-                tutorialStep.Cleanup(TMP);
-                if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
-                tutorialStep.OnDone.AddListener(Next);
+                // clean up all tutorial objects and add OnDone listener
+                foreach (TutorialStep tutorialStep in tutorialSteps)
+                {
+                    tutorialStep.Cleanup(TutorialDashboard.TMP);
+                    if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
+                    tutorialStep.OnDone.AddListener(Next);
+                }
+            
+                TutorialDashboard.Setup();
+
+                // set up the first tutorial item
+                _currStep = 0;
+                tutorialSteps[_currStep].gameObject.SetActive(true);
+                tutorialSteps[_currStep].Setup(TutorialDashboard.TMP);
+                
+                _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
             }
-
-            // set up the first tutorial item
-            _currStep = 0;
-            tutorialSteps[_currStep].gameObject.SetActive(true);
-            tutorialSteps[_currStep].Setup(TMP);
-
-            // set up skip button
-            skipButton.gameObject.SetActive(true);
-            _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
+            else
+            {
+                End();
+            }
+            
         }
 
         public void Next()
@@ -67,7 +73,7 @@ namespace Anivision.Tutorial
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
 
             // clean up the current step
-            tutorialSteps[_currStep].Cleanup(TMP);
+            tutorialSteps[_currStep].Cleanup(TutorialDashboard.TMP);
             if (tutorialSteps[_currStep].AllowActiveFalse == true) tutorialSteps[_currStep].gameObject.SetActive(false);
 
             // set up the next step
@@ -75,7 +81,7 @@ namespace Anivision.Tutorial
             if (_currStep < tutorialSteps.Length)
             {
                 tutorialSteps[_currStep].gameObject.SetActive(true);
-                tutorialSteps[_currStep].Setup(TMP);
+                tutorialSteps[_currStep].Setup(TutorialDashboard.TMP);
             }
             else
             {
@@ -89,32 +95,29 @@ namespace Anivision.Tutorial
             End();
         }
 
-        private void End()
+        public void End()
         {
             foreach (TutorialStep tutorialStep in tutorialSteps)
             {
-                tutorialStep.Cleanup(TMP);
+                tutorialStep.Cleanup(TutorialDashboard.TMP);
                 if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
             }
-            skipButton.gameObject.SetActive(false);
 
             _teleportController.enabled = true;
             if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;          // only move to spawn point if skipping, otherwise player will already be on main island
-
-            // _audioSource.Play();
-
-            tutorialEnd.Invoke();
+            _audioSource.Play();
+            DashboardController.Instance.UpdateDashboard(Dashboard.Dashboard.DashboardType.Home);
         }
 
         private void OnDisable()
         {
             foreach (TutorialStep tutorialStep in tutorialSteps)
             {
-                tutorialStep.Cleanup(TMP);
+                tutorialStep.Cleanup(TutorialDashboard.TMP);
                 tutorialStep.OnDone.RemoveListener(Next);
             }
-            skipButton.gameObject.SetActive(false);
-            tutorialEnd.RemoveAllListeners();
+            
+            TutorialDashboard.Cleanup();
         }
     }
 }

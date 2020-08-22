@@ -795,6 +795,7 @@
             <e p="AnimalManager.cs" t="Include" />
             <e p="HeadsetFade.cs" t="Include" />
             <e p="InputManager.cs" t="Include" />
+            <e p="Save.cs" t="Include" />
           </e>
           <e p="Dashboard" t="Include">
             <e p="Button.cs" t="Include" />
@@ -844,6 +845,7 @@
           <e p="SceneManagement" t="Include">
             <e p="DistanceTrigger.cs" t="Include" />
             <e p="FadeIn.cs" t="Include" />
+            <e p="SceneReference.cs" t="Include" />
             <e p="SceneSwitch.cs" t="Include" />
           </e>
           <e p="tutorial" t="Include">
@@ -854,6 +856,7 @@
               <e p="TutorialVision.cs" t="Include" />
             </e>
             <e p="Lobby" t="Include">
+              <e p="CameraSpawn.cs" t="Include" />
               <e p="LobbyControllerPress.cs" t="Include" />
               <e p="LobbyGrab.cs" t="Include" />
               <e p="LobbyPress.cs" t="Include" />
