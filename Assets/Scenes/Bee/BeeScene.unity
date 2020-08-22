@@ -10632,18 +10632,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 799f3a973275c6f4992679f0e198983b, type: 3}
---- !u!114 &794080615 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2936223257153424954, guid: 799f3a973275c6f4992679f0e198983b,
-    type: 3}
-  m_PrefabInstance: {fileID: 794080614}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b59aca928c80804479bb57607d8107eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &794096285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16390,7 +16378,7 @@ PrefabInstance:
         type: 3}
       propertyPath: headsetFade
       value: 
-      objectReference: {fileID: 794080615}
+      objectReference: {fileID: 1215167240}
     - target: {fileID: 3729175499779935319, guid: 86b3bd3f792b24304916cad955a71cf7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16454,6 +16442,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1215167238}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1215167240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7588873372876034481, guid: 86b3bd3f792b24304916cad955a71cf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1215167238}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59aca928c80804479bb57607d8107eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1218299673
 PrefabInstance:
   m_ObjectHideFlags: 0

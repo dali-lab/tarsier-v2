@@ -17,18 +17,12 @@ namespace Anivision.PlayerInteraction
         public float headsetFadeSpeed = 1;
         [HideInInspector]
         public UnityEvent ScaleDone = new UnityEvent();
-        private void OnEnable()
-        {
-            // scale function called when a headset fade ends
-            headsetFade.OnFadeEnd += ScaleCamera;
-            headsetFade.OnUnfadeEnd += ScaleFinished;
-        }
 
         public void StartScaleChange()
         {
             if (GetSize() != scale)
             {
-                headsetFade.StartFade(headsetFadeSpeed);
+                headsetFade.FadeUnfadeCustomCallback(headsetFadeSpeed, null, ScaleCamera, null, ScaleFinished);
             }
         }
 
@@ -66,21 +60,16 @@ namespace Anivision.PlayerInteraction
             {
                 OVRCameriaRig.parent = parent;
             }
-            
-            // Unfade the headset
-            headsetFade.StartUnfade(headsetFadeSpeed);
 
         }
 
         private void ScaleFinished()
         {
             ScaleDone.Invoke();
-            headsetFade.OnUnfadeEnd -= ScaleFinished;
         }
         
         private void OnDisable()
         {
-            headsetFade.OnFadeEnd -= ScaleCamera;
             ScaleDone.RemoveAllListeners();
         }
     }

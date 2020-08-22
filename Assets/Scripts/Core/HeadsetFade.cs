@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Anivision.Core
@@ -48,21 +49,28 @@ namespace Anivision.Core
         {
             return active;
         }
-
+        
         // Starts a fade.
         // speed is how fast the fade occurs, and max is the fade percent to reach (1 means a full fade, .5 is a half fade, etc...)
         public void StartFade(float speed = 1, float max = 1)
+        {
+            StartCoroutine(StartFadeHelper(speed, max));
+        }
+        
+        private IEnumerator StartFadeHelper(float speed, float max)
         {
             active = true; // Note that the fader is active
             // Call the event for a fade start
             OnFadeStart?.Invoke();
             // Start the fade coroutine
-            StartCoroutine(Fade(speed, max));
+            yield return Fade(speed, max);
+            OnFadeEnd?.Invoke();
         }
-
+        
         // Coroutine for the actual fade
         private IEnumerator Fade(float speed, float max)
         {
+            active = true; // Note that the fader is active
             // Until the fade percent reaches the max, keep fading
             while (fadePercent < max)
             {
@@ -72,22 +80,31 @@ namespace Anivision.Core
             // Once the fade has completed, set it to the max (to eliminate small errors), and call the event for a fade end
             fadePercent = max;
             active = false; // Note that the fader is no longer active
-            OnFadeEnd?.Invoke();
         }
-
+        
         // Starts a unfade.
         // speed is how fast the unfade occurs, and min is the fade percent to reach (0 means a full unfade, .5 is a half unfade, etc...)
-        public void StartUnfade(float speed = 1, float min = 0)
+        public void StartUnfade(float speed = 1f, float min = 0f)
         {
-            active = true; // Note that the fader is active
-            // Call the event for a unfade start
-            OnUnfadeStart?.Invoke();
-            // Start the unfade coroutine
-            StartCoroutine(Unfade(speed, min));
+            StartCoroutine(StartUnfadeHelper(speed, min));
         }
 
+        
+        private IEnumerator StartUnfadeHelper(float speed, float min)
+        {
+            active = true; // Note that the fader is active
+            // Call the event for a fade start
+            OnUnfadeStart?.Invoke();
+            // Start the Unfade coroutine
+            yield return Unfade(speed, min);
+            
+            OnUnfadeEnd?.Invoke();
+        }
+
+        // Coroutine for the actual unfade
         private IEnumerator Unfade(float speed, float min)
         {
+            active = true; // Note that the fader is active
             // Until the fade percent reaches the min, keep unfading
             while (fadePercent > min)
             {
@@ -97,7 +114,44 @@ namespace Anivision.Core
             // Once the unfade has completed, set it to the min (to eliminate small errors), and call the event for a unfade end
             fadePercent = min;
             active = false; // Note that the fader is no longer active
-            OnUnfadeEnd?.Invoke();
+        }
+        
+        /// <summary>
+        /// Use headset fader to do a fade and unfade
+        /// Pass in own functions as callbacks for after fade ends and after unfade ends
+        /// </summary>
+        /// <param name="speed"></param>
+        /// <param name="afterFadeCallback"></param>
+        /// <param name="afterUnfadeCallback"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        public void FadeUnfadeCustomCallback(float speed, [CanBeNull] FadeAction fadeStartCallback, [CanBeNull] FadeAction fadeEndCallback,
+            [CanBeNull] FadeAction unfadeStartCallback, [CanBeNull] FadeAction unfadeEndCallback, float min = 0f, float max = 1.0f)
+        {
+            StartCoroutine(FadeUnfadeHelper(speed, fadeStartCallback, fadeEndCallback, unfadeStartCallback, unfadeEndCallback, min, max));
+        }
+        
+        /// <summary>
+        /// Use headset fader to do a fade and unfade
+        /// Invokes headset fader's events after fade ends and after unfade ends
+        /// </summary>
+        /// <param name="speed"></param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        public void FadeUnfadeWithEvents(float speed, float min = 0f, float max = 1.0f)
+        {
+            StartCoroutine(FadeUnfadeHelper(speed, OnFadeStart, OnFadeEnd, OnUnfadeStart, OnUnfadeEnd, min, max));
+        }
+
+        private IEnumerator FadeUnfadeHelper(float speed, [CanBeNull] FadeAction fadeStartCallback, [CanBeNull] FadeAction fadeEndCallback, [CanBeNull] FadeAction unfadeStartCallback,
+            [CanBeNull] FadeAction unfadeEndCallback, float min, float max)
+        {
+            fadeStartCallback?.Invoke();
+            yield return Fade(speed, max);
+            fadeEndCallback?.Invoke();
+            unfadeStartCallback?.Invoke();
+            yield return Unfade(speed, min);
+            unfadeEndCallback?.Invoke();
         }
     }
 }
