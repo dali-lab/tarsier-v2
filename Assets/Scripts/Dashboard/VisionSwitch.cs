@@ -1,24 +1,32 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using Anivision.Core;
 using UnityEngine;
 
-public class VisionSwitch : MonoBehaviour
+namespace Anivision.Dashboard
 {
-    private Button _button;
-
-    private void OnEnable()
+    public class VisionSwitch : MonoBehaviour
     {
-        _button = gameObject.GetComponent<Button>();
-        _button.onClick.AddListener(SwitchToAnimal);
-    }
+        public Animal animalToSwitch;
+        private Button _button;
+        private AnimalManager _animalManager;
 
-    private void SwitchToAnimal()
-    {
-        //TODO
-    }
+        private void OnEnable()
+        {
+            _animalManager = AnimalManager.Instance;
+            if (_animalManager == null) throw new Exception("Must have a animal manager in the scene");
+            _button = gameObject.GetComponent<Button>();
+            _button.onClick.AddListener(SwitchToAnimal);
+        }
 
-    private void OnDisable()
-    {
-        _button.onClick.RemoveListener(SwitchToAnimal);
+        private void SwitchToAnimal()
+        {
+            _animalManager.SwitchAnimal(animalToSwitch);
+        }
+
+        private void OnDisable()
+        {
+            _button.onClick.RemoveListener(SwitchToAnimal);
+        }
     }
 }
+

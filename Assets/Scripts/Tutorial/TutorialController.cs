@@ -59,8 +59,6 @@ namespace Anivision.Tutorial
 
             // set up skip button
             skipButton.gameObject.SetActive(true);
-            skipButton.onClick.AddListener(Skip);
-
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
         }
 
@@ -85,7 +83,7 @@ namespace Anivision.Tutorial
             }
         }
 
-        private void Skip()
+        public void Skip()
         {
             _skipped = true;
             End();
@@ -99,12 +97,11 @@ namespace Anivision.Tutorial
                 if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
             }
             skipButton.gameObject.SetActive(false);
-            skipButton.onClick.RemoveListener(End);
 
             _teleportController.enabled = true;
             if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;          // only move to spawn point if skipping, otherwise player will already be on main island
 
-            _audioSource.Play();
+            // _audioSource.Play();
 
             tutorialEnd.Invoke();
         }
@@ -117,7 +114,6 @@ namespace Anivision.Tutorial
                 tutorialStep.OnDone.RemoveListener(Next);
             }
             skipButton.gameObject.SetActive(false);
-            skipButton.onClick.RemoveListener(Skip);
             tutorialEnd.RemoveAllListeners();
         }
     }

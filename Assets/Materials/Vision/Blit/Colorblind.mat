@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Colorblind
   m_Shader: {fileID: 4800000, guid: bcb4f40824574084bb7b79b0441e0359, type: 3}
-  m_ShaderKeywords: _TYPE_CUSTOM
+  m_ShaderKeywords: _TYPE_PROTANOPIA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0

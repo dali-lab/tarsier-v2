@@ -789,10 +789,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="Bee" t="Include">
-            <e p="NectarGlob.cs" t="Include" />
-            <e p="NectarShaderIntensityController.cs" t="Include" />
-          </e>
           <e p="Core" t="Include">
             <e p="AnimalController.cs" t="Include" />
             <e p="AnimalEnums.cs" t="Include" />
@@ -807,6 +803,7 @@
             <e p="DashboardController.cs" t="Include" />
             <e p="HomeDashboard.cs" t="Include" />
             <e p="NectarUI.cs" t="Include" />
+            <e p="SkipTutorial.cs" t="Include" />
             <e p="TutorialDashboard.cs" t="Include" />
             <e p="VisionSelectDashboard.cs" t="Include" />
             <e p="VisionSwitch.cs" t="Include" />
@@ -837,6 +834,7 @@
             <e p="MovementParameters.cs" t="Include" />
             <e p="NectarGlob.cs" t="Include" />
             <e p="Rotate.cs" t="Include" />
+            <e p="ScaleController.cs" t="Include" />
             <e p="TeleportController.cs" t="Include" />
           </e>
           <e p="RendererFeatures" t="Include">
@@ -852,6 +850,7 @@
             <e p="Forest" t="Include">
               <e p="TutorialEat.cs" t="Include" />
               <e p="TutorialSaplings.cs" t="Include" />
+              <e p="TutorialSize.cs" t="Include" />
               <e p="TutorialVision.cs" t="Include" />
             </e>
             <e p="Lobby" t="Include">
