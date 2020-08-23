@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Anivision.Core;
 using TMPro;
 using UnityEngine;
 using Anivision.SceneManagement;
+using UnityEngine.SceneManagement;
 
 namespace Anivision.Dashboard
 {
@@ -59,6 +61,7 @@ namespace Anivision.Dashboard
         private void ReplayTutorial()                                                       // reloads the current scene to reset the tutorial
         {
             gameObject.GetComponent<SceneSwitch>().sceneName = replayScene;
+            if (Save.Instance != null) Save.Instance.RemoveActiveSceneFromPreviouslyVisited(); // remove from previously visited scenes so that we can spawn in proper place
             gameObject.GetComponent<SceneSwitch>().StartTransition();
         }
 

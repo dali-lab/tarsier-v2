@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 namespace Anivision.PlayerInteraction
 {
+    /// <summary>
+    /// Scales camera rig to the proper scale
+    /// </summary>
     public class ScaleController : MonoBehaviour
     {
         [Tooltip("OVRCameraRig that needs to be scaled")]
@@ -16,8 +19,10 @@ namespace Anivision.PlayerInteraction
         [Tooltip("How quickly to fade the headset.")]
         public float headsetFadeSpeed = 1;
         [HideInInspector]
-        public UnityEvent ScaleDone = new UnityEvent();
+        public UnityEvent ScaleDone = new UnityEvent(); //called when scaling is finished
 
+        // start headset fade and scale when fade is done, then unfade
+        // invokes ScaleDone event when unfade is finished
         public void StartScaleChange()
         {
             if (GetSize() != scale)
@@ -26,6 +31,7 @@ namespace Anivision.PlayerInteraction
             }
         }
 
+        //get current scale of the ovr camera rig, in world space
         public Vector3 GetSize()
         {
             Transform parent = null;
@@ -45,6 +51,8 @@ namespace Anivision.PlayerInteraction
             return cameraScale;
         }
 
+        // scales camera 
+        // unparents it from parent first, if parent exists, so that scaling is done in world space
         private void ScaleCamera()
         {
             Transform parent = null;

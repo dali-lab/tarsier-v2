@@ -105,7 +105,7 @@ namespace Anivision.Tutorial
 
             _teleportController.enabled = true;
             if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;          // only move to spawn point if skipping, otherwise player will already be on main island
-            _audioSource.Play();
+            // _audioSource.Play();
             DashboardController.Instance.UpdateDashboard(Dashboard.Dashboard.DashboardType.Home);
         }
 

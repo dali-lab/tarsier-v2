@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 namespace Anivision.Core
 {
+    /// <summary>
+    /// Script to save various game objects and information that should not be destroyed between scenes
+    /// </summary>
     public class Save : MonoBehaviour
     {
 
@@ -25,8 +28,8 @@ namespace Anivision.Core
         } } 
         
         public GameObject[] objectsToSave;
-        private readonly HashSet<int> previousLevelBuildIndexes = new HashSet<int>();
-        
+        private readonly HashSet<int> previousLevelBuildIndexes = new HashSet<int>(); // hashset to determine which scenes have been visited
+        private bool addScene = true;
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
@@ -39,12 +42,35 @@ namespace Anivision.Core
         }
         private void LogPreviousScene(Scene scene)
         {
-            previousLevelBuildIndexes.Add(scene.buildIndex);
+            if (addScene)
+            {
+                previousLevelBuildIndexes.Add(scene.buildIndex); // add scene to build index when scene is unloaded
+
+            }
+            else
+            {
+                addScene = true;
+            }
         }
 
+        // removes active scene from previously visited scenes
+        public void RemoveSceneFromPreviouslyVisited(Scene scene)
+        {
+            previousLevelBuildIndexes.Remove(scene.buildIndex);
+        }
+        
+        // removes active scene from previously visited scenes
+        // this is helpful when you want to replay tutorials
+        public void RemoveActiveSceneFromPreviouslyVisited()
+        {
+            previousLevelBuildIndexes.Remove(SceneManager.GetActiveScene().buildIndex);
+            addScene = false;
+        }
+
+        //check if a scene has been previously visited
         public bool PreviouslyVisited(Scene scene)
         {
-            return previousLevelBuildIndexes.Contains(scene.buildIndex);
+            return previousLevelBuildIndexes.Contains(scene.buildIndex); 
         }
 
 

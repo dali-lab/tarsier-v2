@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Anivision.Core
@@ -93,7 +92,7 @@ namespace Anivision.Core
         private IEnumerator StartUnfadeHelper(float speed, float min)
         {
             active = true; // Note that the fader is active
-            // Call the event for a fade start
+            // Call the event for an unfade start
             OnUnfadeStart?.Invoke();
             // Start the Unfade coroutine
             yield return Unfade(speed, min);
@@ -121,12 +120,14 @@ namespace Anivision.Core
         /// Pass in own functions as callbacks for after fade ends and after unfade ends
         /// </summary>
         /// <param name="speed"></param>
-        /// <param name="afterFadeCallback"></param>
-        /// <param name="afterUnfadeCallback"></param>
+        /// <param name="fadeStartCallback"></param>
+        /// <param name="fadeEndCallback"></param>
+        /// <param name="unfadeStartCallback"></param>
+        /// <param name="unfadeEndCallback"></param>
         /// <param name="min"></param>
         /// <param name="max"></param>
-        public void FadeUnfadeCustomCallback(float speed, [CanBeNull] FadeAction fadeStartCallback, [CanBeNull] FadeAction fadeEndCallback,
-            [CanBeNull] FadeAction unfadeStartCallback, [CanBeNull] FadeAction unfadeEndCallback, float min = 0f, float max = 1.0f)
+        public void FadeUnfadeCustomCallback(float speed, FadeAction fadeStartCallback, FadeAction fadeEndCallback,
+            FadeAction unfadeStartCallback, FadeAction unfadeEndCallback, float min = 0f, float max = 1.0f)
         {
             StartCoroutine(FadeUnfadeHelper(speed, fadeStartCallback, fadeEndCallback, unfadeStartCallback, unfadeEndCallback, min, max));
         }
@@ -142,9 +143,10 @@ namespace Anivision.Core
         {
             StartCoroutine(FadeUnfadeHelper(speed, OnFadeStart, OnFadeEnd, OnUnfadeStart, OnUnfadeEnd, min, max));
         }
-
-        private IEnumerator FadeUnfadeHelper(float speed, [CanBeNull] FadeAction fadeStartCallback, [CanBeNull] FadeAction fadeEndCallback, [CanBeNull] FadeAction unfadeStartCallback,
-            [CanBeNull] FadeAction unfadeEndCallback, float min, float max)
+        
+        //actual function for the fade unfade function
+        private IEnumerator FadeUnfadeHelper(float speed, FadeAction fadeStartCallback, FadeAction fadeEndCallback, FadeAction unfadeStartCallback,
+            FadeAction unfadeEndCallback, float min, float max)
         {
             fadeStartCallback?.Invoke();
             yield return Fade(speed, max);

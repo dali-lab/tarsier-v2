@@ -4,26 +4,29 @@ using UnityEngine;
 
 namespace Anivision.Dashboard
 {
+    /// <summary>
+    /// Skips tutorial and scales the camera if it hasn't already been scaled
+    /// </summary>
     public class SkipTutorial : MonoBehaviour
     {
         public TutorialController _TutorialController;
-        public ScaleController scaleController;
+        public ScaleController scaleController; //scale camera script
 
         private Button _button;
         private void OnEnable()
         {
             _button = GetComponent<Button>();
-            _button.onClick.AddListener(StartScaleOrSkip);
+            _button.onClick.AddListener(StartScaleOrSkip); //add listener to button
         }
 
         private void StartScaleOrSkip()
         {
-            if (scaleController.GetSize() != scaleController.scale)
+            if (scaleController != null && scaleController.GetSize() != scaleController.scale)
             {
-                scaleController.ScaleDone.AddListener(DoneScaling);
-                scaleController.StartScaleChange();
-            }
-            else
+                scaleController.ScaleDone.AddListener(DoneScaling); // add function to be called after scaling is done
+                scaleController.StartScaleChange(); // start scaling camera
+                
+            } else
             {
                 _TutorialController.Skip();
             }

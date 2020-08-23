@@ -807,7 +807,6 @@
             <e p="SkipTutorial.cs" t="Include" />
             <e p="TutorialDashboard.cs" t="Include" />
             <e p="VisionSelectDashboard.cs" t="Include" />
-            <e p="VisionSwitch.cs" t="Include" />
           </e>
           <e p="Debug" t="Include">
             <e p="SampleInput.cs" t="Include" />
@@ -884,6 +883,7 @@
             <e p="SkyboxSwap.cs" t="Include" />
             <e p="UV.cs" t="Include" />
             <e p="VisionParameters.cs" t="Include" />
+            <e p="VisionSwitch.cs" t="Include" />
           </e>
         </e>
         <e p="Shaders" t="Include">

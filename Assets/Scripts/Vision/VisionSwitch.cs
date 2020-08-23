@@ -2,8 +2,11 @@
 using Anivision.Core;
 using UnityEngine;
 
-namespace Anivision.Dashboard
+namespace Anivision.Vision
 {
+    /// <summary>
+    /// switches animal vision
+    /// </summary>
     public class VisionSwitch : MonoBehaviour
     {
         public Animal animalToSwitch;
