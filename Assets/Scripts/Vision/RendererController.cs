@@ -68,7 +68,7 @@ namespace Anivision.Vision
             foreach (VisionEffect visionEffect in parameters.VisionEffects)
             {
                 // If the current vision effect is in the effect dictionary, add it to the pipeline
-                if (effectsDictionary[visionEffect])
+                if (effectsDictionary.ContainsKey(visionEffect))
                 {
                     // Get the effect's scriptable renderer feature
                     ScriptableRendererFeature feature = effectsDictionary[visionEffect].GetRendererFeature(parameters);

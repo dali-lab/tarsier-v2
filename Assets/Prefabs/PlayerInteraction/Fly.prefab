@@ -4784,6 +4784,7 @@ Transform:
   m_Children:
   - {fileID: 3729175500109381941}
   - {fileID: 3729175498112731116}
+  - {fileID: 7588873372876034494}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4801,9 +4802,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraRig: {fileID: 0}
   centerEye: {fileID: 0}
-  windSound: {fileID: 3729175500109381940}
-  windParticles: {fileID: 3729175498112731117}
-  speed: 0.06
+  flySpeed: 0.06
+  headsetFade: {fileID: 7588873372876034481}
+  headsetFadeSpeed: 1
+  audioFadeSpeed: 1
 --- !u!1 &3729175500109381938
 GameObject:
   m_ObjectHideFlags: 0
@@ -4931,3 +4933,90 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &9021742502598375167
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3729175499779935319}
+    m_Modifications:
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.17718865
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.70888
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.30122492
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1468933386043729743, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+        type: 3}
+      propertyPath: m_Name
+      value: HeadsetFader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2815065cf2ee0094fb6af66bf1d0c949, type: 3}
+--- !u!4 &7588873372876034494 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1468933386043729729, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+    type: 3}
+  m_PrefabInstance: {fileID: 9021742502598375167}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7588873372876034481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1468933386043729742, guid: 2815065cf2ee0094fb6af66bf1d0c949,
+    type: 3}
+  m_PrefabInstance: {fileID: 9021742502598375167}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59aca928c80804479bb57607d8107eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

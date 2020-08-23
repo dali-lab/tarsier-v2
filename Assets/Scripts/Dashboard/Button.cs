@@ -46,6 +46,7 @@ public class Button : MonoBehaviour
     private MaterialPropertyBlock _propBlock;
     private Renderer _renderer;
     private bool _turnOnTeleport = false;
+    private bool buttonCooldownRunning;
 
 
     private void Awake()
@@ -97,7 +98,11 @@ public class Button : MonoBehaviour
             // trigger button select haptics
             _hapticsController.Haptics(selectionHapticFrequency, selectionHapticAmplitude, selectonHapticDuration, OVRInput.Controller.RTouch);
 
-            StartCoroutine(ButtonCooldown(buttonCooldownSeconds));
+            if (!buttonCooldownRunning)
+            {
+                StartCoroutine(ButtonCooldown(buttonCooldownSeconds));
+            }
+            
         }
     }
     private void OnTriggerExit(Collider other)
@@ -112,6 +117,7 @@ public class Button : MonoBehaviour
 
     IEnumerator ButtonCooldown(float seconds)
     {
+        buttonCooldownRunning = true;
         yield return new WaitForSecondsRealtime(seconds);
         onClick.Invoke();
 
@@ -120,6 +126,7 @@ public class Button : MonoBehaviour
         // reset the controller and selector color to default if the button is pressed
         rightController.GetComponent<ColorController>().ToDefaultControllerColor();
         rightController.GetComponent<ColorController>().ToDefaultSelectorColor();
+        buttonCooldownRunning = false;
     }
 
 
