@@ -24,5 +24,5 @@ Material:
     - Vector1_4AFB7751: 100
     - _Intensity: 1
     m_Colors:
-    - Color_C21F7040: {r: 1, g: 1, b: 1, a: 0}
+    - Color_C21F7040: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
     - _MainColor: {r: 0.81960785, g: 0.9098039, b: 0.52156866, a: 1}
