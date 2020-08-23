@@ -33,7 +33,7 @@ namespace Anivision.Dashboard
         }
 
 
-        private void Start()
+        private void Awake()
         {
             foreach (Dashboard dashboard in dashboards)
             {

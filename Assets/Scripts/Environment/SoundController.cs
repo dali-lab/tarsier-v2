@@ -42,7 +42,11 @@ namespace Anivision.Environment
 
         private void OnDisable()
         {
-            AnimalManager.Instance.AnimalSwitch.RemoveListener(SetSound);
+            if (AnimalManager.Instance != null)
+            {
+                AnimalManager.Instance.AnimalSwitch.RemoveListener(SetSound);
+            }
+            
         }
 
         private void SetSound(Animal animal)

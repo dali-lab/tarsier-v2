@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using Anivision.PlayerInteraction;
 
@@ -15,7 +12,8 @@ namespace Anivision.Tutorial
     {
         public Button startButton;
         public GameObject RTriggerHighlight;
-
+        public ScaleController scaleController;
+        
         private TeleportController _teleportController;
         private HapticsController _hapticsController;
         private AudioSource _audioSource;
@@ -39,16 +37,23 @@ namespace Anivision.Tutorial
             RTriggerHighlight.SetActive(true);
             startButton.gameObject.SetActive(true);
 
-            startButton.onClick.AddListener(Continue);
+            startButton.onClick.AddListener(StartScaleChange);
 
             _teleportController.enabled = false;                // turn off ability to teleport
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
             _audioSource.Play();
         }
 
-        private void Continue()
+        private void StartScaleChange()
+        {
+            scaleController.ScaleDone.AddListener(DoneScaling);
+            scaleController.StartScaleChange();
+        }
+
+        private void DoneScaling()
         {
             _stepDone = true;
+            scaleController.ScaleDone.RemoveListener(DoneScaling);
         }
 
         private void Update()
@@ -64,7 +69,7 @@ namespace Anivision.Tutorial
             TMP.text = "";
             RTriggerHighlight.SetActive(false);
 
-            startButton.GetComponent<Button>().onClick.RemoveListener(Continue);
+            startButton.GetComponent<Button>().onClick.RemoveListener(StartScaleChange);
             startButton.gameObject.SetActive(false);
         }
     }

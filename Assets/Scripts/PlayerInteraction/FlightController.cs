@@ -61,11 +61,9 @@ namespace Anivision.PlayerInteraction
             // If there is a valid input manager, attach callbacks to the necessary button presses
             if (_inputManager != null)
             {
-                _inputManager.AttachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+                _inputManager.AttachInputHandler(FlyTransition, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
             
-            // Make the movement transition function get called when a headset fade ends
-            headsetFade.OnFadeEnd += movementTransition;
             
         }
 
@@ -74,18 +72,16 @@ namespace Anivision.PlayerInteraction
             // Remove callbacks that were added in OnEnable
             if (_inputManager != null)
             {
-                _inputManager.DetachInputHandler(StartFade, InputManager.InputState.ON_PRESS, InputManager.Button.B);
+                _inputManager.DetachInputHandler(FlyTransition, InputManager.InputState.ON_PRESS, InputManager.Button.B);
             }
             
-            headsetFade.OnFadeEnd -= movementTransition;
         }
-        
-        // Initiates a headset fade
-        private void StartFade()
+
+        private void FlyTransition()
         {
-            headsetFade.StartFade(headsetFadeSpeed);
+            headsetFade.FadeUnfadeCustomCallback(headsetFadeSpeed, null, movementTransition, null, null);
         }
-        
+
         private void Update()
         {
             Fly();
@@ -105,8 +101,6 @@ namespace Anivision.PlayerInteraction
         // Called when a fade transition ends
         private void movementTransition()
         {
-            // Unfade the headset
-            headsetFade.StartUnfade(headsetFadeSpeed);
             // Toggle flying
             isFlying = !isFlying;
             // Toggle the ability to teleport
