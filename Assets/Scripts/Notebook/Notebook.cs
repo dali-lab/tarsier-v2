@@ -30,9 +30,9 @@ namespace Anivision.Notebook
 
         [Tooltip("Default chapter title. Should be a title that belongs to a chapter that is a child of this game object.")]
         public Chapter.ChapterTitle defaultChapterTitle; 
+        public Chapter CurrentChapter { get; private set; }
         
         private Chapter[] chapters;
-        private Chapter _currentChapter;
         private Dictionary<Chapter.ChapterTitle, Chapter> _chapterDictionary;
         private void Awake()
         {
@@ -52,15 +52,15 @@ namespace Anivision.Notebook
         //on enable, shows the current chapter without resetting
         private void OnEnable()
         {
-            if (_currentChapter != null) ShowChapter(_currentChapter.chapterTitle);
+            if (CurrentChapter != null) ShowChapter(CurrentChapter.chapterTitle);
         }
         
         // on disable, hides the current chapter without resetting
         private void OnDisable()
         {
-            if (_currentChapter != null)
+            if (CurrentChapter != null)
             {
-                _currentChapter.Hide();
+                CurrentChapter.Hide();
             }
         }
         
@@ -70,7 +70,7 @@ namespace Anivision.Notebook
         public void Setup()
         {
             ResetCurrentChapter();
-            if (_currentChapter != null) _currentChapter.Setup();
+            if (CurrentChapter != null) CurrentChapter.Setup();
             if (!gameObject.activeSelf) gameObject.SetActive(true);
         }
         
@@ -98,27 +98,27 @@ namespace Anivision.Notebook
             Chapter chapter;
             if (_chapterDictionary.TryGetValue(chapterTitle, out chapter))
             {
-                if (_currentChapter != null)
+                if (CurrentChapter != null)
                 {
                     if (resetCurrentChapter)
                     {
-                        _currentChapter.Cleanup();
+                        CurrentChapter.Cleanup();
                     }
                     else
                     {
-                        _currentChapter.Hide();
+                        CurrentChapter.Hide();
                     }
                 }
 
-                _currentChapter = chapter;
+                CurrentChapter = chapter;
 
                 if (resetNewChapter)
                 {
-                    _currentChapter.Setup();
+                    CurrentChapter.Setup();
                 }
                 else
                 {
-                    _currentChapter.Show();
+                    CurrentChapter.Show();
                 }
                 
             }
@@ -135,15 +135,15 @@ namespace Anivision.Notebook
         {
             if (_chapterDictionary.ContainsKey(defaultChapterTitle))
             {
-                _currentChapter = _chapterDictionary[defaultChapterTitle];
+                CurrentChapter = _chapterDictionary[defaultChapterTitle];
             }
             else if (chapters.Length > 0)
             {
-                _currentChapter = chapters[0];
+                CurrentChapter = chapters[0];
             }
             else
             {
-                _currentChapter = null;
+                CurrentChapter = null;
             }
         }
         

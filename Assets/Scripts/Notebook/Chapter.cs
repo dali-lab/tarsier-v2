@@ -106,8 +106,8 @@ namespace Anivision.Notebook
         }
         
         /// <summary>
-        /// Presents the page that is passed in
-        /// Optional booleans to see if current and new pages should be reset before being hidden/presented
+        /// Presents the page that is passed in.
+        /// Optional booleans to see if current and new pages should be reset before being hidden/presented.
         /// </summary>
         /// <param name="page"></param>
         /// <param name="resetCurrentPage"></param>
