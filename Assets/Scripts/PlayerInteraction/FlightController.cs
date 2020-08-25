@@ -27,6 +27,7 @@ namespace Anivision.PlayerInteraction
         private AudioSource windSound;
         private GameObject windParticles;
         private bool isFlying = false;
+        private bool inTransition = false;
 
         private void Awake()
         {
@@ -79,7 +80,10 @@ namespace Anivision.PlayerInteraction
 
         private void FlyTransition()
         {
-            headsetFade.FadeUnfadeCustomCallback(headsetFadeSpeed, null, movementTransition, null, null);
+            if (!inTransition)
+            {
+                headsetFade.FadeUnfadeCustomCallback(headsetFadeSpeed, () => inTransition = true, movementTransition, null, () => inTransition = false);
+            }
         }
 
         private void Update()
@@ -112,7 +116,6 @@ namespace Anivision.PlayerInteraction
             StartCoroutine(FadeSound());
             // Toggle wind particles
             windParticles.SetActive(isFlying);
-            
         }
 
         // Either fades the wind sound in or out, depending on whether the user is flying

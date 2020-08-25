@@ -798,7 +798,6 @@
             <e p="Save.cs" t="Include" />
           </e>
           <e p="Dashboard" t="Include">
-            <e p="Button.cs" t="Include" />
             <e p="ColorController.cs" t="Include" />
             <e p="Dashboard.cs" t="Include" />
             <e p="DashboardController.cs" t="Include" />
@@ -820,6 +819,12 @@
             <e p="LightParameters.cs" t="Include" />
             <e p="SoundController.cs" t="Include" />
             <e p="SoundParameters.cs" t="Include" />
+          </e>
+          <e p="Notebook" t="Include">
+            <e p="Button.cs" t="Include" />
+            <e p="Chapter.cs" t="Include" />
+            <e p="Notebook.cs" t="Include" />
+            <e p="Page.cs" t="Include" />
           </e>
           <e p="PlayerInteraction" t="Include">
             <e p="AnimalMovement.cs" t="Include" />
