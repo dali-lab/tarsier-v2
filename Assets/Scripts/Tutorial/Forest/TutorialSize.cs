@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Anivision.Notebook;
+using TMPro;
 using UnityEngine;
 using Anivision.PlayerInteraction;
 

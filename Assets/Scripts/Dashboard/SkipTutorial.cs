@@ -1,4 +1,5 @@
-﻿using Anivision.PlayerInteraction;
+﻿using Anivision.Notebook;
+using Anivision.PlayerInteraction;
 using Anivision.Tutorial;
 using UnityEngine;
 
