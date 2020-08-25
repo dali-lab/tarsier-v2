@@ -23,7 +23,7 @@ namespace Anivision.Tutorial
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
-            TMP.text = dashboardText;
+            //TMP.text = dashboardText;
             
             // turn on the relevant tutorial items
             platforms.SetActive(true);

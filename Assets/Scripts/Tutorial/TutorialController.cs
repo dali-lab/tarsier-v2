@@ -16,7 +16,8 @@ namespace Anivision.Tutorial
     public class TutorialController : MonoBehaviour
     {
         public TutorialStep[] tutorialSteps;
-        public TutorialDashboard TutorialDashboard;
+        //public TutorialDashboard TutorialDashboard;
+        //public Chapter TutorialChapter;
         public GameObject cameraRig;
         public GameObject spawnPoint;
         [Tooltip("Whether to move the player to the spawn point when skipping tutorial")]
@@ -47,17 +48,17 @@ namespace Anivision.Tutorial
                 // clean up all tutorial objects and add OnDone listener
                 foreach (TutorialStep tutorialStep in tutorialSteps)
                 {
-                    tutorialStep.Cleanup(TutorialDashboard.TMP);
+                    //tutorialStep.Cleanup(TutorialDashboard.TMP);
                     if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
                     tutorialStep.OnDone.AddListener(Next);
                 }
             
-                TutorialDashboard.Setup();
+                //TutorialDashboard.Setup();
 
                 // set up the first tutorial item
                 _currStep = 0;
                 tutorialSteps[_currStep].gameObject.SetActive(true);
-                tutorialSteps[_currStep].Setup(TutorialDashboard.TMP);
+                //tutorialSteps[_currStep].Setup(TutorialDashboard.TMP);
                 
                 _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
             }
@@ -65,7 +66,21 @@ namespace Anivision.Tutorial
             {
                 End();
             }
+
+            Setup();
             
+        }
+        private void Setup()
+        {
+            //TutorialChapter.Setup();
+            foreach (TutorialStep tutorialStep in tutorialSteps)
+            {
+                //tutorialStep.Cleanup(TutorialDashboard.TMP);
+                if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
+                //tutorialStep.chapter = TutorialChapter;
+                tutorialStep.OnDone.AddListener(Next);
+            }
+
         }
 
         public void Next()
@@ -73,7 +88,7 @@ namespace Anivision.Tutorial
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
 
             // clean up the current step
-            tutorialSteps[_currStep].Cleanup(TutorialDashboard.TMP);
+            //tutorialSteps[_currStep].Cleanup(TutorialDashboard.TMP);
             if (tutorialSteps[_currStep].AllowActiveFalse == true) tutorialSteps[_currStep].gameObject.SetActive(false);
 
             // set up the next step
@@ -81,7 +96,7 @@ namespace Anivision.Tutorial
             if (_currStep < tutorialSteps.Length)
             {
                 tutorialSteps[_currStep].gameObject.SetActive(true);
-                tutorialSteps[_currStep].Setup(TutorialDashboard.TMP);
+                //tutorialSteps[_currStep].Setup(TutorialDashboard.TMP);
             }
             else
             {
@@ -99,7 +114,7 @@ namespace Anivision.Tutorial
         {
             foreach (TutorialStep tutorialStep in tutorialSteps)
             {
-                tutorialStep.Cleanup(TutorialDashboard.TMP);
+                //tutorialStep.Cleanup(TutorialDashboard.TMP);
                 if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
             }
 
@@ -113,11 +128,11 @@ namespace Anivision.Tutorial
         {
             foreach (TutorialStep tutorialStep in tutorialSteps)
             {
-                tutorialStep.Cleanup(TutorialDashboard.TMP);
+                //tutorialStep.Cleanup(TutorialDashboard.TMP);
                 tutorialStep.OnDone.RemoveListener(Next);
             }
             
-            TutorialDashboard.Cleanup();
+            //TutorialDashboard.Cleanup();
         }
     }
 }

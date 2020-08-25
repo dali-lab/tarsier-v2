@@ -31,7 +31,7 @@ namespace Anivision.Tutorial
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
 
-            TMP.text = dashboardText;
+            //TMP.text = dashboardText;
 
             // turn on the relevant tutorial items
             tutorialControllers.SetActive(true);

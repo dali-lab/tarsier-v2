@@ -35,7 +35,7 @@ namespace Anivision.PlayerInteraction
             windSound = GetComponentInChildren<AudioSource>();
             windParticles.transform.parent = centerEye.transform;
             windParticles.transform.forward = centerEye.transform.forward * -1;
-            windParticles.transform.localPosition = new Vector3(0f, 0f, 3.5f);
+            windParticles.transform.localPosition = new Vector3(0f, -0.1f, 3.45f);
             windParticles.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
             windParticles.SetActive(false);
             windSound.transform.parent = centerEye.transform;

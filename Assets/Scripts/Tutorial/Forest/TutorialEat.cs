@@ -46,7 +46,7 @@ namespace Anivision.Tutorial
                 }
             }
 
-            TMP.text = dashboardText;
+            //TMP.text = dashboardText;
             gripHighlightRing.SetActive(true);
 
             headsetCollide.onCollide.AddListener(Done);

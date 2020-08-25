@@ -31,7 +31,7 @@ namespace Anivision.Tutorial
             _audioSource = gameObject.GetComponent<AudioSource>();
             if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
-            TMP.text = dashboardText;
+            //TMP.text = dashboardText;
 
             // turn on the relevant tutorial items
             RTriggerHighlight.SetActive(true);
