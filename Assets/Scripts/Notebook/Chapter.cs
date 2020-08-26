@@ -36,7 +36,7 @@ namespace Anivision.Notebook
                 if (!_originalTextInfo.ContainsKey(tmp)) _originalTextInfo.Add(tmp, tmp.text);
             }
 
-            _pages = GetComponentsInChildren<Page>().ToList();
+            GetPages();
         }
         
         /// <summary>
@@ -44,6 +44,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Setup()
         {
+            GetPages();
             foreach (Page p in _pages)
             {
                 p.Setup();
@@ -62,6 +63,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Show()
         {
+            GetPages();
             if (_currentPage == null)
             {
                 ResetCurrentPage();
@@ -78,6 +80,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Cleanup()
         {
+            GetPages();
             foreach (Page p in _pages)
             {
                 p.Cleanup();
@@ -95,6 +98,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Hide()
         {
+            GetPages();
             if (_currentPage != null)
             {
                 _currentPage.Hide();
@@ -138,6 +142,14 @@ namespace Anivision.Notebook
             }
             
             if (!gameObject.activeSelf) gameObject.SetActive(true);
+        }
+
+        protected virtual void GetPages()
+        {
+            if (_pages == null)
+            {
+                _pages = GetComponentsInChildren<Page>().ToList();
+            }
         }
         
         // resets _currentPage variable to default
