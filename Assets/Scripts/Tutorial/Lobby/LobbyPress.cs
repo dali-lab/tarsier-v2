@@ -22,15 +22,13 @@ namespace Anivision.Tutorial
         private HapticsController _hapticsController;
 
 
-        public override void Setup(TextMeshPro TMP)
+        public override void Setup()
         {
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
-
-            //TMP.text = dashboardText;
 
             // turn on the relevant tutorial items
             welcomePanel.SetActive(true);
@@ -49,9 +47,8 @@ namespace Anivision.Tutorial
             OnDone.Invoke();
         }
 
-        public override void Cleanup(TextMeshPro TMP)
+        public override void Cleanup()
         {
-            TMP.text = "";
             welcomePanel.SetActive(false);
             RTriggerHighlight.SetActive(false);
 

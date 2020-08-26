@@ -18,12 +18,10 @@ namespace Anivision.Tutorial
         private HapticsController _hapticsController;
         
 
-        public override void Setup(TextMeshPro TMP)
+        public override void Setup()
         {
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
-
-            //TMP.text = dashboardText;
 
             // turn on the relevant tutorial items
             cube.SetActive(true);
@@ -41,9 +39,8 @@ namespace Anivision.Tutorial
             }
         }
 
-        public override void Cleanup(TextMeshPro TMP)
+        public override void Cleanup()
         {
-            TMP.text = "";
             cube.SetActive(false);
             RGripHighlight.SetActive(false);
         }

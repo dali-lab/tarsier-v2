@@ -20,7 +20,7 @@ namespace Anivision.Tutorial
         private bool _stepDone = false;
 
 
-        public override void Setup(TextMeshPro TMP)
+        public override void Setup()
         {
             _inputManager = InputManager.Instance;
             if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
@@ -46,9 +46,8 @@ namespace Anivision.Tutorial
             }
         }
 
-        public override void Cleanup(TextMeshPro TMP)
+        public override void Cleanup()
         {
-            TMP.text = "";
             aHighlightRing.SetActive(false);
         }
     }

@@ -27,7 +27,7 @@ namespace Anivision.Tutorial
 
 
 
-        public override void Setup(TextMeshPro TMP)
+        public override void Setup()
         {
             _inputManager = InputManager.Instance;
             if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
@@ -46,7 +46,6 @@ namespace Anivision.Tutorial
                 }
             }
 
-            //TMP.text = dashboardText;
             gripHighlightRing.SetActive(true);
 
             headsetCollide.onCollide.AddListener(Done);
@@ -74,9 +73,8 @@ namespace Anivision.Tutorial
             }
         }
 
-        public override void Cleanup(TextMeshPro TMP)
+        public override void Cleanup()
         {
-            TMP.text = "";
             gripHighlightRing.SetActive(false);
 
             headsetCollide.onCollide.RemoveListener(Done);

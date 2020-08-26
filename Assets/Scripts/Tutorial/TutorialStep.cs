@@ -1,23 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using Anivision.Notebook;
 
 public abstract class TutorialStep : MonoBehaviour
 {
     [HideInInspector] public UnityEvent OnDone;
-    //public Chapter chapter;
-    //public Page page;
+    [HideInInspector] public Chapter chapter;
+    public Page page;
     public bool AllowActiveFalse = true;
-    public virtual void Setup(TextMeshPro TMP)
+
+
+    public virtual void Setup()
     {
         gameObject.SetActive(true);
-        //chapter.presentPage(page);
+        chapter.Setup();
     }
-    public virtual void Cleanup(TextMeshPro TMP)
+    public virtual void Cleanup()
     {
-        //chapter.ResetSection();
+        chapter.Cleanup();
         if (AllowActiveFalse) gameObject.SetActive(false);
     }
 }

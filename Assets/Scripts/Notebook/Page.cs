@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,7 +23,18 @@ namespace Anivision.Notebook
         {
             _buttons = GetComponentsInChildren<Button>();
             _textMeshPros = GetComponentsInChildren<TextMeshPro>();
-            _images = GetComponentsInChildren<Image>();
+
+            List<Image> tempImages = GetComponentsInChildren<Image>().ToList();
+            foreach (Image image in tempImages)
+            {
+                if (image.gameObject.tag == "Text Effect")
+                {
+                    tempImages.Remove(image);
+                }
+            }
+            _images = new Image[tempImages.Count];
+            _images = tempImages.ToArray();
+
             _originalTextInfo = new Dictionary<TextMeshPro, string>();
             _originalSprites = new Dictionary<Image, Sprite>();
             

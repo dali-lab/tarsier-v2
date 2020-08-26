@@ -21,7 +21,7 @@ namespace Anivision.Tutorial
         private bool _stepDone = false;
 
 
-        public override void Setup(TextMeshPro TMP)
+        public override void Setup()
         {
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
@@ -32,7 +32,6 @@ namespace Anivision.Tutorial
             _audioSource = gameObject.GetComponent<AudioSource>();
             if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
-            //TMP.text = dashboardText;
 
             // turn on the relevant tutorial items
             RTriggerHighlight.SetActive(true);
@@ -65,9 +64,8 @@ namespace Anivision.Tutorial
             }
         }
 
-        public override void Cleanup(TextMeshPro TMP)
+        public override void Cleanup()
         {
-            TMP.text = "";
             RTriggerHighlight.SetActive(false);
 
             startButton.GetComponent<Button>().onClick.RemoveListener(StartScaleChange);

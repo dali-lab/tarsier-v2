@@ -70,7 +70,7 @@ namespace Anivision.Notebook
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
-            _TMP = gameObject.transform.Find("TMP").gameObject.GetComponent<TextMeshPro>();
+            _TMP = gameObject.GetComponent<TextMeshPro>();
         
             ChangeText(buttonText);
             ChangeButtonColor(defaultButtonColor);

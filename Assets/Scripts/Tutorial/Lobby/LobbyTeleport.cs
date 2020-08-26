@@ -18,12 +18,10 @@ namespace Anivision.Tutorial
         private TeleportController _teleportController;
 
 
-        public override void Setup(TextMeshPro TMP)
+        public override void Setup()
         {
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
-
-            //TMP.text = dashboardText;
             
             // turn on the relevant tutorial items
             platforms.SetActive(true);
@@ -40,9 +38,8 @@ namespace Anivision.Tutorial
             }
         }
 
-        public override void Cleanup(TextMeshPro TMP)
+        public override void Cleanup()
         {
-            TMP.text = "";
             platforms.SetActive(false);
             RTriggerHighlight.SetActive(false);
         }
