@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Anivision.PlayerInteraction;
-using Anivision.Notebook;
+using Anivision.NotebookSystem;
 
 namespace Anivision.Tutorial
 {
@@ -27,15 +27,15 @@ namespace Anivision.Tutorial
         private TeleportController _teleportController;
         private HapticsController _hapticsController;
         private AudioSource _audioSource;
-        //private Notebook _notebookController;
+        private Notebook _notebook;
 
         private int _currStep;
         private bool _skipped = false;
 
         private void OnEnable()
         {
-            _audioSource = gameObject.GetComponent<AudioSource>();
-            if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
+            _notebook = Notebook.Instance;
+            if (_notebook == null) UnityEngine.Debug.LogError("Trying to access the notebook in this scene, but there is none.");
 
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
@@ -65,7 +65,6 @@ namespace Anivision.Tutorial
         }
         private void Setup()
         {
-            TutorialChapter.gameObject.SetActive(true);
             TutorialChapter.Setup();
 
             foreach (TutorialStep tutorialStep in tutorialSteps)

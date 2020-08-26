@@ -1,4 +1,4 @@
-﻿using Anivision.Notebook;
+﻿using Anivision.NotebookSystem;
 using TMPro;
 using UnityEngine;
 using Anivision.PlayerInteraction;

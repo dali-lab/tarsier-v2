@@ -1,6 +1,6 @@
 ﻿using System;
 using Anivision.Core;
-using Anivision.Notebook;
+using Anivision.NotebookSystem;
 using UnityEngine;
 
 namespace Anivision.Vision

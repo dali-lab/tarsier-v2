@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Anivision.Notebook
+namespace Anivision.NotebookSystem
 {
     /// <summary>
     /// 3rd level of the notebook. Controls individual UI elements
@@ -21,38 +21,7 @@ namespace Anivision.Notebook
         
         private void Awake()
         {
-            _buttons = GetComponentsInChildren<Button>();
-            _textMeshPros = GetComponentsInChildren<TextMeshPro>();
-
-            List<Image> tempImages = GetComponentsInChildren<Image>().ToList();
-            foreach (Image image in tempImages)
-            {
-                if (image.gameObject.tag == "Text Effect")
-                {
-                    tempImages.Remove(image);
-                }
-            }
-            _images = new Image[tempImages.Count];
-            _images = tempImages.ToArray();
-
-            _originalTextInfo = new Dictionary<TextMeshPro, string>();
-            _originalSprites = new Dictionary<Image, Sprite>();
-            
-            foreach (TextMeshPro tmp in _textMeshPros)
-            {
-                if (!_originalTextInfo.ContainsKey(tmp))
-                {
-                    _originalTextInfo.Add(tmp, tmp.text);
-                }
-            }
-            
-            foreach (Image image in _images)
-            {
-                if (!_originalSprites.ContainsKey(image))
-                {
-                    _originalSprites.Add(image, image.sprite);
-                }
-            }
+            BuildElementsDictionary();
         }
         
         /// <summary>
@@ -60,14 +29,15 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Setup()
         {
+            BuildElementsDictionary();
             ResetButtons();
             ResetText();
             ResetImages();
             SetButtonsActive(true);
             SetTextActive(true);
             SetImagesActive(true);
-            
             if (!gameObject.activeSelf) gameObject.SetActive(true);
+
         }
         
         /// <summary>
@@ -75,9 +45,12 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Show()
         {
+            BuildElementsDictionary();
             SetButtonsActive(true);
             SetTextActive(true);
             SetImagesActive(true);
+            if (!gameObject.activeSelf) gameObject.SetActive(true);
+
         }
 
         /// <summary>
@@ -85,6 +58,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Cleanup()
         {
+            BuildElementsDictionary();
             ResetButtons();
             ResetText();
             ResetImages();
@@ -97,9 +71,11 @@ namespace Anivision.Notebook
         
         public virtual void Hide()
         {
+            BuildElementsDictionary();
             SetButtonsActive(false);
             SetTextActive(false);
             SetImagesActive(false);
+            if (!gameObject.activeSelf) gameObject.SetActive(false);
         }
 
         public virtual void ChangeText(TextMeshPro tmp, String s)
@@ -118,6 +94,41 @@ namespace Anivision.Notebook
         {
             Image result = Array.Find(_images, ele => image.Equals(ele));
             result.sprite = sprite;
+        }
+        
+        protected virtual void BuildElementsDictionary()
+        {
+            if (_buttons == null)
+            {
+                _buttons = GetComponentsInChildren<Button>();
+            }
+
+            if (_textMeshPros == null)
+            {
+                _textMeshPros = GetComponentsInChildren<TextMeshPro>();
+                _originalTextInfo = new Dictionary<TextMeshPro, string>();
+                foreach (TextMeshPro tmp in _textMeshPros)
+                {
+                    if (!_originalTextInfo.ContainsKey(tmp))
+                    {
+                        _originalTextInfo.Add(tmp, tmp.text);
+                    }
+                }
+
+            }
+
+            if (_images == null)
+            {
+                _images = GetComponentsInChildren<Image>();
+                _originalSprites = new Dictionary<Image, Sprite>();
+                foreach (Image image in _images)
+                {
+                    if (!_originalSprites.ContainsKey(image))
+                    {
+                        _originalSprites.Add(image, image.sprite);
+                    }
+                }
+            }
         }
 
         protected virtual void ResetButtons()

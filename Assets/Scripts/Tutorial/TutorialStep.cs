@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-using Anivision.Notebook;
+using Anivision.NotebookSystem;
 
 public abstract class TutorialStep : MonoBehaviour
 {

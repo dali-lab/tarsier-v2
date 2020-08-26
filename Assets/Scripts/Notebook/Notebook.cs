@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Anivision.Notebook
+namespace Anivision.NotebookSystem
 {
     /// <summary>
     /// First level of the notebook. Controls notebook that is attached to left controller

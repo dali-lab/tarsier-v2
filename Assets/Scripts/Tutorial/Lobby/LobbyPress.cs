@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Anivision.Notebook;
+using Anivision.NotebookSystem;
 using TMPro;
 using UnityEngine;
 using Anivision.PlayerInteraction;

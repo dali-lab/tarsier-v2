@@ -6,7 +6,7 @@ using Anivision.Core;
 using Anivision.PlayerInteraction;
 using TMPro;
 
-namespace Anivision.Notebook
+namespace Anivision.NotebookSystem
 {
     /// <summary>
     /// Controls all the physical pressable buttons in the scene.
@@ -71,7 +71,6 @@ namespace Anivision.Notebook
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
             _TMP = gameObject.GetComponent<TextMeshPro>();
-        
             ChangeText(buttonText);
             ChangeButtonColor(defaultButtonColor);
         }
