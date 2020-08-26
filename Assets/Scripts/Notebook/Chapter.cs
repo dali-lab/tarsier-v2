@@ -30,13 +30,7 @@ namespace Anivision.Notebook
         //save text mesh pro information, get pages from all children
         private void Awake()
         {
-            _originalTextInfo = new Dictionary<TextMeshPro, string>();
-            foreach (TextMeshPro tmp in texts)
-            {
-                if (!_originalTextInfo.ContainsKey(tmp)) _originalTextInfo.Add(tmp, tmp.text);
-            }
-
-            GetPages();
+            SetElementsDictionary();
         }
         
         /// <summary>
@@ -44,7 +38,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Setup()
         {
-            GetPages();
+            SetElementsDictionary();
             foreach (Page p in _pages)
             {
                 p.Setup();
@@ -63,7 +57,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Show()
         {
-            GetPages();
+            SetElementsDictionary();
             if (_currentPage == null)
             {
                 ResetCurrentPage();
@@ -80,7 +74,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Cleanup()
         {
-            GetPages();
+            SetElementsDictionary();
             foreach (Page p in _pages)
             {
                 p.Cleanup();
@@ -98,7 +92,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Hide()
         {
-            GetPages();
+            SetElementsDictionary();
             if (_currentPage != null)
             {
                 _currentPage.Hide();
@@ -144,8 +138,16 @@ namespace Anivision.Notebook
             if (!gameObject.activeSelf) gameObject.SetActive(true);
         }
 
-        protected virtual void GetPages()
+        protected virtual void SetElementsDictionary()
         {
+            if (_originalTextInfo == null)
+            {
+                _originalTextInfo = new Dictionary<TextMeshPro, string>();
+                foreach (TextMeshPro tmp in texts)
+                {
+                    if (!_originalTextInfo.ContainsKey(tmp)) _originalTextInfo.Add(tmp, tmp.text);
+                }
+            }
             if (_pages == null)
             {
                 _pages = GetComponentsInChildren<Page>().ToList();
