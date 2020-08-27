@@ -46,8 +46,10 @@ namespace Anivision.Tutorial
                 }
             }
 
-            gripHighlightRing.SetActive(true);
+            page.Setup();
 
+            // relevant tutorial items
+            gripHighlightRing.SetActive(true);
             headsetCollide.onCollide.AddListener(Done);
 
             _audioSource.Play();
@@ -76,8 +78,9 @@ namespace Anivision.Tutorial
         public override void Cleanup()
         {
             gripHighlightRing.SetActive(false);
-
             headsetCollide.onCollide.RemoveListener(Done);
+
+            page.Cleanup();
         }
     }
 }

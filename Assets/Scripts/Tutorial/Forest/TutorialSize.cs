@@ -33,10 +33,11 @@ namespace Anivision.Tutorial
             if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
 
-            // turn on the relevant tutorial items
+            page.Setup();
+
+            // relevant tutorial items
             RTriggerHighlight.SetActive(true);
             startButton.gameObject.SetActive(true);
-
             startButton.onClick.AddListener(StartScaleChange);
 
             _teleportController.enabled = false;                // turn off ability to teleport
@@ -70,6 +71,7 @@ namespace Anivision.Tutorial
 
             startButton.GetComponent<Button>().onClick.RemoveListener(StartScaleChange);
             startButton.gameObject.SetActive(false);
+            page.Cleanup();
         }
     }
 }

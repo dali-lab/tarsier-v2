@@ -15,9 +15,9 @@ namespace Anivision.NotebookSystem
     {
         private Button[] _buttons;
         private TextMeshPro[] _textMeshPros;
-        private Image[] _images;
+        private SpriteRenderer[] _images;
         private Dictionary<TextMeshPro, string> _originalTextInfo; //saves original text of text mesh pros
-        private Dictionary<Image, Sprite> _originalSprites; // saves original sprites of images
+        private Dictionary<SpriteRenderer, Sprite> _originalSprites; // saves original sprites of images
         
         private void Awake()
         {
@@ -90,9 +90,9 @@ namespace Anivision.NotebookSystem
             result.ChangeText(s);
         }
         
-        public virtual void ChangeImage(Image image, Sprite sprite)
+        public virtual void ChangeImage(SpriteRenderer image, Sprite sprite)
         {
-            Image result = Array.Find(_images, ele => image.Equals(ele));
+            SpriteRenderer result = Array.Find(_images, ele => image.Equals(ele));
             result.sprite = sprite;
         }
         
@@ -114,14 +114,26 @@ namespace Anivision.NotebookSystem
                         _originalTextInfo.Add(tmp, tmp.text);
                     }
                 }
-
             }
 
             if (_images == null)
             {
-                _images = GetComponentsInChildren<Image>();
-                _originalSprites = new Dictionary<Image, Sprite>();
-                foreach (Image image in _images)
+                List<SpriteRenderer> allImages = GetComponentsInChildren<SpriteRenderer>().ToList();
+                //UnityEngine.Debug.Log("count: " + allImages.Count);
+                for (int i = allImages.Count-1; i >= 0; i--)
+                {
+                    //UnityEngine.Debug.Log(allImages[i].gameObject);
+                    if (allImages[i].gameObject.tag == "text effect")
+                    {
+                        //UnityEngine.Debug.Log("removed: " + allImages[i].gameObject);
+                        allImages[i].gameObject.SetActive(false);
+                        allImages.Remove(allImages[i]);
+                    }
+                }
+                _images = allImages.ToArray();
+
+                _originalSprites = new Dictionary<SpriteRenderer, Sprite>();
+                foreach (SpriteRenderer image in _images)
                 {
                     if (!_originalSprites.ContainsKey(image))
                     {
@@ -149,7 +161,7 @@ namespace Anivision.NotebookSystem
         
         protected virtual void ResetImages()
         {
-            foreach (Image image in _images)
+            foreach (SpriteRenderer image in _images)
             {
                 image.sprite = _originalSprites[image];
             }
@@ -173,7 +185,7 @@ namespace Anivision.NotebookSystem
 
         private void SetImagesActive(bool setActive)
         {
-            foreach (Image image in _images)
+            foreach (SpriteRenderer image in _images)
             {
                 image.gameObject.SetActive(setActive);
             }

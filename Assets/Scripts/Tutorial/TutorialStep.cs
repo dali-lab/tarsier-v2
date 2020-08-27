@@ -14,11 +14,11 @@ public abstract class TutorialStep : MonoBehaviour
     public virtual void Setup()
     {
         gameObject.SetActive(true);
-        chapter.Setup();
+        chapter.PresentPage(page);
     }
     public virtual void Cleanup()
     {
-        chapter.Cleanup();
+        page.Cleanup();
         if (AllowActiveFalse) gameObject.SetActive(false);
     }
 }

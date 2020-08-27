@@ -28,7 +28,8 @@ namespace Anivision.Tutorial
             _audioSource = gameObject.GetComponent<AudioSource>();
             if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
-            //TMP.text = dashboardText;
+            page.Setup();
+
             aHighlightRing.SetActive(true);
 
             _audioSource.Play();
@@ -49,6 +50,7 @@ namespace Anivision.Tutorial
         public override void Cleanup()
         {
             aHighlightRing.SetActive(false);
+            page.Cleanup();
         }
     }
 }

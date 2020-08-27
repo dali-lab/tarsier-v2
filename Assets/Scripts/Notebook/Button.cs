@@ -57,7 +57,9 @@ namespace Anivision.NotebookSystem
             _propBlock = new MaterialPropertyBlock();
             _renderer = gameObject.GetComponent<Renderer>();
             _rightColorController = rightController.GetComponent<ColorController>();
-        }
+
+            _TMP = gameObject.GetComponent<TextMeshPro>();
+    }
 
         private void OnEnable()
         {
@@ -70,7 +72,6 @@ namespace Anivision.NotebookSystem
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
-            _TMP = gameObject.GetComponent<TextMeshPro>();
             ChangeText(buttonText);
             ChangeButtonColor(defaultButtonColor);
         }
@@ -135,6 +136,7 @@ namespace Anivision.NotebookSystem
 
         public void ChangeText (string s)
         {
+            if (_TMP == null) _TMP = gameObject.GetComponent<TextMeshPro>();
             _TMP.text = s;
         }
 
@@ -150,5 +152,5 @@ namespace Anivision.NotebookSystem
             onClick.RemoveAllListeners();
             onButtonEnter.RemoveAllListeners();
         }
-    }
+}
 }

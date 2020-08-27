@@ -32,7 +32,8 @@ namespace Anivision.Tutorial
             _audioSource = gameObject.GetComponent<AudioSource>();
             if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
-            //TMP.text = dashboardText;
+            page.Setup();
+
             triggerHighlightRing.SetActive(true);
 
             _teleportController.enabled = true;             // turn on ability to teleport
@@ -58,6 +59,7 @@ namespace Anivision.Tutorial
         public override void Cleanup()
         {
             triggerHighlightRing.SetActive(false);
+            page.Cleanup();
         }
     }
 }
