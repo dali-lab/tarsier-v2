@@ -149,7 +149,8 @@ namespace Anivision.Tutorial
             if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;          // only move to spawn point if skipping, otherwise player will already be on main island
             _audioSource.Play();
 
-            _notebook.ShowChapter(HomeChapter.chapterTitle, true, true);
+            _notebook.ShowChapter(HomeChapter.chapterTitle);    // display the home chapter
+            HomeChapter.PresentPage(HomeChapter.defaultPage);               // display the default page of the home chapter
         }
     }
 }
