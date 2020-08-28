@@ -7,15 +7,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NotebookPageMat
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Name: portalMat
+  m_Shader: {fileID: -6465566751694194690, guid: 013c49b3eb8b6c34a9030f05e2ccbe8a,
+    type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2050
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -48,17 +48,13 @@ Material:
         m_Texture: {fileID: 2800000, guid: 00470be72c2be614590997626d6fd066, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_BD3ABAA2_Texture_1:
-        m_Texture: {fileID: 2800000, guid: bd438c1b6750cce4c843a8edafccf2b4, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_4AFB7751: 100
-    - Vector1_F51DF852: 2
+    - Vector1_F51DF852: 1
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -82,13 +78,13 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_C21F7040: {r: 0, g: 1, b: 0, a: 1}
-    - _BaseColor: {r: 0.9363289, g: 0.9433962, b: 0.83659667, a: 1}
+    - Color_C21F7040: {r: 0, g: 1, b: 0, a: 0}
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _MainColor: {r: 1, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
---- !u!114 &5033614475177474508
+--- !u!114 &637225819930431076
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
