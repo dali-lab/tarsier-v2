@@ -33,16 +33,6 @@ namespace Anivision.NotebookSystem
         private Chapter[] chapters;
         private Dictionary<Chapter.ChapterTitle, Chapter> _chapterDictionary = new Dictionary<Chapter.ChapterTitle, Chapter>();
 
-
-        private void Awake()
-        {
-            BuildChaptersDictionary();
-            foreach (Chapter c in chapters)
-            {
-                c.Cleanup();
-            }
-            ResetCurrentChapter();
-        }
         //on enable, shows the current chapter without resetting
         private void OnEnable()
         {
@@ -62,6 +52,10 @@ namespace Anivision.NotebookSystem
         public void Setup()
         {
             BuildChaptersDictionary();
+            foreach (Chapter c in chapters)
+            {
+                c.Cleanup();
+            }
             ResetCurrentChapter();
             if (CurrentChapter != null) CurrentChapter.Setup();
             if (!gameObject.activeSelf) gameObject.SetActive(true);

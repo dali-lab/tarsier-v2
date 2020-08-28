@@ -19,10 +19,6 @@ namespace Anivision.NotebookSystem
         private Dictionary<TextMeshPro, string> _originalTextInfo; //saves original text of text mesh pros
         private Dictionary<SpriteRenderer, Sprite> _originalSprites; // saves original sprites of images
         
-        private void Awake()
-        {
-            BuildElementsDictionary();
-        }
         
         /// <summary>
         /// Resets the entire page and its elements, sets all elements to active

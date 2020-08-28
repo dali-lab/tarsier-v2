@@ -27,11 +27,6 @@ namespace Anivision.NotebookSystem
         private Page _currentPage;
         private Dictionary<TextMeshPro, string> _originalTextInfo; //saves original text of text mesh pros
         
-        //save text mesh pro information, get pages from all children
-        private void Awake()
-        {
-            SetElementsDictionary();
-        }
         
         /// <summary>
         /// Resets all pages, buttons, and text in this chapter and presents the default page. Turns all elements active
