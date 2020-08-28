@@ -16,9 +16,6 @@ namespace Anivision.Tutorial
     public class TutorialController : MonoBehaviour
     {
         public GameObject cameraRig;
-
-        public Chapter TutorialChapter;
-        public Chapter HomeChapter;
         public Button skipButton;
         public TextMeshPro pageCount;
 
@@ -42,9 +39,6 @@ namespace Anivision.Tutorial
 
         private void OnEnable()
         {
-            _notebook = Notebook.Instance;
-            if (_notebook == null) UnityEngine.Debug.LogError("Trying to access the notebook in this scene, but there is none.");
-
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
@@ -53,6 +47,10 @@ namespace Anivision.Tutorial
 
             _audioSource = gameObject.GetComponent<AudioSource>();
             if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
+
+            _notebook = Notebook.Instance;
+            if (_notebook == null) UnityEngine.Debug.LogError("Trying to access the notebook in this scene, but there is none.");
+            _notebook.Setup();
 
             skipButton.onClick.AddListener(Skip);
 
@@ -74,12 +72,13 @@ namespace Anivision.Tutorial
         }
         private void Setup()
         {
-            TutorialChapter.Setup();
+            _notebook.ShowChapter(Chapter.ChapterTitle.Tutorial);        // display the tutorial chapter
+            _notebook.CurrentChapter.PresentPage(_notebook.CurrentChapter.defaultPage);   // display the default page of the tutorial chapter
 
             foreach (TutorialStep tutorialStep in tutorialSteps)
             {
                 tutorialStep.Cleanup();
-                tutorialStep.chapter = TutorialChapter;
+                tutorialStep.chapter = _notebook.CurrentChapter;
                 if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
             }
 
@@ -92,7 +91,7 @@ namespace Anivision.Tutorial
             // update the page count
             int step = _currStep + 1;
             _pageCountString = "Tutorial step " + step + " of " + tutorialSteps.Length;
-            TutorialChapter.ChangeText(pageCount, _pageCountString);
+            _notebook.CurrentChapter.ChangeText(pageCount, _pageCountString);
             
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
         }
@@ -116,7 +115,7 @@ namespace Anivision.Tutorial
                 // update the page count
                 int step = _currStep + 1;
                 _pageCountString = "Tutorial step " + step + " of " + tutorialSteps.Length;
-                TutorialChapter.ChangeText(pageCount, _pageCountString);
+                _notebook.CurrentChapter.ChangeText(pageCount, _pageCountString);
             }
             else
             {
@@ -143,14 +142,14 @@ namespace Anivision.Tutorial
                 tutorialStep.OnDone.RemoveListener(Next);
                 if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
             }
-            TutorialChapter.Cleanup();
 
             _teleportController.enabled = true;
             if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;          // only move to spawn point if skipping, otherwise player will already be on main island
             _audioSource.Play();
 
-            _notebook.ShowChapter(HomeChapter.chapterTitle);    // display the home chapter
-            HomeChapter.PresentPage(HomeChapter.defaultPage);               // display the default page of the home chapter
+
+            _notebook.ShowChapter(Chapter.ChapterTitle.Home, true);        // display the tutorial chapter
+            _notebook.CurrentChapter.PresentPage(_notebook.CurrentChapter.defaultPage);   // display the default page of the tutorial chapter
         }
     }
 }
