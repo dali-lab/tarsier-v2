@@ -42,8 +42,9 @@ namespace Anivision.PlayerInteraction
                 // Iterate through all potential grabbers
                 foreach (GameObject potentialGrabber in potentialGrabbers)
                 {
-                    // Check if the potential grabber is grabbing
-                    if (potentialGrabber.GetComponent<Grabber>().IsGrabbing())
+                    // Check if the potential grabber is grabbing, and that it isn't already grabbing something
+                    Grabber grabber = potentialGrabber.GetComponent<Grabber>();
+                    if (grabber.IsGrabbing() && !grabber.GrabbedObject)
                     {
                         // If it is grabbing, initiate a grab on this object
                         StartGrab(potentialGrabber);
