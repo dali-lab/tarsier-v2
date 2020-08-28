@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
 namespace Anivision.NotebookSystem
 {
     /// <summary>
@@ -13,48 +12,42 @@ namespace Anivision.NotebookSystem
     {
         private static Notebook _notebook;
         //singleton instance
-        public static Notebook Instance { get
+        public static Notebook Instance
         {
-            if (!_notebook)
+            get
             {
-                _notebook = FindObjectOfType (typeof (Notebook)) as Notebook;
-
                 if (!_notebook)
                 {
-                    UnityEngine.Debug.LogError("There needs to be one active NotebookController script on a GameObject in your scene.");
+                    _notebook = FindObjectOfType(typeof(Notebook)) as Notebook;
+                    if (!_notebook)
+                    {
+                        UnityEngine.Debug.LogError("There needs to be one active NotebookController script on a GameObject in your scene.");
+                    }
                 }
+                return _notebook;
             }
-
-            return _notebook;
-        } }
-
+        }
         [Tooltip("Default chapter title. Should be a title that belongs to a chapter that is a child of this game object.")]
-        public Chapter.ChapterTitle defaultChapterTitle; 
+        public Chapter.ChapterTitle defaultChapterTitle;
         public Chapter CurrentChapter { get; private set; }
-        
         private Chapter[] chapters;
-        private Dictionary<Chapter.ChapterTitle, Chapter> _chapterDictionary;
+        private Dictionary<Chapter.ChapterTitle, Chapter> _chapterDictionary = new Dictionary<Chapter.ChapterTitle, Chapter>();
+
+
         private void Awake()
         {
-            chapters = GetComponentsInChildren<Chapter>();
-            _chapterDictionary = new Dictionary<Chapter.ChapterTitle, Chapter>();
+            BuildChaptersDictionary();
             foreach (Chapter c in chapters)
             {
-                if (!_chapterDictionary.ContainsKey(c.chapterTitle))
-                {
-                    _chapterDictionary.Add(c.chapterTitle, c);
-                }
+                c.Cleanup();
             }
-
             ResetCurrentChapter();
         }
-        
         //on enable, shows the current chapter without resetting
         private void OnEnable()
         {
             if (CurrentChapter != null) ShowChapter(CurrentChapter.chapterTitle);
         }
-        
         // on disable, hides the current chapter without resetting
         private void OnDisable()
         {
@@ -63,22 +56,22 @@ namespace Anivision.NotebookSystem
                 CurrentChapter.Hide();
             }
         }
-        
         /// <summary>
         /// Setup resets the notebook completely and presents the default chapter resetted
         /// </summary>
         public void Setup()
         {
+            BuildChaptersDictionary();
             ResetCurrentChapter();
             if (CurrentChapter != null) CurrentChapter.Setup();
             if (!gameObject.activeSelf) gameObject.SetActive(true);
         }
-        
         /// <summary>
         /// Cleanup resets the notebook and disables game object
         /// </summary>
         public void Cleanup()
         {
+            BuildChaptersDictionary();
             foreach (Chapter c in chapters)
             {
                 c.Cleanup();
@@ -86,7 +79,6 @@ namespace Anivision.NotebookSystem
             ResetCurrentChapter();
             if (gameObject.activeSelf) gameObject.SetActive(false);
         }
-        
         /// <summary>
         /// Shows the chapter that corresponds to the title passed in. Optional booleans to determine if the current and new chapters should be reset
         /// </summary>
@@ -95,6 +87,7 @@ namespace Anivision.NotebookSystem
         /// <param name="resetNewChapter"></param>
         public void ShowChapter(Chapter.ChapterTitle chapterTitle, bool resetCurrentChapter = false, bool resetNewChapter = false)
         {
+            BuildChaptersDictionary();
             Chapter chapter;
             if (_chapterDictionary.TryGetValue(chapterTitle, out chapter))
             {
@@ -109,9 +102,7 @@ namespace Anivision.NotebookSystem
                         CurrentChapter.Hide();
                     }
                 }
-
                 CurrentChapter = chapter;
-
                 if (resetNewChapter)
                 {
                     CurrentChapter.Setup();
@@ -120,16 +111,13 @@ namespace Anivision.NotebookSystem
                 {
                     CurrentChapter.Show();
                 }
-                
             }
             else
             {
                 UnityEngine.Debug.LogError("Chapter type does not exist in this notebook");
             }
-            
             if (!gameObject.activeSelf) gameObject.SetActive(true);
         }
-        
         // resets the _currentChapter variable
         private void ResetCurrentChapter()
         {
@@ -145,7 +133,21 @@ namespace Anivision.NotebookSystem
             {
                 CurrentChapter = null;
             }
+
         }
-        
+        private void BuildChaptersDictionary()
+        {
+            if (chapters == null)
+            {
+                chapters = GetComponentsInChildren<Chapter>();
+                foreach (Chapter c in chapters)
+                {
+                    if (!_chapterDictionary.ContainsKey(c.chapterTitle))
+                    {
+                        _chapterDictionary.Add(c.chapterTitle, c);
+                    }
+                }
+            }
+        }
     }
 }

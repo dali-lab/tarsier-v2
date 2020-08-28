@@ -138,6 +138,18 @@ namespace Anivision.NotebookSystem
             if (!gameObject.activeSelf) gameObject.SetActive(true);
         }
 
+        /// <summary>
+        /// Changes the text of TMPs attached to the chapter
+        /// Takes in the TextMeshPro to be changed, and the string to change it to
+        /// </summary>
+        /// <param name="tmp"></param>
+        /// <param name="text"></param>
+        public void ChangeText(TextMeshPro tmp, string text)
+        {
+            TextMeshPro tmpToChange = texts.Find(x => x == tmp);            // looks through the lists of tmps and finds the one that matches
+            if (tmpToChange != null) tmpToChange.text = text;
+        }
+
         protected virtual void SetElementsDictionary()
         {
             if (_originalTextInfo == null)
