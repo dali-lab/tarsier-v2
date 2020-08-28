@@ -41,7 +41,7 @@ If you choose just the Build option, this will create an apk file that will be s
 
 ### Gameplay
 
-The user will start with a mini tutorial in the Lobby scene to learn how to use the controllers. From the main lobby island, the user will pull a pair of goggles to their face to transition to an animal environment.
+The user will start with a mini tutorial in the Lobby scene to learn how to use the controllers. From the main lobby island, the user will teleport through a portal to transition to an animal environment, and each animal environment will have a tutorial related to that environment.
 
 ## Authors
 * Cathy Wu 2021, developer
@@ -49,7 +49,7 @@ The user will start with a mini tutorial in the Lobby scene to learn how to use 
 * Bill Tang 2020, developer
 * Dorothy Qu 2019, designer
 * Kristie Chow 2020, PM
-* Jasmine Mai 2020, Mentor
+* Jasmine Mai 2020, Mentor + developer
 * Gregory Macharia 2022, designer
 
 ## Acknowledgments 🤝
