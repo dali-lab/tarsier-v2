@@ -98709,7 +98709,7 @@ MonoBehaviour:
     intensity: 0.05
     color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   - animal: 2
-    intensity: 0.25
+    intensity: 0.2
     color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
 --- !u!1001 &2025106199
 PrefabInstance:
@@ -107130,7 +107130,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: addc3b67595196f49a767fd1eea6678d, type: 2}
+      objectReference: {fileID: 2100000, guid: 063ca58ea7b7c2d42b544dd3a66edc61, type: 2}
     - target: {fileID: 8457336339252063608, guid: e72b7a39d5fe12245a1f2317a5f59269,
         type: 3}
       propertyPath: m_LocalPosition.x
