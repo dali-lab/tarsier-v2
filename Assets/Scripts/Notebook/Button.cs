@@ -42,7 +42,7 @@ namespace Anivision.NotebookSystem
         private HapticsController _hapticsController;
         private TeleportController _teleportController;
         private ColorController _rightColorController;
-        private SpriteRenderer[] _textEffect;
+        private SpriteRenderer[] _textHover;
         private TextMeshPro _TMP;
         private MaterialPropertyBlock _propBlock;
         private Renderer _renderer;
@@ -72,10 +72,13 @@ namespace Anivision.NotebookSystem
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
             // turns off all text effects (highlights)
-            _textEffect = GetComponentsInChildren<SpriteRenderer>(true);
-            foreach (SpriteRenderer effects in _textEffect)
+            _textHover = GetComponentsInChildren<SpriteRenderer>(true);
+            foreach (SpriteRenderer effects in _textHover)
             {
-                effects.gameObject.SetActive(false);
+                if (effects.gameObject.tag == "text hover")
+                {
+                    effects.gameObject.SetActive(false);
+                }
             }
 
             ChangeText(buttonText);
@@ -99,9 +102,12 @@ namespace Anivision.NotebookSystem
                 _rightColorController.ToHoverSelectorColor();
 
                 // turn on the text effects (highlight)
-                foreach (SpriteRenderer effects in _textEffect)
+                foreach (SpriteRenderer effects in _textHover)
                 {
-                    effects.gameObject.SetActive(true);
+                    if (effects.gameObject.tag == "text hover")
+                    {
+                        effects.gameObject.SetActive(true);
+                    }
                 }
             }
         }
@@ -128,9 +134,12 @@ namespace Anivision.NotebookSystem
             _rightColorController.ToDefaultSelectorColor();
 
             // turn off the text effects (highlight)
-            foreach (SpriteRenderer effects in _textEffect)
+            foreach (SpriteRenderer effects in _textHover)
             {
-                effects.gameObject.SetActive(false);
+                if (effects.gameObject.tag == "text hover")
+                {
+                    effects.gameObject.SetActive(false);
+                }
             }
         }
 
@@ -167,5 +176,5 @@ namespace Anivision.NotebookSystem
             onClick.RemoveAllListeners();
             onButtonEnter.RemoveAllListeners();
         }
-}
+    }
 }

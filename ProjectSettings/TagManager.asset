@@ -10,7 +10,8 @@ TagManager:
   - flower
   - selector
   - button
-  - text effect
+  - text hover
+  - text select
   layers:
   - Default
   - TransparentFX

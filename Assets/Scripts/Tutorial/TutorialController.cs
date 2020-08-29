@@ -53,7 +53,7 @@ namespace Anivision.Tutorial
             
             if (playTutorialEveryTime || !Save.Instance.PreviouslyVisited(SceneManager.GetActiveScene()))   // moves player directly to main island if have already done tutorial
             {
-                // clean up all tutorial objects and add OnDone listener
+                // clean up all tutorial objects
                 foreach (TutorialStep tutorialStep in tutorialSteps)
                 {
                     tutorialStep.Cleanup();
@@ -68,7 +68,7 @@ namespace Anivision.Tutorial
         }
         private void Setup()
         {
-            _notebook.ShowChapter(Chapter.ChapterTitle.Tutorial);        // display the tutorial chapter
+            _notebook.ShowChapter(Chapter.ChapterTitle.Tutorial);                         // display the tutorial chapter
             _notebook.CurrentChapter.PresentPage(_notebook.CurrentChapter.defaultPage);   // display the default page of the tutorial chapter
 
             foreach (TutorialStep tutorialStep in tutorialSteps)
@@ -140,12 +140,12 @@ namespace Anivision.Tutorial
             }
 
             _teleportController.enabled = true;
-            if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;          // only move to spawn point if skipping, otherwise player will already be on main island
+            if (moveToSpawn && _skipped) cameraRig.transform.position = spawnPoint.transform.position;  // only move to spawn point if skipping, otherwise player will already be on main island
             _audioSource.Play();
 
 
-            _notebook.ShowChapter(Chapter.ChapterTitle.Home);        // display the home chapter
-            _notebook.CurrentChapter.PresentPage(_notebook.CurrentChapter.defaultPage, false, true);   // display the default page of the home chapter
+            _notebook.ShowChapter(Chapter.ChapterTitle.Home);                                           // display the home chapter
+            _notebook.CurrentChapter.PresentPage(_notebook.CurrentChapter.defaultPage, false, true);    // display the default page of the home chapter
         }
     }
 }

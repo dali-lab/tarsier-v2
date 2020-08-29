@@ -19,6 +19,7 @@ namespace Anivision.NotebookSystem
 
             _toDefaultButton = gameObject.GetComponent<Button>();
             if (_toDefaultButton == null) throw new System.Exception("Must have a button script on this object");
+
             _toDefaultButton.onClick.AddListener(FlipToDefault);
         }
         private void FlipToDefault()

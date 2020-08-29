@@ -114,11 +114,11 @@ namespace Anivision.NotebookSystem
 
             if (_images == null)
             {
-                // don't add sprite renderers tagged as "text effect" (only want to turn those on on button hover)
+                // don't add sprite renderers tagged as "text hover" (only turn on on button hover) or "text select" (only turn on on button press)
                 List<SpriteRenderer> allImages = GetComponentsInChildren<SpriteRenderer>(true).ToList();
                 for (int i = allImages.Count-1; i >= 0; i--)
                 {
-                    if (allImages[i].gameObject.tag == "text effect")
+                    if (allImages[i].gameObject.tag == "text hover" || allImages[i].gameObject.tag == "text select")
                     {
                         allImages[i].gameObject.SetActive(false);
                         allImages.Remove(allImages[i]);

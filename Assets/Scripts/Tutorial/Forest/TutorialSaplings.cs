@@ -50,8 +50,7 @@ namespace Anivision.Tutorial
 
         private void Update()
         {
-            if (Input.GetKey("up")) _stepDone = true;
-                if (_stepDone && !_audioSource.isPlaying)       // if player had exited trigger and voiceover is done, move on
+            if (_stepDone && !_audioSource.isPlaying)       // if player had exited trigger and voiceover is done, move on
             {
                 OnDone.Invoke();
             }
