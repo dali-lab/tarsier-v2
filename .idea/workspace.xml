@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="58017c88-64d9-4a9a-aa0d-207feec3fab7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_floor_wood_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/SampleFramework/Usage/Locomotion/Materials/MAT_floor_wood_02.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/pbr-tileable-detailed-forest-ground-textures-3d-model-low-poly.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/pbr-tileable-detailed-forest-ground-textures-3d-model-low-poly.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lobby/Bee Meadow 2.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lobby/Bee Meadow 2.gif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Lobby/NotebookPageMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Lobby/NotebookPageMat.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Shader Graphs_Portal shader 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Shader Graphs_Portal shader 1.mat.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
