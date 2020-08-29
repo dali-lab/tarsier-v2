@@ -133,7 +133,7 @@ namespace Anivision.NotebookSystem
         {
             if (chapters == null)
             {
-                chapters = GetComponentsInChildren<Chapter>();
+                chapters = GetComponentsInChildren<Chapter>(true);
                 foreach (Chapter c in chapters)
                 {
                     if (!_chapterDictionary.ContainsKey(c.chapterTitle))

@@ -96,12 +96,12 @@ namespace Anivision.NotebookSystem
         {
             if (_buttons == null)
             {
-                _buttons = GetComponentsInChildren<Button>();
+                _buttons = GetComponentsInChildren<Button>(true);
             }
 
             if (_textMeshPros == null)
             {
-                _textMeshPros = GetComponentsInChildren<TextMeshPro>();
+                _textMeshPros = GetComponentsInChildren<TextMeshPro>(true);
                 _originalTextInfo = new Dictionary<TextMeshPro, string>();
                 foreach (TextMeshPro tmp in _textMeshPros)
                 {
@@ -114,14 +114,12 @@ namespace Anivision.NotebookSystem
 
             if (_images == null)
             {
-                List<SpriteRenderer> allImages = GetComponentsInChildren<SpriteRenderer>().ToList();
-                //UnityEngine.Debug.Log("count: " + allImages.Count);
+                // don't add sprite renderers tagged as "text effect" (only want to turn those on on button hover)
+                List<SpriteRenderer> allImages = GetComponentsInChildren<SpriteRenderer>(true).ToList();
                 for (int i = allImages.Count-1; i >= 0; i--)
                 {
-                    //UnityEngine.Debug.Log(allImages[i].gameObject);
                     if (allImages[i].gameObject.tag == "text effect")
                     {
-                        //UnityEngine.Debug.Log("removed: " + allImages[i].gameObject);
                         allImages[i].gameObject.SetActive(false);
                         allImages.Remove(allImages[i]);
                     }

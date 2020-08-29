@@ -61,7 +61,6 @@ namespace Anivision.Tutorial
                 {
                     tutorialStep.Cleanup();
                     if (tutorialStep.AllowActiveFalse == true) tutorialStep.gameObject.SetActive(false);
-                    tutorialStep.OnDone.AddListener(Next);
                 }
                 Setup();
             }
@@ -148,8 +147,8 @@ namespace Anivision.Tutorial
             _audioSource.Play();
 
 
-            _notebook.ShowChapter(Chapter.ChapterTitle.Home, true);        // display the tutorial chapter
-            _notebook.CurrentChapter.PresentPage(_notebook.CurrentChapter.defaultPage);   // display the default page of the tutorial chapter
+            _notebook.ShowChapter(Chapter.ChapterTitle.Home);        // display the home chapter
+            _notebook.CurrentChapter.PresentPage(_notebook.CurrentChapter.defaultPage, false, true);   // display the default page of the home chapter
         }
     }
 }

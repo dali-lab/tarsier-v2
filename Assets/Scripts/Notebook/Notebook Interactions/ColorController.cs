@@ -53,14 +53,14 @@ public class ColorController : MonoBehaviour
     public void ToDefaultSelectorColor()
     {
         _selectorRenderer.GetPropertyBlock(_selectorPropBlock);
-        _controllerPropBlock.SetColor("_BaseColor", defaultSelectorColor);
+        _selectorPropBlock.SetColor("_BaseColor", defaultSelectorColor);
         _selectorRenderer.SetPropertyBlock(_selectorPropBlock);
     }
 
     public void ToHoverSelectorColor()
     {
         _selectorRenderer.GetPropertyBlock(_selectorPropBlock);
-        _controllerPropBlock.SetColor("_BaseColor", hoverSelectorColor);
+        _selectorPropBlock.SetColor("_BaseColor", hoverSelectorColor);
         _selectorRenderer.SetPropertyBlock(_selectorPropBlock);
     }
 }

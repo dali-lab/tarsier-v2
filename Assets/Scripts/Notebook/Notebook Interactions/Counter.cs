@@ -8,7 +8,7 @@ namespace Anivision.NotebookSystem
 {
     public class Counter : MonoBehaviour
     {
-        public TextMeshPro count;
+        public TextMeshPro countTMP;
         public HeadsetCollide headsetCollide;
 
         private Chapter _chapter;
@@ -48,7 +48,7 @@ namespace Anivision.NotebookSystem
                 {
                     _currCount += 1;
                     _countString = _currCount + "/10";
-                    _chapter.ChangeText(count, _countString);
+                    countTMP.text = _countString;
                 }
             }
         }

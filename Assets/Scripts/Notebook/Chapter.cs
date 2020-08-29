@@ -157,7 +157,7 @@ namespace Anivision.NotebookSystem
             }
             if (_pages == null)
             {
-                _pages = GetComponentsInChildren<Page>().ToList();
+                _pages = GetComponentsInChildren<Page>(true).ToList();
             }
         }
         

@@ -58,13 +58,6 @@ namespace Anivision.NotebookSystem
             _rightColorController = rightHandAnchor.GetComponent<ColorController>();
 
             _TMP = gameObject.GetComponent<TextMeshPro>();
-
-            // turns off all text effects (highlights)
-            _textEffect = GetComponentsInChildren<SpriteRenderer>();
-            foreach (SpriteRenderer effects in _textEffect)
-            {
-                effects.gameObject.SetActive(false);
-            }
         }
 
         private void OnEnable()
@@ -77,6 +70,13 @@ namespace Anivision.NotebookSystem
 
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
+
+            // turns off all text effects (highlights)
+            _textEffect = GetComponentsInChildren<SpriteRenderer>(true);
+            foreach (SpriteRenderer effects in _textEffect)
+            {
+                effects.gameObject.SetActive(false);
+            }
 
             ChangeText(buttonText);
         }
