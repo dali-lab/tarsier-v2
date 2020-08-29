@@ -89,6 +89,8 @@ namespace Anivision.Core
             {
                 inputManager.DetachInputHandler(SwitchHumanAnimal, InputManager.InputState.ON_PRESS, visionSwapButton);
             }
+            VisionSwitch.RemoveAllListeners();
+            AnimalSwitch.RemoveAllListeners();
         }
 
         private void Update()
