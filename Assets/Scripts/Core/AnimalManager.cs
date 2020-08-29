@@ -116,10 +116,10 @@ namespace Anivision.Core
             AnimalController animalController;
             if (_animalControllerDict.TryGetValue(animal, out animalController))
             {
+                currentVision = animal;
                 VisionSwitch.Invoke(animalController.VisionParameters);
                 AnimalSwitch.Invoke(animal);
-                currentVision = animal;
-                
+
                 if (setAsNewAnimal)
                 {
                     currentAnimalToSwitch = animal;

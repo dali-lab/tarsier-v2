@@ -22,6 +22,6 @@ public class VisionTracker : MonoBehaviour
 
     private void UpdateText(VisionParameters visionParameters)
     {
-        currentVisionTMP.text = _animalManager.currentVision.ToString().ToUpper();
+        currentVisionTMP.text = visionParameters.Animal.ToString().ToUpper();
     }
 }
