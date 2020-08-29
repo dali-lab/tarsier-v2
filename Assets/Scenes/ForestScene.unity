@@ -24797,8 +24797,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279964594
-  m_fontColor: {r: 0.6981132, g: 0.07573871, b: 0.10708132, a: 1}
+    rgba: 4278781278
+  m_fontColor: {r: 0.36862746, g: 0.019607844, b: 0.03529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -28481,7 +28481,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: da8a0d888fb1b144b81cdf2d9dd367e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c471204ca848407093bb8c441acd859, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -32503,6 +32503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultChapterTitle: 0
+  light: {fileID: 1259084944}
 --- !u!1001 &582499282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41356,6 +41357,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &659405709 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9212683106723321924, guid: 054501c8c630dde428d3fb0563f113e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 9212683107263836569}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659405707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a3c845fe2feb14ba5c1eec07c5c9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &660535980
 GameObject:
   m_ObjectHideFlags: 0
@@ -68801,8 +68814,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279964594
-  m_fontColor: {r: 0.6981132, g: 0.07573871, b: 0.10708132, a: 1}
+    rgba: 4278781278
+  m_fontColor: {r: 0.36862746, g: 0.019607844, b: 0.03529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -71587,6 +71600,7 @@ GameObject:
   - component: {fileID: 1288894539}
   - component: {fileID: 1288894538}
   - component: {fileID: 1288894543}
+  - component: {fileID: 1288894544}
   m_Layer: 10
   m_Name: Skip Button
   m_TagString: Untagged
@@ -71656,8 +71670,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279964594
-  m_fontColor: {r: 0.6981132, g: 0.07573871, b: 0.10708132, a: 1}
+    rgba: 4278781278
+  m_fontColor: {r: 0.3679245, g: 0.019090425, b: 0.035834577, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -71821,6 +71835,20 @@ MonoBehaviour:
   onButtonEnter:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1288894544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288894536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51f651e60545549d1a6a3c8b405f09bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _TutorialController: {fileID: 659405709}
+  scaleController: {fileID: 263135407}
 --- !u!1001 &1288907399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73087,8 +73115,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288439569
-  m_fontColor: {r: 0.066666655, g: 0.39458853, b: 0.6117647, a: 1}
+    rgba: 4287961615
+  m_fontColor: {r: 0.057938762, g: 0.1009479, b: 0.5849056, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -98871,8 +98899,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4279344145
-  m_fontColor: {r: 0.06666667, g: 0.6117647, b: 0.06666667, a: 1}
+    rgba: 4278606598
+  m_fontColor: {r: 0.021982923, g: 0.3584906, b: 0.021982923, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -99244,12 +99272,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 02216e774315d7644acb108de7e3b6b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 569e8f7a9c723443494a4d7be4a1fdf2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 21.49, y: 13.714565}
+  m_Size: {x: 20.48, y: 20.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -111804,7 +111832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1954050748
 RectTransform:
   m_ObjectHideFlags: 0

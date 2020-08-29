@@ -16,7 +16,6 @@ namespace Anivision.Tutorial
     public class TutorialController : MonoBehaviour
     {
         public GameObject cameraRig;
-        public Button skipButton;
         public TextMeshPro pageCount;
 
         [Tooltip("Where to move the player to when skipping tutorial")]
@@ -51,9 +50,7 @@ namespace Anivision.Tutorial
             _notebook = Notebook.Instance;
             if (_notebook == null) UnityEngine.Debug.LogError("Trying to access the notebook in this scene, but there is none.");
             _notebook.Setup();
-
-            skipButton.onClick.AddListener(Skip);
-
+            
             if (playTutorialEveryTime || !Save.Instance.PreviouslyVisited(SceneManager.GetActiveScene()))   // moves player directly to main island if have already done tutorial
             {
                 // clean up all tutorial objects and add OnDone listener

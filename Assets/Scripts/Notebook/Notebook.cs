@@ -29,18 +29,30 @@ namespace Anivision.NotebookSystem
         }
         [Tooltip("Default chapter title. Should be a title that belongs to a chapter that is a child of this game object.")]
         public Chapter.ChapterTitle defaultChapterTitle;
+        [Tooltip("Light that follows notebook so that it is always lit and readable. Consider setting the culling mask of the light to Notebook.")]
+        public Light light;
         public Chapter CurrentChapter { get; private set; }
         private Chapter[] chapters;
         private Dictionary<Chapter.ChapterTitle, Chapter> _chapterDictionary = new Dictionary<Chapter.ChapterTitle, Chapter>();
 
+        private void Awake()
+        {
+            if (light != null)
+            {
+                light.transform.parent = gameObject.transform;
+            }
+        }
+
         //on enable, shows the current chapter without resetting
         private void OnEnable()
         {
+            if (light != null) light.enabled = true;
             if (CurrentChapter != null) ShowChapter(CurrentChapter.chapterTitle);
         }
         // on disable, hides the current chapter without resetting
         private void OnDisable()
         {
+            if (light != null) light.enabled = false;
             if (CurrentChapter != null)
             {
                 CurrentChapter.Hide();
