@@ -42,12 +42,11 @@ namespace Anivision.Core
         public AnimalSwitchEvent AnimalSwitch = new AnimalSwitchEvent();
         [Tooltip("Button used to switch between human vision and the current animal of the scene")]
         public InputManager.Button visionSwapButton = InputManager.Button.A;
-        [HideInInspector]
         public Animal currentAnimalToSwitch { get; set; }
         
         private Dictionary<Animal, AnimalController> _animalControllerDict;
         private bool initialSetup = false;
-        [HideInInspector] public Animal currentVision = Animal.Human;
+        private Animal currentVision = Animal.Human;
 
         private InputManager inputManager;
         // Start is called before the first frame update
