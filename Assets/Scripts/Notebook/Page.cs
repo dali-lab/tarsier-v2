@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Anivision.Notebook
+namespace Anivision.NotebookSystem
 {
     /// <summary>
     /// 3rd level of the notebook. Controls individual UI elements
@@ -14,48 +15,25 @@ namespace Anivision.Notebook
     {
         private Button[] _buttons;
         private TextMeshPro[] _textMeshPros;
-        private Image[] _images;
+        private SpriteRenderer[] _images;
         private Dictionary<TextMeshPro, string> _originalTextInfo; //saves original text of text mesh pros
-        private Dictionary<Image, Sprite> _originalSprites; // saves original sprites of images
+        private Dictionary<SpriteRenderer, Sprite> _originalSprites; // saves original sprites of images
         
-        private void Awake()
-        {
-            _buttons = GetComponentsInChildren<Button>();
-            _textMeshPros = GetComponentsInChildren<TextMeshPro>();
-            _images = GetComponentsInChildren<Image>();
-            _originalTextInfo = new Dictionary<TextMeshPro, string>();
-            _originalSprites = new Dictionary<Image, Sprite>();
-            
-            foreach (TextMeshPro tmp in _textMeshPros)
-            {
-                if (!_originalTextInfo.ContainsKey(tmp))
-                {
-                    _originalTextInfo.Add(tmp, tmp.text);
-                }
-            }
-            
-            foreach (Image image in _images)
-            {
-                if (!_originalSprites.ContainsKey(image))
-                {
-                    _originalSprites.Add(image, image.sprite);
-                }
-            }
-        }
         
         /// <summary>
         /// Resets the entire page and its elements, sets all elements to active
         /// </summary>
         public virtual void Setup()
         {
+            BuildElementsDictionary();
             ResetButtons();
             ResetText();
             ResetImages();
             SetButtonsActive(true);
             SetTextActive(true);
             SetImagesActive(true);
-            
             if (!gameObject.activeSelf) gameObject.SetActive(true);
+
         }
         
         /// <summary>
@@ -63,9 +41,12 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Show()
         {
+            BuildElementsDictionary();
             SetButtonsActive(true);
             SetTextActive(true);
             SetImagesActive(true);
+            if (!gameObject.activeSelf) gameObject.SetActive(true);
+
         }
 
         /// <summary>
@@ -73,6 +54,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Cleanup()
         {
+            BuildElementsDictionary();
             ResetButtons();
             ResetText();
             ResetImages();
@@ -85,9 +67,11 @@ namespace Anivision.Notebook
         
         public virtual void Hide()
         {
+            BuildElementsDictionary();
             SetButtonsActive(false);
             SetTextActive(false);
             SetImagesActive(false);
+            if (!gameObject.activeSelf) gameObject.SetActive(false);
         }
 
         public virtual void ChangeText(TextMeshPro tmp, String s)
@@ -102,10 +86,55 @@ namespace Anivision.Notebook
             result.ChangeText(s);
         }
         
-        public virtual void ChangeImage(Image image, Sprite sprite)
+        public virtual void ChangeImage(SpriteRenderer image, Sprite sprite)
         {
-            Image result = Array.Find(_images, ele => image.Equals(ele));
+            SpriteRenderer result = Array.Find(_images, ele => image.Equals(ele));
             result.sprite = sprite;
+        }
+        
+        protected virtual void BuildElementsDictionary()
+        {
+            if (_buttons == null)
+            {
+                _buttons = GetComponentsInChildren<Button>(true);
+            }
+
+            if (_textMeshPros == null)
+            {
+                _textMeshPros = GetComponentsInChildren<TextMeshPro>(true);
+                _originalTextInfo = new Dictionary<TextMeshPro, string>();
+                foreach (TextMeshPro tmp in _textMeshPros)
+                {
+                    if (!_originalTextInfo.ContainsKey(tmp))
+                    {
+                        _originalTextInfo.Add(tmp, tmp.text);
+                    }
+                }
+            }
+
+            if (_images == null)
+            {
+                // don't add sprite renderers tagged as "text hover" (only turn on on button hover) or "text select" (only turn on on button press)
+                List<SpriteRenderer> allImages = GetComponentsInChildren<SpriteRenderer>(true).ToList();
+                for (int i = allImages.Count-1; i >= 0; i--)
+                {
+                    if (allImages[i].gameObject.tag == "text hover" || allImages[i].gameObject.tag == "text select")
+                    {
+                        allImages[i].gameObject.SetActive(false);
+                        allImages.Remove(allImages[i]);
+                    }
+                }
+                _images = allImages.ToArray();
+
+                _originalSprites = new Dictionary<SpriteRenderer, Sprite>();
+                foreach (SpriteRenderer image in _images)
+                {
+                    if (!_originalSprites.ContainsKey(image))
+                    {
+                        _originalSprites.Add(image, image.sprite);
+                    }
+                }
+            }
         }
 
         protected virtual void ResetButtons()
@@ -126,7 +155,7 @@ namespace Anivision.Notebook
         
         protected virtual void ResetImages()
         {
-            foreach (Image image in _images)
+            foreach (SpriteRenderer image in _images)
             {
                 image.sprite = _originalSprites[image];
             }
@@ -150,7 +179,7 @@ namespace Anivision.Notebook
 
         private void SetImagesActive(bool setActive)
         {
-            foreach (Image image in _images)
+            foreach (SpriteRenderer image in _images)
             {
                 image.gameObject.SetActive(setActive);
             }

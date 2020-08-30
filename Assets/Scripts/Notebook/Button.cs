@@ -6,7 +6,7 @@ using Anivision.Core;
 using Anivision.PlayerInteraction;
 using TMPro;
 
-namespace Anivision.Notebook
+namespace Anivision.NotebookSystem
 {
     /// <summary>
     /// Controls all the physical pressable buttons in the scene.
@@ -16,13 +16,10 @@ namespace Anivision.Notebook
     public class Button : MonoBehaviour
     {
         [TextArea(3, 10)] public string buttonText;
-        public GameObject rightController;
+        public GameObject rightHandAnchor;
 
         [Tooltip("How many seconds to wait before the button can register another press.")]
         public float buttonCooldownSeconds = 0.5f;
-
-        public Color defaultButtonColor;
-        public Color hoverButtonColor;
 
         [Tooltip("The haptic frequency when the selector sphere enters the button.")]
         public float hoverHapticFrequency = 1;
@@ -45,9 +42,11 @@ namespace Anivision.Notebook
         private HapticsController _hapticsController;
         private TeleportController _teleportController;
         private ColorController _rightColorController;
+        private SpriteRenderer[] _textHover;
         private TextMeshPro _TMP;
         private MaterialPropertyBlock _propBlock;
         private Renderer _renderer;
+   
         private bool _turnOnTeleport = false;
         private bool buttonCooldownRunning;
 
@@ -56,7 +55,9 @@ namespace Anivision.Notebook
         {
             _propBlock = new MaterialPropertyBlock();
             _renderer = gameObject.GetComponent<Renderer>();
-            _rightColorController = rightController.GetComponent<ColorController>();
+            _rightColorController = rightHandAnchor.GetComponent<ColorController>();
+
+            _TMP = gameObject.GetComponent<TextMeshPro>();
         }
 
         private void OnEnable()
@@ -70,10 +71,17 @@ namespace Anivision.Notebook
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
-            _TMP = gameObject.transform.Find("TMP").gameObject.GetComponent<TextMeshPro>();
-        
+            // turns off all text effects (highlights)
+            _textHover = GetComponentsInChildren<SpriteRenderer>(true);
+            foreach (SpriteRenderer effects in _textHover)
+            {
+                if (effects.gameObject.tag == "text hover")
+                {
+                    effects.gameObject.SetActive(false);
+                }
+            }
+
             ChangeText(buttonText);
-            ChangeButtonColor(defaultButtonColor);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -89,10 +97,18 @@ namespace Anivision.Notebook
                 // trigger button hover haptics
                 _hapticsController.Haptics(hoverHapticFrequency, hoverHapticAmplitude, hoverHapticDuration, OVRInput.Controller.RTouch);
 
-                // update hover colors of the button, the right controller, and the selector sphere on the right controller
-                ChangeButtonColor(hoverButtonColor);
+                // update hover colors of the right controller and the selector sphere on the right controller
                 _rightColorController.ToHoverControllerColor();
                 _rightColorController.ToHoverSelectorColor();
+
+                // turn on the text effects (highlight)
+                foreach (SpriteRenderer effects in _textHover)
+                {
+                    if (effects.gameObject.tag == "text hover")
+                    {
+                        effects.gameObject.SetActive(true);
+                    }
+                }
             }
         }
         private void OnTriggerStay(Collider other)
@@ -113,10 +129,18 @@ namespace Anivision.Notebook
         {
             if (_turnOnTeleport) _teleportController.enabled = true;            // turn on ability to teleport if player had teleport before interacting with button
 
-            // update colors of the button, the right controller, and the selector sphere on the right controller back to the default
-            ChangeButtonColor(defaultButtonColor);
+            // update colors of the right controller and the selector sphere on the right controller back to the default
             _rightColorController.ToDefaultControllerColor();
             _rightColorController.ToDefaultSelectorColor();
+
+            // turn off the text effects (highlight)
+            foreach (SpriteRenderer effects in _textHover)
+            {
+                if (effects.gameObject.tag == "text hover")
+                {
+                    effects.gameObject.SetActive(false);
+                }
+            }
         }
 
         IEnumerator ButtonCooldown(float seconds)
@@ -136,6 +160,7 @@ namespace Anivision.Notebook
 
         public void ChangeText (string s)
         {
+            if (_TMP == null) _TMP = gameObject.GetComponent<TextMeshPro>();
             _TMP.text = s;
         }
 

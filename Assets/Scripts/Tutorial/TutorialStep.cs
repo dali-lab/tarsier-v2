@@ -1,14 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using Anivision.NotebookSystem;
 
 public abstract class TutorialStep : MonoBehaviour
 {
-    [TextArea(3, 10)] public string dashboardText;
     [HideInInspector] public UnityEvent OnDone;
+    [HideInInspector] public Chapter chapter;
+    public Page page;
     public bool AllowActiveFalse = true;
-    public abstract void Setup(TextMeshPro TMP);
-    public abstract void Cleanup(TextMeshPro TMP);
+
+
+    public virtual void Setup()
+    {
+        gameObject.SetActive(true);
+        chapter.PresentPage(page);
+    }
+    public virtual void Cleanup()
+    {
+        page.Cleanup();
+        if (AllowActiveFalse) gameObject.SetActive(false);
+    }
 }

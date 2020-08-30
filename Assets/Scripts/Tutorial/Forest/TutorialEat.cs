@@ -27,7 +27,7 @@ namespace Anivision.Tutorial
 
 
 
-        public override void Setup(TextMeshPro TMP)
+        public override void Setup()
         {
             _inputManager = InputManager.Instance;
             if (_inputManager == null) throw new System.Exception("Must have an input manager script in the scene");
@@ -46,9 +46,11 @@ namespace Anivision.Tutorial
                 }
             }
 
-            TMP.text = dashboardText;
-            gripHighlightRing.SetActive(true);
+            // set up the corresponding page of the tutorial notebook
+            chapter.PresentPage(page);
 
+            // relevant tutorial items
+            gripHighlightRing.SetActive(true);
             headsetCollide.onCollide.AddListener(Done);
 
             _audioSource.Play();
@@ -74,12 +76,12 @@ namespace Anivision.Tutorial
             }
         }
 
-        public override void Cleanup(TextMeshPro TMP)
+        public override void Cleanup()
         {
-            TMP.text = "";
             gripHighlightRing.SetActive(false);
-
             headsetCollide.onCollide.RemoveListener(Done);
+
+            page.Cleanup();
         }
     }
 }

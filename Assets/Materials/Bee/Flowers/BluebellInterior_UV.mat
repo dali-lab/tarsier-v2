@@ -25,5 +25,5 @@ Material:
     - _Intensity: 1
     - _NectarScale: 20
     m_Colors:
-    - Color_C21F7040: {r: 1, g: 1, b: 1, a: 0}
+    - Color_C21F7040: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
     - _MainColor: {r: 0.8862745, g: 0.7921569, b: 1, a: 1}

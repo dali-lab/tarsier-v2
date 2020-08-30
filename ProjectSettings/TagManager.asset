@@ -10,6 +10,8 @@ TagManager:
   - flower
   - selector
   - button
+  - text hover
+  - text select
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - 
   - Teleportable
   - Player
-  - Dashboard
+  - Notebook
   - 
   - 
   - 

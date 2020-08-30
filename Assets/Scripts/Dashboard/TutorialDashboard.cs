@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Anivision.Notebook;
+using Anivision.NotebookSystem;
 using UnityEngine;
 using Anivision.Tutorial;
 using TMPro;

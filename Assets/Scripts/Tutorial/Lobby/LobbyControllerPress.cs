@@ -23,7 +23,7 @@ namespace Anivision.Tutorial
         private GameObject _currHighlight;
         private int _highlightsOn = 10;
 
-        public override void Setup(TextMeshPro TMP)
+        public override void Setup()
         {
             _inputManager = InputManager.Instance;
             if (_inputManager == null) throw new System.Exception("Must have an input manager in the scene");
@@ -31,7 +31,6 @@ namespace Anivision.Tutorial
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
 
-            TMP.text = dashboardText;
 
             // turn on the relevant tutorial items
             tutorialControllers.SetActive(true);
@@ -67,9 +66,8 @@ namespace Anivision.Tutorial
             }
         }
 
-        public override void Cleanup(TextMeshPro TMP)
+        public override void Cleanup()
         {
-            TMP.text = "";
             tutorialControllers.SetActive(false);
             foreach (Transform child in LHighlightRings.transform) child.gameObject.SetActive(false);
             foreach (Transform child in RHighlightRings.transform) child.gameObject.SetActive(false);

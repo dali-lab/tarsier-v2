@@ -4,7 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-namespace Anivision.Notebook
+namespace Anivision.NotebookSystem
 {
     /// <summary>
     /// Second level of the notebook. Automatically saves a reference to all of the page scripts that are attached to children of the game object
@@ -27,23 +27,13 @@ namespace Anivision.Notebook
         private Page _currentPage;
         private Dictionary<TextMeshPro, string> _originalTextInfo; //saves original text of text mesh pros
         
-        //save text mesh pro information, get pages from all children
-        private void Awake()
-        {
-            _originalTextInfo = new Dictionary<TextMeshPro, string>();
-            foreach (TextMeshPro tmp in texts)
-            {
-                if (!_originalTextInfo.ContainsKey(tmp)) _originalTextInfo.Add(tmp, tmp.text);
-            }
-
-            _pages = GetComponentsInChildren<Page>().ToList();
-        }
         
         /// <summary>
         /// Resets all pages, buttons, and text in this chapter and presents the default page. Turns all elements active
         /// </summary>
         public virtual void Setup()
         {
+            SetElementsDictionary();
             foreach (Page p in _pages)
             {
                 p.Setup();
@@ -62,6 +52,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Show()
         {
+            SetElementsDictionary();
             if (_currentPage == null)
             {
                 ResetCurrentPage();
@@ -78,6 +69,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Cleanup()
         {
+            SetElementsDictionary();
             foreach (Page p in _pages)
             {
                 p.Cleanup();
@@ -95,6 +87,7 @@ namespace Anivision.Notebook
         /// </summary>
         public virtual void Hide()
         {
+            SetElementsDictionary();
             if (_currentPage != null)
             {
                 _currentPage.Hide();
@@ -138,6 +131,34 @@ namespace Anivision.Notebook
             }
             
             if (!gameObject.activeSelf) gameObject.SetActive(true);
+        }
+
+        /// <summary>
+        /// Changes the text of TMPs attached to the chapter
+        /// Takes in the TextMeshPro to be changed, and the string to change it to
+        /// </summary>
+        /// <param name="tmp"></param>
+        /// <param name="text"></param>
+        public void ChangeText(TextMeshPro tmp, string text)
+        {
+            TextMeshPro tmpToChange = texts.Find(x => x == tmp);            // looks through the lists of tmps and finds the one that matches
+            if (tmpToChange != null) tmpToChange.text = text;
+        }
+
+        protected virtual void SetElementsDictionary()
+        {
+            if (_originalTextInfo == null)
+            {
+                _originalTextInfo = new Dictionary<TextMeshPro, string>();
+                foreach (TextMeshPro tmp in texts)
+                {
+                    if (!_originalTextInfo.ContainsKey(tmp)) _originalTextInfo.Add(tmp, tmp.text);
+                }
+            }
+            if (_pages == null)
+            {
+                _pages = GetComponentsInChildren<Page>(true).ToList();
+            }
         }
         
         // resets _currentPage variable to default

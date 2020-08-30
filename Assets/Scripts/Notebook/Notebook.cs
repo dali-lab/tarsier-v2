@@ -1,8 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-
-namespace Anivision.Notebook
+namespace Anivision.NotebookSystem
 {
     /// <summary>
     /// First level of the notebook. Controls notebook that is attached to left controller
@@ -13,72 +12,72 @@ namespace Anivision.Notebook
     {
         private static Notebook _notebook;
         //singleton instance
-        public static Notebook Instance { get
+        public static Notebook Instance
         {
-            if (!_notebook)
+            get
             {
-                _notebook = FindObjectOfType (typeof (Notebook)) as Notebook;
-
                 if (!_notebook)
                 {
-                    UnityEngine.Debug.LogError("There needs to be one active NotebookController script on a GameObject in your scene.");
+                    _notebook = FindObjectOfType(typeof(Notebook)) as Notebook;
+                    if (!_notebook)
+                    {
+                        UnityEngine.Debug.LogError("There needs to be one active NotebookController script on a GameObject in your scene.");
+                    }
                 }
+                return _notebook;
             }
-
-            return _notebook;
-        } }
-
+        }
         [Tooltip("Default chapter title. Should be a title that belongs to a chapter that is a child of this game object.")]
-        public Chapter.ChapterTitle defaultChapterTitle; 
+        public Chapter.ChapterTitle defaultChapterTitle;
+        [Tooltip("Light that follows notebook so that it is always lit and readable. Consider setting the culling mask of the light to Notebook.")]
+        public Light light;
         public Chapter CurrentChapter { get; private set; }
-        
         private Chapter[] chapters;
-        private Dictionary<Chapter.ChapterTitle, Chapter> _chapterDictionary;
+        private Dictionary<Chapter.ChapterTitle, Chapter> _chapterDictionary = new Dictionary<Chapter.ChapterTitle, Chapter>();
+
         private void Awake()
         {
-            chapters = GetComponentsInChildren<Chapter>();
-            _chapterDictionary = new Dictionary<Chapter.ChapterTitle, Chapter>();
-            foreach (Chapter c in chapters)
+            if (light != null)
             {
-                if (!_chapterDictionary.ContainsKey(c.chapterTitle))
-                {
-                    _chapterDictionary.Add(c.chapterTitle, c);
-                }
+                light.transform.parent = gameObject.transform;
             }
-
-            ResetCurrentChapter();
         }
-        
+
         //on enable, shows the current chapter without resetting
         private void OnEnable()
         {
+            if (light != null) light.enabled = true;
             if (CurrentChapter != null) ShowChapter(CurrentChapter.chapterTitle);
         }
-        
         // on disable, hides the current chapter without resetting
         private void OnDisable()
         {
+            if (light != null) light.enabled = false;
             if (CurrentChapter != null)
             {
                 CurrentChapter.Hide();
             }
         }
-        
         /// <summary>
         /// Setup resets the notebook completely and presents the default chapter resetted
         /// </summary>
         public void Setup()
         {
+            BuildChaptersDictionary();
+            foreach (Chapter c in chapters)
+            {
+                c.Cleanup();
+            }
             ResetCurrentChapter();
             if (CurrentChapter != null) CurrentChapter.Setup();
             if (!gameObject.activeSelf) gameObject.SetActive(true);
         }
-        
         /// <summary>
         /// Cleanup resets the notebook and disables game object
         /// </summary>
         public void Cleanup()
         {
+            BuildChaptersDictionary();
             foreach (Chapter c in chapters)
             {
                 c.Cleanup();
@@ -86,7 +85,6 @@ namespace Anivision.Notebook
             ResetCurrentChapter();
             if (gameObject.activeSelf) gameObject.SetActive(false);
         }
-        
         /// <summary>
         /// Shows the chapter that corresponds to the title passed in. Optional booleans to determine if the current and new chapters should be reset
         /// </summary>
@@ -95,6 +93,7 @@ namespace Anivision.Notebook
         /// <param name="resetNewChapter"></param>
         public void ShowChapter(Chapter.ChapterTitle chapterTitle, bool resetCurrentChapter = false, bool resetNewChapter = false)
         {
+            BuildChaptersDictionary();
             Chapter chapter;
             if (_chapterDictionary.TryGetValue(chapterTitle, out chapter))
             {
@@ -109,9 +108,7 @@ namespace Anivision.Notebook
                         CurrentChapter.Hide();
                     }
                 }
-
                 CurrentChapter = chapter;
-
                 if (resetNewChapter)
                 {
                     CurrentChapter.Setup();
@@ -120,16 +117,13 @@ namespace Anivision.Notebook
                 {
                     CurrentChapter.Show();
                 }
-                
             }
             else
             {
                 UnityEngine.Debug.LogError("Chapter type does not exist in this notebook");
             }
-            
             if (!gameObject.activeSelf) gameObject.SetActive(true);
         }
-        
         // resets the _currentChapter variable
         private void ResetCurrentChapter()
         {
@@ -145,7 +139,21 @@ namespace Anivision.Notebook
             {
                 CurrentChapter = null;
             }
+
         }
-        
+        private void BuildChaptersDictionary()
+        {
+            if (chapters == null)
+            {
+                chapters = GetComponentsInChildren<Chapter>(true);
+                foreach (Chapter c in chapters)
+                {
+                    if (!_chapterDictionary.ContainsKey(c.chapterTitle))
+                    {
+                        _chapterDictionary.Add(c.chapterTitle, c);
+                    }
+                }
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Anivision.Notebook;
+﻿using Anivision.NotebookSystem;
 using TMPro;
 using UnityEngine;
 using Anivision.PlayerInteraction;
@@ -21,7 +21,7 @@ namespace Anivision.Tutorial
         private bool _stepDone = false;
 
 
-        public override void Setup(TextMeshPro TMP)
+        public override void Setup()
         {
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
@@ -32,12 +32,12 @@ namespace Anivision.Tutorial
             _audioSource = gameObject.GetComponent<AudioSource>();
             if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
-            TMP.text = dashboardText;
+            // set up the corresponding page of the tutorial notebook
+            chapter.PresentPage(page);
 
-            // turn on the relevant tutorial items
+            // relevant tutorial items
             RTriggerHighlight.SetActive(true);
             startButton.gameObject.SetActive(true);
-
             startButton.onClick.AddListener(StartScaleChange);
 
             _teleportController.enabled = false;                // turn off ability to teleport
@@ -65,13 +65,13 @@ namespace Anivision.Tutorial
             }
         }
 
-        public override void Cleanup(TextMeshPro TMP)
+        public override void Cleanup()
         {
-            TMP.text = "";
             RTriggerHighlight.SetActive(false);
 
             startButton.GetComponent<Button>().onClick.RemoveListener(StartScaleChange);
             startButton.gameObject.SetActive(false);
+            page.Cleanup();
         }
     }
 }

@@ -22,7 +22,7 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - Vector1_4AFB7751: 100
-    - _Intensity: 1
+    - _Intensity: 0.5
     m_Colors:
-    - Color_C21F7040: {r: 1, g: 1, b: 1, a: 0}
+    - Color_C21F7040: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
     - _MainColor: {r: 0.019607844, g: 0.011764706, b: 0.02745098, a: 1}
