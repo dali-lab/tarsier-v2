@@ -9,7 +9,7 @@ namespace Anivision.Tutorial
 {
     /// <summary>
     /// Teaches the player how to teleport.
-    /// Moves on to the next step of the tutorial when the player leaves the collider of this gameobject.
+    /// Moves on to the next step of the tutorial when the player teleports onto a valid object.
     /// </summary>
     public class TutorialTeleport : TutorialStep
     {
@@ -48,17 +48,9 @@ namespace Anivision.Tutorial
             _teleportController.onTeleport.RemoveListener(Teleported);
         }
 
-        //private void OnTriggerExit(Collider other)          // triggers when player leaves capsule collider
-        //{
-        //    if (other.tag == "MainCamera")
-        //    {
-        //        _stepDone = true;
-        //    }
-        //}
-
         private void Update()
         {
-            if (_stepDone && !_audioSource.isPlaying)       // if player had exited trigger and voiceover is done, move on
+            if (_stepDone && !_audioSource.isPlaying)       // if player has teleported and voiceover is done, move on
             {
                 OnDone.Invoke();
             }

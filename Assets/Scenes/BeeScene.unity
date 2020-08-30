@@ -26043,36 +26043,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1226021105}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1230210462
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1230210463}
-  m_Layer: 10
-  m_Name: NotebookPOs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1230210463
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1230210462}
-  m_LocalRotation: {x: -0.33460128, y: -0.6891115, z: 0.15850632, w: 0.6229311}
-  m_LocalPosition: {x: -0.19188, y: 0.023019, z: -0.030233}
-  m_LocalScale: {x: 1.2244829, y: 1.2244829, z: 1.2244829}
-  m_Children: []
-  m_Father: {fileID: 953217825}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -11.444, y: -100.206, z: 42.221}
 --- !u!1001 &1230833858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28918,7 +28888,7 @@ PrefabInstance:
     - target: {fileID: 2561896675741971078, guid: 4f6b72abc5ab93548a25b2f9f01ab5ba,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2561896675741971078, guid: 4f6b72abc5ab93548a25b2f9f01ab5ba,
         type: 3}
