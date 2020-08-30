@@ -16,7 +16,7 @@ namespace Anivision.NotebookSystem
     public class Button : MonoBehaviour
     {
         [TextArea(3, 10)] public string buttonText;
-        public GameObject rightHandAnchor;
+        //public GameObject rightHandAnchor;
 
         [Tooltip("How many seconds to wait before the button can register another press.")]
         public float buttonCooldownSeconds = 0.5f;
@@ -55,7 +55,7 @@ namespace Anivision.NotebookSystem
         {
             _propBlock = new MaterialPropertyBlock();
             _renderer = gameObject.GetComponent<Renderer>();
-            _rightColorController = rightHandAnchor.GetComponent<ColorController>();
+            //_rightColorController = rightHandAnchor.GetComponent<ColorController>();
 
             _TMP = gameObject.GetComponent<TextMeshPro>();
         }
@@ -70,6 +70,9 @@ namespace Anivision.NotebookSystem
 
             _teleportController = TeleportController.Instance;
             if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
+
+            _rightColorController = ColorController.Instance;
+            if (_rightColorController == null) throw new System.Exception("Must have a color controller in the scene");
 
             // turns off all text effects (highlights)
             _textHover = GetComponentsInChildren<SpriteRenderer>(true);

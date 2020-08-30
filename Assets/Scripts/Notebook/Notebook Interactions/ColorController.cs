@@ -7,6 +7,24 @@ using UnityEngine;
 /// </summary>
 public class ColorController : MonoBehaviour
 {
+    private static ColorController _colorController;
+    //singleton instance
+    public static ColorController Instance
+    {
+        get
+        {
+            if (!_colorController)
+            {
+                _colorController = FindObjectOfType(typeof(ColorController)) as ColorController;
+                if (!_colorController)
+                {
+                    UnityEngine.Debug.LogError("There needs to be one active ColorController script on a GameObject in your scene (usually on right hand anchor).");
+                }
+            }
+            return _colorController;
+        }
+    }
+
     public GameObject rightControllerModel;
     public GameObject selectorObject;
 

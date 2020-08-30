@@ -11,7 +11,6 @@ namespace Anivision.NotebookSystem
         public TextMeshPro countTMP;
         public HeadsetCollide headsetCollide;
 
-        private Chapter _chapter;
         private Grabber[] _Grabbers;
         private Grabber _RGrabber;
         private Grabber _LGrabber;
@@ -22,11 +21,9 @@ namespace Anivision.NotebookSystem
         {
             ResetCount();
         }
+
         private void OnEnable()
         {
-            _chapter = gameObject.GetComponent<Chapter>();
-            if (_chapter == null) UnityEngine.Debug.LogError("Trying to access the chapter of this gameobject, but there is none.");
-
             _Grabbers = FindObjectsOfType<Grabber>();
             if (_Grabbers.Length > 0)
             {
@@ -60,8 +57,6 @@ namespace Anivision.NotebookSystem
         {
             _currCount = 0;
         }
-
-
 
         private void OnDisable()
         {
