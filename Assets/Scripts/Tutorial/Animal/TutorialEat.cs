@@ -26,7 +26,6 @@ namespace Anivision.Tutorial
         private Grabber _LGrabber;
 
 
-
         public override void Setup()
         {
             _inputManager = InputManager.Instance;

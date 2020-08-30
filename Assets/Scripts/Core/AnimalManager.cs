@@ -46,7 +46,7 @@ namespace Anivision.Core
         
         private Dictionary<Animal, AnimalController> _animalControllerDict;
         private bool initialSetup = false;
-        private Animal currentVision = Animal.Human;
+        [HideInInspector] public Animal currentVision = Animal.Human;
 
         private InputManager inputManager;
         // Start is called before the first frame update

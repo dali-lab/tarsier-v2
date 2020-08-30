@@ -16,7 +16,6 @@ namespace Anivision.NotebookSystem
     public class Button : MonoBehaviour
     {
         [TextArea(3, 10)] public string buttonText;
-        public GameObject rightHandAnchor;
 
         [Tooltip("How many seconds to wait before the button can register another press.")]
         public float buttonCooldownSeconds = 0.5f;
@@ -41,7 +40,8 @@ namespace Anivision.NotebookSystem
         private InputManager _inputManager;
         private HapticsController _hapticsController;
         private TeleportController _teleportController;
-        private ColorController _rightColorController;
+
+        private ColorController _colorController;
         private SpriteRenderer[] _textHover;
         private TextMeshPro _TMP;
         private MaterialPropertyBlock _propBlock;
@@ -55,7 +55,6 @@ namespace Anivision.NotebookSystem
         {
             _propBlock = new MaterialPropertyBlock();
             _renderer = gameObject.GetComponent<Renderer>();
-            _rightColorController = rightHandAnchor.GetComponent<ColorController>();
 
             _TMP = gameObject.GetComponent<TextMeshPro>();
         }
@@ -68,8 +67,8 @@ namespace Anivision.NotebookSystem
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
 
+            // for turning off teleport functionality when interacting with buttons (only if the scene supports teleporting)
             _teleportController = TeleportController.Instance;
-            if (_teleportController == null) throw new System.Exception("Must have a teleport controller in the scene");
 
             // turns off all text effects (highlights)
             _textHover = GetComponentsInChildren<SpriteRenderer>(true);
@@ -88,18 +87,23 @@ namespace Anivision.NotebookSystem
         {
             if (other.tag == "selector")
             {
-                if (_teleportController.enabled)                // to prevent accidental teleport when trying to select a button
+                if (_teleportController != null && _teleportController.enabled) // if scene has teleport functionality, prevents accidental teleport when trying to select a button
                 {
-                    _turnOnTeleport = true;                     // keeps track of whether the teleporterController is suppose to be on to set its state back when OnTriggerExit is called
-                    _teleportController.enabled = false;        // turn off ability to teleport
+                    _turnOnTeleport = true;                                     // keeps track of whether the teleporterController is suppose to be on to set its state back when OnTriggerExit is called
+                    _teleportController.enabled = false;                        // turn off ability to teleport
                 }
 
                 // trigger button hover haptics
                 _hapticsController.Haptics(hoverHapticFrequency, hoverHapticAmplitude, hoverHapticDuration, OVRInput.Controller.RTouch);
 
-                // update hover colors of the right controller and the selector sphere on the right controller
-                _rightColorController.ToHoverControllerColor();
-                _rightColorController.ToHoverSelectorColor();
+                // look for a color controller in parent objects
+                _colorController = other.gameObject.GetComponentInParent<ColorController>();
+                // if color controller found, update hover colors of the controller and the selector sphere on the controller
+                if (_colorController != null)
+                {
+                    _colorController.ToHoverControllerColor();
+                    _colorController.ToHoverSelectorColor();
+                }
 
                 // turn on the text effects (highlight)
                 foreach (SpriteRenderer effects in _textHover)
@@ -127,11 +131,14 @@ namespace Anivision.NotebookSystem
         }
         private void OnTriggerExit(Collider other)
         {
-            if (_turnOnTeleport) _teleportController.enabled = true;            // turn on ability to teleport if player had teleport before interacting with button
+            if (_teleportController != null && _turnOnTeleport) _teleportController.enabled = true;            // turn on ability to teleport if player had teleport before interacting with button
 
-            // update colors of the right controller and the selector sphere on the right controller back to the default
-            _rightColorController.ToDefaultControllerColor();
-            _rightColorController.ToDefaultSelectorColor();
+            // if color controller found, update hover colors of the controller and the selector sphere on the controller
+            if (_colorController != null)
+            {
+                _colorController.ToDefaultControllerColor();
+                _colorController.ToDefaultSelectorColor();
+            }
 
             // turn off the text effects (highlight)
             foreach (SpriteRenderer effects in _textHover)
@@ -149,11 +156,14 @@ namespace Anivision.NotebookSystem
             yield return new WaitForSecondsRealtime(seconds);
             onClick.Invoke();
 
-            if (_turnOnTeleport) _teleportController.enabled = true;            // turn on ability to teleport if player had teleport before interacting with button
+            if (_teleportController != null && _turnOnTeleport) _teleportController.enabled = true;            // turn on ability to teleport if player had teleport before interacting with button
 
-            // reset the controller and selector color to default if the button is pressed
-            _rightColorController.ToDefaultControllerColor();
-            _rightColorController.ToDefaultSelectorColor();
+            // if color controller found, // reset the controller and selector color to default if the button is pressed
+            if (_colorController != null)
+            {
+                _colorController.ToDefaultControllerColor();
+                _colorController.ToDefaultSelectorColor();
+            }
             buttonCooldownRunning = false;
         }
 

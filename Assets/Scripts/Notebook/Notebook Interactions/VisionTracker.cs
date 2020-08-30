@@ -18,6 +18,7 @@ public class VisionTracker : MonoBehaviour
             throw new Exception("There must be an instance of the AnimalManager script in the scene");
         }
         _animalManager.VisionSwitch.AddListener(UpdateText);
+        currentVisionTMP.text = _animalManager.currentVision.ToString().ToUpper();
     }
 
     private void UpdateText(VisionParameters visionParameters)

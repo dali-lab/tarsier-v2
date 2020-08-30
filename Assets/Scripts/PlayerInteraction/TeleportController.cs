@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Anivision.Core;
+using UnityEngine.Events;
 
 namespace Anivision.PlayerInteraction
 {
@@ -51,6 +52,8 @@ namespace Anivision.PlayerInteraction
         public float hapticStrength = 0.25f;
         [Tooltip("The haptic duration when the raycast enters a valid target.")]
         public float hapticDuration = 0.1f;
+
+        [HideInInspector] public UnityEvent onTeleport;
 
 
         // Whether the current teleportation attempt is valid (The raycast hit a layer in the 'validLayers' Layer Mask)
@@ -131,6 +134,9 @@ namespace Anivision.PlayerInteraction
 
                 // Reset the teleporter
                 valid = false;
+
+                // Emit onTeleport event
+                onTeleport.Invoke();
             }
             else
             {
