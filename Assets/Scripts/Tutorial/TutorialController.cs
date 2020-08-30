@@ -68,7 +68,7 @@ namespace Anivision.Tutorial
         }
         private void Setup()
         {
-            _notebook.CurrentChapter.Setup();
+            _notebook.ShowChapter(Chapter.ChapterTitle.Tutorial, false, true);
 
             // clean up all the tutorial steps
             foreach (TutorialStep tutorialStep in tutorialSteps)
