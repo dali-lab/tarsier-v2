@@ -20,16 +20,13 @@ namespace Anivision.NotebookSystem
 
             _toVisionButton = gameObject.GetComponent<Button>();
             if (_toVisionButton == null) throw new System.Exception("Must have a button script on this object");
+
             _toVisionButton.onClick.AddListener(FlipToVision);
         }
+
         private void FlipToVision()
         {
             _notebook.CurrentChapter.PresentPage(visionPage, false, false);   // display the vision select page of the home chapter
         }
-
-        //private void Update()
-        //{
-        //    if (Input.GetKey("up")) FlipToVision();
-        //}
     }
 }

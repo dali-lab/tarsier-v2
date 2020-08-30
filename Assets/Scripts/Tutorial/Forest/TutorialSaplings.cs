@@ -32,7 +32,8 @@ namespace Anivision.Tutorial
             _audioSource = gameObject.GetComponent<AudioSource>();
             if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
 
-            page.Setup();
+            // set up the corresponding page of the tutorial notebook
+            chapter.PresentPage(page);
 
             triggerHighlightRing.SetActive(true);
 

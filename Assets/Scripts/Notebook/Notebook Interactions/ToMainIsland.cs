@@ -11,12 +11,17 @@ namespace Anivision.NotebookSystem
 {
     public class ToMainIsland : MonoBehaviour
     {
+        private SceneSwitch _sceneSwitch;
         private Button _toMainIslandButton;
 
         private void OnEnable()
         {
+            _sceneSwitch = gameObject.GetComponent<SceneSwitch>();
+            if (_sceneSwitch == null) throw new System.Exception("Must have a scene switch script on this object");
+
             _toMainIslandButton = gameObject.GetComponent<Button>();
             if (_toMainIslandButton == null) throw new System.Exception("Must have a button script on this object");
+
             _toMainIslandButton.onClick.AddListener(Transition);
         }
 

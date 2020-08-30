@@ -18,6 +18,10 @@ namespace Anivision.NotebookSystem
         private int _currCount;
         private string _countString;
 
+        private void Awake()
+        {
+            ResetCount();
+        }
         private void OnEnable()
         {
             _chapter = gameObject.GetComponent<Chapter>();
@@ -35,7 +39,6 @@ namespace Anivision.NotebookSystem
             }
 
             headsetCollide.onCollide.AddListener(Eat);
-            _currCount = 0;
         }
 
         // Update the count of number eaten
@@ -52,6 +55,13 @@ namespace Anivision.NotebookSystem
                 }
             }
         }
+
+        private void ResetCount()
+        {
+            _currCount = 0;
+        }
+
+
 
         private void OnDisable()
         {

@@ -46,7 +46,8 @@ namespace Anivision.Tutorial
                 }
             }
 
-            page.Setup();
+            // set up the corresponding page of the tutorial notebook
+            chapter.PresentPage(page);
 
             // relevant tutorial items
             gripHighlightRing.SetActive(true);

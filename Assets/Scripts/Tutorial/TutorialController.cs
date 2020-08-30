@@ -68,9 +68,9 @@ namespace Anivision.Tutorial
         }
         private void Setup()
         {
-            _notebook.ShowChapter(Chapter.ChapterTitle.Tutorial);                         // display the tutorial chapter
-            _notebook.CurrentChapter.PresentPage(_notebook.CurrentChapter.defaultPage);   // display the default page of the tutorial chapter
+            _notebook.CurrentChapter.Setup();
 
+            // clean up all the tutorial steps
             foreach (TutorialStep tutorialStep in tutorialSteps)
             {
                 tutorialStep.Cleanup();
