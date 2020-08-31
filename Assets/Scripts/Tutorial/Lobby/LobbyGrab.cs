@@ -18,6 +18,8 @@ namespace Anivision.Tutorial
         public GameObject stamp;                            // the stamp itself
         public GameObject accessGrantedMark;                // what appears on the notebook when it has been stamped
         public GameObject RGripHighlight;
+        [Tooltip("Seconds to wait on this step so the player can see the beautiful stamp before proceeding.")]
+        public int secondsToWait = 2;
 
         private HapticsController _hapticsController;
         private AudioSource _audioSource;
@@ -55,9 +57,13 @@ namespace Anivision.Tutorial
         {
             if (other.gameObject == stamp)
             {
-                accessGrantedMark.transform.parent = stampColliderPosition.transform;  // when the stamp hits the notebook, parent the logo to the notebook instead of the stamp
+                // when the stamp hits the notebook, parent the logo to the notebook instead of the stamp
+                accessGrantedMark.transform.SetParent(stampColliderPosition.transform, true);
+
                 _hapticsController.Haptics(1, 0.5f, 0.25f, OVRInput.Controller.RTouch);
-                _stepDone = true;
+
+                // wait on this step before proceeding
+                StartCoroutine(Wait(secondsToWait));          
             }
         }
 
@@ -68,6 +74,12 @@ namespace Anivision.Tutorial
             {
                 OnDone.Invoke();
             }
+        }
+
+        IEnumerator Wait(int seconds)
+        {
+            yield return new WaitForSecondsRealtime(seconds);
+            _stepDone = true;
         }
 
         public override void Cleanup()
