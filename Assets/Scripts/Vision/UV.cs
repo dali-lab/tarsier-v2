@@ -113,7 +113,6 @@ namespace Anivision.Vision
             
                 if (matInfo == null)
                 {
-
                     MaterialInfo newMatInfo =
                         CreateMaterialInfo(currentMaterial, shaderBaseColor, shaderBaseTexture, currentRenderer);
                     if (newMatInfo.texture != null)
