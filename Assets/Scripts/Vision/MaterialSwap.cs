@@ -53,7 +53,7 @@ namespace Anivision.Vision
 
             Material[] newMaterials = currentRenderer.materials;
             newMaterials[currentMaterialIndex] = swapMaterial;
-            currentRenderer.materials = newMaterials;
+            currentRenderer.sharedMaterials = newMaterials;
         }
 
         private void ConstructMaterialDictionaries(MaterialGroup[] materialGroupsList, Dictionary<string, Dictionary<Animal, Material>> matDictionary, Dictionary<string, Material> reverseMatDictionary)
@@ -132,7 +132,7 @@ namespace Anivision.Vision
         /// <param name="r"></param>
         public override void RevertToOriginal(Renderer r)
         {
-            Material[] currentMaterials = r.materials;
+            Material[] currentMaterials = r.sharedMaterials;
             MaterialPropertyBlock propertyBlock = new MaterialPropertyBlock();
             for (int i = 0; i < currentMaterials.Length; i++)
             {
@@ -140,14 +140,14 @@ namespace Anivision.Vision
 
                 if (originalMaterial != null)
                 {
-                    currentMaterials[i] = GetOriginalMaterial(currentMaterials[i]);
+                    currentMaterials[i] = originalMaterial;
                 }
                 
                 r.SetPropertyBlock(propertyBlock, i);
             }
 
-            r.materials = currentMaterials;
-        
+            r.sharedMaterials = currentMaterials;
+
         }
     }
 }

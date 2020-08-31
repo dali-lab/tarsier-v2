@@ -26,21 +26,13 @@ namespace Anivision.Vision
         /// <summary>
         /// Function to save material information into a dictionary
         /// </summary>
-        /// <param name="t"></param>
+        /// <param name="parentGameObject"></param>
         /// <param name="shaderBaseColor"></param>
         /// <param name="shaderBaseTexture"></param>
         /// <returns></returns>
-        public static Dictionary<string, MaterialInfo> SaveMaterialInfo(Transform t, string shaderBaseColor, string shaderBaseTexture)
+        public static Dictionary<string, MaterialInfo> SaveMaterialInfo(GameObject parentGameObject, string shaderBaseColor, string shaderBaseTexture)
         {
             Dictionary<string, MaterialInfo> originalMaterialInfo = new Dictionary<string, MaterialInfo>();
-            SaveMaterialInfo(t.gameObject, originalMaterialInfo, shaderBaseColor, shaderBaseTexture);
-            return originalMaterialInfo;
-        }
-
-        private static void SaveMaterialInfo(GameObject parentGameObject,
-            Dictionary<string, MaterialInfo> _originalMaterials, string shaderColorProperty,
-            string shaderTextureProperty)
-        {
             List<Renderer> renderers = parentGameObject.GetComponentsInChildren<Renderer>(true).ToList();
             Renderer parentRenderer = parentGameObject.GetComponent<Renderer>();
             if (parentRenderer != null)
@@ -52,33 +44,14 @@ namespace Anivision.Vision
             {
                 foreach (Material m in r.sharedMaterials)
                 {
-                    if (!_originalMaterials.ContainsKey(GetMaterialName(m)))
+                    if (!originalMaterialInfo.ContainsKey(GetMaterialName(m)))
                     {
-                        _originalMaterials.Add(GetMaterialName(m), CreateMaterialInfo(m, shaderColorProperty, shaderTextureProperty, r));
-                    }
-                }
-            }
-        }
-        
-        //save original material's info in hash table so that we can retrieve it easily later. 
-        private static void SaveMaterialInfoRecursive(Transform t, Dictionary<string, MaterialInfo> _originalMaterials, string shaderColorProperty, string shaderTextureProperty)
-        {
-            GameObject currGameObject = t.gameObject;
-            Renderer mRenderer = currGameObject.GetComponent<Renderer>();
-            if (mRenderer != null)
-            {
-                foreach (Material m in mRenderer.sharedMaterials)
-                {
-                    if (!_originalMaterials.ContainsKey(GetMaterialName(m)))
-                    {
-                        _originalMaterials.Add(GetMaterialName(m), CreateMaterialInfo(m, shaderColorProperty, shaderTextureProperty, mRenderer));
+                        originalMaterialInfo.Add(GetMaterialName(m), CreateMaterialInfo(m, shaderBaseColor, shaderBaseTexture, r));
                     }
                 }
             }
             
-            foreach( Transform child in t) {
-                SaveMaterialInfoRecursive(child, _originalMaterials, shaderColorProperty, shaderTextureProperty);
-            }
+            return originalMaterialInfo;
         }
 
         public static MaterialInfo CreateMaterialInfo(Material m, string shaderColorProperty, string shaderTextureProperty, Renderer r)

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Anivision.Core;
 using UnityEngine;
 
@@ -45,28 +46,24 @@ namespace Anivision.Vision
                 _animalManager.VisionSwitch.AddListener(MaterialChange);
             }
         }
-
+        
+        /// <summary>
+        /// Goes through all renderers in itself and in children and applies vision effects
+        /// </summary>
+        /// <param name="visionParameters"></param>
         private void MaterialChange(VisionParameters visionParameters)
         {
-            MaterialChangeRecursive(gameObject.transform, visionParameters);
-            lastAppliedEffects = visionParameters.VisionEffects;
-        }
-
-        /// <summary>
-        /// Recurses through all of the child transforms and applies the relevant effects
-        /// </summary>
-        /// <param name="t"></param>
-        /// <param name="visionParameters"></param>
-        private void MaterialChangeRecursive(Transform t, VisionParameters visionParameters)
-        {
-            GameObject currGameObject = t.gameObject;
-            Renderer mRenderer = currGameObject.GetComponent<Renderer>();
-            
-            // if current game object has a renderer
-            if (mRenderer != null)
+            List<Renderer> renderers = gameObject.GetComponentsInChildren<Renderer>(true).ToList();
+            Renderer parentRenderer = gameObject.GetComponent<Renderer>();
+            if (parentRenderer != null)
             {
-                RevertToOriginal(mRenderer); //revert materials to original before applying new changes
-                //go through renderer materials
+                renderers.Add(parentRenderer);
+            }
+
+            foreach (Renderer mRenderer in renderers)
+            {
+                RevertToOriginal(mRenderer);
+                
                 for (int i = 0; i < mRenderer.sharedMaterials.Length; i++)
                 {
                     MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
@@ -81,14 +78,10 @@ namespace Anivision.Vision
                     }
                     mRenderer.SetPropertyBlock(propBlock, i);
                 }
-
             }
-            // recurse over children
-            foreach(Transform child in t) {
-                MaterialChangeRecursive(child, visionParameters);
-            }
+            lastAppliedEffects = visionParameters.VisionEffects;
         }
-        
+
         //revert current renderer to original
         private void RevertToOriginal(Renderer r)
         {
@@ -97,7 +90,6 @@ namespace Anivision.Vision
                 
                 if (lastAppliedEffects != null && lastAppliedEffects.Count > 0)
                 {
-                    
                     int i = lastAppliedEffects.Count - 1;
                     
                     while (i >= 0)
@@ -112,21 +104,6 @@ namespace Anivision.Vision
                 }
             }
            
-        }
-        
-        //recurse through children to revert renderers to original
-        private void RevertToOriginalRecursive(Transform t)
-        {
-            GameObject currGameObject = t.gameObject;
-            Renderer mRenderer = currGameObject.GetComponent<Renderer>();
-
-            RevertToOriginal(mRenderer);
-
-            // recurse over children
-            foreach(Transform child in t) {
-                RevertToOriginalRecursive(child);
-            }
-            
         }
     }
 }

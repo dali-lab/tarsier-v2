@@ -23,7 +23,7 @@ namespace Anivision.Vision
         private void Awake()
         {
             //save original colors in hash table so that we can access them easily later.
-            _materialInfo = SaveMaterialInfo(gameObject.transform, shaderBaseColor, shaderBaseTexture);
+            _materialInfo = SaveMaterialInfo(gameObject, shaderBaseColor, shaderBaseTexture);
             ConstructUVTextures(_materialInfo);
         }
         
@@ -93,7 +93,7 @@ namespace Anivision.Vision
             VisionParameters visionParameters)
         {
             
-            //if we have recursed to a child game object with its own UV script, we should use the child's UV settings instead
+            //if we have child game object has its own UV script, we should use the child's UV settings instead
             if (currentRenderer.gameObject != gameObject)
             {
                 UV childUVScript = currentRenderer.gameObject.GetComponent<UV>();
