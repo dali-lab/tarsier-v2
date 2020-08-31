@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorblindType: 0
-  effects: 0200000003000000
+  effects: 0300000001000000
   rRed: 1
   rGreen: 0
   rBlue: 0

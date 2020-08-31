@@ -34,6 +34,6 @@ namespace Anivision.Core
         Colorblindness,
         UV,
         MaterialSwap,
-        NectarIntensity
+        Sparkle
     }
 }

@@ -109,12 +109,6 @@ namespace Anivision.Core
                 
                 initialSetup = true;
             }
-
-            // if (Input.GetKeyDown("b"))
-            // {
-            //     SwitchHumanAnimal();
-            // }
-            
         }
 
 

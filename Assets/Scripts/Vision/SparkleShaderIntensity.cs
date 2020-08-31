@@ -8,11 +8,12 @@ namespace Anivision.Vision
     /// <summary>
     /// Controls the nectar sparkliness based on the amount of nectar
     /// </summary>
-    public class NectarShaderIntensity : MaterialEffect
+    public class SparkleShaderIntensity : MaterialEffect
     {
-        public override VisionEffect Effect => VisionEffect.NectarIntensity;
-        private int globcount = 0;
-        private float maxGlobs = 1;
+        public override VisionEffect Effect => VisionEffect.Sparkle;
+        public int SparkleIntensity = 0;
+        
+        private float _maxSparkle = 1;
 
         private MaterialPropertyBlock _propBlock;
 
@@ -22,29 +23,36 @@ namespace Anivision.Vision
             UpdateMaterial();
         }
 
-        public void IncrementGlob()
+        public void IncreaseSparkle(int incrementBy = 1)
         {
-            globcount++;
-            if (globcount > maxGlobs)
+            SparkleIntensity += incrementBy;
+            if (SparkleIntensity > _maxSparkle)
             {
-                maxGlobs = globcount;
+                _maxSparkle = SparkleIntensity;
             }
             UpdateMaterial();
         }
 
-        public void GlobConsumed()
+        public void DecreaseSparkle(int decrementBy = 1)
         {
-            if (globcount > 0)
+            if (SparkleIntensity > 0)
             {
-                globcount--;
+                if (SparkleIntensity - decrementBy > 0)
+                {
+                    SparkleIntensity-= decrementBy;
+                }
+                else
+                {
+                    SparkleIntensity--;
+                }
+                
                 UpdateMaterial();
             }
-            
         }
         
         private float GetIntensity()
         {
-            return globcount / maxGlobs;
+            return SparkleIntensity / _maxSparkle;
         }
 
         public override void ApplyEffect(MaterialPropertyBlock propBlock, int materialIndex, Renderer renderer,

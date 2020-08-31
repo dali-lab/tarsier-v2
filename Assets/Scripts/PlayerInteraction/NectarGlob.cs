@@ -7,7 +7,7 @@ namespace Anivision.PlayerInteraction
 {
     public class NectarGlob : MonoBehaviour 
     {
-        public NectarShaderIntensity controller;
+        public SparkleShaderIntensity controller;
         
         private HeadsetCollide _headsetCollide;
         private Grabber[] Grabbers;
@@ -16,7 +16,7 @@ namespace Anivision.PlayerInteraction
         void Start()
         {
             if (controller != null) {
-                controller.IncrementGlob();
+                controller.IncreaseSparkle();
             }
 
             Grabbers = FindObjectsOfType<Grabber>();
@@ -44,7 +44,7 @@ namespace Anivision.PlayerInteraction
             {
 
                 if (controller) {
-                    controller.GlobConsumed();
+                    controller.DecreaseSparkle();
                 }
                     
                 Destroy(gameObject);

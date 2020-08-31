@@ -889,13 +889,13 @@
             <e p="MaterialGroup.cs" t="Include" />
             <e p="MaterialInfo.cs" t="Include" />
             <e p="MaterialSwap.cs" t="Include" />
-            <e p="NectarShaderIntensity.cs" t="Include" />
             <e p="Pixelation.cs" t="Include" />
             <e p="RendererController.cs" t="Include" />
             <e p="RendererEffect.cs" t="Include" />
             <e p="SkyboxController.cs" t="Include" />
             <e p="SkyboxEffect.cs" t="Include" />
             <e p="SkyboxSwap.cs" t="Include" />
+            <e p="SparkleShaderIntensity.cs" t="Include" />
             <e p="UV.cs" t="Include" />
             <e p="VisionParameters.cs" t="Include" />
             <e p="VisionSwitch.cs" t="Include" />
