@@ -28,6 +28,8 @@ namespace Anivision.Core
             }
 
             return _animalManager;
+
+
         } } 
 
         

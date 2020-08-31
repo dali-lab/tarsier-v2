@@ -823,6 +823,7 @@
             <e p="Button.cs" t="Include" />
             <e p="Chapter.cs" t="Include" />
             <e p="Notebook Interactions" t="Include">
+              <e p="ButtonSelected.cs" t="Include" />
               <e p="ColorController.cs" t="Include" />
               <e p="Counter.cs" t="Include" />
               <e p="ReplayTutorial.cs" t="Include" />
@@ -861,10 +862,11 @@
             <e p="SceneSwitch.cs" t="Include" />
           </e>
           <e p="tutorial" t="Include">
-            <e p="Forest" t="Include">
+            <e p="Animal" t="Include">
               <e p="TutorialEat.cs" t="Include" />
-              <e p="TutorialSaplings.cs" t="Include" />
+              <e p="TutorialFly.cs" t="Include" />
               <e p="TutorialSize.cs" t="Include" />
+              <e p="TutorialTeleport.cs" t="Include" />
               <e p="TutorialVision.cs" t="Include" />
             </e>
             <e p="Lobby" t="Include">

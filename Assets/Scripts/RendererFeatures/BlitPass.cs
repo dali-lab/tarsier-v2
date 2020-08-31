@@ -55,7 +55,6 @@ namespace UnityEngine.Experiemntal.Rendering.Universal
         public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
         {
             CommandBuffer cmd = CommandBufferPool.Get(m_ProfilerTag);
-            
             RenderTextureDescriptor opaqueDesc = renderingData.cameraData.cameraTargetDescriptor;
             opaqueDesc.depthBufferBits = 0;
 

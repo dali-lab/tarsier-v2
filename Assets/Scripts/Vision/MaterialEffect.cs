@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Anivision.Core;
 using UnityEngine;
 
@@ -32,8 +33,31 @@ namespace Anivision.Vision
         public static Dictionary<string, MaterialInfo> SaveMaterialInfo(Transform t, string shaderBaseColor, string shaderBaseTexture)
         {
             Dictionary<string, MaterialInfo> originalMaterialInfo = new Dictionary<string, MaterialInfo>();
-            SaveMaterialInfoRecursive(t, originalMaterialInfo, shaderBaseColor, shaderBaseTexture);
+            SaveMaterialInfo(t.gameObject, originalMaterialInfo, shaderBaseColor, shaderBaseTexture);
             return originalMaterialInfo;
+        }
+
+        private static void SaveMaterialInfo(GameObject parentGameObject,
+            Dictionary<string, MaterialInfo> _originalMaterials, string shaderColorProperty,
+            string shaderTextureProperty)
+        {
+            List<Renderer> renderers = parentGameObject.GetComponentsInChildren<Renderer>(true).ToList();
+            Renderer parentRenderer = parentGameObject.GetComponent<Renderer>();
+            if (parentRenderer != null)
+            {
+                renderers.Add(parentRenderer);
+            }
+
+            foreach (Renderer r in renderers)
+            {
+                foreach (Material m in r.sharedMaterials)
+                {
+                    if (!_originalMaterials.ContainsKey(GetMaterialName(m)))
+                    {
+                        _originalMaterials.Add(GetMaterialName(m), CreateMaterialInfo(m, shaderColorProperty, shaderTextureProperty, r));
+                    }
+                }
+            }
         }
         
         //save original material's info in hash table so that we can retrieve it easily later. 
