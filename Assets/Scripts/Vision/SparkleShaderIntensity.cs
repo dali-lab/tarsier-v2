@@ -20,6 +20,7 @@ namespace Anivision.Vision
         void Awake()
         {
             _propBlock = new MaterialPropertyBlock();
+            IncreaseSparkle(SparkleIntensity);
             UpdateMaterial();
         }
 
@@ -59,7 +60,7 @@ namespace Anivision.Vision
             VisionParameters visionParameters)
         {
             propBlock.SetFloat("_SparkleOn", 1.0f);
-            propBlock.SetFloat("_SparkleIntensity", GetIntensity());
+            if (renderer.sharedMaterials[materialIndex].HasProperty("_SparkleOn")) propBlock.SetFloat("_SparkleIntensity", GetIntensity());
         }
 
         public override void RevertToOriginal(Renderer r)
@@ -95,7 +96,7 @@ namespace Anivision.Vision
                 {
                     r.GetPropertyBlock(propBlock, i);
                     propBlock.SetFloat("_SparkleIntensity", GetIntensity());
-                    propBlock.SetFloat("_SparkleOn", r.sharedMaterials[i].GetFloat("_SparkeOn"));
+                    if (r.sharedMaterials[i].HasProperty("_SparkleOn")) propBlock.SetFloat("_SparkleOn", r.sharedMaterials[i].GetFloat("_SparkleOn"));
                     r.SetPropertyBlock(propBlock, i);
                 }
             }

@@ -797,15 +797,6 @@
             <e p="InputManager.cs" t="Include" />
             <e p="Save.cs" t="Include" />
           </e>
-          <e p="Dashboard" t="Include">
-            <e p="Dashboard.cs" t="Include" />
-            <e p="DashboardController.cs" t="Include" />
-            <e p="HomeDashboard.cs" t="Include" />
-            <e p="NectarUI.cs" t="Include" />
-            <e p="SkipTutorial.cs" t="Include" />
-            <e p="TutorialDashboard.cs" t="Include" />
-            <e p="VisionSelectDashboard.cs" t="Include" />
-          </e>
           <e p="Debug" t="Include">
             <e p="SampleInput.cs" t="Include" />
             <e p="SwitchAnimalTest.cs" t="Include" />
@@ -827,6 +818,7 @@
               <e p="ColorController.cs" t="Include" />
               <e p="Counter.cs" t="Include" />
               <e p="ReplayTutorial.cs" t="Include" />
+              <e p="SkipTutorial.cs" t="Include" />
               <e p="ToDefaultPage.cs" t="Include" />
               <e p="ToMainIsland.cs" t="Include" />
               <e p="ToVisionPage.cs" t="Include" />
