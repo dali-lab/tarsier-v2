@@ -37,13 +37,13 @@ namespace Anivision.Dashboard
         private void DoneScaling()
         {
             _TutorialController.Skip();
-            scaleController.ScaleDone.RemoveListener(DoneScaling);
+            if (scaleController != null) scaleController.ScaleDone.RemoveListener(DoneScaling);
         }
 
         private void OnDisable()
         {
             _button.onClick.RemoveListener(StartScaleOrSkip);
-            scaleController.ScaleDone.RemoveListener(DoneScaling);
+            if (scaleController != null) scaleController.ScaleDone.RemoveListener(DoneScaling);
         }
     }
 }

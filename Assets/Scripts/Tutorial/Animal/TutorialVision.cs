@@ -42,7 +42,7 @@ namespace Anivision.Tutorial
             {
                 _stepDone = true;
             }
-            if (_stepDone && !_audioSource.isPlaying) // if player had pressed A and voiceover is done, move on
+            if (_stepDone && !_audioSource.isPlaying) // if player has pressed A and voiceover is done, move on
             {
                 OnDone.Invoke();
             }
