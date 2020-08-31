@@ -13,12 +13,12 @@ namespace Anivision.Tutorial
     /// </summary>
     public class LobbyControllerPress : TutorialStep
     {
-        public GameObject tutorialControllers;
         public GameObject LHighlightRings;
         public GameObject RHighlightRings;
 
         private InputManager _inputManager;
         private HapticsController _hapticsController;
+        private AudioSource _audioSource;
 
         private GameObject _currHighlight;
         private int _highlightsOn = 10;
@@ -31,18 +31,23 @@ namespace Anivision.Tutorial
             _hapticsController = HapticsController.Instance;
             if (_hapticsController == null) throw new System.Exception("Must have a haptics controller in the scene");
 
+            _audioSource = gameObject.GetComponent<AudioSource>();
+            if (_audioSource == null) UnityEngine.Debug.LogError("Trying to access the audio source on this object, but there is none.");
+
+            // set up the corresponding page of the tutorial notebook
+            chapter.PresentPage(page);
 
             // turn on the relevant tutorial items
-            tutorialControllers.SetActive(true);
             foreach (Transform child in LHighlightRings.transform) child.gameObject.SetActive(true);
             foreach (Transform child in RHighlightRings.transform) child.gameObject.SetActive(true);
 
             _hapticsController.Haptics(1, 0.5f, 1, OVRInput.Controller.LTouch);
+            _audioSource.Play();
         }
 
-        private void Update()                                               // turn off the highlight when corresponding button is pressed
+        private void Update()                                                   // turn off the highlight when corresponding button is pressed
         {
-            if (_highlightsOn == 0) OnDone.Invoke();
+            if (_highlightsOn == 0 && !_audioSource.isPlaying) OnDone.Invoke(); // if player has pressed all the buttons and voiceover is done, move on
 
             if (_inputManager.IsButtonPressed(InputManager.Button.A)) _currHighlight = RHighlightRings.transform.Find("aRing").gameObject;
             if (_inputManager.IsButtonPressed(InputManager.Button.B)) _currHighlight = RHighlightRings.transform.Find("bRing").gameObject;
@@ -68,9 +73,10 @@ namespace Anivision.Tutorial
 
         public override void Cleanup()
         {
-            tutorialControllers.SetActive(false);
             foreach (Transform child in LHighlightRings.transform) child.gameObject.SetActive(false);
             foreach (Transform child in RHighlightRings.transform) child.gameObject.SetActive(false);
+
+            page.Cleanup();
         }
     }
 }

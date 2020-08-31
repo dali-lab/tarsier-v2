@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Anivision.Tutorial;
 using UnityEngine.SceneManagement;
+using Anivision.Core;
 
 /// <summary>
 /// This script is attached to the button that will reload the scene and replay the tutorial
@@ -21,8 +22,9 @@ namespace Anivision.NotebookSystem
             _replayButton.onClick.AddListener(Replay);
         }
 
-        private void Replay()
+        private void Replay()                                                       // reloads the current scene to reset the tutorial
         {
+            if (Save.Instance != null) Save.Instance.RemoveActiveSceneFromPreviouslyVisited(); // remove from previously visited scenes so that we can spawn in proper place
             gameObject.GetComponent<SceneSwitch>().StartTransition();
         }
     }

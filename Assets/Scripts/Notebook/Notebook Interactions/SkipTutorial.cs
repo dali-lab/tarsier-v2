@@ -1,9 +1,8 @@
-﻿using Anivision.NotebookSystem;
-using Anivision.PlayerInteraction;
+﻿using Anivision.PlayerInteraction;
 using Anivision.Tutorial;
 using UnityEngine;
 
-namespace Anivision.Dashboard
+namespace Anivision.NotebookSystem
 {
     /// <summary>
     /// Skips tutorial and scales the camera if it hasn't already been scaled
@@ -37,13 +36,13 @@ namespace Anivision.Dashboard
         private void DoneScaling()
         {
             _TutorialController.Skip();
-            scaleController.ScaleDone.RemoveListener(DoneScaling);
+            if (scaleController != null) scaleController.ScaleDone.RemoveListener(DoneScaling);
         }
 
         private void OnDisable()
         {
             _button.onClick.RemoveListener(StartScaleOrSkip);
-            scaleController.ScaleDone.RemoveListener(DoneScaling);
+            if (scaleController != null) scaleController.ScaleDone.RemoveListener(DoneScaling);
         }
     }
 }
