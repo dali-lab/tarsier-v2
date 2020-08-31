@@ -8,7 +8,7 @@ namespace Anivision.Vision
     {
         public Texture2D texture;
         public Texture2D changedTexture;
-        public Color? color = null;
+        public Color color;
         public String shaderTextureProperty = null;
         public String shaderColorProperty = null;
         public Renderer renderer;

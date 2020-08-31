@@ -101,6 +101,5 @@ namespace Anivision.Vision
                 }
             }
         }
-
     }
 }

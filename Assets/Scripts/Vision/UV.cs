@@ -93,7 +93,7 @@ namespace Anivision.Vision
             VisionParameters visionParameters)
         {
             
-            //if we have child game object has its own UV script, we should use the child's UV settings instead
+            //if child game object has its own UV script, we should use the child's UV settings instead
             if (currentRenderer.gameObject != gameObject)
             {
                 UV childUVScript = currentRenderer.gameObject.GetComponent<UV>();

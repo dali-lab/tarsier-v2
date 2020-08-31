@@ -27,7 +27,6 @@ namespace Anivision.Vision
                     effectsDictionary.Add(effect.Effect, effect);
                 }
             }
-            
             // Instantiate the list of added features
             addedFeatures = new List<ScriptableRendererFeature>();
         }
