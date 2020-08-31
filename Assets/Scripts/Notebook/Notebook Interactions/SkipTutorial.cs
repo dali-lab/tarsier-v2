@@ -1,9 +1,8 @@
-﻿using Anivision.NotebookSystem;
-using Anivision.PlayerInteraction;
+﻿using Anivision.PlayerInteraction;
 using Anivision.Tutorial;
 using UnityEngine;
 
-namespace Anivision.Dashboard
+namespace Anivision.NotebookSystem
 {
     /// <summary>
     /// Skips tutorial and scales the camera if it hasn't already been scaled
