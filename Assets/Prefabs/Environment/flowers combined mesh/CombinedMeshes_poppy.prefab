@@ -151,7 +151,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
+  - {fileID: 2100000, guid: e3d58b237ac0a4fe298571c7990a3a46, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -230,7 +230,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
+  - {fileID: 2100000, guid: 1c01fb7915da74f3dbeb837a99855413, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,7 +260,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3836812759483316722}
-  - component: {fileID: -6519146790330112452}
+  - component: {fileID: 3682303290220820590}
   - component: {fileID: 3025517679522594763}
   - component: {fileID: 6173549783820885119}
   m_Layer: 0
@@ -293,7 +293,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6519146790330112452
+--- !u!114 &3682303290220820590
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,34 +302,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3459848275692598824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaterialGroups:
-  - originalMaterial: {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-    MaterialsToSwap:
-    - animal: 0
-      material: {fileID: 2100000, guid: be18643f42102d743864a4a5fce98cfc, type: 2}
-    - animal: 1
-      material: {fileID: 2100000, guid: ecc2b0b530206424ab9c5cbacd490c17, type: 2}
-  - originalMaterial: {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-    MaterialsToSwap:
-    - animal: 0
-      material: {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
-    - animal: 1
-      material: {fileID: 2100000, guid: 3252265cf15a9a0449932289e1ab4cc9, type: 2}
-  - originalMaterial: {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-    MaterialsToSwap:
-    - animal: 0
-      material: {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
-    - animal: 1
-      material: {fileID: 2100000, guid: ddc858af47e345143807836d7be89f5a, type: 2}
-  - originalMaterial: {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-    MaterialsToSwap:
-    - animal: 0
-      material: {fileID: 2100000, guid: 000be9ff62c388341a5cb7c7a71f2d4d, type: 2}
-    - animal: 1
-      material: {fileID: 2100000, guid: 4a1b58413c591d34388cdd07fba5f70c, type: 2}
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
 --- !u!114 &3025517679522594763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,7 +483,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: de4bc048f6b46a94bba23d56fc16bcc4, type: 2}
+  - {fileID: 2100000, guid: d7b3200416ce0423e9659aa8a53f7867, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -584,7 +562,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f601ae90b8dbd624dab15ec045ef9695, type: 2}
+  - {fileID: 2100000, guid: 059b3aee572ec4bf4b198e425b7e55f4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

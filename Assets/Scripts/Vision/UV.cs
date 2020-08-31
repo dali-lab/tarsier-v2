@@ -107,28 +107,31 @@ namespace Anivision.Vision
             Material currentMaterial = currentRenderer.sharedMaterials[materialIndex];
             MaterialInfo matInfo;
             _materialInfo.TryGetValue(GetMaterialName(currentMaterial), out matInfo);
-            Color color = currentMaterial.GetColor(shaderBaseColor);
-
-            if (matInfo == null)
+            if (currentMaterial.HasProperty(shaderBaseColor))
             {
-
-                MaterialInfo newMatInfo =
-                    CreateMaterialInfo(currentMaterial, shaderBaseColor, shaderBaseTexture, currentRenderer);
-                if (newMatInfo.texture != null)
+                Color color = currentMaterial.GetColor(shaderBaseColor);
+            
+                if (matInfo == null)
                 {
-                    newMatInfo.changedTexture = CreateUVTexture(newMatInfo.texture, UVAmount);
+
+                    MaterialInfo newMatInfo =
+                        CreateMaterialInfo(currentMaterial, shaderBaseColor, shaderBaseTexture, currentRenderer);
+                    if (newMatInfo.texture != null)
+                    {
+                        newMatInfo.changedTexture = CreateUVTexture(newMatInfo.texture, UVAmount);
+                    }
+                    _materialInfo.Add(GetMaterialName(currentMaterial), newMatInfo);
+                    matInfo = newMatInfo;
                 }
-                _materialInfo.Add(GetMaterialName(currentMaterial), newMatInfo);
-                matInfo = newMatInfo;
-            }
 
-            if (matInfo.changedTexture != null)
-            {
-                propBlock.SetTexture(shaderBaseTexture, matInfo.changedTexture);
-            }
+                if (matInfo.changedTexture != null)
+                {
+                    propBlock.SetTexture(shaderBaseTexture, matInfo.changedTexture);
+                }
 
-            Color newColor = new Color(color.g, color.b,UVAmount);
-            propBlock.SetColor(shaderBaseColor, newColor);
+                Color newColor = new Color(color.g, color.b,UVAmount);
+                propBlock.SetColor(shaderBaseColor, newColor);
+            }
 
         }
         

@@ -28,16 +28,15 @@ namespace Anivision.PlayerInteraction
         private GameObject windParticles;
         private bool isFlying = false;
         private bool inTransition = false;
+        private Vector3 windParticlesScale = new Vector3(0.1f, 0.11f, 0.1f);
+        private Vector3 windParticlesLocalPosition = new Vector3(0f, 0.43f, 3.684f);
 
         private void Awake()
         {
             //Get attached wind audio source and particles and save them
             windParticles = GetComponentInChildren<ParticleSystem>().gameObject;
             windSound = GetComponentInChildren<AudioSource>();
-            windParticles.transform.parent = centerEye.transform;
-            windParticles.transform.forward = centerEye.transform.forward * -1;
-            windParticles.transform.localPosition = new Vector3(0f, 0.43f, 3.684f);
-            windParticles.transform.localScale = new Vector3(0.01f, 0.011f, 0.01f);
+            ChangeScale();
             windParticles.SetActive(false);
             windSound.transform.parent = centerEye.transform;
             windSound.volume = 0;
@@ -107,6 +106,11 @@ namespace Anivision.PlayerInteraction
         {
             // Toggle flying
             isFlying = !isFlying;
+
+            if (isFlying)
+            {
+                ChangeScale();
+            }
             // Toggle the ability to teleport
             if (_teleportController != null)
             {
@@ -137,6 +141,16 @@ namespace Anivision.PlayerInteraction
                     yield return null;
                 }
             }
+        }
+
+        private void ChangeScale()
+        {
+            windParticles.transform.parent = centerEye.transform;
+            windParticles.transform.forward = centerEye.transform.forward * -1;
+            windParticles.transform.localPosition = windParticlesLocalPosition;
+
+            Vector3 cameraRigScale = cameraRig.transform.localScale;
+            windParticles.transform.localScale = new Vector3(cameraRigScale.x * windParticlesScale.x, cameraRigScale.y * windParticlesScale.y, cameraRigScale.z * windParticlesScale.z);
         }
 
         private void EnableFlight(MovementParameters parameters)

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Anivision.Vision
@@ -7,9 +8,9 @@ namespace Anivision.Vision
     {
         public Texture2D texture;
         public Texture2D changedTexture;
-        public Color color;
-        public string shaderTextureProperty;
-        public string shaderColorProperty;
+        public Color? color = null;
+        public String shaderTextureProperty = null;
+        public String shaderColorProperty = null;
         public Renderer renderer;
     }
 }

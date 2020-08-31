@@ -56,12 +56,17 @@ namespace Anivision.Vision
 
         public static MaterialInfo CreateMaterialInfo(Material m, string shaderColorProperty, string shaderTextureProperty, Renderer r)
         {
-            Color originalColor = m.GetColor(shaderColorProperty);
+            
+
             MaterialInfo matInfo = new MaterialInfo();
-            matInfo.color = new Color(originalColor.r, originalColor.g, originalColor.b);
-            matInfo.texture = (Texture2D) m.GetTexture(shaderTextureProperty);
-            matInfo.shaderColorProperty = shaderColorProperty;
-            matInfo.shaderTextureProperty = shaderTextureProperty;
+            if (m.HasProperty(shaderColorProperty))
+            {
+                Color originalColor = m.GetColor(shaderColorProperty);
+                matInfo.color = new Color(originalColor.r, originalColor.g, originalColor.b);
+            }
+            if (m.HasProperty(shaderTextureProperty)) matInfo.texture = (Texture2D) m.GetTexture(shaderTextureProperty);
+            if (m.HasProperty(shaderColorProperty)) matInfo.shaderColorProperty = shaderColorProperty;
+            if (m.HasProperty(shaderTextureProperty)) matInfo.shaderTextureProperty = shaderTextureProperty;
             matInfo.renderer = r;
 
             return matInfo;

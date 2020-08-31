@@ -244,7 +244,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a769b352f3dac044ea7d746fec82ea8c, type: 2}
+  - {fileID: 2100000, guid: 44a0a8cc33c9b4d348e8d0c2d1336b5c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -323,7 +323,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 70fa064bb4a4cc7429abfe479a12dd03, type: 2}
+  - {fileID: 2100000, guid: edab6d4b32e144525ae927814d216a8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -818,8 +818,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7755143009967244306}
-  - component: {fileID: -6423530836180928406}
   - component: {fileID: 3906567757080647711}
+  - component: {fileID: -1635633833939726633}
   - component: {fileID: -1654052136614148674}
   m_Layer: 0
   m_Name: CombinedMeshes_purple flowers
@@ -857,37 +857,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6423530836180928406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8709331904014055444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae2607a5bc2dcb48affc96cbc1db46e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaterialGroups:
-  - originalMaterial: {fileID: 2100000, guid: 70fa064bb4a4cc7429abfe479a12dd03, type: 2}
-    MaterialsToSwap:
-    - animal: 0
-      material: {fileID: 2100000, guid: 70fa064bb4a4cc7429abfe479a12dd03, type: 2}
-    - animal: 1
-      material: {fileID: 2100000, guid: 54624a05740b41242846b3eb949fe5aa, type: 2}
-  - originalMaterial: {fileID: 2100000, guid: a2403beef6249944da40d6f11171de82, type: 2}
-    MaterialsToSwap:
-    - animal: 0
-      material: {fileID: 2100000, guid: a2403beef6249944da40d6f11171de82, type: 2}
-    - animal: 1
-      material: {fileID: 2100000, guid: ceb32a1e5daf08746be1b857be6bebb8, type: 2}
-  - originalMaterial: {fileID: 2100000, guid: a769b352f3dac044ea7d746fec82ea8c, type: 2}
-    MaterialsToSwap:
-    - animal: 0
-      material: {fileID: 2100000, guid: a769b352f3dac044ea7d746fec82ea8c, type: 2}
-    - animal: 1
-      material: {fileID: 2100000, guid: 4e3c3aa6450794e4595f5148d4619ab9, type: 2}
 --- !u!114 &3906567757080647711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -900,6 +869,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2fe7f8600343f40a31ddb9ba1d4425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1635633833939726633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709331904014055444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab8b0b49d86a54effa30897f93f0338e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UVAmount: 0
+  shaderBaseColor: _BaseColor
+  shaderBaseTexture: _BaseMap
 --- !u!114 &-1654052136614148674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -970,7 +954,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a2403beef6249944da40d6f11171de82, type: 2}
+  - {fileID: 2100000, guid: c8173889357d449339ac47e2dfc5eeb7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

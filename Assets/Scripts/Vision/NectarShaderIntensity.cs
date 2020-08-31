@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Anivision.Core;
 
@@ -48,7 +50,8 @@ namespace Anivision.Vision
         public override void ApplyEffect(MaterialPropertyBlock propBlock, int materialIndex, Renderer renderer,
             VisionParameters visionParameters)
         {
-            propBlock.SetFloat("_Intensity", GetIntensity());
+            propBlock.SetFloat("_SparkleOn", 1.0f);
+            propBlock.SetFloat("_SparkleIntensity", GetIntensity());
         }
 
         public override void RevertToOriginal(Renderer r)
@@ -59,8 +62,8 @@ namespace Anivision.Vision
 
         private void UpdateMaterial()
         {
-            _propBlock.SetFloat("_Intensity", GetIntensity());
-            UpdateMaterialRecursive(transform, _propBlock);
+            // _propBlock.SetFloat("_SparkleIntensity", GetIntensity());
+            UpdateMaterialHelper(transform, _propBlock);
         }
         
         /// <summary>
@@ -68,24 +71,25 @@ namespace Anivision.Vision
         /// </summary>
         /// <param name="t"></param>
         /// <param name="propBlock"></param>
-        private void UpdateMaterialRecursive(Transform t, MaterialPropertyBlock propBlock)
+        private void UpdateMaterialHelper(Transform t, MaterialPropertyBlock propBlock)
         {
-            GameObject currGameObject = t.gameObject;
-            Renderer mRenderer = currGameObject.GetComponent<Renderer>();
             
-            // if current game object has a renderer
-            if (mRenderer != null)
+            List<Renderer> renderers = gameObject.GetComponentsInChildren<Renderer>(true).ToList();
+            Renderer parentRenderer = gameObject.GetComponent<Renderer>();
+            if (parentRenderer != null)
             {
-                //go through renderer materials
-                for (int i = 0; i < mRenderer.sharedMaterials.Length; i++)
-                {
-                    mRenderer.SetPropertyBlock(propBlock, i);
-                }
-
+                renderers.Add(parentRenderer);
             }
-            // recurse over children
-            foreach(Transform child in t) {
-                UpdateMaterialRecursive(child, propBlock);
+
+            foreach (Renderer r in renderers)
+            {
+                for (int i = 0; i < r.sharedMaterials.Length; i++)
+                {
+                    r.GetPropertyBlock(propBlock, i);
+                    propBlock.SetFloat("_SparkleIntensity", GetIntensity());
+                    propBlock.SetFloat("_SparkleOn", r.sharedMaterials[i].GetFloat("_SparkeOn"));
+                    r.SetPropertyBlock(propBlock, i);
+                }
             }
         }
 
